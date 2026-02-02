@@ -1,0 +1,24 @@
+# VALORANT Scouting Tool - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Database
+duckdb>=1.4.0
+
+# AI / LLM
+google-genai>=1.0.0
+
+# Web Framework (Streamlit UI)
+streamlit>=1.30.0
+
+# Web Framework (FastAPI Backend)
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# Data Processing
+pandas>=2.0.0
+
+# Environment & Config
+python-dotenv>=1.0.0
+
+# Type Validation
+pydantic>=2.0.0

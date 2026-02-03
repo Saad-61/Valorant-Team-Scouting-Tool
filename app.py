@@ -129,7 +129,7 @@ def main():
         
         with col3:
             st.markdown("<br>", unsafe_allow_html=True)
-            generate_btn = st.button("🔍 Generate Report", type="primary", use_container_width=True)
+            generate_btn = st.button("🔍 Generate Report", type="primary", use_container_width=False)
         
         st.markdown("---")
         
@@ -328,7 +328,7 @@ def main():
                     st.bar_chart(df_maps.set_index('Map')['Win Rate %'])
                     
                     # Table
-                    st.dataframe(df_maps, use_container_width=True, hide_index=True)
+                    st.dataframe(df_maps, width='stretch', hide_index=True)
                     
                     # Best/Worst maps
                     col1, col2 = st.columns(2)
@@ -354,7 +354,7 @@ def main():
                         'KDA': p['kda']
                     } for p in players])
                     
-                    st.dataframe(df_players, use_container_width=True, hide_index=True)
+                    st.dataframe(df_players, width='stretch', hide_index=True)
                     
                     # Agent pools
                     st.subheader("🎭 Agent Pools")
@@ -363,7 +363,7 @@ def main():
                             if p.get('agent_pool'):
                                 agent_df = pd.DataFrame(p['agent_pool'])
                                 agent_df['agent'] = agent_df['agent'].str.title()
-                                st.dataframe(agent_df, use_container_width=True, hide_index=True)
+                                st.dataframe(agent_df, width='stretch', hide_index=True)
             
             with tabs[5]:
                 st.subheader("🎮 Team Compositions")
@@ -386,7 +386,7 @@ def main():
                     with col1:
                         st.bar_chart(df_agents.set_index('Agent')['Pick Rate %'].head(10))
                     with col2:
-                        st.dataframe(df_agents.head(10), use_container_width=True, hide_index=True)
+                        st.dataframe(df_agents.head(10), width='stretch', hide_index=True)
                 
                 # Compositions by map
                 st.markdown("### Compositions by Map")

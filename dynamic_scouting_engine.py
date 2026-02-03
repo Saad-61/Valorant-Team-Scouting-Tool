@@ -9,6 +9,7 @@ from typing import Dict, List, Any, Optional
 import json
 import os
 import time
+import numpy as np
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -275,7 +276,25 @@ SQL:"""
             result = self.conn.execute(sql).fetchdf()
             
             # Convert to list of dicts for JSON serialization
+            # Replace NaN/inf with None and convert numpy types to Python types
+            result = result.replace([np.inf, -np.inf], None)
+            result = result.where(result.notna(), None)
+            
             records = result.to_dict('records')
+            
+            # Convert numpy types to native Python types
+            def convert_value(val):
+                if val is None:
+                    return None
+                if isinstance(val, (np.integer, np.int64, np.int32)):
+                    return int(val)
+                if isinstance(val, (np.floating, np.float64, np.float32)):
+                    return float(val)
+                if isinstance(val, np.bool_):
+                    return bool(val)
+                return val
+            
+            records = [{k: convert_value(v) for k, v in record.items()} for record in records]
             columns = list(result.columns)
             
             return {

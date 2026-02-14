@@ -33,8 +33,14 @@ allowed_origins = [
     "http://localhost:5175",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
-    "*"  # Allow all origins for Vercel deployment
 ]
+
+# Add production frontend URL from environment variable
+frontend_url = os.getenv("FRONTEND_URL")
+if frontend_url:
+    allowed_origins.append(frontend_url)
+    # Also allow the Vercel preview URLs pattern
+    allowed_origins.append("https://*.vercel.app")
 
 app.add_middleware(
     CORSMiddleware,

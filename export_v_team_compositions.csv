@@ -1,0 +1,649 @@
+game_id,series_id,map_name,team_id,team_name,composition,duelist_count,controller_count,sentinel_count,initiator_count
+8aacfbab-be97-44f9-bc69-da5c6601062a,2629391,bind,81,MIBR,"brimstone,viper,jett,raze,skye",2,2,0,1
+3d5eab91-9ef7-4410-b996-8463dc2fe880,2637963,split,96,G2 Esports,"omen,viper,raze,breach,cypher",1,2,1,1
+67293f23-ec04-4774-a105-9fcb6afdca81,2748746,lotus,97,NRG,"omen,viper,raze,fade,vyse",1,2,1,1
+68bb681c-15c0-4b6d-b9e5-ffbdf49bfbf1,2748766,pearl,96,G2 Esports,"astra,yoru,sova,chamber,vyse",1,1,2,1
+a417c9ca-3598-470d-9730-8d13f02ec81a,2654001,icebox,337,100 Thieves,"viper,jett,gekko,sova,killjoy",1,1,1,2
+4c7f787a-596f-44f5-9e40-0f71661387d0,2654005,lotus,48457,KRÜ Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+6e090973-12d4-4499-9825-6dc4e641a52b,2654012,bind,96,G2 Esports,"brimstone,viper,raze,gekko,skye",1,2,0,2
+6fead2de-0fb4-470a-8919-95774257f533,2653969,sunset,79,Cloud9,"omen,viper,raze,skye,cypher",1,2,1,1
+6fead2de-0fb4-470a-8919-95774257f533,2653969,sunset,1611,Leviatán Esports,"omen,phoenix,breach,sova,cypher",1,1,1,2
+fe03185a-024e-48a8-a378-2c0a7a8a64e3,2653972,icebox,96,G2 Esports,"omen,viper,gekko,sova,killjoy",0,2,1,2
+b5729ab0-3c59-45cd-8837-6222f10fca65,2653975,bind,337,100 Thieves,"brimstone,viper,raze,fade,gekko",1,2,0,2
+95712ade-7574-4291-b5be-d4b999a40032,2653980,bind,81,MIBR (1),"brimstone,viper,raze,kay/o,skye",1,2,0,2
+37beb0e4-fd15-4166-a427-6c79b1186b8f,2653986,sunset,1079,Sentinels,"omen,raze,gekko,kay/o,cypher",1,1,1,2
+4d2f9f28-398f-438c-8d2f-46a430c8b10f,2789396,haven,281,Evil Geniuses,"omen,waylay,breach,sova,cypher",1,1,1,2
+d020a707-feca-44c7-a72f-7f492c637972,2775972,lotus,96,G2 Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+cb66f826-0192-4950-bd53-28a5b4a874cb,2775978,ascent,81,MIBR (1),"omen,jett,kay/o,sova,cypher",1,1,1,2
+5a3e9018-48a7-4238-9091-54d86686e263,2681846,sunset,48457,KRÜ Esports,"omen,neon,breach,sova,cypher",1,1,1,2
+aae2bc4d-68e3-4868-9778-d8df0f23ff3b,2681847,haven,96,G2 Esports,"omen,jett,breach,sova,killjoy",1,1,1,2
+88d0fdf2-686f-4fb8-a679-36a2e26e9f3d,2681809,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+8a4945ed-21e8-48e1-8440-5f8985b34529,2681812,lotus,281,Evil Geniuses,"omen,iso,breach,fade,cypher",1,1,1,2
+7e2ae3c7-4b14-45e2-be90-bb4f4053531d,2681830,lotus,3412,LOUD (1),"omen,raze,breach,fade,cypher",1,1,1,2
+73de9751-6b29-4cc2-b7d5-7e709d8c3624,2681835,icebox,79,Cloud9,"viper,reyna,gekko,sova,killjoy",1,1,1,2
+84960f38-8a0e-4669-9060-161fb6891d54,2843060,lotus,79,Cloud9,"omen,viper,raze,fade,vyse",1,2,1,1
+8fa1d515-4d32-49a6-85cf-c3dfafc116f5,2843063,corrode,97,NRG,"omen,viper,waylay,kay/o,sova",1,2,0,2
+b0614051-7d8f-49ff-8953-12e7c3e1a5d1,2819676,bind,79,Cloud9,"brimstone,viper,raze,skye,vyse",1,2,1,1
+aef88b0f-95d8-454a-a044-5e1bb9a5cb4c,2819683,icebox,99,FURIA,"omen,viper,waylay,sova,killjoy",1,2,1,1
+986b8b5c-c633-4cce-930c-0f2d9b0bec92,2819677,bind,1611,Leviatán Esports,"brimstone,viper,yoru,fade,gekko",1,2,0,2
+99ee9f1f-1ca1-4b3b-8090-b4465478fcaf,2819677,ascent,1611,Leviatán Esports,"omen,jett,kay/o,sova,cypher",1,1,1,2
+00891f98-65bc-4f88-ae3b-0fd434938b46,2819677,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+62c2f358-4bcc-4073-bad2-b06d19ebb3ed,2819680,bind,97,NRG,"brimstone,viper,raze,fade,kay/o",1,2,0,2
+ccdb5ba5-1d12-4531-b9e4-468847256454,2819689,icebox,97,NRG,"harbor,viper,jett,sova,killjoy",1,2,1,1
+95e09901-fc6e-4f29-8d0d-5421b3208891,2819697,bind,48457,KRÜ Esports,"brimstone,viper,raze,yoru,fade",2,2,0,1
+c744738d-3c34-4715-9ea4-e97fba3ad15f,2819705,sunset,3412,LOUD (1),"omen,neon,breach,sova,cypher",1,1,1,2
+4a219f17-c477-448a-ad7b-4f77ab033c9c,2629391,lotus,81,MIBR,"omen,viper,raze,skye,killjoy",1,2,1,1
+03babb80-c970-443f-a21f-f7a4370a23ad,2629401,ascent,81,MIBR,"omen,viper,jett,skye,cypher",1,2,1,1
+911f55f4-b1a3-4cb8-ba4c-3c100d7b4245,2748743,pearl,3412,LOUD (1),"astra,jett,kay/o,sova,cypher",1,1,1,2
+8d83929e-47cb-49d8-8307-7cffb832e1d7,2748744,lotus,337,100 Thieves,"clove,omen,neon,breach,fade",1,2,0,2
+39ed5c37-3b48-40f6-a7e5-f47dd433ce3d,2748745,lotus,99,FURIA,"omen,raze,breach,tejo,vyse",1,1,1,2
+fd60215e-32cd-475d-bba3-fe9fa741a952,2748765,lotus,1079,Sentinels,"omen,viper,raze,fade,vyse",1,2,1,1
+f3a3f70a-319e-4382-adfb-09030cd3fb9e,2748765,pearl,81,MIBR (1),"astra,jett,kay/o,sova,killjoy",1,1,1,2
+bb5635ac-bc43-412f-8a40-c688f88e84cb,2654001,bind,3412,LOUD (1),"brimstone,viper,raze,breach,kay/o",1,2,0,2
+f08e1ac0-c575-4ba7-b1de-e7caf6dd202f,2654004,ascent,337,100 Thieves,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+4c7f787a-596f-44f5-9e40-0f71661387d0,2654005,lotus,1611,Leviatán Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+95c67cfb-b66a-490b-b46f-a50419a79897,2654005,icebox,48457,KRÜ Esports,"viper,jett,gekko,kay/o,killjoy",1,1,1,2
+a7cf11d8-d64b-41bc-9807-62e91dac343b,2654012,breeze,1611,Leviatán Esports,"viper,jett,kay/o,sova,cypher",1,1,1,2
+15aba0eb-0241-4525-8138-098143330bc8,2653974,icebox,48457,KRÜ Esports,"viper,reyna,gekko,kay/o,killjoy",1,1,1,2
+4d43b00d-bafd-401e-8a2a-a2b9bd516c06,2653981,bind,79,Cloud9,"brimstone,viper,raze,skye,cypher",1,2,1,1
+6eb1d3d5-c083-4d95-b13f-4441c628e0a2,2653981,lotus,3412,LOUD (1),"omen,viper,raze,fade,deadlock",1,2,1,1
+f0bf8623-a619-4d40-b7b2-e5a8662e533a,2653983,bind,97,NRG,"brimstone,viper,raze,gekko,kay/o",1,2,0,2
+4ec0f1c0-dfbf-4533-8f86-5c7e8673e7ed,2653984,lotus,99,FURIA,"omen,viper,raze,fade,killjoy",1,2,1,1
+bd70cd3b-b0f8-466b-8dd4-5fbd72d275dd,2653988,breeze,96,G2 Esports,"harbor,viper,yoru,sova,cypher",1,2,1,1
+7f819353-6fd8-45c1-b499-2017618cdce6,2653988,lotus,1611,Leviatán Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+822a19a9-37dd-408d-a409-fe5ab3bfc17a,2775990,haven,96,G2 Esports,"astra,yoru,breach,tejo,vyse",1,1,1,2
+e7166237-04f0-432d-ac5b-e561a21b971d,2775991,split,1079,Sentinels,"omen,viper,yoru,breach,tejo",1,2,0,2
+095227c4-d2e0-4b7f-8a73-c6d68031765a,2775994,haven,96,G2 Esports,"astra,yoru,breach,tejo,vyse",1,1,1,2
+c917c878-5459-40e8-8d25-dda4404624b9,2775979,haven,1079,Sentinels,"omen,neon,breach,sova,cypher",1,1,1,2
+38e746ea-9f0c-4287-bd52-921eeb66afda,2789396,pearl,1079,Sentinels,"astra,yoru,fade,tejo,vyse",1,1,1,2
+102b780b-de11-4049-a334-8069daaa8aef,2775955,ascent,99,FURIA,"omen,yoru,kay/o,sova,vyse",1,1,1,2
+43d9c878-46e0-45ba-aad2-1404129d1823,2775959,pearl,99,FURIA,"astra,neon,kay/o,sova,cypher",1,1,1,2
+51156eaa-c25e-4901-95d2-1f5f7e3f0fbc,2775962,pearl,81,MIBR (1),"astra,waylay,kay/o,tejo,vyse",1,1,1,2
+fa35f815-092e-4631-bb06-dff91f2217a0,2775964,ascent,1611,Leviatán Esports,"omen,yoru,sova,cypher,deadlock",1,1,2,1
+cf3b2d75-5225-4938-b869-5dc907abd896,2775976,haven,81,MIBR (1),"omen,jett,breach,tejo,cypher",1,1,1,2
+c4c1903c-13e0-456d-8e5f-6f4a0eff4b19,2775978,split,99,FURIA,"omen,viper,yoru,breach,tejo",1,2,0,2
+3be9d0da-bc75-4f37-b4f6-119ef2e56dd3,2681847,bind,1611,Leviatán Esports,"brimstone,viper,raze,fade,gekko",1,2,0,2
+c84971ad-e3eb-46cf-bc6e-283af57b44f2,2681847,ascent,96,G2 Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+c1c25c9b-82bc-4a5d-bbc2-2befcd034748,2681811,icebox,99,FURIA,"viper,jett,sova,killjoy,sage",1,1,2,1
+b3891f68-1023-4467-b245-1a17d77d6bb6,2681812,icebox,281,Evil Geniuses,"clove,harbor,iso,sova,killjoy",1,2,1,1
+303dfa6a-8659-4d40-b8ca-bb1f7f7202ec,2681819,lotus,81,MIBR (1),"omen,viper,raze,fade,killjoy",1,2,1,1
+00c5b440-eee3-423b-a01c-954a8c96a7c7,2681824,bind,3412,LOUD (1),"brimstone,omen,neon,gekko,skye",1,2,0,2
+b61a19fd-daf2-4abf-b8db-3261720636fc,2843064,haven,1611,Leviatán Esports,"omen,neon,yoru,sova,cypher",2,1,1,1
+e4743d6a-8122-4d99-8063-a257db0ca552,2819678,ascent,53367,2GAME eSports,"omen,jett,kay/o,sova,cypher",1,1,1,2
+9c95a847-ca63-4511-96f7-abbd348c0d9f,2819681,lotus,96,G2 Esports,"omen,viper,yoru,fade,tejo",1,2,0,2
+e1afa88b-cb82-48af-a34c-9473c57a2bcc,2819689,lotus,97,NRG,"omen,viper,raze,fade,vyse",1,2,1,1
+ccdb5ba5-1d12-4531-b9e4-468847256454,2819689,icebox,1611,Leviatán Esports,"viper,jett,sova,killjoy,sage",1,1,2,1
+beef7cc9-5aa7-42c9-b1aa-02a1655a7ef1,2819700,sunset,97,NRG,"omen,raze,breach,sova,cypher",1,1,1,2
+711ae558-0054-4127-96ef-65de99d99673,2629396,split,1079,Sentinels,"omen,viper,raze,skye,cypher",1,2,1,1
+39ed5c37-3b48-40f6-a7e5-f47dd433ce3d,2748745,lotus,53367,2GAME eSports,"omen,raze,breach,tejo,vyse",1,1,1,2
+7c6d677a-1429-4e83-af6c-539ff3ea762b,2748746,fracture,97,NRG,"brimstone,raze,breach,sova,killjoy",1,1,1,2
+67293f23-ec04-4774-a105-9fcb6afdca81,2748746,lotus,79,Cloud9,"omen,raze,breach,tejo,deadlock",1,1,1,2
+5f11d22a-f433-4b50-99ca-c3f7dfc98f28,2748749,haven,99,FURIA,"omen,jett,breach,sova,cypher",1,1,1,2
+968b7d65-6966-4c62-8cbb-da1fa4d2aa2c,2748763,pearl,96,G2 Esports,"astra,yoru,sova,chamber,vyse",1,1,2,1
+75c3d8a2-3095-40b8-8cbe-a48dc5844788,2653970,breeze,97,NRG,"viper,jett,yoru,sova,cypher",2,1,1,1
+40be6139-32f9-4bff-9cef-14aed306f587,2653974,breeze,99,FURIA,"viper,jett,kay/o,sova,cypher",1,1,1,2
+0ca44b38-54c7-433b-8c67-d3edf7991274,2653978,split,99,FURIA,"omen,viper,raze,yoru,skye",2,2,0,1
+751ec5c5-e3bf-4e5d-8257-415f902b2c90,2653980,lotus,1079,Sentinels,"omen,viper,raze,fade,killjoy",1,2,1,1
+70c15445-5f84-4c36-a44a-af848f6b8ae1,2653982,lotus,281,Evil Geniuses,"omen,viper,raze,fade,cypher",1,2,1,1
+4ec0f1c0-dfbf-4533-8f86-5c7e8673e7ed,2653984,lotus,96,G2 Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+2e8e786e-d906-49c1-b5c3-a76592fe78cb,2653984,icebox,99,FURIA,"omen,viper,gekko,kay/o,killjoy",0,2,1,2
+a6da2cbb-8bbd-43bf-9225-8edc4ca9fc4a,2653985,ascent,79,Cloud9,"omen,jett,kay/o,sova,cypher",1,1,1,2
+239fa10b-4e58-48c1-97c0-edeb9cc0b720,2775992,split,96,G2 Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+4ce1599c-dbee-4be0-a0ce-16fdcb7f6adf,2775992,pearl,96,G2 Esports,"astra,yoru,fade,tejo,vyse",1,1,1,2
+a722e7c7-3ede-48f7-b427-703c95befcc3,2775993,ascent,81,MIBR (1),"omen,jett,kay/o,tejo,vyse",1,1,1,2
+df086c97-482f-4af5-8575-e667403e9a55,2775981,pearl,281,Evil Geniuses,"astra,jett,yoru,tejo,vyse",2,1,1,1
+c107f7a8-39a2-478d-92d7-afc4e89a7f1c,2775962,ascent,81,MIBR (1),"omen,jett,kay/o,sova,cypher",1,1,1,2
+1f2900ac-deff-4f20-a343-9ca46a1a8f2e,2775969,ascent,1611,Leviatán Esports,"omen,waylay,kay/o,tejo,vyse",1,1,1,2
+7aed6afc-c5e8-4a5a-b87f-d5659ba7acb0,2775973,lotus,99,FURIA,"clove,omen,neon,breach,fade",1,2,0,2
+2f818e02-6a0f-4516-88e2-25e136a0966e,2775973,pearl,79,Cloud9,"astra,jett,yoru,sova,cypher",2,1,1,1
+77e06cdf-1533-4c85-8bd6-f1521e5d6e95,2681841,ascent,1079,Sentinels,"omen,jett,sova,cypher,deadlock",1,1,2,1
+e2a04da4-a190-4576-92f3-35eb2933b8af,2681842,sunset,48457,KRÜ Esports,"omen,neon,breach,sova,cypher",1,1,1,2
+122fc792-c9cb-4d19-a241-7e0a15f721aa,2681843,lotus,337,100 Thieves,"omen,viper,raze,fade,killjoy",1,2,1,1
+a657c3e0-4dfd-409e-86fd-bd0fefa20044,2681846,haven,1611,Leviatán Esports,"omen,neon,breach,sova,cypher",1,1,1,2
+d350fad9-4a06-4d77-ada9-ae685c73c669,2681832,icebox,97,NRG,"viper,jett,kay/o,sova,killjoy",1,1,1,2
+38277aa2-5b46-4661-aec7-1638b4bbc72b,2843063,sunset,96,G2 Esports,"omen,neon,fade,chamber,sage",1,1,2,1
+09a9a194-c8ae-4883-b774-6187eef9f720,2819678,lotus,281,Evil Geniuses,"clove,viper,raze,fade,chamber",1,2,1,1
+c966fd7f-f575-4695-b523-f7864a96e5e3,2819683,sunset,99,FURIA,"omen,viper,neon,sova,sage",1,2,1,1
+c966fd7f-f575-4695-b523-f7864a96e5e3,2819683,sunset,1079,Sentinels,"omen,neon,breach,fade,cypher",1,1,1,2
+4c38094b-345a-4640-ae9e-7680dbabe4d2,2819680,sunset,97,NRG,"omen,viper,neon,sova,deadlock",1,2,1,1
+1ea22d41-5b4f-4573-af44-f0d9bc541cda,2819695,lotus,97,NRG,"omen,viper,raze,fade,vyse",1,2,1,1
+beef7cc9-5aa7-42c9-b1aa-02a1655a7ef1,2819700,sunset,48457,KRÜ Esports,"omen,neon,yoru,sova,cypher",2,1,1,1
+aea682e5-53b3-4078-858f-a8b5f8ae2624,2819701,sunset,337,100 Thieves,"omen,neon,yoru,sova,cypher",2,1,1,1
+bf3e378e-0a78-499f-8bd7-75dbcb99f86b,2819705,icebox,81,MIBR (1),"harbor,viper,jett,sova,killjoy",1,2,1,1
+c924abac-da36-42b3-b78f-f0c51fdb34f2,2629393,icebox,337,100 Thieves,"viper,jett,gekko,sova,killjoy",1,1,1,2
+1eb0c429-4511-4516-b23c-33aed7cc6eed,2748744,bind,81,MIBR (1),"brimstone,raze,skye,cypher,deadlock",1,1,2,1
+02a970c8-2081-4843-83de-cf56f95de820,2748764,bind,48457,KRÜ Esports,"brimstone,viper,raze,skye,vyse",1,2,1,1
+36e8dca6-6f5a-4b5d-a81c-4bcd9ef5d627,2748766,abyss,96,G2 Esports,"astra,yoru,breach,sova,chamber",1,1,1,2
+763e4073-e01e-4a09-8743-6fcbf2c2d9e8,2654000,ascent,96,G2 Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+c881a53b-abc2-4d63-af9c-c53b2d6c073b,2654002,ascent,96,G2 Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+07e14580-ba7e-433d-89a3-74829c2688e8,2654052,bind,96,G2 Esports,"brimstone,viper,raze,gekko,skye",1,2,0,2
+fe03185a-024e-48a8-a378-2c0a7a8a64e3,2653972,icebox,281,Evil Geniuses,"harbor,viper,jett,sova,killjoy",1,2,1,1
+2bbb4c72-0036-4d88-b13a-43b86bc5b29d,2653973,icebox,1079,Sentinels,"viper,jett,gekko,kay/o,killjoy",1,1,1,2
+d78544b9-d29f-4dea-b8df-eca35acd35d3,2653977,icebox,81,MIBR (1),"harbor,viper,jett,sova,killjoy",1,2,1,1
+f0bf8623-a619-4d40-b7b2-e5a8662e533a,2653983,bind,1611,Leviatán Esports,"brimstone,viper,raze,gekko,skye",1,2,0,2
+06ba8d23-47ee-448b-a906-40dae02b614f,2775985,haven,337,100 Thieves,"omen,iso,neon,sova,cypher",2,1,1,1
+22bb6096-8b8d-460c-8f76-11006184e573,2775988,split,1079,Sentinels,"omen,viper,yoru,breach,tejo",1,2,0,2
+4f12a259-d492-4c9d-a643-6d7a232bfda0,2775989,icebox,48457,KRÜ Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+ce9bb129-3b89-4f7f-9d15-fb5a632a2991,2775993,lotus,96,G2 Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+08c5bf4e-f883-405a-b2c2-d5661c9f3e14,2775981,split,281,Evil Geniuses,"astra,viper,raze,breach,tejo",1,2,0,2
+03d68365-f62c-473c-95a1-4aa1dff0367c,2775955,lotus,99,FURIA,"clove,omen,neon,breach,fade",1,2,0,2
+102b780b-de11-4049-a334-8069daaa8aef,2775955,ascent,96,G2 Esports,"omen,waylay,kay/o,tejo,vyse",1,1,1,2
+393de77c-90eb-438e-9486-639ff2bf41aa,2775959,fracture,97,NRG,"brimstone,raze,breach,tejo,cypher",1,1,1,2
+5f27f062-7d66-4598-8ebd-2fe9fef9f7c2,2775964,split,79,Cloud9,"omen,viper,yoru,breach,tejo",1,2,0,2
+e8a576ee-9560-44d3-ac33-4fd0b3df07ad,2775968,lotus,97,NRG,"omen,raze,breach,tejo,vyse",1,1,1,2
+12e68607-5767-415f-b349-abba0688132f,2775968,ascent,97,NRG,"omen,jett,kay/o,sova,cypher",1,1,1,2
+d020a707-feca-44c7-a72f-7f492c637972,2775972,lotus,1611,Leviatán Esports,"omen,viper,neon,breach,tejo",1,2,0,2
+048192f2-dd93-493b-b943-ac291debe55b,2775978,icebox,81,MIBR (1),"harbor,viper,jett,sova,killjoy",1,2,1,1
+b5932ad8-88f8-4626-b6de-339c4f7d673e,2681840,lotus,79,Cloud9,"clove,omen,raze,gekko,killjoy",1,2,1,1
+42f11322-2575-4042-82d9-34a1fd8dd19b,2681846,ascent,1611,Leviatán Esports,"omen,jett,sova,cypher,deadlock",1,1,2,1
+b74e9644-2394-49a5-bb31-4973ea728ffc,2681817,lotus,281,Evil Geniuses,"omen,neon,breach,fade,cypher",1,1,1,2
+87831b61-caaa-467d-bee3-9d1016b08546,2681819,ascent,81,MIBR (1),"omen,jett,kay/o,sova,killjoy",1,1,1,2
+6e09564c-41e4-4113-8257-3f75b148d181,2681823,sunset,1611,Leviatán Esports,"omen,neon,breach,sova,cypher",1,1,1,2
+09370f4b-6cdc-4ed0-b5d0-76ca315e1535,2681835,split,48457,KRÜ Esports,"omen,viper,raze,skye,cypher",1,2,1,1
+1bd3eda3-5917-4daf-978c-84c16b81bfc2,2843060,corrode,1611,Leviatán Esports,"omen,viper,neon,fade,chamber",1,2,1,1
+5a5d6f54-28fd-469f-b2b7-59019793fa62,2819681,corrode,96,G2 Esports,"omen,viper,yoru,sova,vyse",1,2,1,1
+bcf8a377-5f93-4a0b-b0a3-31d00ed9d70d,2819682,ascent,96,G2 Esports,"omen,yoru,sova,chamber,vyse",1,1,2,1
+aef88b0f-95d8-454a-a044-5e1bb9a5cb4c,2819683,icebox,1079,Sentinels,"viper,jett,sova,killjoy,sage",1,1,2,1
+7984d7f3-3b19-4f2e-b230-e3f6af270375,2819685,haven,3412,LOUD (1),"omen,neon,breach,sova,cypher",1,1,1,2
+19594f1c-8e9c-4426-b895-95e348041d50,2819685,corrode,97,NRG,"omen,viper,waylay,kay/o,sova",1,2,0,2
+f175545b-6d0a-4c7d-8779-987c4cdaa4f5,2819687,sunset,1611,Leviatán Esports,"omen,neon,kay/o,sova,vyse",1,1,1,2
+1ea22d41-5b4f-4573-af44-f0d9bc541cda,2819695,lotus,81,MIBR (1),"omen,raze,yoru,fade,vyse",2,1,1,1
+bf3e378e-0a78-499f-8bd7-75dbcb99f86b,2819705,icebox,3412,LOUD (1),"omen,viper,jett,sova,killjoy",1,2,1,1
+719f343f-e8d5-44de-98c5-e66f04d0f5ab,2629390,breeze,99,FURIA,"viper,jett,kay/o,sova,cypher",1,1,1,2
+cd0ede88-b842-4de2-ae9f-bb8776a99437,2629390,ascent,99,FURIA,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+03babb80-c970-443f-a21f-f7a4370a23ad,2629401,ascent,79,Cloud9,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+e9343429-3dcc-4633-a28b-585ff4b33c2e,2748748,split,337,100 Thieves,"astra,raze,breach,tejo,sage",1,1,1,2
+3c038c28-3080-4730-a6da-7941e84381ac,2748766,haven,96,G2 Esports,"astra,yoru,breach,tejo,vyse",1,1,1,2
+5c0033f6-1a30-42bb-a09a-ca61b470feb9,2654003,sunset,337,100 Thieves,"omen,raze,gekko,sova,cypher",1,1,1,2
+f08e1ac0-c575-4ba7-b1de-e7caf6dd202f,2654004,ascent,96,G2 Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+6ba8e10f-779f-4982-8c09-dbd6d5982ea4,2654004,split,337,100 Thieves,"astra,viper,raze,fade,gekko",1,2,0,2
+4242545a-2c5f-4d0f-8239-63b2102cdb36,2654052,breeze,96,G2 Esports,"astra,viper,yoru,sova,cypher",1,2,1,1
+a3829f99-0642-4cc6-8007-bc207a2efed8,2654052,sunset,337,100 Thieves,"omen,raze,gekko,sova,cypher",1,1,1,2
+9ff33c59-9e3e-412a-b015-01881a79eb59,2653969,ascent,79,Cloud9,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+c2440b95-ce02-4b30-aac7-ff1ffbcb80e9,2653976,lotus,1611,Leviatán Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+d10dd165-9ffc-4add-9093-2de0cab3e8b5,2653985,bind,79,Cloud9,"brimstone,viper,raze,skye,cypher",1,2,1,1
+bd70cd3b-b0f8-466b-8dd4-5fbd72d275dd,2653988,breeze,1611,Leviatán Esports,"viper,jett,kay/o,sova,cypher",1,1,1,2
+9be9aa30-b1b7-4d33-a21a-babdd3a43994,2653999,bind,96,G2 Esports,"brimstone,viper,raze,gekko,skye",1,2,0,2
+e9237108-ba35-4ed2-b431-23a43f2b070c,2775984,pearl,79,Cloud9,"astra,jett,yoru,sova,cypher",2,1,1,1
+095227c4-d2e0-4b7f-8a73-c6d68031765a,2775994,haven,1079,Sentinels,"omen,neon,breach,sova,cypher",1,1,1,2
+4a2a1e87-815d-47e1-897f-cf8e319c13f2,2775994,split,1079,Sentinels,"omen,viper,yoru,breach,tejo",1,2,0,2
+f816e606-ea36-481e-8688-833dba794baa,2775994,ascent,96,G2 Esports,"omen,waylay,kay/o,tejo,vyse",1,1,1,2
+08c5bf4e-f883-405a-b2c2-d5661c9f3e14,2775981,split,3412,LOUD (1),"omen,viper,jett,breach,tejo",1,2,0,2
+38e746ea-9f0c-4287-bd52-921eeb66afda,2789396,pearl,281,Evil Geniuses,"astra,jett,yoru,tejo,vyse",2,1,1,1
+8eea6ab2-3dc4-4fe1-9f01-028b0b8589bd,2775953,lotus,79,Cloud9,"omen,raze,breach,tejo,deadlock",1,1,1,2
+eb7b4a14-e70c-47a6-8ab4-443ed2c65bae,2775956,split,1611,Leviatán Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+cb5e350e-e18a-426b-bfbe-90603d72f1c9,2775962,haven,96,G2 Esports,"astra,yoru,breach,tejo,vyse",1,1,1,2
+c107f7a8-39a2-478d-92d7-afc4e89a7f1c,2775962,ascent,96,G2 Esports,"omen,waylay,kay/o,tejo,vyse",1,1,1,2
+5ce71594-de35-414f-ba2a-297f05473c58,2775969,pearl,1611,Leviatán Esports,"astra,yoru,fade,tejo,vyse",1,1,1,2
+823775b0-c7f5-4ee1-bfe1-eca9eb05bf86,2775972,haven,96,G2 Esports,"astra,yoru,breach,tejo,vyse",1,1,1,2
+acdef2ec-c074-4c19-b01e-31c90ee877c2,2775976,icebox,81,MIBR (1),"harbor,viper,jett,sova,killjoy",1,2,1,1
+a657c3e0-4dfd-409e-86fd-bd0fefa20044,2681846,haven,48457,KRÜ Esports,"omen,neon,breach,sova,cypher",1,1,1,2
+907b74f9-fa87-4a3f-8add-ebb3e33f4291,2681829,split,48457,KRÜ Esports,"omen,viper,raze,skye,cypher",1,2,1,1
+ce934f59-12e5-4be1-af6c-21fb4bd6ad61,2681832,ascent,79,Cloud9,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+3c4b2006-e081-4efb-af65-789495c4fa88,2843062,icebox,1079,Sentinels,"viper,jett,sova,killjoy,sage",1,1,2,1
+df98c550-e20c-499d-b814-d4d32ef5ec9a,2819676,haven,79,Cloud9,"omen,viper,jett,skye,killjoy",1,2,1,1
+9c95a847-ca63-4511-96f7-abbd348c0d9f,2819681,lotus,1079,Sentinels,"omen,viper,raze,fade,vyse",1,2,1,1
+bcf8a377-5f93-4a0b-b0a3-31d00ed9d70d,2819682,ascent,53367,2GAME eSports,"omen,jett,kay/o,sova,cypher",1,1,1,2
+62c2f358-4bcc-4073-bad2-b06d19ebb3ed,2819680,bind,337,100 Thieves,"brimstone,viper,raze,yoru,fade",2,2,0,1
+f175545b-6d0a-4c7d-8779-987c4cdaa4f5,2819687,sunset,81,MIBR (1),"omen,raze,yoru,sova,cypher",2,1,1,1
+01080eed-aa6f-4ff0-9d1b-70ffa4d9cd44,2819691,bind,337,100 Thieves,"brimstone,viper,raze,yoru,fade",2,2,0,1
+aa0c9c87-07d0-4b5d-b121-c53539ef9200,2819695,bind,81,MIBR (1),"brimstone,viper,raze,yoru,fade",2,2,0,1
+7331feef-35e0-47e9-a06e-6ae3a99eee20,2819700,haven,97,NRG,"omen,viper,neon,sova,killjoy",1,2,1,1
+4a219f17-c477-448a-ad7b-4f77ab033c9c,2629391,lotus,79,Cloud9,"omen,raze,fade,gekko,killjoy",1,1,1,2
+2cd86d08-a06b-4c0f-b749-a0f2964a68ce,2629395,split,99,FURIA,"astra,viper,jett,raze,skye",2,2,0,1
+02a4f2b8-4a3c-4538-8329-0a8c28b0dbb0,2629392,ascent,1079,Sentinels,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+b1185c74-f70d-413f-a941-9240e9708890,2629393,split,337,100 Thieves,"astra,viper,raze,fade,gekko",1,2,0,2
+e28b9dbd-3643-4e70-a47f-d635be9ce699,2629396,bind,1079,Sentinels,"brimstone,viper,raze,yoru,skye",2,2,0,1
+2a7bec4a-4f98-41f5-a71f-65b436402d82,2637963,sunset,96,G2 Esports,"omen,viper,raze,sova,cypher",1,2,1,1
+8d83929e-47cb-49d8-8307-7cffb832e1d7,2748744,lotus,81,MIBR (1),"omen,raze,breach,tejo,killjoy",1,1,1,2
+e30a6206-cd5a-4d47-866c-42debcd5cffe,2748745,haven,53367,2GAME eSports,"omen,yoru,breach,tejo,vyse",1,1,1,2
+7e6c8f26-2f07-4cac-9204-3ead7102ea28,2748747,haven,3412,LOUD (1),"omen,jett,breach,sova,cypher",1,1,1,2
+5f11d22a-f433-4b50-99ca-c3f7dfc98f28,2748749,haven,1611,Leviatán Esports,"omen,jett,breach,sova,cypher",1,1,1,2
+763e4073-e01e-4a09-8743-6fcbf2c2d9e8,2654000,ascent,79,Cloud9,"omen,viper,jett,skye,killjoy",1,2,1,1
+192467c7-4d6d-44c0-9a0f-250515139ad7,2654003,bind,337,100 Thieves,"brimstone,viper,raze,fade,gekko",1,2,0,2
+aa49b741-d494-4a05-a4b0-5c79cfd6b0ac,2654003,icebox,337,100 Thieves,"viper,jett,gekko,sova,killjoy",1,1,1,2
+bbbd79ad-0fd2-4f3f-ad97-1d9b50437a4b,2654012,icebox,96,G2 Esports,"harbor,viper,gekko,sova,killjoy",0,2,1,2
+07e14580-ba7e-433d-89a3-74829c2688e8,2654052,bind,337,100 Thieves,"brimstone,viper,raze,fade,gekko",1,2,0,2
+d22aabdb-c9d2-4c94-a2fe-43a84c1b5ffc,2653973,split,1079,Sentinels,"omen,viper,raze,skye,cypher",1,2,1,1
+15aba0eb-0241-4525-8138-098143330bc8,2653974,icebox,99,FURIA,"omen,viper,gekko,kay/o,killjoy",0,2,1,2
+8a61c304-f1a9-4773-9111-ab7b6bd406f8,2653979,lotus,281,Evil Geniuses,"omen,viper,raze,fade,cypher",1,2,1,1
+a6da2cbb-8bbd-43bf-9225-8edc4ca9fc4a,2653985,ascent,337,100 Thieves,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+875600d4-44e3-4de6-9fcd-6e922d57763a,2653986,lotus,1079,Sentinels,"omen,viper,raze,fade,killjoy",1,2,1,1
+5d573b2f-a0ef-48d7-8a16-4d5bfcd83a7d,2775990,pearl,337,100 Thieves,"astra,neon,yoru,fade,killjoy",2,1,1,1
+80e672bb-e6e6-477c-886b-836a18c00ff8,2775992,lotus,96,G2 Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+c710502a-e4c3-49b3-b4c2-5f4d58b980f8,2775993,haven,81,MIBR (1),"omen,jett,breach,tejo,cypher",1,1,1,2
+bbf09287-3e93-47e6-bef7-a925974b9ad1,2775954,fracture,48457,KRÜ Esports,"brimstone,raze,breach,tejo,vyse",1,1,1,2
+e763903a-caf9-4bca-a999-691d1feae31c,2775980,icebox,48457,KRÜ Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+5f27f062-7d66-4598-8ebd-2fe9fef9f7c2,2775964,split,1611,Leviatán Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+e7d5c00d-93f9-48e5-abb6-2fee1c70125f,2775970,lotus,81,MIBR (1),"omen,neon,breach,tejo,vyse",1,1,1,2
+a6a70ec5-b34e-4016-9067-54c5f462926c,2775972,fracture,1611,Leviatán Esports,"brimstone,neon,breach,tejo,vyse",1,1,1,2
+6bb6f4c0-8625-4ee0-bfa3-f477bb5d511d,2681840,abyss,48457,KRÜ Esports,"omen,jett,kay/o,sova,cypher",1,1,1,2
+8c0267eb-ca88-4788-b0ba-2d6d3e770fdc,2681846,icebox,48457,KRÜ Esports,"viper,reyna,gekko,sova,killjoy",1,1,1,2
+020cf554-a91d-4aa2-81f9-79287b3d5c5e,2681809,ascent,1611,Leviatán Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+88d0fdf2-686f-4fb8-a679-36a2e26e9f3d,2681809,icebox,81,MIBR (1),"viper,jett,gekko,sova,killjoy",1,1,1,2
+b74e9644-2394-49a5-bb31-4973ea728ffc,2681817,lotus,99,FURIA,"omen,neon,breach,kay/o,cypher",1,1,1,2
+1183426c-c115-4085-8c22-2ba1ef6efef8,2681819,sunset,81,MIBR (1),"omen,raze,breach,gekko,cypher",1,1,1,2
+163a9daf-3ba6-409d-94a6-51f0c663803d,2681831,icebox,99,FURIA,"viper,jett,sova,killjoy,sage",1,1,2,1
+b0614051-7d8f-49ff-8953-12e7c3e1a5d1,2819676,bind,99,FURIA,"brimstone,viper,raze,skye,deadlock",1,2,1,1
+4c38094b-345a-4640-ae9e-7680dbabe4d2,2819680,sunset,337,100 Thieves,"omen,neon,yoru,sova,cypher",2,1,1,1
+efeb1d82-9d59-4450-8a86-29bcb78b02c9,2819691,icebox,81,MIBR (1),"harbor,viper,jett,sova,killjoy",1,2,1,1
+ae311a9c-3366-4bb4-b2ee-bc2aa715b523,2819699,lotus,3412,LOUD (1),"omen,viper,raze,fade,vyse",1,2,1,1
+711ae558-0054-4127-96ef-65de99d99673,2629396,split,337,100 Thieves,"astra,viper,raze,fade,gekko",1,2,0,2
+4b6aab5f-4e85-4454-b24e-0aafdb022771,2748747,split,3412,LOUD (1),"astra,raze,breach,tejo,cypher",1,1,1,2
+eccfa3ca-bb4e-4cf0-aabc-57cf950b80bc,2748748,pearl,337,100 Thieves,"astra,jett,fade,kay/o,killjoy",1,1,1,2
+fb82d007-0363-495c-b606-3ee4db06e012,2748765,split,81,MIBR (1),"astra,viper,jett,raze,skye",2,2,0,1
+36e8dca6-6f5a-4b5d-a81c-4bcd9ef5d627,2748766,abyss,1079,Sentinels,"astra,omen,jett,kay/o,tejo",1,2,0,2
+7fc33d9b-f343-4345-aa97-1b0743180eb2,2748766,fracture,96,G2 Esports,"brimstone,raze,breach,tejo,vyse",1,1,1,2
+aa49b741-d494-4a05-a4b0-5c79cfd6b0ac,2654003,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+94d44dbc-2e44-4393-915b-205598370f0b,2654004,bind,96,G2 Esports,"brimstone,viper,raze,gekko,skye",1,2,0,2
+908e0f76-6bdf-4359-af7b-0fb23fd0f98f,2654005,sunset,48457,KRÜ Esports,"omen,raze,breach,gekko,cypher",1,1,1,2
+932904bd-40ab-409d-973e-5c827b76336d,2654012,ascent,96,G2 Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+32488820-9b98-428b-928c-0fc640077089,2653979,split,281,Evil Geniuses,"omen,viper,raze,skye,cypher",1,2,1,1
+95712ade-7574-4291-b5be-d4b999a40032,2653980,bind,1079,Sentinels,"brimstone,viper,raze,gekko,skye",1,2,0,2
+712fb2e7-6dd2-487c-b20d-91a29fcb7f2b,2653981,icebox,79,Cloud9,"viper,jett,sova,killjoy,sage",1,1,2,1
+70c15445-5f84-4c36-a44a-af848f6b8ae1,2653982,lotus,48457,KRÜ Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+e9715d1a-1595-4f67-a018-eadaaee55a8c,2653987,split,81,MIBR (1),"astra,viper,jett,raze,skye",2,2,0,1
+0090f853-9c8e-485a-ad16-7b1e7b9bccc4,2775988,icebox,1079,Sentinels,"omen,viper,gekko,tejo,killjoy",0,2,1,2
+78ae85fc-7148-4d17-a5b9-a4ed3722281e,2775989,lotus,281,Evil Geniuses,"clove,viper,raze,fade,tejo",1,2,0,2
+8fa3b2ff-a211-49c9-a1cb-25acb8708ba7,2775994,pearl,1079,Sentinels,"astra,yoru,fade,tejo,vyse",1,1,1,2
+bbf09287-3e93-47e6-bef7-a925974b9ad1,2775954,fracture,3412,LOUD (1),"brimstone,neon,breach,tejo,cypher",1,1,1,2
+92d54244-b7ac-480e-be5c-ae8818cfc0dc,2775954,haven,3412,LOUD (1),"omen,jett,breach,sova,cypher",1,1,1,2
+84fc0c04-1c1e-47f1-8865-52a48f864a3b,2775981,lotus,3412,LOUD (1),"omen,neon,breach,tejo,vyse",1,1,1,2
+da064a14-63df-4d60-b0cd-2268fd677294,2775959,lotus,99,FURIA,"clove,omen,neon,breach,fade",1,2,0,2
+a416b309-8310-49c2-a2ca-3f8c5be72622,2775970,haven,79,Cloud9,"omen,jett,breach,sova,cypher",1,1,1,2
+7aed6afc-c5e8-4a5a-b87f-d5659ba7acb0,2775973,lotus,79,Cloud9,"omen,neon,breach,tejo,cypher",1,1,1,2
+fe2c0bf3-5c6c-49d4-8206-9d9d7e64891b,2775977,pearl,96,G2 Esports,"astra,yoru,fade,tejo,vyse",1,1,1,2
+67d5b287-174a-46a8-af5c-e6094c786190,2681840,haven,79,Cloud9,"omen,jett,breach,sova,killjoy",1,1,1,2
+7eb81c27-9f3f-4b91-91bd-ae02e6d3ac8e,2681844,bind,1611,Leviatán Esports,"brimstone,viper,raze,fade,gekko",1,2,0,2
+3a81076b-9bc2-4e70-8f8d-296d2eec7cd5,2681846,abyss,48457,KRÜ Esports,"omen,jett,kay/o,sova,cypher",1,1,1,2
+c84971ad-e3eb-46cf-bc6e-283af57b44f2,2681847,ascent,1611,Leviatán Esports,"omen,jett,sova,cypher,deadlock",1,1,2,1
+693dc11d-c83b-4871-87c2-ae34835357ba,2681820,bind,337,100 Thieves,"brimstone,viper,raze,fade,gekko",1,2,0,2
+f441a093-83a4-4e7c-9e9f-b014868b25f4,2681824,icebox,3412,LOUD (1),"harbor,omen,gekko,kay/o,killjoy",0,2,1,2
+73de9751-6b29-4cc2-b7d5-7e709d8c3624,2681835,icebox,48457,KRÜ Esports,"viper,jett,kay/o,sova,killjoy",1,1,1,2
+09370f4b-6cdc-4ed0-b5d0-76ca315e1535,2681835,split,79,Cloud9,"omen,viper,raze,skye,cypher",1,2,1,1
+02fd0ece-b1b9-4199-ab9f-ec7ddf3dd04d,2681839,bind,96,G2 Esports,"brimstone,viper,raze,gekko,skye",1,2,0,2
+6aba6aec-1b30-42d5-a966-02a8defdbffb,2843061,haven,96,G2 Esports,"omen,viper,yoru,fade,vyse",1,2,1,1
+e18041ca-9d6a-46cf-a064-ffeafc3c0e32,2843062,lotus,79,Cloud9,"omen,viper,raze,fade,vyse",1,2,1,1
+986b8b5c-c633-4cce-930c-0f2d9b0bec92,2819677,bind,3412,LOUD (1),"brimstone,viper,raze,gekko,skye",1,2,0,2
+00891f98-65bc-4f88-ae3b-0fd434938b46,2819677,icebox,3412,LOUD (1),"omen,viper,jett,sova,killjoy",1,2,1,1
+327da6a0-02c8-45f8-b091-77bbcbd98d98,2819687,lotus,81,MIBR (1),"omen,raze,yoru,fade,vyse",2,1,1,1
+0cf28c95-a415-4992-8c9a-f08ecfb314ba,2819697,ascent,48457,KRÜ Esports,"omen,jett,yoru,sova,cypher",2,1,1,1
+b24bbd35-14f6-46cb-8e78-c6fcc67da476,2819699,bind,337,100 Thieves,"brimstone,viper,raze,yoru,fade",2,2,0,1
+7331feef-35e0-47e9-a06e-6ae3a99eee20,2819700,haven,48457,KRÜ Esports,"omen,neon,yoru,sova,cypher",2,1,1,1
+c771aaf8-c65c-4468-9bf5-7f6530c768f3,2629395,breeze,99,FURIA,"viper,jett,kay/o,sova,cypher",1,1,1,2
+da54a836-dd47-47d1-a79e-6daa504bdb56,2629398,sunset,79,Cloud9,"omen,viper,raze,yoru,skye",2,2,0,1
+df33ba86-e9fe-423e-8e44-206002633674,2629401,bind,79,Cloud9,"brimstone,viper,raze,yoru,skye",2,2,0,1
+cfc3a968-84cf-4e7b-a0ea-32b79d993499,2629396,lotus,337,100 Thieves,"omen,viper,raze,fade,chamber",1,2,1,1
+cd522dc0-5ec9-41b7-ac8d-f3d7b5c1d279,2654000,lotus,96,G2 Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+c881a53b-abc2-4d63-af9c-c53b2d6c073b,2654002,ascent,48457,KRÜ Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+6ba8e10f-779f-4982-8c09-dbd6d5982ea4,2654004,split,96,G2 Esports,"omen,viper,raze,breach,fade",1,2,0,2
+932904bd-40ab-409d-973e-5c827b76336d,2654012,ascent,1611,Leviatán Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+2bbb4c72-0036-4d88-b13a-43b86bc5b29d,2653973,icebox,337,100 Thieves,"viper,jett,gekko,sova,killjoy",1,1,1,2
+17304074-aa74-4e59-bd77-8889809b7e92,2775983,icebox,81,MIBR (1),"harbor,viper,jett,sova,killjoy",1,2,1,1
+f7e89ffb-c048-4a28-a179-8ba351d4af40,2775987,icebox,48457,KRÜ Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+52948b3a-3f92-4983-9892-2ca1e65ee667,2775988,ascent,1079,Sentinels,"omen,jett,kay/o,tejo,vyse",1,1,1,2
+84fc0c04-1c1e-47f1-8865-52a48f864a3b,2775981,lotus,281,Evil Geniuses,"clove,viper,raze,fade,tejo",1,2,0,2
+43d9c878-46e0-45ba-aad2-1404129d1823,2775959,pearl,97,NRG,"astra,jett,yoru,sova,killjoy",2,1,1,1
+12e68607-5767-415f-b349-abba0688132f,2775968,ascent,96,G2 Esports,"omen,waylay,kay/o,tejo,vyse",1,1,1,2
+1f2900ac-deff-4f20-a343-9ca46a1a8f2e,2775969,ascent,99,FURIA,"omen,yoru,sova,tejo,vyse",1,1,1,2
+e7d5c00d-93f9-48e5-abb6-2fee1c70125f,2775970,lotus,79,Cloud9,"omen,neon,breach,tejo,cypher",1,1,1,2
+7bb2e6db-6e6f-40d8-9d93-2706f10d4bb3,2775977,haven,96,G2 Esports,"astra,yoru,breach,tejo,vyse",1,1,1,2
+048192f2-dd93-493b-b943-ac291debe55b,2775978,icebox,99,FURIA,"viper,jett,kay/o,tejo,killjoy",1,1,1,2
+b5932ad8-88f8-4626-b6de-339c4f7d673e,2681840,lotus,48457,KRÜ Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+740cb082-3c54-498d-9255-c0dd35140558,2681842,icebox,48457,KRÜ Esports,"viper,jett,kay/o,sova,killjoy",1,1,1,2
+e2a04da4-a190-4576-92f3-35eb2933b8af,2681842,sunset,1611,Leviatán Esports,"omen,neon,breach,sova,cypher",1,1,1,2
+7eb81c27-9f3f-4b91-91bd-ae02e6d3ac8e,2681844,bind,96,G2 Esports,"brimstone,viper,raze,gekko,skye",1,2,0,2
+4f75a5d4-9fa7-44cc-874a-32ee238310ef,2681845,lotus,337,100 Thieves,"omen,viper,raze,fade,killjoy",1,2,1,1
+4f75a5d4-9fa7-44cc-874a-32ee238310ef,2681845,lotus,48457,KRÜ Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+3be9d0da-bc75-4f37-b4f6-119ef2e56dd3,2681847,bind,96,G2 Esports,"brimstone,viper,raze,gekko,skye",1,2,0,2
+b5989047-9486-4c74-ae17-2d28b2f7fe68,2681811,haven,337,100 Thieves,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+bfe4aeb9-c40c-4e5d-8978-17d7e9aeb303,2681824,haven,3412,LOUD (1),"omen,viper,neon,skye,cypher",1,2,1,1
+bfe4aeb9-c40c-4e5d-8978-17d7e9aeb303,2681824,haven,99,FURIA,"omen,neon,breach,gekko,killjoy",1,1,1,2
+0585ae05-a83d-4553-bb86-b7202c11525f,2681829,lotus,96,G2 Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+38277aa2-5b46-4661-aec7-1638b4bbc72b,2843063,sunset,97,NRG,"omen,neon,breach,sova,cypher",1,1,1,2
+5bf99a04-bd7a-4113-a102-06bd59ce1f92,2843064,lotus,48457,KRÜ Esports,"omen,viper,raze,yoru,fade",2,2,0,1
+5845fede-66f2-4949-88dc-8a50c56c4ff0,2819679,corrode,81,MIBR (1),"astra,raze,yoru,fade,vyse",2,1,1,1
+f0cc0f5d-c79a-4fa1-9fc7-d7471e3d3596,2819679,ascent,81,MIBR (1),"omen,jett,kay/o,sova,killjoy",1,1,1,2
+efeb1d82-9d59-4450-8a86-29bcb78b02c9,2819691,icebox,337,100 Thieves,"omen,viper,jett,sova,killjoy",1,2,1,1
+aea682e5-53b3-4078-858f-a8b5f8ae2624,2819701,sunset,1611,Leviatán Esports,"omen,neon,kay/o,sova,vyse",1,1,1,2
+c744738d-3c34-4715-9ea4-e97fba3ad15f,2819705,sunset,81,MIBR (1),"omen,viper,neon,sova,cypher",1,2,1,1
+719f343f-e8d5-44de-98c5-e66f04d0f5ab,2629390,breeze,97,NRG,"viper,jett,kay/o,sova,cypher",1,1,1,2
+23db92c5-dde1-4110-8ca8-2fb0887baea0,2629398,ascent,97,NRG,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+02a4f2b8-4a3c-4538-8329-0a8c28b0dbb0,2629392,ascent,3412,LOUD,"omen,viper,phoenix,breach,kay/o",1,2,0,2
+cfc3a968-84cf-4e7b-a0ea-32b79d993499,2629396,lotus,1079,Sentinels,"omen,viper,raze,fade,killjoy",1,2,1,1
+4b6aab5f-4e85-4454-b24e-0aafdb022771,2748747,split,48457,KRÜ Esports,"omen,viper,raze,skye,cypher",1,2,1,1
+eccfa3ca-bb4e-4cf0-aabc-57cf950b80bc,2748748,pearl,1079,Sentinels,"astra,yoru,fade,tejo,vyse",1,1,1,2
+cd522dc0-5ec9-41b7-ac8d-f3d7b5c1d279,2654000,lotus,79,Cloud9,"omen,viper,raze,gekko,killjoy",1,2,1,1
+5c0033f6-1a30-42bb-a09a-ca61b470feb9,2654003,sunset,1611,Leviatán Esports,"omen,raze,breach,gekko,cypher",1,1,1,2
+95c67cfb-b66a-490b-b46f-a50419a79897,2654005,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+4643965f-3e18-4a2a-9f89-21bd9858b2da,2653969,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+848c92f4-3b64-4105-b6fc-b80bc28c9b0f,2653975,split,96,G2 Esports,"omen,viper,raze,breach,cypher",1,2,1,1
+848c92f4-3b64-4105-b6fc-b80bc28c9b0f,2653975,split,337,100 Thieves,"astra,viper,raze,fade,gekko",1,2,0,2
+c2440b95-ce02-4b30-aac7-ff1ffbcb80e9,2653976,lotus,1079,Sentinels,"omen,viper,raze,fade,killjoy",1,2,1,1
+32488820-9b98-428b-928c-0fc640077089,2653979,split,79,Cloud9,"omen,viper,raze,skye,cypher",1,2,1,1
+37beb0e4-fd15-4166-a427-6c79b1186b8f,2653986,sunset,281,Evil Geniuses,"omen,raze,breach,fade,cypher",1,1,1,2
+644d755d-6b64-49aa-ab4e-cbc4515003f7,2653987,breeze,97,NRG,"viper,jett,yoru,sova,cypher",2,1,1,1
+8e73ed4a-c7b3-47d7-8cd6-0797f74b07e1,2653988,icebox,96,G2 Esports,"harbor,viper,gekko,sova,killjoy",0,2,1,2
+7f819353-6fd8-45c1-b499-2017618cdce6,2653988,lotus,96,G2 Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+78ae85fc-7148-4d17-a5b9-a4ed3722281e,2775989,lotus,48457,KRÜ Esports,"omen,neon,breach,tejo,vyse",1,1,1,2
+4d2f9f28-398f-438c-8d2f-46a430c8b10f,2789396,haven,1079,Sentinels,"omen,neon,breach,sova,cypher",1,1,1,2
+fa35f815-092e-4631-bb06-dff91f2217a0,2775964,ascent,79,Cloud9,"omen,yoru,sova,deadlock,vyse",1,1,2,1
+24f97577-541c-46ac-a30c-8098635ce529,2775977,icebox,79,Cloud9,"harbor,viper,jett,sova,killjoy",1,2,1,1
+cb66f826-0192-4950-bd53-28a5b4a874cb,2775978,ascent,99,FURIA,"omen,jett,kay/o,sova,vyse",1,1,1,2
+2835b339-5fa5-4309-972c-3e06f4b85cf6,2681843,abyss,96,G2 Esports,"astra,viper,yoru,sova,killjoy",1,2,1,1
+020cf554-a91d-4aa2-81f9-79287b3d5c5e,2681809,ascent,81,MIBR (1),"omen,iso,yoru,sova,killjoy",2,1,1,1
+303dfa6a-8659-4d40-b8ca-bb1f7f7202ec,2681819,lotus,3412,LOUD (1),"omen,neon,fade,gekko,cypher",1,1,1,2
+693dc11d-c83b-4871-87c2-ae34835357ba,2681820,bind,1611,Leviatán Esports,"brimstone,viper,raze,fade,gekko",1,2,0,2
+6e09564c-41e4-4113-8257-3f75b148d181,2681823,sunset,281,Evil Geniuses,"omen,neon,breach,fade,cypher",1,1,1,2
+2c175eba-f724-4432-8e97-7a2f534a3a04,2681826,icebox,81,MIBR (1),"viper,jett,gekko,sova,killjoy",1,1,1,2
+b0eb7b8b-8876-47b7-9504-e6cafbf5c015,2681826,split,81,MIBR (1),"omen,viper,jett,raze,skye",2,2,0,1
+5f9b7134-fba1-4dc5-87af-1b4c7ba9416b,2681832,sunset,97,NRG,"omen,neon,breach,fade,cypher",1,1,1,2
+f24daf6d-0a89-450f-94ad-2ea49767d801,2843061,sunset,96,G2 Esports,"omen,neon,fade,chamber,sage",1,1,2,1
+f24daf6d-0a89-450f-94ad-2ea49767d801,2843061,sunset,337,100 Thieves,"omen,neon,yoru,sova,cypher",2,1,1,1
+2b087d1b-80fa-4fa3-bf94-d80f3441c526,2819682,haven,53367,2GAME eSports,"omen,iso,yoru,sova,cypher",2,1,1,1
+e1afa88b-cb82-48af-a34c-9473c57a2bcc,2819689,lotus,1611,Leviatán Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+2311f5ee-3e34-4404-9f56-140e65de20df,2819689,haven,1611,Leviatán Esports,"omen,neon,yoru,sova,cypher",2,1,1,1
+aa0c9c87-07d0-4b5d-b121-c53539ef9200,2819695,bind,97,NRG,"brimstone,viper,raze,fade,kay/o",1,2,0,2
+a7897faf-0b65-4267-8ee2-e70dfeb16a66,2819697,haven,48457,KRÜ Esports,"omen,iso,yoru,sova,cypher",2,1,1,1
+7cf1796b-377f-44b8-ae2e-b6d4b6a9333e,2819700,lotus,97,NRG,"omen,viper,raze,fade,vyse",1,2,1,1
+e267ddd1-e28f-48e3-8e83-3fb42a27cc63,2629391,split,79,Cloud9,"astra,viper,raze,skye,killjoy",1,2,1,1
+dadd1796-2cb3-419b-814b-1260cea71822,2629392,split,3412,LOUD,"omen,viper,raze,breach,skye",1,2,0,2
+36bbcd37-1b30-48da-bb7a-a034ccde5b93,2748750,abyss,79,Cloud9,"astra,omen,jett,kay/o,sova",1,2,0,2
+02a970c8-2081-4843-83de-cf56f95de820,2748764,bind,81,MIBR (1),"brimstone,viper,raze,yoru,skye",2,2,0,1
+fd60215e-32cd-475d-bba3-fe9fa741a952,2748765,lotus,81,MIBR (1),"omen,jett,raze,breach,cypher",2,1,1,1
+192467c7-4d6d-44c0-9a0f-250515139ad7,2654003,bind,1611,Leviatán Esports,"brimstone,viper,raze,gekko,skye",1,2,0,2
+4ac2a86d-bb20-40dd-ac59-ef5b4a0d0f25,2653976,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+a38b7327-581a-4fde-9cc8-c8b9c41bc5f5,2653979,sunset,281,Evil Geniuses,"omen,raze,breach,fade,cypher",1,1,1,2
+e9715d1a-1595-4f67-a018-eadaaee55a8c,2653987,split,97,NRG,"omen,viper,jett,raze,skye",2,2,0,1
+35fa2b2b-88d4-4af9-bda3-d04ada01ceb4,2653999,icebox,96,G2 Esports,"harbor,viper,gekko,sova,killjoy",0,2,1,2
+ec50a5f1-50cf-4882-a3ef-c70e314cffd1,2775983,split,337,100 Thieves,"astra,raze,breach,tejo,sage",1,1,1,2
+dcf63170-3d1a-4e86-bd97-b33b28deabea,2775986,icebox,281,Evil Geniuses,"viper,jett,kay/o,sova,killjoy",1,1,1,2
+eb97617e-5737-4fdf-a248-5a3b04d0b824,2775987,lotus,48457,KRÜ Esports,"omen,neon,breach,tejo,vyse",1,1,1,2
+22bb6096-8b8d-460c-8f76-11006184e573,2775988,split,96,G2 Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+52948b3a-3f92-4983-9892-2ca1e65ee667,2775988,ascent,96,G2 Esports,"omen,waylay,kay/o,tejo,vyse",1,1,1,2
+8f49f159-3991-4128-9b63-c1e24f5be669,2775990,split,337,100 Thieves,"astra,raze,breach,tejo,sage",1,1,1,2
+e04002c9-277b-485c-94ff-2cc48dd94592,2775979,pearl,1079,Sentinels,"astra,yoru,fade,tejo,vyse",1,1,1,2
+47f8d2db-a64b-4698-b865-c7b790591149,2775953,pearl,97,NRG,"astra,neon,yoru,sova,killjoy",2,1,1,1
+a6a70ec5-b34e-4016-9067-54c5f462926c,2775972,fracture,96,G2 Esports,"brimstone,waylay,breach,tejo,cypher",1,1,1,2
+dd47bbd2-528c-4352-a32f-95fedd5c1396,2775982,fracture,1611,Leviatán Esports,"brimstone,neon,breach,tejo,vyse",1,1,1,2
+2b2ae93c-0d10-4db7-87a1-54493096bea2,2681841,haven,1079,Sentinels,"omen,jett,breach,sova,killjoy",1,1,1,2
+77e06cdf-1533-4c85-8bd6-f1521e5d6e95,2681841,ascent,337,100 Thieves,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+c441c52b-e82d-4890-b78a-5aed1bde37ef,2681845,icebox,48457,KRÜ Esports,"viper,jett,kay/o,sova,killjoy",1,1,1,2
+8c0267eb-ca88-4788-b0ba-2d6d3e770fdc,2681846,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+b5989047-9486-4c74-ae17-2d28b2f7fe68,2681811,haven,99,FURIA,"omen,neon,breach,gekko,killjoy",1,1,1,2
+9173600a-2430-49e8-8b38-6d1964606039,2681820,haven,337,100 Thieves,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+77029b2f-fd12-4dc5-888d-3ab4dc98c4c3,2681830,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+0850cf76-ce33-4074-ad1c-a1cb37538c21,2681831,sunset,99,FURIA,"omen,jett,kay/o,sova,cypher",1,1,1,2
+ce934f59-12e5-4be1-af6c-21fb4bd6ad61,2681832,ascent,97,NRG,"omen,jett,kay/o,sova,cypher",1,1,1,2
+1ae74585-d043-45b3-8a42-451e035446ef,2843062,corrode,1079,Sentinels,"omen,viper,neon,fade,vyse",1,2,1,1
+43789a39-4eba-4d31-80c5-633bcb949841,2843063,bind,96,G2 Esports,"brimstone,yoru,fade,tejo,deadlock",1,1,1,2
+43789a39-4eba-4d31-80c5-633bcb949841,2843063,bind,97,NRG,"brimstone,viper,raze,fade,kay/o",1,2,0,2
+84f92c91-a31a-4afd-9677-a04db2082d65,2819678,sunset,53367,2GAME eSports,"omen,neon,breach,sova,cypher",1,1,1,2
+99ee9f1f-1ca1-4b3b-8090-b4465478fcaf,2819677,ascent,3412,LOUD (1),"omen,jett,kay/o,sova,cypher",1,1,1,2
+5845fede-66f2-4949-88dc-8a50c56c4ff0,2819679,corrode,48457,KRÜ Esports,"omen,viper,neon,fade,vyse",1,2,1,1
+da8a31ce-c9c0-4822-a0a2-6809fd279376,2819684,corrode,48457,KRÜ Esports,"omen,viper,neon,fade,vyse",1,2,1,1
+7984d7f3-3b19-4f2e-b230-e3f6af270375,2819685,haven,97,NRG,"omen,viper,neon,sova,killjoy",1,2,1,1
+1ac1b3c8-5be6-4283-8373-8544e049fa09,2819693,ascent,3412,LOUD (1),"omen,jett,kay/o,sova,cypher",1,1,1,2
+46023acd-d264-46c8-b605-0de1d1046fcd,2819699,sunset,3412,LOUD (1),"omen,neon,breach,sova,cypher",1,1,1,2
+ae311a9c-3366-4bb4-b2ee-bc2aa715b523,2819699,lotus,337,100 Thieves,"omen,raze,yoru,fade,vyse",2,1,1,1
+c771aaf8-c65c-4468-9bf5-7f6530c768f3,2629395,breeze,81,MIBR,"viper,jett,kay/o,sova,cypher",1,1,1,2
+e28b9dbd-3643-4e70-a47f-d635be9ce699,2629396,bind,337,100 Thieves,"brimstone,viper,raze,fade,gekko",1,2,0,2
+e53757cd-60af-4260-8ed1-d708348a173c,2748764,abyss,81,MIBR (1),"astra,jett,kay/o,sova,cypher",1,1,1,2
+bbbd79ad-0fd2-4f3f-ad97-1d9b50437a4b,2654012,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+9ff33c59-9e3e-412a-b015-01881a79eb59,2653969,ascent,1611,Leviatán Esports,"omen,viper,raze,kay/o,sage",1,2,1,1
+d22aabdb-c9d2-4c94-a2fe-43a84c1b5ffc,2653973,split,337,100 Thieves,"astra,viper,raze,fade,gekko",1,2,0,2
+1d75b223-64a3-46e9-8ad8-89d4de11044a,2653974,lotus,48457,KRÜ Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+1d75b223-64a3-46e9-8ad8-89d4de11044a,2653974,lotus,99,FURIA,"omen,viper,raze,skye,killjoy",1,2,1,1
+4ac2a86d-bb20-40dd-ac59-ef5b4a0d0f25,2653976,icebox,1079,Sentinels,"viper,jett,gekko,kay/o,killjoy",1,1,1,2
+8913b6ef-a2bf-48a3-9516-ff831d0bb32d,2653977,sunset,81,MIBR (1),"omen,viper,raze,skye,cypher",1,2,1,1
+0ca44b38-54c7-433b-8c67-d3edf7991274,2653978,split,97,NRG,"omen,viper,jett,raze,skye",2,2,0,1
+8a61c304-f1a9-4773-9111-ab7b6bd406f8,2653979,lotus,79,Cloud9,"omen,viper,raze,gekko,killjoy",1,2,1,1
+751ec5c5-e3bf-4e5d-8257-415f902b2c90,2653980,lotus,81,MIBR (1),"omen,viper,raze,skye,killjoy",1,2,1,1
+9cf7b90c-51fe-4d8e-aed0-808d7749973b,2653982,breeze,48457,KRÜ Esports,"viper,jett,kay/o,sova,cypher",1,1,1,2
+e7039f62-34d5-4974-858c-c852677d3c4d,2653983,sunset,1611,Leviatán Esports,"omen,raze,breach,gekko,cypher",1,1,1,2
+d10dd165-9ffc-4add-9093-2de0cab3e8b5,2653985,bind,337,100 Thieves,"brimstone,viper,raze,fade,gekko",1,2,0,2
+932bd0f8-184b-471a-ba0c-c408bef7e3f5,2775985,fracture,337,100 Thieves,"brimstone,neon,breach,tejo,chamber",1,1,1,2
+932bd0f8-184b-471a-ba0c-c408bef7e3f5,2775985,fracture,97,NRG,"brimstone,raze,breach,tejo,cypher",1,1,1,2
+f7e89ffb-c048-4a28-a179-8ba351d4af40,2775987,icebox,81,MIBR (1),"harbor,viper,jett,sova,killjoy",1,2,1,1
+4f12a259-d492-4c9d-a643-6d7a232bfda0,2775989,icebox,281,Evil Geniuses,"viper,jett,kay/o,sova,killjoy",1,1,1,2
+5d573b2f-a0ef-48d7-8a16-4d5bfcd83a7d,2775990,pearl,96,G2 Esports,"astra,yoru,fade,tejo,vyse",1,1,1,2
+d47c5689-1ce0-4e1f-893b-a0337c80697e,2775991,lotus,1079,Sentinels,"omen,viper,yoru,breach,tejo",1,2,0,2
+e763903a-caf9-4bca-a999-691d1feae31c,2775980,icebox,337,100 Thieves,"viper,jett,gekko,sova,killjoy",1,1,1,2
+df086c97-482f-4af5-8575-e667403e9a55,2775981,pearl,3412,LOUD (1),"astra,yoru,fade,tejo,vyse",1,1,1,2
+b290b828-6dde-4978-9b99-c0e78ae0c77a,2775953,fracture,79,Cloud9,"brimstone,neon,breach,tejo,cypher",1,1,1,2
+b290b828-6dde-4978-9b99-c0e78ae0c77a,2775953,fracture,97,NRG,"brimstone,raze,breach,tejo,cypher",1,1,1,2
+eb7b4a14-e70c-47a6-8ab4-443ed2c65bae,2775956,split,81,MIBR (1),"astra,jett,breach,tejo,cypher",1,1,1,2
+acdef2ec-c074-4c19-b01e-31c90ee877c2,2775976,icebox,97,NRG,"harbor,viper,jett,sova,killjoy",1,2,1,1
+67d5b287-174a-46a8-af5c-e6094c786190,2681840,haven,48457,KRÜ Esports,"omen,neon,breach,sova,cypher",1,1,1,2
+2c1bb3d9-ee6b-4f5d-b902-404d7736d250,2681847,lotus,1611,Leviatán Esports,"omen,neon,breach,fade,cypher",1,1,1,2
+2c1bb3d9-ee6b-4f5d-b902-404d7736d250,2681847,lotus,96,G2 Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+1bd3eda3-5917-4daf-978c-84c16b81bfc2,2843060,corrode,79,Cloud9,"omen,viper,raze,skye,vyse",1,2,1,1
+1ae74585-d043-45b3-8a42-451e035446ef,2843062,corrode,79,Cloud9,"omen,viper,raze,skye,vyse",1,2,1,1
+e4743d6a-8122-4d99-8063-a257db0ca552,2819678,ascent,281,Evil Geniuses,"omen,jett,kay/o,sova,cypher",1,1,1,2
+1d75dc9a-c49d-4e86-ae32-a710a2182639,2819681,ascent,96,G2 Esports,"omen,yoru,sova,chamber,vyse",1,1,2,1
+7428070d-1707-4a58-a76b-0cb4c78670d7,2819679,haven,48457,KRÜ Esports,"omen,iso,yoru,sova,cypher",2,1,1,1
+2311f5ee-3e34-4404-9f56-140e65de20df,2819689,haven,97,NRG,"omen,viper,neon,sova,killjoy",1,2,1,1
+1ac1b3c8-5be6-4283-8373-8544e049fa09,2819693,ascent,48457,KRÜ Esports,"omen,jett,yoru,sova,cypher",2,1,1,1
+a7897faf-0b65-4267-8ee2-e70dfeb16a66,2819697,haven,1611,Leviatán Esports,"omen,neon,yoru,sova,cypher",2,1,1,1
+46023acd-d264-46c8-b605-0de1d1046fcd,2819699,sunset,337,100 Thieves,"omen,neon,yoru,sova,cypher",2,1,1,1
+2192bde4-09d7-4547-b7e5-69ceab395a74,2819701,lotus,1611,Leviatán Esports,"omen,viper,raze,fade,vyse",1,2,1,1
+8aacfbab-be97-44f9-bc69-da5c6601062a,2629391,bind,79,Cloud9,"brimstone,viper,raze,yoru,skye",2,2,0,1
+e267ddd1-e28f-48e3-8e83-3fb42a27cc63,2629391,split,81,MIBR,"astra,viper,jett,raze,skye",2,2,0,1
+3d5eab91-9ef7-4410-b996-8463dc2fe880,2637963,split,1079,Sentinels,"omen,viper,raze,skye,cypher",1,2,1,1
+f493ae92-1c47-4ff7-9785-ecb193511d72,2748743,split,3412,LOUD (1),"astra,raze,breach,tejo,cypher",1,1,1,2
+1eb0c429-4511-4516-b23c-33aed7cc6eed,2748744,bind,337,100 Thieves,"brimstone,viper,raze,fade,gekko",1,2,0,2
+7e6c8f26-2f07-4cac-9204-3ead7102ea28,2748747,haven,48457,KRÜ Esports,"omen,jett,breach,sova,cypher",1,1,1,2
+92a90ade-5d3d-4a6d-9d85-61911f683a32,2748749,split,1611,Leviatán Esports,"omen,viper,raze,skye,cypher",1,2,1,1
+c69a55a2-9c9e-48a9-87db-cbc557a830cd,2748750,lotus,79,Cloud9,"omen,raze,breach,tejo,deadlock",1,1,1,2
+28e9e484-a040-4ccb-92ba-99b5ff586386,2748765,abyss,81,MIBR (1),"astra,jett,kay/o,sova,cypher",1,1,1,2
+7fc33d9b-f343-4345-aa97-1b0743180eb2,2748766,fracture,1079,Sentinels,"brimstone,yoru,breach,tejo,vyse",1,1,1,2
+bb5635ac-bc43-412f-8a40-c688f88e84cb,2654001,bind,337,100 Thieves,"brimstone,viper,raze,fade,gekko",1,2,0,2
+f8c3e88f-cc2a-415d-bf6d-bcfb5248e727,2653972,lotus,96,G2 Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+8913b6ef-a2bf-48a3-9516-ff831d0bb32d,2653977,sunset,48457,KRÜ Esports,"omen,raze,breach,gekko,cypher",1,1,1,2
+7b96ee77-9af9-4348-b24d-254028cba8a2,2653978,breeze,99,FURIA,"viper,jett,yoru,sova,cypher",2,1,1,1
+2e8e786e-d906-49c1-b5c3-a76592fe78cb,2653984,icebox,96,G2 Esports,"harbor,viper,gekko,sova,killjoy",0,2,1,2
+ed91744d-7be5-45a0-b0c3-342374e3d930,2653986,bind,281,Evil Geniuses,"brimstone,viper,raze,gekko,skye",1,2,0,2
+644d755d-6b64-49aa-ab4e-cbc4515003f7,2653987,breeze,81,MIBR (1),"viper,jett,kay/o,sova,cypher",1,1,1,2
+9be9aa30-b1b7-4d33-a21a-babdd3a43994,2653999,bind,3412,LOUD (1),"brimstone,viper,raze,breach,kay/o",1,2,0,2
+f590dc69-e5fe-4c72-89ff-7735d5b93d9d,2775984,ascent,1079,Sentinels,"omen,jett,kay/o,tejo,vyse",1,1,1,2
+f590dc69-e5fe-4c72-89ff-7735d5b93d9d,2775984,ascent,79,Cloud9,"omen,yoru,sova,deadlock,vyse",1,1,2,1
+721a4466-7ea1-4067-bf01-02be2f4493b4,2775986,fracture,79,Cloud9,"brimstone,neon,breach,tejo,cypher",1,1,1,2
+721a4466-7ea1-4067-bf01-02be2f4493b4,2775986,fracture,281,Evil Geniuses,"brimstone,raze,breach,tejo,cypher",1,1,1,2
+239fa10b-4e58-48c1-97c0-edeb9cc0b720,2775992,split,281,Evil Geniuses,"astra,viper,raze,breach,tejo",1,2,0,2
+c710502a-e4c3-49b3-b4c2-5f4d58b980f8,2775993,haven,96,G2 Esports,"astra,yoru,breach,tejo,vyse",1,1,1,2
+c917c878-5459-40e8-8d25-dda4404624b9,2775979,haven,53367,2GAME eSports,"omen,iso,yoru,sova,cypher",2,1,1,1
+0ec5e952-b03f-4aec-92c4-8bc253c51177,2775980,fracture,48457,KRÜ Esports,"brimstone,neon,breach,tejo,vyse",1,1,1,2
+8eea6ab2-3dc4-4fe1-9f01-028b0b8589bd,2775953,lotus,97,NRG,"omen,neon,breach,tejo,vyse",1,1,1,2
+03d68365-f62c-473c-95a1-4aa1dff0367c,2775955,lotus,96,G2 Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+a416b309-8310-49c2-a2ca-3f8c5be72622,2775970,haven,81,MIBR (1),"omen,jett,breach,tejo,cypher",1,1,1,2
+c4c1903c-13e0-456d-8e5f-6f4a0eff4b19,2775978,split,81,MIBR (1),"omen,viper,jett,breach,tejo",1,2,0,2
+740cb082-3c54-498d-9255-c0dd35140558,2681842,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+c441c52b-e82d-4890-b78a-5aed1bde37ef,2681845,icebox,337,100 Thieves,"viper,jett,gekko,sova,killjoy",1,1,1,2
+18736ff5-ebed-45d0-b453-320f5763e198,2681845,ascent,48457,KRÜ Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+a70ac7a9-982b-435b-9b3d-4b1826f0ef7f,2681812,sunset,281,Evil Geniuses,"omen,neon,breach,fade,cypher",1,1,1,2
+f6af23d3-cec8-4abe-b47d-938be17647c2,2681829,ascent,48457,KRÜ Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+5bf99a04-bd7a-4113-a102-06bd59ce1f92,2843064,lotus,1611,Leviatán Esports,"omen,viper,raze,fade,vyse",1,2,1,1
+33c45db3-8fa3-4946-a183-e5261ed061e1,2843064,sunset,48457,KRÜ Esports,"omen,neon,yoru,sova,cypher",2,1,1,1
+df98c550-e20c-499d-b814-d4d32ef5ec9a,2819676,haven,99,FURIA,"omen,viper,neon,sova,killjoy",1,2,1,1
+d88e4a6f-ee71-4a8b-a338-8f9476c4f0c1,2819684,bind,48457,KRÜ Esports,"brimstone,viper,raze,skye,vyse",1,2,1,1
+19594f1c-8e9c-4426-b895-95e348041d50,2819685,corrode,3412,LOUD (1),"omen,viper,neon,fade,vyse",1,2,1,1
+327da6a0-02c8-45f8-b091-77bbcbd98d98,2819687,lotus,1611,Leviatán Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+23db92c5-dde1-4110-8ca8-2fb0887baea0,2629398,ascent,79,Cloud9,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+6a2cd9d2-b105-44fc-a573-22daf50c2265,2629393,bind,337,100 Thieves,"brimstone,viper,raze,fade,gekko",1,2,0,2
+c924abac-da36-42b3-b78f-f0c51fdb34f2,2629393,icebox,1611,Leviatán Esports,"harbor,viper,reyna,sova,killjoy",1,2,1,1
+912fccf9-db18-4fa5-9807-b1ab9ace1e8d,2637963,breeze,96,G2 Esports,"harbor,viper,yoru,sova,cypher",1,2,1,1
+7c6d677a-1429-4e83-af6c-539ff3ea762b,2748746,fracture,79,Cloud9,"brimstone,clove,raze,tejo,killjoy",1,2,1,1
+68bb681c-15c0-4b6d-b9e5-ffbdf49bfbf1,2748766,pearl,1079,Sentinels,"astra,yoru,fade,tejo,vyse",1,1,1,2
+1852c76c-6c74-4f6c-a56c-542a7d96add0,2654002,icebox,96,G2 Esports,"harbor,viper,gekko,sova,killjoy",0,2,1,2
+94d44dbc-2e44-4393-915b-205598370f0b,2654004,bind,337,100 Thieves,"brimstone,viper,raze,fade,gekko",1,2,0,2
+5ca11bd6-e218-4a6c-9427-00e7badce91b,2653970,sunset,97,NRG,"omen,raze,gekko,kay/o,cypher",1,1,1,2
+f8c3e88f-cc2a-415d-bf6d-bcfb5248e727,2653972,lotus,281,Evil Geniuses,"omen,viper,raze,fade,cypher",1,2,1,1
+40be6139-32f9-4bff-9cef-14aed306f587,2653974,breeze,48457,KRÜ Esports,"viper,jett,kay/o,sova,cypher",1,1,1,2
+7b96ee77-9af9-4348-b24d-254028cba8a2,2653978,breeze,97,NRG,"viper,jett,yoru,sova,cypher",2,1,1,1
+712fb2e7-6dd2-487c-b20d-91a29fcb7f2b,2653981,icebox,3412,LOUD (1),"harbor,viper,jett,sova,killjoy",1,2,1,1
+e7039f62-34d5-4974-858c-c852677d3c4d,2653983,sunset,97,NRG,"omen,raze,gekko,kay/o,cypher",1,1,1,2
+ed91744d-7be5-45a0-b0c3-342374e3d930,2653986,bind,1079,Sentinels,"brimstone,viper,raze,gekko,skye",1,2,0,2
+8e73ed4a-c7b3-47d7-8cd6-0797f74b07e1,2653988,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+e9237108-ba35-4ed2-b431-23a43f2b070c,2775984,pearl,1079,Sentinels,"astra,yoru,fade,tejo,vyse",1,1,1,2
+06ba8d23-47ee-448b-a906-40dae02b614f,2775985,haven,97,NRG,"omen,jett,breach,tejo,cypher",1,1,1,2
+8f49f159-3991-4128-9b63-c1e24f5be669,2775990,split,96,G2 Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+80e672bb-e6e6-477c-886b-836a18c00ff8,2775992,lotus,281,Evil Geniuses,"clove,viper,raze,fade,tejo",1,2,0,2
+a722e7c7-3ede-48f7-b427-703c95befcc3,2775993,ascent,96,G2 Esports,"omen,waylay,kay/o,tejo,vyse",1,1,1,2
+8fa3b2ff-a211-49c9-a1cb-25acb8708ba7,2775994,pearl,96,G2 Esports,"astra,yoru,fade,tejo,vyse",1,1,1,2
+f816e606-ea36-481e-8688-833dba794baa,2775994,ascent,1079,Sentinels,"omen,jett,kay/o,tejo,vyse",1,1,1,2
+3bcdfc90-e969-4887-8f3c-c7e127516051,2775954,split,48457,KRÜ Esports,"omen,viper,jett,breach,tejo",1,2,0,2
+47f8d2db-a64b-4698-b865-c7b790591149,2775953,pearl,79,Cloud9,"astra,jett,yoru,sova,cypher",2,1,1,1
+3726169b-07ea-4aa3-83df-3b33c0fec447,2775956,icebox,1611,Leviatán Esports,"viper,yoru,sova,tejo,killjoy",1,1,1,2
+3726169b-07ea-4aa3-83df-3b33c0fec447,2775956,icebox,81,MIBR (1),"harbor,viper,jett,sova,killjoy",1,2,1,1
+da064a14-63df-4d60-b0cd-2268fd677294,2775959,lotus,97,NRG,"omen,neon,breach,tejo,vyse",1,1,1,2
+5ce71594-de35-414f-ba2a-297f05473c58,2775969,pearl,99,FURIA,"astra,yoru,fade,tejo,vyse",1,1,1,2
+6230096f-b761-461a-9b4f-805406981e6c,2775970,pearl,81,MIBR (1),"astra,waylay,kay/o,tejo,vyse",1,1,1,2
+fe2c0bf3-5c6c-49d4-8206-9d9d7e64891b,2775977,pearl,79,Cloud9,"astra,jett,yoru,sova,cypher",2,1,1,1
+6bb6f4c0-8625-4ee0-bfa3-f477bb5d511d,2681840,abyss,79,Cloud9,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+2b2ae93c-0d10-4db7-87a1-54493096bea2,2681841,haven,337,100 Thieves,"omen,iso,yoru,sova,cypher",2,1,1,1
+c1c25c9b-82bc-4a5d-bbc2-2befcd034748,2681811,icebox,337,100 Thieves,"viper,jett,gekko,sova,killjoy",1,1,1,2
+8a4945ed-21e8-48e1-8440-5f8985b34529,2681812,lotus,3412,LOUD (1),"omen,neon,fade,gekko,cypher",1,1,1,2
+06b91140-eaa0-41e7-b8cc-1b88f9996faf,2681823,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+f441a093-83a4-4e7c-9e9f-b014868b25f4,2681824,icebox,99,FURIA,"viper,jett,sova,killjoy,sage",1,1,2,1
+f6af23d3-cec8-4abe-b47d-938be17647c2,2681829,ascent,96,G2 Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+d350fad9-4a06-4d77-ada9-ae685c73c669,2681832,icebox,79,Cloud9,"viper,reyna,gekko,sova,killjoy",1,1,1,2
+5f9b7134-fba1-4dc5-87af-1b4c7ba9416b,2681832,sunset,79,Cloud9,"clove,omen,raze,skye,cypher",1,2,1,1
+b70c4772-18be-4f15-95a3-99812a0b5ccb,2681839,lotus,96,G2 Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+1b77407a-2782-45ec-98df-0425f189ba6c,2843060,haven,1611,Leviatán Esports,"omen,neon,yoru,sova,cypher",2,1,1,1
+1b77407a-2782-45ec-98df-0425f189ba6c,2843060,haven,79,Cloud9,"omen,viper,jett,skye,killjoy",1,2,1,1
+e18041ca-9d6a-46cf-a064-ffeafc3c0e32,2843062,lotus,1079,Sentinels,"omen,viper,raze,fade,vyse",1,2,1,1
+7cf1796b-377f-44b8-ae2e-b6d4b6a9333e,2819700,lotus,48457,KRÜ Esports,"omen,viper,raze,yoru,fade",2,2,0,1
+84ed8642-1d74-4852-a926-400b7758c0e9,2819701,haven,1611,Leviatán Esports,"omen,neon,yoru,sova,cypher",2,1,1,1
+2cd86d08-a06b-4c0f-b749-a0f2964a68ce,2629395,split,81,MIBR,"astra,viper,jett,raze,skye",2,2,0,1
+dadd1796-2cb3-419b-814b-1260cea71822,2629392,split,1079,Sentinels,"omen,viper,raze,skye,cypher",1,2,1,1
+6a2cd9d2-b105-44fc-a573-22daf50c2265,2629393,bind,1611,Leviatán Esports,"harbor,viper,raze,gekko,skye",1,2,0,2
+f493ae92-1c47-4ff7-9785-ecb193511d72,2748743,split,281,Evil Geniuses,"omen,viper,raze,skye,chamber",1,2,1,1
+e30a6206-cd5a-4d47-866c-42debcd5cffe,2748745,haven,99,FURIA,"clove,jett,breach,tejo,cypher",1,1,1,2
+e9343429-3dcc-4633-a28b-585ff4b33c2e,2748748,split,1079,Sentinels,"omen,viper,yoru,breach,tejo",1,2,0,2
+dcfa8ab3-3510-430a-ba9c-4e53c9eed8e1,2748763,abyss,96,G2 Esports,"astra,yoru,breach,sova,chamber",1,1,1,2
+e53757cd-60af-4260-8ed1-d708348a173c,2748764,abyss,48457,KRÜ Esports,"astra,viper,jett,kay/o,sova",1,2,0,2
+2ddb8dae-0ce4-41c0-a21b-67aa6e3a135d,2748764,split,81,MIBR (1),"astra,viper,jett,raze,skye",2,2,0,1
+28e9e484-a040-4ccb-92ba-99b5ff586386,2748765,abyss,1079,Sentinels,"astra,omen,jett,kay/o,sova",1,2,0,2
+a417c9ca-3598-470d-9730-8d13f02ec81a,2654001,icebox,3412,LOUD (1),"harbor,viper,jett,sova,killjoy",1,2,1,1
+1852c76c-6c74-4f6c-a56c-542a7d96add0,2654002,icebox,48457,KRÜ Esports,"viper,reyna,gekko,kay/o,killjoy",1,1,1,2
+a7cf11d8-d64b-41bc-9807-62e91dac343b,2654012,breeze,96,G2 Esports,"astra,viper,yoru,sova,cypher",1,2,1,1
+a38b7327-581a-4fde-9cc8-c8b9c41bc5f5,2653979,sunset,79,Cloud9,"omen,viper,raze,skye,cypher",1,2,1,1
+4d43b00d-bafd-401e-8a2a-a2b9bd516c06,2653981,bind,3412,LOUD (1),"brimstone,viper,raze,breach,kay/o",1,2,0,2
+6eb1d3d5-c083-4d95-b13f-4441c628e0a2,2653981,lotus,79,Cloud9,"omen,viper,raze,gekko,killjoy",1,2,1,1
+9cf7b90c-51fe-4d8e-aed0-808d7749973b,2653982,breeze,281,Evil Geniuses,"astra,viper,jett,yoru,sova",2,2,0,1
+17304074-aa74-4e59-bd77-8889809b7e92,2775983,icebox,337,100 Thieves,"viper,jett,gekko,sova,killjoy",1,1,1,2
+0090f853-9c8e-485a-ad16-7b1e7b9bccc4,2775988,icebox,96,G2 Esports,"harbor,viper,gekko,tejo,killjoy",0,2,1,2
+d47c5689-1ce0-4e1f-893b-a0337c80697e,2775991,lotus,81,MIBR (1),"omen,viper,neon,breach,tejo",1,2,0,2
+e7166237-04f0-432d-ac5b-e561a21b971d,2775991,split,81,MIBR (1),"omen,viper,jett,breach,tejo",1,2,0,2
+92d54244-b7ac-480e-be5c-ae8818cfc0dc,2775954,haven,48457,KRÜ Esports,"omen,yoru,breach,tejo,cypher",1,1,1,2
+51156eaa-c25e-4901-95d2-1f5f7e3f0fbc,2775962,pearl,96,G2 Esports,"astra,yoru,fade,tejo,vyse",1,1,1,2
+6230096f-b761-461a-9b4f-805406981e6c,2775970,pearl,79,Cloud9,"astra,jett,yoru,sova,cypher",2,1,1,1
+7bb2e6db-6e6f-40d8-9d93-2706f10d4bb3,2775977,haven,79,Cloud9,"omen,jett,breach,sova,cypher",1,1,1,2
+dd47bbd2-528c-4352-a32f-95fedd5c1396,2775982,fracture,97,NRG,"brimstone,raze,breach,tejo,cypher",1,1,1,2
+e6fc1711-5d21-479d-9115-484951ff346d,2775982,icebox,1611,Leviatán Esports,"viper,jett,kay/o,tejo,killjoy",1,1,1,2
+42f11322-2575-4042-82d9-34a1fd8dd19b,2681846,ascent,48457,KRÜ Esports,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+87831b61-caaa-467d-bee3-9d1016b08546,2681819,ascent,3412,LOUD (1),"omen,jett,kay/o,sova,cypher",1,1,1,2
+1183426c-c115-4085-8c22-2ba1ef6efef8,2681819,sunset,3412,LOUD (1),"omen,neon,breach,gekko,cypher",1,1,1,2
+163a9daf-3ba6-409d-94a6-51f0c663803d,2681831,icebox,81,MIBR (1),"viper,jett,gekko,sova,killjoy",1,1,1,2
+0585ae05-a83d-4553-bb86-b7202c11525f,2681829,lotus,48457,KRÜ Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+3c4b2006-e081-4efb-af65-789495c4fa88,2843062,icebox,79,Cloud9,"viper,iso,raze,sova,killjoy",2,1,1,1
+2b087d1b-80fa-4fa3-bf94-d80f3441c526,2819682,haven,96,G2 Esports,"omen,viper,yoru,fade,vyse",1,2,1,1
+f0cc0f5d-c79a-4fa1-9fc7-d7471e3d3596,2819679,ascent,48457,KRÜ Esports,"omen,jett,yoru,sova,cypher",2,1,1,1
+01080eed-aa6f-4ff0-9d1b-70ffa4d9cd44,2819691,bind,81,MIBR (1),"brimstone,viper,raze,yoru,skye",2,2,0,1
+e507a162-4071-4f0e-99ee-15bdff1efb24,2819693,haven,3412,LOUD (1),"omen,neon,breach,sova,cypher",1,1,1,2
+cd0ede88-b842-4de2-ae9f-bb8776a99437,2629390,ascent,97,NRG,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+da54a836-dd47-47d1-a79e-6daa504bdb56,2629398,sunset,97,NRG,"omen,viper,jett,skye,cypher",1,2,1,1
+b1185c74-f70d-413f-a941-9240e9708890,2629393,split,1611,Leviatán Esports,"omen,raze,breach,sova,cypher",1,1,1,2
+912fccf9-db18-4fa5-9807-b1ab9ace1e8d,2637963,breeze,1079,Sentinels,"viper,jett,kay/o,sova,cypher",1,1,1,2
+92a90ade-5d3d-4a6d-9d85-61911f683a32,2748749,split,99,FURIA,"omen,viper,raze,skye,sage",1,2,1,1
+968b7d65-6966-4c62-8cbb-da1fa4d2aa2c,2748763,pearl,1079,Sentinels,"astra,yoru,fade,tejo,vyse",1,1,1,2
+2ddb8dae-0ce4-41c0-a21b-67aa6e3a135d,2748764,split,48457,KRÜ Esports,"omen,viper,raze,skye,cypher",1,2,1,1
+fb82d007-0363-495c-b606-3ee4db06e012,2748765,split,1079,Sentinels,"omen,viper,yoru,breach,tejo",1,2,0,2
+d3f5418e-a64f-46ed-80aa-01226799b07d,2748766,split,1079,Sentinels,"omen,viper,yoru,breach,tejo",1,2,0,2
+908e0f76-6bdf-4359-af7b-0fb23fd0f98f,2654005,sunset,1611,Leviatán Esports,"omen,raze,breach,gekko,cypher",1,1,1,2
+4242545a-2c5f-4d0f-8239-63b2102cdb36,2654052,breeze,337,100 Thieves,"viper,jett,kay/o,sova,cypher",1,1,1,2
+a3829f99-0642-4cc6-8007-bc207a2efed8,2654052,sunset,96,G2 Esports,"omen,raze,breach,gekko,cypher",1,1,1,2
+4643965f-3e18-4a2a-9f89-21bd9858b2da,2653969,icebox,79,Cloud9,"viper,jett,sova,killjoy,sage",1,1,2,1
+5ca11bd6-e218-4a6c-9427-00e7badce91b,2653970,sunset,3412,LOUD (1),"omen,viper,phoenix,breach,sova",1,2,0,2
+b5729ab0-3c59-45cd-8837-6222f10fca65,2653975,bind,96,G2 Esports,"brimstone,viper,yoru,fade,kay/o",1,2,0,2
+d78544b9-d29f-4dea-b8df-eca35acd35d3,2653977,icebox,48457,KRÜ Esports,"viper,reyna,gekko,kay/o,killjoy",1,1,1,2
+875600d4-44e3-4de6-9fcd-6e922d57763a,2653986,lotus,281,Evil Geniuses,"omen,viper,raze,fade,cypher",1,2,1,1
+ec50a5f1-50cf-4882-a3ef-c70e314cffd1,2775983,split,81,MIBR (1),"omen,viper,jett,breach,tejo",1,2,0,2
+ce9bb129-3b89-4f7f-9d15-fb5a632a2991,2775993,lotus,81,MIBR (1),"omen,viper,neon,breach,tejo",1,2,0,2
+cb5e350e-e18a-426b-bfbe-90603d72f1c9,2775962,haven,81,MIBR (1),"omen,jett,breach,tejo,cypher",1,1,1,2
+823775b0-c7f5-4ee1-bfe1-eca9eb05bf86,2775972,haven,1611,Leviatán Esports,"omen,jett,breach,tejo,vyse",1,1,1,2
+24f97577-541c-46ac-a30c-8098635ce529,2775977,icebox,96,G2 Esports,"harbor,viper,gekko,tejo,killjoy",0,2,1,2
+e6fc1711-5d21-479d-9115-484951ff346d,2775982,icebox,97,NRG,"viper,reyna,gekko,kay/o,killjoy",1,1,1,2
+06f18451-66a2-4e5d-bdb1-46b3217bf668,2681844,icebox,96,G2 Esports,"harbor,viper,gekko,sova,killjoy",0,2,1,2
+06f18451-66a2-4e5d-bdb1-46b3217bf668,2681844,icebox,1611,Leviatán Esports,"harbor,viper,jett,sova,killjoy",1,2,1,1
+18736ff5-ebed-45d0-b453-320f5763e198,2681845,ascent,337,100 Thieves,"omen,jett,kay/o,sova,killjoy",1,1,1,2
+3a81076b-9bc2-4e70-8f8d-296d2eec7cd5,2681846,abyss,1611,Leviatán Esports,"harbor,omen,jett,sova,cypher",1,2,1,1
+b3891f68-1023-4467-b245-1a17d77d6bb6,2681812,icebox,3412,LOUD (1),"omen,viper,gekko,kay/o,killjoy",0,2,1,2
+09d45f03-a09e-4ba2-be4e-e7482d5334fd,2681817,bind,281,Evil Geniuses,"brimstone,omen,raze,gekko,skye",1,2,0,2
+9173600a-2430-49e8-8b38-6d1964606039,2681820,haven,1611,Leviatán Esports,"omen,neon,breach,sova,cypher",1,1,1,2
+77029b2f-fd12-4dc5-888d-3ab4dc98c4c3,2681830,icebox,3412,LOUD (1),"harbor,omen,kay/o,sova,killjoy",0,2,1,2
+0850cf76-ce33-4074-ad1c-a1cb37538c21,2681831,sunset,81,MIBR (1),"omen,raze,breach,gekko,cypher",1,1,1,2
+84960f38-8a0e-4669-9060-161fb6891d54,2843060,lotus,1611,Leviatán Esports,"omen,viper,raze,fade,vyse",1,2,1,1
+6aba6aec-1b30-42d5-a966-02a8defdbffb,2843061,haven,337,100 Thieves,"omen,neon,yoru,sova,cypher",2,1,1,1
+8fa1d515-4d32-49a6-85cf-c3dfafc116f5,2843063,corrode,96,G2 Esports,"omen,viper,waylay,fade,sage",1,2,1,1
+33c45db3-8fa3-4946-a183-e5261ed061e1,2843064,sunset,1611,Leviatán Esports,"omen,neon,kay/o,sova,vyse",1,1,1,2
+84f92c91-a31a-4afd-9677-a04db2082d65,2819678,sunset,281,Evil Geniuses,"omen,jett,kay/o,sova,cypher",1,1,1,2
+09a9a194-c8ae-4883-b774-6187eef9f720,2819678,lotus,53367,2GAME eSports,"omen,neon,breach,fade,cypher",1,1,1,2
+7428070d-1707-4a58-a76b-0cb4c78670d7,2819679,haven,81,MIBR (1),"omen,iso,yoru,sova,cypher",2,1,1,1
+d88e4a6f-ee71-4a8b-a338-8f9476c4f0c1,2819684,bind,337,100 Thieves,"brimstone,viper,raze,yoru,fade",2,2,0,1
+9d567067-d1dd-4033-83ef-9ba94eb422a7,2819693,bind,3412,LOUD (1),"brimstone,viper,raze,gekko,skye",1,2,0,2
+0cf28c95-a415-4992-8c9a-f08ecfb314ba,2819697,ascent,1611,Leviatán Esports,"omen,yoru,sova,chamber,vyse",1,1,2,1
+b24bbd35-14f6-46cb-8e78-c6fcc67da476,2819699,bind,3412,LOUD (1),"brimstone,viper,raze,gekko,skye",1,2,0,2
+2192bde4-09d7-4547-b7e5-69ceab395a74,2819701,lotus,337,100 Thieves,"omen,raze,yoru,fade,vyse",2,1,1,1
+df33ba86-e9fe-423e-8e44-206002633674,2629401,bind,81,MIBR,"brimstone,viper,raze,kay/o,skye",1,2,0,2
+2a7bec4a-4f98-41f5-a71f-65b436402d82,2637963,sunset,1079,Sentinels,"omen,raze,gekko,kay/o,cypher",1,1,1,2
+911f55f4-b1a3-4cb8-ba4c-3c100d7b4245,2748743,pearl,281,Evil Geniuses,"astra,jett,phoenix,sova,vyse",2,1,1,1
+a254587d-54e4-409c-aede-94c0716cb081,2748748,bind,337,100 Thieves,"brimstone,viper,raze,fade,gekko",1,2,0,2
+a254587d-54e4-409c-aede-94c0716cb081,2748748,bind,1079,Sentinels,"brimstone,viper,raze,gekko,tejo",1,2,0,2
+c69a55a2-9c9e-48a9-87db-cbc557a830cd,2748750,lotus,96,G2 Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+36bbcd37-1b30-48da-bb7a-a034ccde5b93,2748750,abyss,96,G2 Esports,"astra,yoru,breach,sova,chamber",1,1,1,2
+dcfa8ab3-3510-430a-ba9c-4e53c9eed8e1,2748763,abyss,1079,Sentinels,"astra,omen,jett,kay/o,sova",1,2,0,2
+f3a3f70a-319e-4382-adfb-09030cd3fb9e,2748765,pearl,1079,Sentinels,"astra,yoru,fade,tejo,vyse",1,1,1,2
+d3f5418e-a64f-46ed-80aa-01226799b07d,2748766,split,96,G2 Esports,"astra,viper,yoru,breach,tejo",1,2,0,2
+3c038c28-3080-4730-a6da-7941e84381ac,2748766,haven,1079,Sentinels,"omen,iso,yoru,sova,cypher",2,1,1,1
+6e090973-12d4-4499-9825-6dc4e641a52b,2654012,bind,1611,Leviatán Esports,"brimstone,viper,raze,gekko,skye",1,2,0,2
+373f081d-edba-4aed-b378-bf4d7568902e,2654012,lotus,1611,Leviatán Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+373f081d-edba-4aed-b378-bf4d7568902e,2654012,lotus,96,G2 Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+75c3d8a2-3095-40b8-8cbe-a48dc5844788,2653970,breeze,3412,LOUD (1),"viper,jett,kay/o,sova,cypher",1,1,1,2
+35fa2b2b-88d4-4af9-bda3-d04ada01ceb4,2653999,icebox,3412,LOUD (1),"harbor,viper,jett,sova,killjoy",1,2,1,1
+dcf63170-3d1a-4e86-bd97-b33b28deabea,2775986,icebox,79,Cloud9,"harbor,viper,jett,sova,killjoy",1,2,1,1
+eb97617e-5737-4fdf-a248-5a3b04d0b824,2775987,lotus,81,MIBR (1),"omen,viper,neon,breach,tejo",1,2,0,2
+822a19a9-37dd-408d-a409-fe5ab3bfc17a,2775990,haven,337,100 Thieves,"omen,iso,neon,sova,cypher",2,1,1,1
+4ce1599c-dbee-4be0-a0ce-16fdcb7f6adf,2775992,pearl,281,Evil Geniuses,"astra,jett,yoru,tejo,vyse",2,1,1,1
+09078b6d-e405-4cd8-9956-0e807f2d9a01,2775993,split,96,G2 Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+09078b6d-e405-4cd8-9956-0e807f2d9a01,2775993,split,81,MIBR (1),"omen,viper,jett,breach,tejo",1,2,0,2
+4a2a1e87-815d-47e1-897f-cf8e319c13f2,2775994,split,96,G2 Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+3bcdfc90-e969-4887-8f3c-c7e127516051,2775954,split,3412,LOUD (1),"astra,viper,raze,breach,tejo",1,2,0,2
+e04002c9-277b-485c-94ff-2cc48dd94592,2775979,pearl,53367,2GAME eSports,"astra,yoru,fade,tejo,vyse",1,1,1,2
+0ec5e952-b03f-4aec-92c4-8bc253c51177,2775980,fracture,337,100 Thieves,"brimstone,neon,breach,tejo,chamber",1,1,1,2
+393de77c-90eb-438e-9486-639ff2bf41aa,2775959,fracture,99,FURIA,"brimstone,raze,breach,tejo,cypher",1,1,1,2
+e8a576ee-9560-44d3-ac33-4fd0b3df07ad,2775968,lotus,96,G2 Esports,"omen,viper,yoru,breach,tejo",1,2,0,2
+2f818e02-6a0f-4516-88e2-25e136a0966e,2775973,pearl,99,FURIA,"astra,jett,kay/o,tejo,vyse",1,1,1,2
+cf3b2d75-5225-4938-b869-5dc907abd896,2775976,haven,97,NRG,"omen,jett,yoru,sova,cypher",2,1,1,1
+122fc792-c9cb-4d19-a241-7e0a15f721aa,2681843,lotus,96,G2 Esports,"omen,viper,raze,fade,killjoy",1,2,1,1
+2835b339-5fa5-4309-972c-3e06f4b85cf6,2681843,abyss,337,100 Thieves,"omen,jett,gekko,sova,cypher",1,1,1,2
+5a3e9018-48a7-4238-9091-54d86686e263,2681846,sunset,1611,Leviatán Esports,"omen,neon,breach,sova,cypher",1,1,1,2
+aae2bc4d-68e3-4868-9778-d8df0f23ff3b,2681847,haven,1611,Leviatán Esports,"omen,neon,breach,sova,cypher",1,1,1,2
+a70ac7a9-982b-435b-9b3d-4b1826f0ef7f,2681812,sunset,3412,LOUD (1),"omen,neon,breach,gekko,cypher",1,1,1,2
+09d45f03-a09e-4ba2-be4e-e7482d5334fd,2681817,bind,99,FURIA,"brimstone,viper,raze,fade,gekko",1,2,0,2
+06b91140-eaa0-41e7-b8cc-1b88f9996faf,2681823,icebox,281,Evil Geniuses,"clove,harbor,sova,killjoy,sage",0,2,2,1
+00c5b440-eee3-423b-a01c-954a8c96a7c7,2681824,bind,99,FURIA,"brimstone,viper,raze,skye,sage",1,2,1,1
+2c175eba-f724-4432-8e97-7a2f534a3a04,2681826,icebox,337,100 Thieves,"viper,jett,gekko,sova,killjoy",1,1,1,2
+b0eb7b8b-8876-47b7-9504-e6cafbf5c015,2681826,split,337,100 Thieves,"astra,viper,raze,breach,fade",1,2,0,2
+7e2ae3c7-4b14-45e2-be90-bb4f4053531d,2681830,lotus,1611,Leviatán Esports,"omen,neon,breach,fade,cypher",1,1,1,2
+907b74f9-fa87-4a3f-8add-ebb3e33f4291,2681829,split,96,G2 Esports,"omen,viper,raze,breach,fade",1,2,0,2
+02fd0ece-b1b9-4199-ab9f-ec7ddf3dd04d,2681839,bind,1079,Sentinels,"brimstone,raze,fade,gekko,deadlock",1,1,1,2
+b70c4772-18be-4f15-95a3-99812a0b5ccb,2681839,lotus,1079,Sentinels,"omen,raze,fade,cypher,deadlock",1,1,2,1
+b61a19fd-daf2-4abf-b8db-3261720636fc,2843064,haven,48457,KRÜ Esports,"omen,iso,yoru,sova,cypher",2,1,1,1
+5a5d6f54-28fd-469f-b2b7-59019793fa62,2819681,corrode,1079,Sentinels,"omen,viper,neon,fade,vyse",1,2,1,1
+1d75dc9a-c49d-4e86-ae32-a710a2182639,2819681,ascent,1079,Sentinels,"omen,yoru,sova,cypher,deadlock",1,1,2,1
+da8a31ce-c9c0-4822-a0a2-6809fd279376,2819684,corrode,337,100 Thieves,"omen,yoru,fade,sova,chamber",1,1,1,2
+e507a162-4071-4f0e-99ee-15bdff1efb24,2819693,haven,48457,KRÜ Esports,"omen,iso,yoru,sova,cypher",2,1,1,1
+9d567067-d1dd-4033-83ef-9ba94eb422a7,2819693,bind,48457,KRÜ Esports,"brimstone,viper,raze,yoru,fade",2,2,0,1
+95e09901-fc6e-4f29-8d0d-5421b3208891,2819697,bind,1611,Leviatán Esports,"brimstone,viper,yoru,fade,gekko",1,2,0,2
+84ed8642-1d74-4852-a926-400b7758c0e9,2819701,haven,337,100 Thieves,"omen,neon,yoru,sova,cypher",2,1,1,1

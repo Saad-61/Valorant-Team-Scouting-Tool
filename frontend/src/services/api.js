@@ -1,9 +1,8 @@
 // API Integration Layer
 import axios from 'axios';
 
-// For production: use environment variable for backend URL
-// For local dev: proxy configured in vite.config.js handles /api
-const API_BASE = import.meta.env.VITE_API_URL || '/api';
+// API base URL - /api works for both local (vite proxy) and Vercel
+const API_BASE = '/api';
 
 const axiosInstance = axios.create({
   baseURL: API_BASE,

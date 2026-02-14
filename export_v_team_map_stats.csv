@@ -1,0 +1,521 @@
+team_id,team_name,map_name,games_played,wins,losses,win_rate,rounds_won,rounds_lost,round_diff_ratio
+99,FURIA,ascent,1,0,1,0.0,8,13,0.62
+81,MIBR,bind,1,0,1,0.0,11,13,0.85
+1079,Sentinels,ascent,1,0,1,0.0,9,13,0.69
+96,G2 Esports,,2,0,2,0.0,,,
+53367,2GAME eSports,haven,1,0,1,0.0,7,13,0.54
+79,Cloud9,,3,1,2,33.3,,,
+48457,KRÜ Esports,,2,2,0,100.0,,,
+81,MIBR (1),,3,2,1,66.7,,,
+337,100 Thieves,bind,1,1,0,100.0,13,6,2.17
+337,100 Thieves,ascent,1,1,0,100.0,13,5,2.6
+96,G2 Esports,sunset,1,0,1,0.0,8,13,0.62
+79,Cloud9,icebox,1,0,1,0.0,7,13,0.54
+79,Cloud9,sunset,1,1,0,100.0,13,7,1.86
+97,NRG,sunset,1,1,0,100.0,13,2,6.5
+96,G2 Esports,lotus,1,1,0,100.0,13,8,1.63
+96,G2 Esports,icebox,1,1,0,100.0,13,3,4.33
+97,NRG,,2,0,2,0.0,,,
+48457,KRÜ Esports,,3,1,2,33.3,,,
+81,MIBR (1),split,1,1,0,100.0,13,10,1.3
+96,G2 Esports,haven,1,0,1,0.0,10,13,0.77
+96,G2 Esports,haven,1,0,1,0.0,4,13,0.31
+48457,KRÜ Esports,abyss,1,1,0,100.0,13,11,1.18
+48457,KRÜ Esports,icebox,1,0,1,0.0,3,13,0.23
+1611,Leviatán Esports,haven,1,1,0,100.0,13,4,3.25
+81,MIBR (1),split,1,0,1,0.0,6,13,0.46
+1611,Leviatán Esports,,2,2,0,100.0,,,
+97,NRG,,4,3,1,75.0,,,
+1079,Sentinels,lotus,1,1,0,100.0,14,12,1.17
+79,Cloud9,,2,2,0,100.0,,,
+99,FURIA,,2,0,2,0.0,,,
+1611,Leviatán Esports,lotus,1,0,1,0.0,7,13,0.54
+3412,LOUD (1),haven,1,1,0,100.0,13,7,1.86
+1611,Leviatán Esports,,2,0,2,0.0,,,
+48457,KRÜ Esports,abyss,1,0,1,0.0,8,13,0.62
+81,MIBR (1),icebox,1,1,0,100.0,13,4,3.25
+1079,Sentinels,icebox,1,1,0,100.0,13,11,1.18
+1079,Sentinels,ascent,1,1,0,100.0,13,11,1.18
+48457,KRÜ Esports,icebox,1,1,0,100.0,13,9,1.44
+96,G2 Esports,lotus,1,1,0,100.0,13,1,13.0
+99,FURIA,lotus,1,0,1,0.0,14,16,0.88
+97,NRG,icebox,1,1,0,100.0,13,8,1.63
+1611,Leviatán Esports,lotus,1,1,0,100.0,15,13,1.15
+99,FURIA,haven,1,1,0,100.0,16,14,1.14
+1611,Leviatán Esports,bind,1,1,0,100.0,13,10,1.3
+3412,LOUD (1),bind,1,0,1,0.0,9,13,0.69
+81,MIBR (1),icebox,1,0,1,0.0,5,13,0.38
+81,MIBR (1),sunset,1,0,1,0.0,10,13,0.77
+281,Evil Geniuses,,2,0,2,0.0,,,
+96,G2 Esports,,3,2,1,66.7,,,
+96,G2 Esports,ascent,1,1,0,100.0,16,14,1.14
+1611,Leviatán Esports,corrode,1,0,1,0.0,10,13,0.77
+337,100 Thieves,,2,2,0,100.0,,,
+1079,Sentinels,,2,2,0,100.0,,,
+53367,2GAME eSports,,3,1,2,33.3,,,
+1611,Leviatán Esports,icebox,1,0,1,0.0,11,13,0.85
+337,100 Thieves,corrode,1,1,0,100.0,13,4,3.25
+1611,Leviatán Esports,ascent,1,1,0,100.0,13,4,3.25
+1079,Sentinels,abyss,1,1,0,100.0,13,9,1.44
+1079,Sentinels,fracture,1,0,1,0.0,5,13,0.38
+96,G2 Esports,bind,1,0,1,0.0,9,13,0.69
+96,G2 Esports,split,1,0,1,0.0,8,13,0.62
+97,NRG,breeze,1,1,0,100.0,13,3,4.33
+1079,Sentinels,ascent,1,1,0,100.0,13,9,1.44
+96,G2 Esports,ascent,1,1,0,100.0,13,8,1.63
+99,FURIA,pearl,1,0,1,0.0,1,13,0.08
+48457,KRÜ Esports,sunset,1,1,0,100.0,13,7,1.86
+81,MIBR (1),ascent,1,0,1,0.0,9,13,0.69
+99,FURIA,icebox,1,1,0,100.0,14,12,1.17
+1611,Leviatán Esports,haven,1,1,0,100.0,13,10,1.3
+281,Evil Geniuses,ascent,1,1,0,100.0,13,9,1.44
+1079,Sentinels,ascent,1,0,1,0.0,6,13,0.46
+53367,2GAME eSports,haven,1,0,1,0.0,5,13,0.38
+81,MIBR (1),icebox,1,1,0,100.0,13,10,1.3
+3412,LOUD (1),ascent,1,0,1,0.0,4,13,0.31
+1611,Leviatán Esports,haven,1,1,0,100.0,13,10,1.3
+3412,LOUD (1),sunset,1,1,0,100.0,13,2,6.5
+3412,LOUD (1),lotus,1,0,1,0.0,12,14,0.86
+1079,Sentinels,,5,3,2,60.0,,,
+53367,2GAME eSports,lotus,1,0,1,0.0,5,13,0.38
+97,NRG,lotus,1,0,1,0.0,10,13,0.77
+337,100 Thieves,split,1,1,0,100.0,13,4,3.25
+79,Cloud9,lotus,1,0,1,0.0,6,13,0.46
+337,100 Thieves,sunset,1,0,1,0.0,12,14,0.86
+337,100 Thieves,bind,1,0,1,0.0,8,13,0.62
+96,G2 Esports,icebox,1,1,0,100.0,13,3,4.33
+1079,Sentinels,icebox,1,1,0,100.0,13,10,1.3
+1079,Sentinels,lotus,1,1,0,100.0,13,3,4.33
+96,G2 Esports,lotus,1,1,0,100.0,13,3,4.33
+79,Cloud9,ascent,1,0,1,0.0,6,13,0.46
+1079,Sentinels,lotus,1,1,0,100.0,13,10,1.3
+96,G2 Esports,bind,1,0,1,0.0,11,13,0.85
+1079,Sentinels,,2,0,2,0.0,,,
+3412,LOUD (1),,2,0,2,0.0,,,
+337,100 Thieves,,2,2,0,100.0,,,
+281,Evil Geniuses,lotus,1,0,1,0.0,11,13,0.85
+96,G2 Esports,lotus,1,1,0,100.0,13,10,1.3
+3412,LOUD (1),icebox,1,0,1,0.0,11,13,0.85
+97,NRG,sunset,1,0,1,0.0,12,14,0.86
+79,Cloud9,corrode,1,0,1,0.0,10,13,0.77
+1611,Leviatán Esports,ascent,1,0,1,0.0,10,13,0.77
+48457,KRÜ Esports,lotus,1,0,1,0.0,7,13,0.54
+48457,KRÜ Esports,haven,1,0,1,0.0,5,13,0.38
+81,MIBR (1),sunset,1,1,0,100.0,13,10,1.3
+81,MIBR,ascent,1,1,0,100.0,13,9,1.44
+1079,Sentinels,,3,2,1,66.7,,,
+1079,Sentinels,split,1,0,1,0.0,9,13,0.69
+79,Cloud9,lotus,1,0,1,0.0,6,13,0.46
+1611,Leviatán Esports,lotus,1,0,1,0.0,6,13,0.46
+97,NRG,split,1,1,0,100.0,13,2,6.5
+79,Cloud9,sunset,1,1,0,100.0,13,8,1.63
+48457,KRÜ Esports,lotus,1,1,0,100.0,13,5,2.6
+1079,Sentinels,,2,2,0,100.0,,,
+337,100 Thieves,haven,1,1,0,100.0,13,11,1.18
+96,G2 Esports,ascent,1,1,0,100.0,13,10,1.3
+1611,Leviatán Esports,split,1,0,1,0.0,7,13,0.54
+79,Cloud9,ascent,1,1,0,100.0,13,3,4.33
+79,Cloud9,pearl,1,1,0,100.0,13,9,1.44
+79,Cloud9,lotus,1,0,1,0.0,13,15,0.87
+1611,Leviatán Esports,lotus,1,0,1,0.0,10,13,0.77
+1611,Leviatán Esports,fracture,1,1,0,100.0,13,11,1.18
+337,100 Thieves,lotus,1,0,1,0.0,5,13,0.38
+3412,LOUD (1),ascent,1,1,0,100.0,13,7,1.86
+79,Cloud9,split,1,0,1,0.0,10,13,0.77
+1611,Leviatán Esports,haven,1,1,0,100.0,13,8,1.63
+97,NRG,,3,0,3,0.0,,,
+281,Evil Geniuses,lotus,1,1,0,100.0,13,11,1.18
+97,NRG,corrode,1,1,0,100.0,13,9,1.44
+337,100 Thieves,split,1,1,0,100.0,13,3,4.33
+337,100 Thieves,split,1,0,1,0.0,8,13,0.62
+99,FURIA,haven,1,0,1,0.0,8,13,0.62
+81,MIBR (1),abyss,1,0,1,0.0,5,13,0.38
+1611,Leviatán Esports,icebox,1,1,0,100.0,13,11,1.18
+337,100 Thieves,,3,2,1,66.7,,,
+96,G2 Esports,ascent,1,1,0,100.0,13,7,1.86
+96,G2 Esports,pearl,1,1,0,100.0,13,11,1.18
+3412,LOUD (1),icebox,1,0,1,0.0,6,13,0.46
+1079,Sentinels,,2,2,0,100.0,,,
+81,MIBR,split,1,1,0,100.0,13,8,1.63
+281,Evil Geniuses,split,1,0,1,0.0,12,14,0.86
+281,Evil Geniuses,pearl,1,0,1,0.0,10,13,0.77
+81,MIBR (1),,2,2,0,100.0,,,
+48457,KRÜ Esports,split,1,0,1,0.0,11,13,0.85
+96,G2 Esports,ascent,1,1,0,100.0,13,8,1.63
+337,100 Thieves,icebox,1,1,0,100.0,13,10,1.3
+1611,Leviatán Esports,lotus,1,0,1,0.0,10,13,0.77
+337,100 Thieves,fracture,1,1,0,100.0,13,5,2.6
+79,Cloud9,icebox,1,0,1,0.0,13,15,0.87
+48457,KRÜ Esports,lotus,1,0,1,0.0,12,14,0.86
+96,G2 Esports,haven,1,1,0,100.0,13,4,3.25
+1079,Sentinels,split,1,1,0,100.0,13,11,1.18
+281,Evil Geniuses,lotus,1,1,0,100.0,13,9,1.44
+337,100 Thieves,ascent,1,0,1,0.0,11,13,0.85
+81,MIBR (1),icebox,1,0,1,0.0,7,13,0.54
+79,Cloud9,,2,2,0,100.0,,,
+79,Cloud9,haven,1,1,0,100.0,13,5,2.6
+1611,Leviatán Esports,bind,1,1,0,100.0,13,10,1.3
+81,MIBR (1),haven,1,0,1,0.0,9,13,0.69
+81,MIBR,split,1,1,0,100.0,13,9,1.44
+96,G2 Esports,pearl,1,1,0,100.0,13,7,1.86
+1079,Sentinels,split,1,1,0,100.0,13,4,3.25
+1079,Sentinels,lotus,1,0,1,0.0,17,19,0.89
+79,Cloud9,fracture,1,0,1,0.0,9,13,0.69
+81,MIBR (1),lotus,1,1,0,100.0,13,8,1.63
+96,G2 Esports,split,1,1,0,100.0,13,10,1.3
+48457,KRÜ Esports,fracture,1,0,1,0.0,3,13,0.23
+281,Evil Geniuses,pearl,1,0,1,0.0,6,13,0.46
+79,Cloud9,fracture,1,1,0,100.0,13,5,2.6
+96,G2 Esports,ascent,1,1,0,100.0,13,6,2.17
+97,NRG,icebox,1,0,1,0.0,5,13,0.38
+81,MIBR (1),icebox,1,1,0,100.0,13,3,4.33
+96,G2 Esports,icebox,1,1,0,100.0,13,8,1.63
+337,100 Thieves,icebox,1,1,0,100.0,13,9,1.44
+3412,LOUD (1),haven,1,1,0,100.0,13,11,1.18
+96,G2 Esports,lotus,1,0,1,0.0,4,13,0.31
+99,FURIA,sunset,1,0,1,0.0,4,13,0.31
+337,100 Thieves,bind,1,1,0,100.0,13,5,2.6
+1611,Leviatán Esports,icebox,1,0,1,0.0,11,13,0.85
+337,100 Thieves,lotus,1,0,1,0.0,2,13,0.15
+81,MIBR,bind,1,1,0,100.0,14,12,1.17
+96,G2 Esports,,3,2,1,66.7,,,
+81,MIBR,,2,0,2,0.0,,,
+3412,LOUD (1),split,1,1,0,100.0,13,10,1.3
+337,100 Thieves,bind,1,0,1,0.0,9,13,0.69
+337,100 Thieves,icebox,1,1,0,100.0,13,4,3.25
+337,100 Thieves,split,1,1,0,100.0,13,11,1.18
+48457,KRÜ Esports,lotus,1,1,0,100.0,13,7,1.86
+1079,Sentinels,icebox,1,0,1,0.0,11,13,0.85
+1079,Sentinels,bind,1,1,0,100.0,13,7,1.86
+79,Cloud9,lotus,1,1,0,100.0,13,9,1.44
+1079,Sentinels,bind,1,0,1,0.0,11,13,0.85
+79,Cloud9,,2,2,0,100.0,,,
+1079,Sentinels,pearl,1,1,0,100.0,13,9,1.44
+1079,Sentinels,split,1,0,1,0.0,5,13,0.38
+96,G2 Esports,pearl,1,0,1,0.0,10,13,0.77
+281,Evil Geniuses,haven,1,0,1,0.0,4,13,0.31
+99,FURIA,ascent,1,0,1,0.0,4,13,0.31
+1079,Sentinels,ascent,1,0,1,0.0,10,13,0.77
+1079,Sentinels,,2,2,0,100.0,,,
+97,NRG,icebox,1,0,1,0.0,10,13,0.77
+79,Cloud9,lotus,1,0,1,0.0,10,13,0.77
+81,MIBR (1),corrode,1,1,0,100.0,13,9,1.44
+81,MIBR (1),sunset,1,0,1,0.0,3,14,0.21
+337,100 Thieves,haven,1,1,0,100.0,13,10,1.3
+96,G2 Esports,,3,1,2,33.3,,,
+1079,Sentinels,breeze,1,0,1,0.0,9,13,0.69
+97,NRG,,3,1,2,33.3,,,
+81,MIBR (1),bind,1,0,1,0.0,9,13,0.69
+1079,Sentinels,,3,2,1,66.7,,,
+79,Cloud9,ascent,1,0,1,0.0,13,15,0.87
+1611,Leviatán Esports,icebox,1,1,0,100.0,14,12,1.17
+96,G2 Esports,bind,1,0,1,0.0,9,13,0.69
+97,NRG,breeze,1,1,0,100.0,13,8,1.63
+97,NRG,sunset,1,0,1,0.0,4,13,0.31
+81,MIBR (1),icebox,1,1,0,100.0,13,5,2.6
+96,G2 Esports,split,1,0,1,0.0,12,14,0.86
+281,Evil Geniuses,split,1,0,1,0.0,7,13,0.54
+281,Evil Geniuses,pearl,1,0,1,0.0,11,13,0.85
+53367,2GAME eSports,,2,0,2,0.0,,,
+1079,Sentinels,,3,2,1,66.7,,,
+53367,2GAME eSports,,3,1,2,33.3,,,
+97,NRG,fracture,1,1,0,100.0,13,4,3.25
+96,G2 Esports,haven,1,1,0,100.0,13,11,1.18
+79,Cloud9,haven,1,0,1,0.0,11,13,0.85
+97,NRG,fracture,1,1,0,100.0,15,13,1.15
+1079,Sentinels,haven,1,0,1,0.0,7,13,0.54
+337,100 Thieves,lotus,1,0,1,0.0,11,13,0.85
+48457,KRÜ Esports,abyss,1,0,1,0.0,10,13,0.77
+1611,Leviatán Esports,bind,1,0,1,0.0,9,13,0.69
+281,Evil Geniuses,lotus,1,1,0,100.0,13,4,3.25
+3412,LOUD (1),icebox,1,0,1,0.0,10,13,0.77
+3412,LOUD (1),lotus,1,0,1,0.0,11,13,0.85
+281,Evil Geniuses,,3,1,2,33.3,,,
+96,G2 Esports,corrode,1,0,1,0.0,10,13,0.77
+96,G2 Esports,bind,1,1,0,100.0,13,7,1.86
+97,NRG,,2,2,0,100.0,,,
+53367,2GAME eSports,ascent,1,0,1,0.0,8,13,0.62
+96,G2 Esports,,2,2,0,100.0,,,
+1611,Leviatán Esports,haven,1,1,0,100.0,14,12,1.17
+3412,LOUD (1),haven,1,0,1,0.0,7,13,0.54
+81,MIBR (1),bind,1,0,1,0.0,10,13,0.77
+3412,LOUD (1),bind,1,0,1,0.0,7,13,0.54
+1079,Sentinels,split,1,0,1,0.0,11,13,0.85
+99,FURIA,split,1,0,1,0.0,6,13,0.46
+96,G2 Esports,abyss,1,1,0,100.0,13,7,1.86
+81,MIBR (1),split,1,0,1,0.0,7,13,0.54
+1079,Sentinels,pearl,1,0,1,0.0,8,13,0.62
+96,G2 Esports,icebox,1,1,0,100.0,13,5,2.6
+1611,Leviatán Esports,ascent,1,0,1,0.0,11,13,0.85
+96,G2 Esports,breeze,1,0,1,0.0,7,13,0.54
+48457,KRÜ Esports,sunset,1,1,0,100.0,13,8,1.63
+79,Cloud9,bind,1,0,1,0.0,11,13,0.85
+96,G2 Esports,icebox,1,1,0,100.0,13,8,1.63
+96,G2 Esports,,2,2,0,100.0,,,
+96,G2 Esports,pearl,1,1,0,100.0,16,14,1.14
+96,G2 Esports,lotus,1,1,0,100.0,15,13,1.15
+337,100 Thieves,,2,2,0,100.0,,,
+1079,Sentinels,pearl,1,1,0,100.0,13,5,2.6
+1611,Leviatán Esports,haven,1,0,1,0.0,7,13,0.54
+48457,KRÜ Esports,sunset,1,0,1,0.0,4,13,0.31
+337,100 Thieves,abyss,1,0,1,0.0,10,13,0.77
+1079,Sentinels,,2,2,0,100.0,,,
+96,G2 Esports,split,1,1,0,100.0,13,5,2.6
+97,NRG,ascent,1,1,0,100.0,13,3,4.33
+1611,Leviatán Esports,lotus,1,1,0,100.0,14,12,1.17
+79,Cloud9,,2,2,0,100.0,,,
+53367,2GAME eSports,,3,2,1,66.7,,,
+81,MIBR (1),lotus,1,0,1,0.0,8,13,0.62
+81,MIBR,lotus,1,0,1,0.0,10,13,0.77
+79,Cloud9,sunset,1,0,1,0.0,7,13,0.54
+337,100 Thieves,lotus,1,0,1,0.0,5,13,0.38
+1079,Sentinels,sunset,1,1,0,100.0,13,8,1.63
+79,Cloud9,abyss,1,0,1,0.0,8,13,0.62
+48457,KRÜ Esports,,3,2,1,66.7,,,
+1079,Sentinels,split,1,1,0,100.0,13,6,2.17
+79,Cloud9,split,1,1,0,100.0,13,4,3.25
+79,Cloud9,bind,1,0,1,0.0,7,13,0.54
+96,G2 Esports,lotus,1,0,1,0.0,9,13,0.69
+96,G2 Esports,icebox,1,0,1,0.0,4,13,0.31
+48457,KRÜ Esports,icebox,1,0,1,0.0,11,13,0.85
+1079,Sentinels,lotus,1,1,0,100.0,13,7,1.86
+96,G2 Esports,split,1,1,0,100.0,13,9,1.44
+1079,Sentinels,,3,2,1,66.7,,,
+79,Cloud9,lotus,1,0,1,0.0,6,13,0.46
+79,Cloud9,pearl,1,1,0,100.0,13,9,1.44
+97,NRG,pearl,1,1,0,100.0,13,2,6.5
+96,G2 Esports,icebox,1,1,0,100.0,13,5,2.6
+1611,Leviatán Esports,haven,1,1,0,100.0,16,14,1.14
+281,Evil Geniuses,bind,1,1,0,100.0,13,5,2.6
+1079,Sentinels,,2,2,0,100.0,,,
+79,Cloud9,icebox,1,0,1,0.0,7,13,0.54
+96,G2 Esports,haven,1,1,0,100.0,13,5,2.6
+99,FURIA,icebox,1,0,1,0.0,0,13,0.0
+81,MIBR (1),ascent,1,0,1,0.0,1,13,0.08
+337,100 Thieves,sunset,1,1,0,100.0,13,4,3.25
+48457,KRÜ Esports,sunset,1,1,0,100.0,13,6,2.17
+99,FURIA,breeze,1,0,1,0.0,10,13,0.77
+79,Cloud9,ascent,1,0,1,0.0,12,14,0.86
+337,100 Thieves,pearl,1,0,1,0.0,9,13,0.69
+99,FURIA,,2,0,2,0.0,,,
+81,MIBR (1),lotus,1,0,1,0.0,7,13,0.54
+81,MIBR (1),pearl,1,1,0,100.0,21,19,1.11
+337,100 Thieves,bind,1,1,0,100.0,13,3,4.33
+48457,KRÜ Esports,breeze,1,1,0,100.0,13,7,1.86
+79,Cloud9,lotus,1,0,1,0.0,9,13,0.69
+97,NRG,bind,1,0,1,0.0,4,13,0.31
+1079,Sentinels,,2,0,2,0.0,,,
+79,Cloud9,,3,2,1,66.7,,,
+48457,KRÜ Esports,,2,0,2,0.0,,,
+281,Evil Geniuses,pearl,1,1,0,100.0,14,12,1.17
+281,Evil Geniuses,split,1,1,0,100.0,13,11,1.18
+96,G2 Esports,ascent,1,1,0,100.0,13,8,1.63
+79,Cloud9,split,1,1,0,100.0,13,8,1.63
+99,FURIA,pearl,1,0,1,0.0,5,13,0.38
+97,NRG,haven,1,0,1,0.0,6,13,0.46
+48457,KRÜ Esports,ascent,1,0,1,0.0,10,13,0.77
+1611,Leviatán Esports,ascent,1,1,0,100.0,13,4,3.25
+3412,LOUD (1),lotus,1,0,1,0.0,11,13,0.85
+3412,LOUD (1),sunset,1,1,0,100.0,13,9,1.44
+1611,Leviatán Esports,lotus,1,0,1,0.0,11,13,0.85
+96,G2 Esports,sunset,1,1,0,100.0,13,11,1.18
+79,Cloud9,bind,1,1,0,100.0,13,4,3.25
+337,100 Thieves,sunset,1,0,1,0.0,10,13,0.77
+1079,Sentinels,haven,1,0,1,0.0,10,13,0.77
+1611,Leviatán Esports,breeze,1,0,1,0.0,7,13,0.54
+1079,Sentinels,sunset,1,0,1,0.0,10,13,0.77
+96,G2 Esports,haven,1,1,0,100.0,13,9,1.44
+1079,Sentinels,haven,1,1,0,100.0,13,4,3.25
+1611,Leviatán Esports,icebox,1,0,1,0.0,8,13,0.62
+48457,KRÜ Esports,lotus,1,0,1,0.0,11,13,0.85
+48457,KRÜ Esports,haven,1,1,0,100.0,13,6,2.17
+3412,LOUD (1),lotus,1,1,0,100.0,12,7,1.71
+3412,LOUD (1),sunset,1,0,1,0.0,6,13,0.46
+97,NRG,,3,2,1,66.7,,,
+1079,Sentinels,bind,1,0,1,0.0,5,13,0.38
+1611,Leviatán Esports,sunset,1,0,1,0.0,6,13,0.46
+337,100 Thieves,bind,1,1,0,100.0,13,10,1.3
+3412,LOUD (1),bind,1,1,0,100.0,13,9,1.44
+337,100 Thieves,bind,1,0,1,0.0,9,13,0.69
+337,100 Thieves,bind,1,1,0,100.0,13,6,2.17
+97,NRG,fracture,1,0,1,0.0,12,14,0.86
+337,100 Thieves,,3,1,2,33.3,,,
+48457,KRÜ Esports,bind,1,1,0,100.0,13,8,1.63
+79,Cloud9,ascent,1,1,0,100.0,18,16,1.13
+97,NRG,breeze,1,1,0,100.0,13,10,1.3
+48457,KRÜ Esports,icebox,1,0,1,0.0,11,13,0.85
+79,Cloud9,icebox,1,1,0,100.0,13,4,3.25
+48457,KRÜ Esports,breeze,1,1,0,100.0,13,9,1.44
+48457,KRÜ Esports,,2,2,0,100.0,,,
+97,NRG,,3,1,2,33.3,,,
+96,G2 Esports,pearl,1,0,1,0.0,12,14,0.86
+81,MIBR (1),ascent,1,0,1,0.0,9,13,0.69
+96,G2 Esports,bind,1,1,0,100.0,13,6,2.17
+281,Evil Geniuses,icebox,1,0,1,0.0,5,13,0.38
+281,Evil Geniuses,sunset,1,0,1,0.0,10,13,0.77
+3412,LOUD (1),,3,2,1,66.7,,,
+97,NRG,,2,0,2,0.0,,,
+79,Cloud9,icebox,1,1,0,100.0,13,9,1.44
+79,Cloud9,,3,1,2,33.3,,,
+281,Evil Geniuses,sunset,1,0,1,0.0,7,13,0.54
+97,NRG,haven,1,1,0,100.0,13,4,3.25
+81,MIBR (1),bind,1,1,0,100.0,14,12,1.17
+1611,Leviatán Esports,bind,1,0,1,0.0,6,13,0.46
+81,MIBR (1),icebox,1,1,0,100.0,13,11,1.18
+81,MIBR,breeze,1,1,0,100.0,13,11,1.18
+337,100 Thieves,icebox,1,0,1,0.0,11,13,0.85
+1611,Leviatán Esports,,3,1,2,33.3,,,
+48457,KRÜ Esports,,2,0,2,0.0,,,
+281,Evil Geniuses,,3,1,2,33.3,,,
+81,MIBR (1),lotus,1,0,1,0.0,4,13,0.31
+48457,KRÜ Esports,,2,2,0,100.0,,,
+1611,Leviatán Esports,sunset,1,1,0,100.0,13,8,1.63
+1611,Leviatán Esports,bind,1,1,0,100.0,14,12,1.17
+48457,KRÜ Esports,icebox,1,1,0,100.0,13,6,2.17
+97,NRG,split,1,1,0,100.0,13,9,1.44
+96,G2 Esports,breeze,1,0,1,0.0,6,13,0.46
+48457,KRÜ Esports,,3,2,1,66.7,,,
+48457,KRÜ Esports,haven,1,1,0,100.0,13,2,6.5
+48457,KRÜ Esports,split,1,1,0,100.0,13,10,1.3
+48457,KRÜ Esports,fracture,1,1,0,100.0,13,10,1.3
+97,NRG,lotus,1,0,1,0.0,10,13,0.77
+81,MIBR (1),split,1,1,0,100.0,13,8,1.63
+48457,KRÜ Esports,icebox,1,0,1,0.0,2,13,0.15
+48457,KRÜ Esports,haven,1,1,0,100.0,13,11,1.18
+81,MIBR (1),icebox,1,0,1,0.0,7,13,0.54
+1079,Sentinels,lotus,1,0,1,0.0,9,12,0.75
+96,G2 Esports,sunset,1,1,0,100.0,13,4,3.25
+96,G2 Esports,,2,2,0,100.0,,,
+1079,Sentinels,corrode,1,1,0,100.0,13,8,1.63
+96,G2 Esports,,3,2,1,66.7,,,
+99,FURIA,,2,0,2,0.0,,,
+81,MIBR (1),lotus,1,0,1,0.0,13,15,0.87
+97,NRG,breeze,1,1,0,100.0,13,10,1.3
+3412,LOUD,ascent,1,1,0,100.0,13,9,1.44
+3412,,,26,11,15,42.3,,,
+337,100 Thieves,lotus,2,2,0,100.0,27,16,1.69
+99,FURIA,haven,3,1,2,33.3,29,33,0.88
+96,G2 Esports,abyss,3,2,1,66.7,35,31,1.13
+3412,LOUD (1),sunset,2,0,2,0.0,12,26,0.46
+281,Evil Geniuses,split,1,0,1,0.0,4,13,0.31
+81,MIBR (1),breeze,1,0,1,0.0,3,13,0.23
+1079,Sentinels,ascent,1,0,1,0.0,10,13,0.77
+3412,LOUD (1),fracture,1,1,0,100.0,13,3,4.33
+79,Cloud9,fracture,1,1,0,100.0,14,12,1.17
+1611,Leviatán Esports,haven,3,1,2,33.3,34,34,1.0
+281,Evil Geniuses,icebox,4,3,1,75.0,44,48,0.92
+281,Evil Geniuses,bind,1,1,0,100.0,13,11,1.18
+53367,2GAME eSports,haven,1,0,1,0.0,4,13,0.31
+79,Cloud9,sunset,1,1,0,100.0,14,12,1.17
+3412,LOUD,split,1,1,0,100.0,13,11,1.18
+1079,Sentinels,split,4,2,2,50.0,39,41,0.95
+96,,,11,11,0,100.0,,,
+96,G2 Esports,breeze,2,2,0,100.0,26,16,1.63
+1079,Sentinels,pearl,5,3,2,60.0,65,59,1.1
+81,MIBR (1),abyss,1,1,0,100.0,13,8,1.63
+3412,LOUD (1),haven,2,0,2,0.0,6,26,0.23
+99,FURIA,fracture,1,0,1,0.0,4,13,0.31
+99,FURIA,sunset,1,1,0,100.0,13,10,1.3
+1079,Sentinels,bind,2,1,1,50.0,19,22,0.86
+53367,,,8,2,6,25.0,,,
+1611,Leviatán Esports,sunset,8,6,2,75.0,94,69,1.36
+79,Cloud9,haven,3,1,2,33.3,29,30,0.97
+1611,Leviatán Esports,fracture,1,0,1,0.0,13,15,0.87
+1079,Sentinels,icebox,2,1,1,50.0,22,13,1.69
+53367,2GAME eSports,sunset,1,1,0,100.0,13,7,1.86
+1079,Sentinels,lotus,3,3,0,100.0,39,22,1.77
+48457,KRÜ Esports,haven,5,2,3,40.0,51,55,0.93
+337,100 Thieves,ascent,2,2,0,100.0,26,16,1.63
+99,,,10,2,8,20.0,,,
+1611,Leviatán Esports,abyss,1,1,0,100.0,13,10,1.3
+48457,KRÜ Esports,split,3,1,2,33.3,28,36,0.78
+96,G2 Esports,bind,4,3,1,75.0,51,36,1.42
+96,G2 Esports,icebox,2,0,2,0.0,23,27,0.85
+337,100 Thieves,sunset,3,1,2,33.3,19,34,0.56
+3412,LOUD (1),lotus,2,1,1,50.0,22,24,0.92
+337,100 Thieves,fracture,1,0,1,0.0,10,13,0.77
+48457,,,13,6,7,46.2,,,
+1079,Sentinels,abyss,2,1,1,50.0,20,18,1.11
+81,MIBR (1),split,5,2,3,40.0,56,57,0.98
+96,G2 Esports,ascent,7,4,3,57.1,74,77,0.96
+1611,Leviatán Esports,lotus,5,5,0,100.0,71,47,1.51
+281,Evil Geniuses,breeze,1,0,1,0.0,9,13,0.69
+97,NRG,pearl,1,0,1,0.0,9,13,0.69
+81,MIBR (1),pearl,2,1,1,50.0,23,25,0.92
+79,Cloud9,corrode,1,1,0,100.0,13,10,1.3
+53367,2GAME eSports,lotus,1,0,1,0.0,11,13,0.85
+1079,,,14,7,7,50.0,,,
+48457,KRÜ Esports,sunset,2,1,1,50.0,21,19,1.11
+281,Evil Geniuses,lotus,6,2,4,33.3,57,72,0.79
+337,100 Thieves,split,5,3,2,60.0,56,52,1.08
+1611,Leviatán Esports,breeze,1,1,0,100.0,13,6,2.17
+337,100 Thieves,pearl,1,0,1,0.0,14,16,0.88
+79,Cloud9,abyss,1,0,1,0.0,11,13,0.85
+79,,,9,1,8,11.1,,,
+1079,Sentinels,corrode,1,1,0,100.0,13,10,1.3
+99,FURIA,split,3,0,3,0.0,19,39,0.49
+1611,Leviatán Esports,bind,4,2,2,50.0,35,39,0.9
+1611,Leviatán Esports,icebox,12,8,4,66.7,138,104,1.33
+99,FURIA,pearl,1,0,1,0.0,2,13,0.15
+1079,Sentinels,sunset,1,1,0,100.0,13,4,3.25
+3412,LOUD (1),ascent,1,1,0,100.0,13,10,1.3
+48457,KRÜ Esports,corrode,2,0,2,0.0,13,26,0.5
+97,NRG,sunset,4,1,3,25.0,34,46,0.74
+81,,,12,6,6,50.0,,,
+96,G2 Esports,haven,4,3,1,75.0,53,38,1.39
+3412,LOUD (1),breeze,1,0,1,0.0,10,13,0.77
+81,MIBR (1),sunset,2,0,2,0.0,17,26,0.65
+97,NRG,fracture,2,0,2,0.0,10,26,0.38
+97,NRG,ascent,3,2,1,66.7,33,33,1.0
+79,Cloud9,lotus,5,5,0,100.0,68,56,1.21
+96,G2 Esports,split,5,3,2,60.0,54,47,1.15
+96,G2 Esports,pearl,2,2,0,100.0,26,19,1.37
+48457,KRÜ Esports,icebox,5,1,4,20.0,43,59,0.73
+81,MIBR (1),ascent,3,0,3,0.0,23,39,0.59
+48457,KRÜ Esports,bind,3,1,2,33.3,27,32,0.84
+79,Cloud9,ascent,3,0,3,0.0,21,39,0.54
+1611,Leviatán Esports,split,3,1,2,33.3,24,32,0.75
+281,,,26,13,13,50.0,,,
+337,100 Thieves,breeze,1,1,0,100.0,13,7,1.86
+99,FURIA,icebox,5,3,2,60.0,45,54,0.83
+81,MIBR (1),lotus,5,2,3,40.0,51,65,0.78
+53367,2GAME eSports,pearl,1,0,1,0.0,5,13,0.38
+97,NRG,lotus,5,4,1,80.0,55,46,1.2
+1611,Leviatán Esports,pearl,1,1,0,100.0,13,5,2.6
+99,FURIA,bind,3,1,2,33.3,22,35,0.63
+96,G2 Esports,corrode,1,0,1,0.0,8,13,0.62
+79,Cloud9,bind,2,1,1,50.0,25,25,1.0
+3412,LOUD (1),split,3,1,2,33.3,35,38,0.92
+3412,LOUD (1),pearl,2,1,1,50.0,25,24,1.04
+48457,KRÜ Esports,lotus,5,3,2,60.0,59,48,1.23
+281,Evil Geniuses,sunset,3,2,1,66.7,34,29,1.17
+281,Evil Geniuses,fracture,1,1,0,100.0,13,9,1.44
+1079,Sentinels,haven,2,1,1,50.0,22,17,1.29
+99,FURIA,ascent,2,1,1,50.0,20,22,0.91
+79,Cloud9,icebox,2,1,1,50.0,18,23,0.78
+79,Cloud9,split,1,0,1,0.0,8,13,0.62
+96,G2 Esports,lotus,9,6,3,66.7,111,88,1.26
+97,,,11,5,6,45.5,,,
+3412,LOUD (1),bind,4,2,2,50.0,42,48,0.88
+3412,LOUD (1),icebox,5,2,3,40.0,45,54,0.83
+1611,Leviatán Esports,ascent,5,3,2,60.0,58,54,1.07
+79,Cloud9,pearl,3,1,2,33.3,33,27,1.22
+97,NRG,corrode,1,1,0,100.0,13,10,1.3
+53367,2GAME eSports,ascent,1,0,1,0.0,9,13,0.69
+1611,,,11,4,7,36.4,,,
+99,FURIA,lotus,6,2,4,33.3,50,67,0.75
+81,MIBR (1),bind,2,0,2,0.0,15,26,0.58
+48457,KRÜ Esports,ascent,6,3,3,50.0,65,58,1.12
+81,MIBR (1),icebox,3,2,1,66.7,32,26,1.23
+337,100 Thieves,haven,5,1,4,20.0,40,62,0.65
+97,NRG,bind,3,1,2,33.3,30,36,0.83
+3412,LOUD (1),corrode,1,0,1,0.0,9,13,0.69
+97,NRG,icebox,1,1,0,100.0,13,11,1.18
+99,FURIA,breeze,3,0,3,0.0,26,39,0.67
+96,G2 Esports,sunset,1,0,1,0.0,8,13,0.62
+337,100 Thieves,bind,7,5,2,71.4,87,68,1.28
+96,G2 Esports,fracture,2,1,1,50.0,24,18,1.33
+337,100 Thieves,icebox,6,1,5,16.7,58,71,0.82
+337,,,16,7,9,43.8,,,
+97,NRG,haven,3,1,2,33.3,36,32,1.13
+81,MIBR (1),haven,4,3,1,75.0,50,40,1.25

@@ -13,7 +13,13 @@ import os
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from dynamic_scouting_engine import DynamicScoutingEngine
+# Use PostgreSQL engine if DATABASE_URL is set, otherwise fall back to DuckDB
+database_url = os.getenv("DATABASE_URL")
+if database_url:
+    from dynamic_scouting_engine_postgres import DynamicScoutingEngine
+else:
+    from dynamic_scouting_engine import DynamicScoutingEngine
+
 from report_generator import ReportGenerator
 from dotenv import load_dotenv
 

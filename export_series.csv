@@ -1,0 +1,197 @@
+series_id,tournament_id,tournament_name,stage,start_time_scheduled,started_at,updated_at,finished,best_of,team1_id,team1_name,team2_id,team2_name,winner_team_id,loser_team_id,team1_score,team2_score,has_depth4_data,depth_level
+2629390,757073,VCT Americas - Kickoff 2024 (Groups: Group A),Groups: Group A,2024-02-17 03:00:00,2024-02-17 02:51:12.276,2024-02-17 05:31:51.042,true,2,99,FURIA,97,NRG,97,99,0,2,true,4
+2629391,757073,VCT Americas - Kickoff 2024 (Groups: Group A),Groups: Group A,2024-02-17 06:00:00,2024-02-17 05:56:43.941,2024-02-17 09:09:32.64,true,3,81,MIBR,79,Cloud9,79,81,1,2,true,4
+2629395,757073,VCT Americas - Kickoff 2024 (Groups: Group A),Groups: Group A,2024-02-20 03:00:00,2024-02-20 02:53:27.172,2024-02-20 05:16:43.884,true,2,81,MIBR,99,FURIA,81,99,2,0,true,4
+2629398,757073,VCT Americas - Kickoff 2024 (Groups: Group A),Groups: Group A,2024-02-24 03:00:00,2024-02-24 02:51:04.326,2024-02-24 05:01:31.342,true,2,79,Cloud9,97,NRG,97,79,0,2,true,4
+2629401,757073,VCT Americas - Kickoff 2024 (Groups: Group A),Groups: Group A,2024-02-26 01:00:00,2024-02-26 00:52:05.365,2024-02-26 03:15:45.777,true,2,81,MIBR,79,Cloud9,81,79,2,0,true,4
+2629392,757628,VCT Americas - Kickoff 2024 (Groups: Group B),Groups: Group B,2024-02-18 03:00:00,2024-02-18 02:53:57.156,2024-02-18 05:10:20.046,true,2,1079,Sentinels,3412,LOUD,3412,1079,0,2,true,4
+2629393,757628,VCT Americas - Kickoff 2024 (Groups: Group B),Groups: Group B,2024-02-18 06:00:00,2024-02-18 05:42:11.266,2024-02-18 08:42:23.938,true,3,337,100 Thieves,1611,Leviatán Esports,1611,337,1,2,true,4
+2629396,757628,VCT Americas - Kickoff 2024 (Groups: Group B),Groups: Group B,2024-02-20 06:00:00,2024-02-20 05:44:13.136,2024-02-20 08:22:18.096,true,3,337,100 Thieves,1079,Sentinels,1079,337,1,2,true,4
+2629399,757628,VCT Americas - Kickoff 2024 (Groups: Group B),Groups: Group B,2024-02-24 06:00:00,,,true,3,1611,Leviatán Esports,3412,LOUD,3412,1611,1,2,false,2
+2629402,757628,VCT Americas - Kickoff 2024 (Groups: Group B),Groups: Group B,2024-02-26 04:00:00,,,true,3,1079,Sentinels,1611,Leviatán Esports,1079,1611,2,1,false,2
+2629394,757629,VCT Americas - Kickoff 2024 (Groups: Group C),Groups: Group C,2024-02-19 03:00:00,,,true,3,96,G2 Esports,48457,KRÜ Esports,96,48457,2,1,false,2
+2629400,757629,VCT Americas - Kickoff 2024 (Groups: Group C),Groups: Group C,2024-02-25 03:00:00,,,true,2,96,G2 Esports,281,Evil Geniuses,281,96,0,2,false,2
+2629403,757629,VCT Americas - Kickoff 2024 (Groups: Group C),Groups: Group C,2024-02-26 07:00:00,,,true,2,48457,KRÜ Esports,96,G2 Esports,96,48457,0,2,false,2
+2637961,757101,VCT Americas - Kickoff 2024 (Play-Ins: Play In Groups),Play-Ins: Play In Groups,2024-02-27 01:00:00,,,true,2,81,MIBR,1079,Sentinels,1079,81,0,2,false,2
+2637962,757101,VCT Americas - Kickoff 2024 (Play-Ins: Play In Groups),Play-Ins: Play In Groups,2024-02-27 04:00:00,,,true,3,96,G2 Esports,81,MIBR,81,96,1,2,false,2
+2637963,757101,VCT Americas - Kickoff 2024 (Play-Ins: Play In Groups),Play-Ins: Play In Groups,2024-02-27 07:00:00,2024-02-27 06:53:25.95,2024-02-27 09:47:56.274,true,3,1079,Sentinels,96,G2 Esports,96,1079,1,2,true,4
+2629405,757074,VCT Americas - Kickoff 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-03-03 03:00:00,,,true,3,281,Evil Geniuses,3412,LOUD,3412,281,1,2,false,2
+2629406,757074,VCT Americas - Kickoff 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-03-03 06:00:00,,,true,3,97,NRG,1079,Sentinels,1079,97,1,2,false,2
+2629407,757074,VCT Americas - Kickoff 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-03-04 03:00:00,,,true,5,1079,Sentinels,3412,LOUD,1079,3412,3,2,false,2
+2748743,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-17 03:00:00,2025-01-17 02:56:54.537,2025-01-17 05:15:22.717,true,2,281,Evil Geniuses,3412,LOUD (1),3412,281,0,2,true,4
+2748744,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-17 06:00:00,2025-01-17 05:37:51.888,2025-01-17 07:43:13.811,true,2,81,MIBR (1),337,100 Thieves,337,81,0,2,true,4
+2748745,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-18 03:00:00,2025-01-18 02:55:36.134,2025-01-18 04:38:52.64,true,2,53367,2GAME eSports,99,FURIA,99,53367,0,2,true,4
+2748746,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-18 06:00:00,2025-01-18 05:01:25.095,2025-01-18 07:20:49.32,true,2,97,NRG,79,Cloud9,79,97,0,2,true,4
+2748747,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-19 03:00:00,2025-01-19 02:53:00.817,2025-01-19 04:53:30.252,true,2,3412,LOUD (1),48457,KRÜ Esports,3412,48457,2,0,true,4
+2748748,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-19 06:00:00,2025-01-19 05:13:53.877,2025-01-19 08:07:26.633,true,3,337,100 Thieves,1079,Sentinels,1079,337,1,2,true,4
+2748749,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-20 03:00:00,2025-01-20 02:58:06.316,2025-01-20 04:53:31.4,true,2,99,FURIA,1611,Leviatán Esports,1611,99,0,2,true,4
+2748750,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-20 06:00:00,2025-01-20 05:25:55.535,2025-01-20 07:11:43.383,true,2,79,Cloud9,96,G2 Esports,96,79,0,2,true,4
+2748753,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-24 03:00:00,,,true,2,99,FURIA,281,Evil Geniuses,281,99,0,2,false,2
+2748754,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-24 06:00:00,,,true,3,79,Cloud9,81,MIBR (1),81,79,1,2,false,2
+2748755,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-25 06:00:00,,,true,3,337,100 Thieves,97,NRG,97,337,1,2,false,2
+2748756,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-01-25 03:00:00,,,true,2,48457,KRÜ Esports,53367,2GAME eSports,48457,53367,2,0,false,2
+2748757,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-02-01 03:00:00,,,true,3,1079,Sentinels,3412,LOUD (1),1079,3412,2,1,false,2
+2748758,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-02-01 06:00:00,,,true,2,1611,Leviatán Esports,96,G2 Esports,96,1611,0,2,false,2
+2748759,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-02-02 03:00:00,,,true,2,81,MIBR (1),281,Evil Geniuses,81,281,2,0,false,2
+2748760,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-02-02 06:00:00,,,true,3,48457,KRÜ Esports,97,NRG,48457,97,2,1,false,2
+2748761,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-02-03 03:00:00,,,true,3,81,MIBR (1),1611,Leviatán Esports,81,1611,2,1,false,2
+2748762,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-02-03 06:00:00,,,true,2,48457,KRÜ Esports,3412,LOUD (1),48457,3412,2,0,false,2
+2748763,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-02-07 03:00:00,2025-02-07 02:53:02.111,2025-02-07 04:52:42.794,true,2,96,G2 Esports,1079,Sentinels,96,1079,2,0,true,4
+2748764,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-02-07 06:00:00,2025-02-07 05:21:31.485,2025-02-07 08:25:41.443,true,3,48457,KRÜ Esports,81,MIBR (1),81,48457,1,2,true,4
+2748765,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-02-08 03:00:00,2025-02-08 02:53:48.885,2025-02-08 07:25:40.832,true,4,81,MIBR (1),1079,Sentinels,1079,81,1,3,true,4
+2748766,775518,VCT Americas - Kickoff 2025 (Knockouts: Knockouts),Knockouts: Knockouts,2025-02-09 03:00:00,2025-02-09 02:52:57.415,2025-02-09 07:24:38.129,true,5,1079,Sentinels,96,G2 Esports,96,1079,2,3,true,4
+2654000,757321,VCT Americas - Stage 1 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-05-09 02:00:00,2024-05-09 01:49:52.759,2024-05-09 04:01:43.798,true,2,79,Cloud9,96,G2 Esports,96,79,0,2,true,4
+2654001,757321,VCT Americas - Stage 1 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-05-09 05:00:00,2024-05-09 04:18:17.906,2024-05-09 05:55:53.914,true,2,337,100 Thieves,3412,LOUD (1),337,3412,2,0,true,4
+2654002,757321,VCT Americas - Stage 1 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-05-10 02:00:00,2024-05-10 01:50:35.479,2024-05-10 03:37:24.7,true,2,96,G2 Esports,48457,KRÜ Esports,96,48457,2,0,true,4
+2654003,757321,VCT Americas - Stage 1 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-05-10 05:00:00,2024-05-10 03:56:48.048,2024-05-10 06:48:54.682,true,3,337,100 Thieves,1611,Leviatán Esports,337,1611,2,1,true,4
+2654004,757321,VCT Americas - Stage 1 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-05-11 02:00:00,2024-05-11 01:49:52.394,2024-05-11 04:36:14.117,true,3,337,100 Thieves,96,G2 Esports,337,96,2,1,true,4
+2654005,757321,VCT Americas - Stage 1 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-05-11 05:00:00,2024-05-11 05:00:19.092,2024-05-11 07:55:41.747,true,3,1611,Leviatán Esports,48457,KRÜ Esports,1611,48457,2,1,true,4
+2654012,757321,VCT Americas - Stage 1 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-05-12 02:00:00,2024-05-12 01:50:35.977,2024-05-12 07:51:00.066,true,5,1611,Leviatán Esports,96,G2 Esports,96,1611,2,3,true,4
+2654052,757321,VCT Americas - Stage 1 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-05-13 02:00:00,2024-05-13 01:49:39.286,2024-05-13 04:44:28.234,true,3,96,G2 Esports,337,100 Thieves,337,96,0,3,true,4
+2653969,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-07 02:00:00,2024-04-07 01:50:09.404,2024-04-07 05:34:51.196,true,3,79,Cloud9,1611,Leviatán Esports,79,1611,2,1,true,4
+2653970,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-07 05:00:00,2024-04-07 05:56:50.287,2024-04-07 07:42:16.047,true,2,97,NRG,3412,LOUD (1),97,3412,2,0,true,4
+2653972,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-08 02:00:00,2024-04-08 01:50:23.848,2024-04-08 03:43:35.873,true,2,96,G2 Esports,281,Evil Geniuses,96,281,2,0,true,4
+2653973,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-08 05:00:00,2024-04-08 04:02:57.53,2024-04-08 05:54:16.056,true,2,1079,Sentinels,337,100 Thieves,1079,337,2,0,true,4
+2653974,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-09 02:00:00,2024-04-09 01:50:29.32,2024-04-09 04:59:49.203,true,3,48457,KRÜ Esports,99,FURIA,48457,99,2,1,true,4
+2653975,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-14 02:00:00,2024-04-14 01:50:31.296,2024-04-14 03:59:48.375,true,2,96,G2 Esports,337,100 Thieves,337,96,0,2,true,4
+2653976,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-14 05:00:00,2024-04-14 04:26:39.486,2024-04-14 07:08:45.335,true,2,1079,Sentinels,1611,Leviatán Esports,1611,1079,0,2,true,4
+2653977,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-15 02:00:00,2024-04-15 01:52:35.465,2024-04-15 03:52:11.071,true,2,48457,KRÜ Esports,81,MIBR (1),48457,81,2,0,true,4
+2653978,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-15 05:00:00,2024-04-15 04:13:50.089,2024-04-15 05:52:24.329,true,2,97,NRG,99,FURIA,97,99,2,0,true,4
+2653979,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-16 02:00:00,2024-04-16 01:50:11.399,2024-04-16 04:44:33.91,true,3,79,Cloud9,281,Evil Geniuses,79,281,2,1,true,4
+2653980,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-21 02:00:00,2024-04-21 01:50:10.084,2024-04-21 04:01:31.596,true,2,1079,Sentinels,81,MIBR (1),1079,81,2,0,true,4
+2653981,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-21 05:00:00,2024-04-21 04:22:43.341,2024-04-21 07:22:54.733,true,3,79,Cloud9,3412,LOUD (1),79,3412,2,1,true,4
+2653982,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-22 02:00:00,2024-04-22 01:50:15.497,2024-04-22 03:47:20.595,true,2,48457,KRÜ Esports,281,Evil Geniuses,48457,281,2,0,true,4
+2653983,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-22 05:00:00,2024-04-22 04:06:59.237,2024-04-22 05:40:51.917,true,2,97,NRG,1611,Leviatán Esports,1611,97,0,2,true,4
+2653984,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-23 02:00:00,2024-04-23 01:49:54.725,2024-04-23 03:33:02.44,true,2,96,G2 Esports,99,FURIA,96,99,2,0,true,4
+2653985,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-23 05:00:00,2024-04-23 03:55:07.155,2024-04-23 05:41:00.455,true,2,79,Cloud9,337,100 Thieves,337,79,0,2,true,4
+2653986,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-24 02:00:00,2024-04-24 01:50:23.231,2024-04-24 05:10:49.013,true,3,1079,Sentinels,281,Evil Geniuses,281,1079,1,2,true,4
+2653987,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-24 05:00:00,2024-04-24 05:30:42.761,2024-04-24 07:30:46.772,true,2,97,NRG,81,MIBR (1),97,81,2,0,true,4
+2653988,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-25 02:00:00,2024-04-25 01:50:50.362,2024-04-25 04:46:10.966,true,3,96,G2 Esports,1611,Leviatán Esports,1611,96,1,2,true,4
+2653989,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-25 05:00:00,,,true,2,48457,KRÜ Esports,3412,LOUD (1),48457,3412,2,0,false,2
+2653990,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-28 02:00:00,,,true,2,96,G2 Esports,81,MIBR (1),96,81,2,0,false,2
+2653991,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-28 05:00:00,,,true,2,1079,Sentinels,3412,LOUD (1),3412,1079,0,2,false,2
+2653992,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-29 02:00:00,,,true,3,79,Cloud9,99,FURIA,79,99,2,1,false,2
+2653993,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-29 05:00:00,,,true,3,97,NRG,281,Evil Geniuses,281,97,1,2,false,2
+2653994,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-04-30 02:00:00,,,true,3,48457,KRÜ Esports,337,100 Thieves,48457,337,2,1,false,2
+2653995,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-05-04 05:00:00,,,true,2,1079,Sentinels,99,FURIA,1079,99,2,0,false,2
+2653996,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-05-05 02:00:00,,,true,2,97,NRG,337,100 Thieves,337,97,0,2,false,2
+2653997,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-05-05 05:00:00,,,true,3,48457,KRÜ Esports,1611,Leviatán Esports,1611,48457,1,2,false,2
+2653998,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-05-06 02:00:00,,,true,2,79,Cloud9,81,MIBR (1),79,81,2,0,false,2
+2653999,758114,VCT Americas - Stage 1 2024 (Regular Season: Alpha Group),Regular Season: Alpha Group,2024-05-06 05:00:00,2024-05-06 04:22:38.538,2024-05-06 06:14:26.636,true,2,96,G2 Esports,3412,LOUD (1),3412,96,0,2,true,4
+2775983,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-04-25 02:00:00,2025-04-25 01:54:03.892,2025-04-25 03:48:39.773,true,2,81,MIBR (1),337,100 Thieves,81,337,2,0,true,4
+2775984,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-04-25 05:00:00,2025-04-25 04:05:25.633,2025-04-25 06:42:20.359,true,2,1079,Sentinels,79,Cloud9,1079,79,2,0,true,4
+2775985,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-04-26 02:00:00,2025-04-26 01:52:58.964,2025-04-26 03:50:13.68,true,2,337,100 Thieves,97,NRG,337,97,2,0,true,4
+2775986,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-04-26 05:00:00,2025-04-26 04:06:29.608,2025-04-26 06:19:41.17,true,2,79,Cloud9,281,Evil Geniuses,281,79,0,2,true,4
+2775987,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-04-27 02:00:00,2025-04-27 01:53:38.687,2025-04-27 03:39:36.463,true,2,81,MIBR (1),48457,KRÜ Esports,81,48457,2,0,true,4
+2775988,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-04-27 05:00:00,2025-04-27 03:58:46.46,2025-04-27 07:03:43.355,true,3,1079,Sentinels,96,G2 Esports,1079,96,2,1,true,4
+2775989,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-04-28 02:00:00,2025-04-28 01:54:02.203,2025-04-28 04:17:40.319,true,2,48457,KRÜ Esports,281,Evil Geniuses,281,48457,0,2,true,4
+2775990,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-04-28 05:00:00,2025-04-28 04:35:43.338,2025-04-28 07:56:40.219,true,3,96,G2 Esports,337,100 Thieves,96,337,2,1,true,4
+2775991,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-05-03 02:00:00,2025-05-03 01:53:14.939,2025-05-03 04:26:27.371,true,2,1079,Sentinels,81,MIBR (1),1079,81,2,0,true,4
+2775992,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-05-03 05:00:00,2025-05-03 04:43:03.091,2025-05-03 07:48:32.894,true,3,281,Evil Geniuses,96,G2 Esports,96,281,1,2,true,4
+2775993,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-05-04 02:00:00,2025-05-04 01:54:49.718,2025-05-04 06:16:00.232,true,4,96,G2 Esports,81,MIBR (1),96,81,3,1,true,4
+2775994,800680,VCT Americas - Stage 1 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-05-05 02:00:00,2025-05-05 01:53:05.611,2025-05-05 06:13:10.028,true,4,96,G2 Esports,1079,Sentinels,96,1079,3,1,true,4
+2775954,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-03-22 05:00:00,2025-03-22 05:25:21.614,2025-03-22 08:05:46.129,true,3,48457,KRÜ Esports,3412,LOUD (1),48457,3412,2,1,true,4
+2775957,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-03-24 02:00:00,,,true,2,53367,2GAME eSports,281,Evil Geniuses,281,53367,0,2,false,2
+2775958,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-03-24 05:00:00,,,true,3,1079,Sentinels,337,100 Thieves,1079,337,2,1,false,2
+2775960,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-03-29 05:00:00,,,true,2,1079,Sentinels,48457,KRÜ Esports,48457,1079,0,2,false,2
+2775961,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-03-30 02:00:00,,,true,2,337,100 Thieves,281,Evil Geniuses,337,281,2,0,false,2
+2775963,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-03-31 02:00:00,,,true,2,3412,LOUD (1),53367,2GAME eSports,53367,3412,0,2,false,2
+2775966,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-04-05 05:00:00,,,true,3,337,100 Thieves,3412,LOUD (1),337,3412,2,1,false,2
+2775967,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-04-06 02:00:00,,,true,3,53367,2GAME eSports,48457,KRÜ Esports,48457,53367,1,2,false,2
+2775971,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-04-12 02:00:00,,,true,2,337,100 Thieves,53367,2GAME eSports,337,53367,2,0,false,2
+2775974,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-04-13 05:00:00,,,true,3,1079,Sentinels,3412,LOUD (1),1079,3412,2,1,false,2
+2775975,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-04-14 02:00:00,,,true,2,48457,KRÜ Esports,281,Evil Geniuses,281,48457,0,2,false,2
+2775979,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-04-20 02:00:00,2025-04-20 01:59:14.619,2025-04-20 03:49:42.091,true,2,1079,Sentinels,53367,2GAME eSports,1079,53367,2,0,true,4
+2775980,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-04-20 05:00:00,2025-04-20 04:23:34.617,2025-04-20 06:13:26.018,true,2,48457,KRÜ Esports,337,100 Thieves,48457,337,2,0,true,4
+2775981,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-04-21 02:00:00,2025-04-21 01:58:25.701,2025-04-21 05:34:58.929,true,3,281,Evil Geniuses,3412,LOUD (1),281,3412,2,1,true,4
+2789396,800678,VCT Americas - Stage 1 2025 (Regular Season: Group A),Regular Season: Group A,2025-04-05 02:20:00,2025-04-05 01:54:07.148,2025-04-08 02:03:00.863,true,2,281,Evil Geniuses,1079,Sentinels,1079,281,0,2,true,4
+2775953,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-03-22 02:00:00,2025-03-22 02:00:13.201,2025-03-22 05:00:27.126,true,3,79,Cloud9,97,NRG,79,97,2,1,true,4
+2775955,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-03-23 02:00:00,2025-03-23 01:54:25.111,2025-03-23 03:57:54.214,true,2,96,G2 Esports,99,FURIA,96,99,2,0,true,4
+2775956,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-03-23 05:00:00,2025-03-23 04:27:31.353,2025-03-23 06:20:06.854,true,2,1611,Leviatán Esports,81,MIBR (1),81,1611,0,2,true,4
+2775959,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-03-29 02:00:00,2025-03-29 01:52:58.755,2025-03-29 04:32:06.717,true,3,97,NRG,99,FURIA,97,99,2,1,true,4
+2775962,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-03-30 05:00:00,2025-03-30 04:08:47.905,2025-03-30 07:33:27.764,true,3,96,G2 Esports,81,MIBR (1),96,81,2,1,true,4
+2775964,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-03-31 05:00:00,2025-03-31 04:41:21.564,2025-03-31 06:28:05.598,true,2,79,Cloud9,1611,Leviatán Esports,79,1611,2,0,true,4
+2775968,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-04-06 05:00:00,2025-04-06 05:05:36.499,2025-04-06 06:40:04.645,true,2,96,G2 Esports,97,NRG,96,97,2,0,true,4
+2775969,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-04-07 02:00:00,2025-04-07 01:56:45.361,2025-04-07 03:38:40.759,true,2,99,FURIA,1611,Leviatán Esports,1611,99,0,2,true,4
+2775970,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-04-07 05:00:00,2025-04-07 04:12:01.431,2025-04-07 07:29:33.824,true,3,79,Cloud9,81,MIBR (1),81,79,1,2,true,4
+2775972,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-04-12 05:00:00,2025-04-12 04:18:21.343,2025-04-12 07:20:35.445,true,3,1611,Leviatán Esports,96,G2 Esports,96,1611,1,2,true,4
+2775973,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-04-13 02:00:00,2025-04-13 01:54:40.624,2025-04-13 03:56:57.849,true,2,99,FURIA,79,Cloud9,79,99,0,2,true,4
+2775976,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-04-14 05:00:00,2025-04-14 04:03:17.83,2025-04-14 05:44:34.615,true,2,97,NRG,81,MIBR (1),81,97,0,2,true,4
+2775977,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-04-19 02:00:00,2025-04-19 01:57:40.114,2025-04-19 04:35:23.565,true,3,96,G2 Esports,79,Cloud9,96,79,2,1,true,4
+2775978,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-04-19 05:00:00,2025-04-19 04:54:29.105,2025-04-19 07:34:09.76,true,3,81,MIBR (1),99,FURIA,81,99,2,1,true,4
+2775982,800677,VCT Americas - Stage 1 2025 (Regular Season: Group B),Regular Season: Group B,2025-04-21 06:15:00,2025-04-21 06:23:40.475,2025-04-21 08:19:25.12,true,2,97,NRG,1611,Leviatán Esports,97,1611,2,0,true,4
+2681840,774787,VCT Americas - Stage 2 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-07-18 02:00:00,2024-07-18 01:53:59.361,2024-07-18 05:01:02.67,true,3,48457,KRÜ Esports,79,Cloud9,48457,79,2,1,true,4
+2681841,774787,VCT Americas - Stage 2 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-07-18 05:00:00,2024-07-18 05:18:20.762,2024-07-18 07:18:57.044,true,2,1079,Sentinels,337,100 Thieves,337,1079,0,2,true,4
+2681842,774787,VCT Americas - Stage 2 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-07-19 02:00:00,2024-07-19 01:53:49.186,2024-07-19 03:25:53.228,true,2,48457,KRÜ Esports,1611,Leviatán Esports,1611,48457,0,2,true,4
+2681843,774787,VCT Americas - Stage 2 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-07-19 05:00:00,2024-07-19 03:41:48.315,2024-07-19 05:42:26.732,true,2,337,100 Thieves,96,G2 Esports,96,337,0,2,true,4
+2681844,774787,VCT Americas - Stage 2 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-07-20 02:00:00,2024-07-20 01:51:50.758,2024-07-20 03:43:53.667,true,2,96,G2 Esports,1611,Leviatán Esports,96,1611,2,0,true,4
+2681845,774787,VCT Americas - Stage 2 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-07-20 05:00:00,2024-07-20 04:04:08.561,2024-07-20 07:28:37.804,true,3,337,100 Thieves,48457,KRÜ Esports,48457,337,1,2,true,4
+2681846,774787,VCT Americas - Stage 2 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-07-21 02:00:00,2024-07-21 01:53:15.95,2024-07-21 06:51:03.633,true,5,48457,KRÜ Esports,1611,Leviatán Esports,1611,48457,2,3,true,4
+2681847,774787,VCT Americas - Stage 2 2024 (Playoffs: Playoffs),Playoffs: Playoffs,2024-07-22 02:00:00,2024-07-22 01:52:01.698,2024-07-22 06:16:47.01,true,4,1611,Leviatán Esports,96,G2 Esports,1611,96,3,1,true,4
+2681809,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-06-23 02:00:00,2024-06-23 01:49:25.148,2024-06-23 03:50:41.41,true,2,81,MIBR (1),1611,Leviatán Esports,1611,81,0,2,true,4
+2681811,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-06-24 02:00:00,2024-06-24 01:52:07.095,2024-06-24 04:18:03.789,true,2,99,FURIA,337,100 Thieves,99,337,2,0,true,4
+2681812,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-06-24 05:00:00,2024-06-24 04:40:03.271,2024-06-24 07:25:10.494,true,3,3412,LOUD (1),281,Evil Geniuses,281,3412,1,2,true,4
+2681817,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-06-30 02:00:00,2024-06-30 01:53:39.825,2024-06-30 03:38:18.022,true,2,281,Evil Geniuses,99,FURIA,281,99,2,0,true,4
+2681819,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-07-01 02:00:00,2024-07-01 01:53:11.949,2024-07-01 04:55:38.713,true,3,3412,LOUD (1),81,MIBR (1),3412,81,2,1,true,4
+2681820,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-07-01 05:00:00,2024-07-01 05:15:39.641,2024-07-01 07:01:25.49,true,2,1611,Leviatán Esports,337,100 Thieves,1611,337,2,0,true,4
+2681823,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-07-03 02:00:00,2024-07-03 01:52:08.048,2024-07-03 03:48:26.635,true,2,281,Evil Geniuses,1611,Leviatán Esports,1611,281,0,2,true,4
+2681824,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-07-03 05:00:00,2024-07-03 04:11:18.824,2024-07-03 07:12:29.774,true,3,3412,LOUD (1),99,FURIA,99,3412,1,2,true,4
+2681826,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-07-04 02:00:00,2024-07-04 01:53:45.6,2024-07-04 03:35:30.596,true,2,81,MIBR (1),337,100 Thieves,337,81,0,2,true,4
+2681830,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-07-07 05:00:00,2024-07-07 05:23:54.287,2024-07-07 07:21:32.915,true,2,3412,LOUD (1),1611,Leviatán Esports,1611,3412,0,2,true,4
+2681831,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-07-08 02:00:00,2024-07-08 01:51:54.828,2024-07-08 03:48:28.553,true,2,81,MIBR (1),99,FURIA,99,81,0,2,true,4
+2681834,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-07-09 02:00:00,,,true,3,281,Evil Geniuses,337,100 Thieves,337,281,1,2,false,2
+2681836,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-07-14 02:00:00,,,true,2,281,Evil Geniuses,81,MIBR (1),81,281,0,2,false,2
+2681837,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-07-14 05:00:00,,,true,2,1611,Leviatán Esports,99,FURIA,1611,99,2,0,false,2
+2681838,774784,VCT Americas - Stage 2 2024 (Regular Season: Group A),Regular Season: Group A,2024-07-15 02:00:00,,,true,3,3412,LOUD (1),337,100 Thieves,3412,337,2,1,false,2
+2681810,774785,VCT Americas - Stage 2 2024 (Regular Season: Group B),Regular Season: Group B,2024-06-23 05:00:00,,,true,2,1079,Sentinels,97,NRG,1079,97,2,0,false,2
+2681814,774785,VCT Americas - Stage 2 2024 (Regular Season: Group B),Regular Season: Group B,2024-06-25 02:00:00,,,true,3,96,G2 Esports,79,Cloud9,96,79,2,1,false,2
+2681818,774785,VCT Americas - Stage 2 2024 (Regular Season: Group B),Regular Season: Group B,2024-06-30 05:00:00,,,true,2,1079,Sentinels,48457,KRÜ Esports,1079,48457,2,0,false,2
+2681821,774785,VCT Americas - Stage 2 2024 (Regular Season: Group B),Regular Season: Group B,2024-07-02 02:00:00,,,true,2,97,NRG,96,G2 Esports,96,97,0,2,false,2
+2681822,774785,VCT Americas - Stage 2 2024 (Regular Season: Group B),Regular Season: Group B,2024-07-02 05:00:00,,,true,2,1079,Sentinels,79,Cloud9,1079,79,2,0,false,2
+2681827,774785,VCT Americas - Stage 2 2024 (Regular Season: Group B),Regular Season: Group B,2024-07-04 05:00:00,,,true,3,97,NRG,48457,KRÜ Esports,97,48457,2,1,false,2
+2681829,774785,VCT Americas - Stage 2 2024 (Regular Season: Group B),Regular Season: Group B,2024-07-07 02:00:00,2024-07-07 01:52:03.048,2024-07-07 05:05:07.588,true,3,96,G2 Esports,48457,KRÜ Esports,96,48457,2,1,true,4
+2681832,774785,VCT Americas - Stage 2 2024 (Regular Season: Group B),Regular Season: Group B,2024-07-08 05:00:00,2024-07-08 04:03:49.941,2024-07-08 06:54:54.362,true,3,97,NRG,79,Cloud9,79,97,1,2,true,4
+2681835,774785,VCT Americas - Stage 2 2024 (Regular Season: Group B),Regular Season: Group B,2024-07-13 05:00:00,2024-07-13 04:53:11.1,2024-07-13 06:56:07.426,true,2,79,Cloud9,48457,KRÜ Esports,48457,79,0,2,true,4
+2681839,774785,VCT Americas - Stage 2 2024 (Regular Season: Group B),Regular Season: Group B,2024-07-15 05:00:00,2024-07-15 04:45:24.549,2024-07-15 07:24:32.156,true,2,1079,Sentinels,96,G2 Esports,96,1079,0,2,true,4
+2843060,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-08-22 02:00:00,2025-08-22 01:53:32.364,2025-08-22 05:18:10.49,true,3,1611,Leviatán Esports,79,Cloud9,79,1611,1,2,true,4
+2843061,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-08-22 05:00:00,2025-08-22 05:36:31.904,2025-08-22 07:09:13.547,true,2,96,G2 Esports,337,100 Thieves,96,337,2,0,true,4
+2843062,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-08-23 02:00:00,2025-08-23 01:54:38.012,2025-08-23 05:10:11.27,true,3,79,Cloud9,1079,Sentinels,1079,79,1,2,true,4
+2843063,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-08-23 05:00:00,2025-08-23 05:26:54.433,2025-08-23 08:19:47.872,true,3,96,G2 Esports,97,NRG,96,97,2,1,true,4
+2843064,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-08-24 02:00:00,2025-08-24 01:59:20.756,2025-08-24 04:56:35.346,true,3,1611,Leviatán Esports,48457,KRÜ Esports,1611,48457,2,1,true,4
+2843065,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-08-24 05:00:00,,,true,2,337,100 Thieves,281,Evil Geniuses,337,281,2,0,false,2
+2843066,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-08-25 05:00:00,,,true,2,79,Cloud9,337,100 Thieves,79,337,2,0,false,2
+2843067,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-08-25 02:00:00,,,true,2,97,NRG,1611,Leviatán Esports,97,1611,2,0,false,2
+2843068,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-08-30 02:00:00,,,true,2,96,G2 Esports,1079,Sentinels,96,1079,2,0,false,2
+2843069,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-08-30 05:00:00,,,true,3,79,Cloud9,97,NRG,97,79,1,2,false,2
+2843070,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-08-31 02:00:00,,,true,4,97,NRG,1079,Sentinels,97,1079,3,1,false,2
+2843071,826992,VCT Americas - Stage 2 2025 (Playoffs: Playoffs),Playoffs: Playoffs,2025-09-01 02:00:00,,,true,3,97,NRG,96,G2 Esports,96,97,0,3,false,2
+2819676,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-07-19 02:00:00,2025-07-19 02:09:23.543,2025-07-19 03:51:55.27,true,2,79,Cloud9,99,FURIA,79,99,2,0,true,4
+2819678,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-07-20 02:00:00,2025-07-20 01:54:15.822,2025-07-20 04:57:50.759,true,3,281,Evil Geniuses,53367,2GAME eSports,281,53367,2,1,true,4
+2819681,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-07-21 05:00:00,2025-07-21 03:56:20.615,2025-07-21 07:03:17.277,true,3,1079,Sentinels,96,G2 Esports,1079,96,2,1,true,4
+2819682,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-07-26 02:00:00,2025-07-26 01:53:09.012,2025-07-26 03:46:45.342,true,2,53367,2GAME eSports,96,G2 Esports,96,53367,0,2,true,4
+2819683,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-07-26 05:00:00,2025-07-26 04:03:26.613,2025-07-26 05:29:12.728,true,2,99,FURIA,1079,Sentinels,1079,99,0,2,true,4
+2819686,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-07-28 02:00:00,,,true,2,79,Cloud9,281,Evil Geniuses,79,281,2,0,false,2
+2819688,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-08-02 02:00:00,,,true,3,53367,2GAME eSports,99,FURIA,53367,99,2,1,false,2
+2819690,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-08-03 02:00:00,,,true,2,1079,Sentinels,79,Cloud9,1079,79,2,0,false,2
+2819692,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-08-04 02:00:00,,,true,3,96,G2 Esports,281,Evil Geniuses,96,281,2,1,false,2
+2819694,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-08-09 02:00:00,,,true,2,79,Cloud9,53367,2GAME eSports,79,53367,2,0,false,2
+2819696,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-08-10 02:00:00,,,true,2,1079,Sentinels,281,Evil Geniuses,1079,281,2,0,false,2
+2819698,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-08-11 02:00:00,,,true,2,99,FURIA,96,G2 Esports,96,99,0,2,false,2
+2819702,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-08-17 02:00:00,,,true,2,99,FURIA,281,Evil Geniuses,281,99,0,2,false,2
+2819703,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-08-17 05:00:00,,,true,3,53367,2GAME eSports,1079,Sentinels,1079,53367,1,2,false,2
+2819704,826662,VCT Americas - Stage 2 2025 (Regular Season: Group A),Regular Season: Group A,2025-08-18 02:00:00,,,true,2,96,G2 Esports,79,Cloud9,96,79,2,0,false,2
+2819677,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-07-19 05:00:00,2025-07-19 04:16:56.75,2025-07-19 07:15:19.037,true,3,1611,Leviatán Esports,3412,LOUD (1),3412,1611,1,2,true,4
+2819679,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-07-20 05:15:00,2025-07-20 05:18:28.854,2025-07-20 07:57:35.892,true,3,81,MIBR (1),48457,KRÜ Esports,48457,81,1,2,true,4
+2819680,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-07-21 02:00:00,2025-07-21 01:52:55.229,2025-07-21 03:38:26.113,true,2,337,100 Thieves,97,NRG,337,97,2,0,true,4
+2819684,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-07-27 02:00:00,2025-07-27 01:57:02.032,2025-07-27 03:35:55.553,true,2,337,100 Thieves,48457,KRÜ Esports,337,48457,2,0,true,4
+2819685,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-07-27 05:00:00,2025-07-27 04:07:21.582,2025-07-27 05:54:46.396,true,2,97,NRG,3412,LOUD (1),97,3412,2,0,true,4
+2819687,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-07-28 05:00:00,2025-07-28 04:15:45.681,2025-07-28 06:22:07.231,true,2,81,MIBR (1),1611,Leviatán Esports,1611,81,0,2,true,4
+2819689,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-08-02 05:00:00,2025-08-02 05:15:08.332,2025-08-02 08:20:11.282,true,3,1611,Leviatán Esports,97,NRG,97,1611,1,2,true,4
+2819691,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-08-03 05:00:00,2025-08-03 04:08:14.564,2025-08-03 06:21:11.422,true,2,81,MIBR (1),337,100 Thieves,81,337,2,0,true,4
+2819693,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-08-04 05:00:00,2025-08-04 05:03:57.237,2025-08-04 07:41:11.693,true,3,3412,LOUD (1),48457,KRÜ Esports,48457,3412,1,2,true,4
+2819695,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-08-09 05:00:00,2025-08-09 03:49:59.859,2025-08-09 06:08:24.737,true,2,81,MIBR (1),97,NRG,97,81,0,2,true,4
+2819697,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-08-10 05:00:00,2025-08-10 04:04:51.99,2025-08-10 06:46:37.763,true,3,1611,Leviatán Esports,48457,KRÜ Esports,1611,48457,2,1,true,4
+2819699,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-08-11 05:00:00,2025-08-11 03:57:06.591,2025-08-11 06:48:10.316,true,3,3412,LOUD (1),337,100 Thieves,337,3412,1,2,true,4
+2819700,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-08-16 02:00:00,2025-08-16 01:55:46.042,2025-08-16 04:42:27.554,true,3,48457,KRÜ Esports,97,NRG,97,48457,1,2,true,4
+2819701,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-08-16 05:00:00,2025-08-16 04:58:54.617,2025-08-16 07:41:43.89,true,3,337,100 Thieves,1611,Leviatán Esports,1611,337,1,2,true,4
+2819705,826663,VCT Americas - Stage 2 2025 (Regular Season: Group B),Regular Season: Group B,2025-08-18 05:00:00,2025-08-18 04:26:01.221,2025-08-18 06:31:03.86,true,2,81,MIBR (1),3412,LOUD (1),81,3412,2,0,true,4

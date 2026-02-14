@@ -119,8 +119,6 @@ Thumbs.db
 logs/
 *.log
 
-# Database files (if you don't want to commit the actual data)
-# valorant_esports.duckdb
 
 # Temporary files
 tmp/
@@ -135,3 +133,4 @@ secrets.json
 
 # Build artifacts
 *.build
+.env

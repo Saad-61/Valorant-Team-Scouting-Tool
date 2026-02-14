@@ -1,36 +1,232 @@
+/**
+ * Cloud9 Esports Analytics Dashboard - Global Styles
+ * 
+ * Theme System:
+ * - Uses CSS custom properties for seamless light/dark mode switching
+ * - Cloud9 Blue (#00AEEF) as primary brand color
+ * - White as secondary with carefully tuned grays
+ * - WCAG AA compliant contrast ratios
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #0a1015 0%, #0f1923 50%, #1a2634 100%);
-  background-attachment: fixed;
-  color: #ece8e1;
-  min-height: 100vh;
+/* ============================================================
+   THEME VARIABLES - Light Mode (Default)
+   ============================================================ */
+:root {
+  /* Cloud9 Brand Colors */
+  --c9-blue: #00AEEF;
+  --c9-blue-hover: #0095d9;
+  --c9-blue-active: #007bb8;
+  --c9-blue-light: #e6f7fe;
+  
+  /* Background Colors - Light Mode */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  
+  /* Surface/Card Colors - Light Mode */
+  --surface-primary: #ffffff;
+  --surface-secondary: #f8fafc;
+  --surface-hover: #f1f5f9;
+  --surface-active: #e2e8f0;
+  
+  /* Text Colors - Light Mode (WCAG AA compliant) */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --text-inverse: #ffffff;
+  
+  /* Border Colors - Light Mode */
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --border-focus: #00AEEF;
+  
+  /* Shadows - Light Mode */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 20px rgba(0, 174, 239, 0.15);
+  
+  /* Scrollbar */
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #00AEEF;
+  --scrollbar-thumb-hover: #0095d9;
 }
 
-/* Custom scrollbar */
+/* ============================================================
+   THEME VARIABLES - Dark Mode
+   ============================================================ */
+.dark {
+  /* Background Colors - Dark Mode */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  
+  /* Surface/Card Colors - Dark Mode */
+  --surface-primary: #1e293b;
+  --surface-secondary: #334155;
+  --surface-hover: #475569;
+  --surface-active: #64748b;
+  
+  /* Text Colors - Dark Mode (WCAG AA compliant) */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-inverse: #0f172a;
+  
+  /* Border Colors - Dark Mode */
+  --border-primary: #334155;
+  --border-secondary: #475569;
+  --border-focus: #00AEEF;
+  
+  /* Shadows - Dark Mode */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(0, 174, 239, 0.25);
+  
+  /* Scrollbar */
+  --scrollbar-track: #1e293b;
+  --scrollbar-thumb: #00AEEF;
+  --scrollbar-thumb-hover: #0095d9;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a2634;
+  background: var(--scrollbar-track);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff4655;
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #e03e4d;
+  background: var(--scrollbar-thumb-hover);
 }
 
-/* Message animations */
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+@layer utilities {
+  /* Cloud9 Text Gradient */
+  .text-c9-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-c9-500 to-c9-400;
+  }
+  
+  /* Card Styles */
+  .card {
+    background: var(--surface-primary);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-primary);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .card-interactive {
+    background: var(--surface-primary);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-primary);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+  }
+  
+  .card-interactive:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--c9-blue);
+  }
+  
+  /* Severity badges */
+  .severity-high {
+    @apply text-danger-600 bg-danger-50 border-danger-500/30;
+  }
+  
+  .severity-medium {
+    @apply text-warning-600 bg-warning-50 border-warning-500/30;
+  }
+  
+  .severity-low {
+    @apply text-success-600 bg-success-50 border-success-500/30;
+  }
+  
+  /* Focus ring - Cloud9 styled */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-c9-500/50 focus:ring-offset-2;
+  }
+  
+  /* Button base */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-btn font-medium transition-all duration-200 focus-ring;
+  }
+  
+  .btn-primary {
+    @apply btn bg-c9-500 text-white hover:bg-c9-600 active:bg-c9-700;
+  }
+  
+  .btn-secondary {
+    background: var(--surface-primary);
+    border: 1px solid var(--border-primary);
+    color: var(--text-primary);
+  }
+  
+  .btn-secondary:hover {
+    background: var(--surface-hover);
+  }
+  
+  .btn-ghost {
+    color: var(--text-secondary);
+  }
+  
+  .btn-ghost:hover {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+  }
+  
+  /* Hide scrollbar but maintain functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
 @keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -41,52 +237,63 @@ body {
   }
 }
 
-.message-enter {
-  animation: fadeIn 0.3s ease-out;
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
-/* Glow effect for highlights */
-.glow {
-  box-shadow: 0 0 20px rgba(255, 70, 85, 0.3);
-}
-
-.glow-blue {
-  box-shadow: 0 0 20px rgba(10, 116, 181, 0.3);
-}
-
-/* Subtle pulse animation */
-@keyframes pulse-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(255, 70, 85, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(255, 70, 85, 0.4);
-  }
-}
-
-.pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* Loading dots animation */
 @keyframes bounce {
-  0%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-6px);
-  }
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
 }
 
-.loading-dot:nth-child(1) {
-  animation: bounce 1s infinite 0s;
+.animate-in { animation: slideUp 0.3s ease-out; }
+.message-enter { animation: fadeIn 0.3s ease-out; }
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--surface-primary) 25%,
+    var(--surface-hover) 50%,
+    var(--surface-primary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }
-.loading-dot:nth-child(2) {
-  animation: bounce 1s infinite 0.2s;
+
+.loading-dot:nth-child(1) { animation: bounce 1s infinite 0s; }
+.loading-dot:nth-child(2) { animation: bounce 1s infinite 0.2s; }
+.loading-dot:nth-child(3) { animation: bounce 1s infinite 0.4s; }
+
+/* ============================================================
+   COMPONENT OVERRIDES
+   ============================================================ */
+.recharts-tooltip-wrapper {
+  outline: none !important;
 }
-.loading-dot:nth-child(3) {
-  animation: bounce 1s infinite 0.4s;
+
+.custom-tooltip {
+  background: var(--surface-primary) !important;
+  border: 1px solid var(--border-primary) !important;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: var(--shadow-lg);
+}
+
+::selection {
+  background: rgba(0, 174, 239, 0.3);
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
 }

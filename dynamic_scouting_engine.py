@@ -9,17 +9,17 @@ from typing import Dict, List, Any, Optional
 import json
 import os
 import time
+import numpy as np
 from dotenv import load_dotenv
 
 load_dotenv()
 
-# Try to import Gemini
+# Try to import Groq
 try:
-    from google import genai
-    from google.genai import types
-    GEMINI_AVAILABLE = True
+    from groq import Groq
+    GROQ_AVAILABLE = True
 except ImportError:
-    GEMINI_AVAILABLE = False
+    GROQ_AVAILABLE = False
 
 DB_PATH = Path(__file__).parent / "valorant_esports.duckdb"
 
@@ -135,17 +135,17 @@ DATABASE_SCHEMA = """
 class DynamicScoutingEngine:
     """Query engine with AI-powered dynamic SQL generation."""
     
-    MODEL_NAME = "gemini-2.5-flash"
+    MODEL_NAME = "llama-3.3-70b-versatile"
     
     def __init__(self, db_path: str = None, api_key: str = None):
         self.db_path = db_path or str(DB_PATH)
         self.conn = None
         
-        # Initialize Gemini client
-        self.api_key = api_key or os.getenv("GEMINI_API_KEY")
-        if self.api_key and GEMINI_AVAILABLE:
+        # Initialize Groq client
+        self.api_key = api_key or os.getenv("GROQ_API_KEY")
+        if self.api_key and GROQ_AVAILABLE:
             self.api_key = self.api_key.strip().strip('"').strip("'")
-            self.client = genai.Client(api_key=self.api_key)
+            self.client = Groq(api_key=self.api_key)
         else:
             self.client = None
     
@@ -169,6 +169,18 @@ class DynamicScoutingEngine:
         """Check if AI query generation is available."""
         return self.client is not None
     
+    def _extract_team_from_question(self, question: str) -> Optional[str]:
+        """Extract team name from the question if mentioned."""
+        question_lower = question.lower()
+        teams = self.get_all_teams()
+        
+        # Check if any team name is mentioned in the question
+        for team in teams:
+            if team.lower() in question_lower:
+                return team
+        
+        return None
+    
     def get_all_teams(self) -> List[str]:
         """Get list of all teams in the database."""
         query = """
@@ -190,33 +202,79 @@ class DynamicScoutingEngine:
                 "sql": None
             }
         
-        team_context = f"\nIMPORTANT: The user is asking about the team '{team_name}'. Filter queries to include this team." if team_name else ""
+        team_context = f"\nUSER CONTEXT: The question is about '{team_name}'. Filter all queries to this team." if team_name else ""
         
-        prompt = f"""You are a SQL expert. Generate a simple, working DuckDB SQL query.
+        prompt = f"""You are an expert SQL developer for VALORANT esports analytics. Generate a complete, syntactically correct DuckDB SQL query.
 
-DATABASE TABLES:
-- series: series_id, tournament_name, team1_name, team2_name, team1_id, team2_id, winner_team_id, team1_score, team2_score, started_at, finished
-- games: game_id, series_id, map_name, team1_id, team1_name, team2_id, team2_name, team1_score, team2_score, winner_team_id
-- rounds: round_id, game_id, series_id, round_number, attacker_team_id, defender_team_id, winner_team_id, win_type, bomb_planted, is_pistol_round
-- game_compositions: game_id, map_name, team_id, team_name, agent, agent_role, player_name
-- player_economy: game_id, player_name, team_id, agent, total_kills, total_deaths, total_assists
-- player_round_stats: game_id, round_number, player_name, team_id, agent, kills, deaths, assists
+DATABASE SCHEMA:
 
-IMPORTANT NOTES:
-- winner_team_id is an ID, not a name. To check if a team won, compare winner_team_id to team1_id or team2_id
-- For win rate: SUM(CASE WHEN winner_team_id = team1_id AND team1_name = 'TeamName' THEN 1 WHEN winner_team_id = team2_id AND team2_name = 'TeamName' THEN 1 ELSE 0 END)
-- Use game_compositions to get team_id from team_name: JOIN game_compositions gc ON ... WHERE gc.team_name = 'TeamName'
+1. series: series_id, tournament_name, team1_name, team2_name, team1_id, team2_id, winner_team_id, team1_score, team2_score, started_at, finished
+2. games: game_id, series_id, map_name, team1_id, team1_name, team2_id, team2_name, team1_score, team2_score, winner_team_id, total_rounds
+3. rounds: round_id, game_id, series_id, round_number, attacker_team_id, defender_team_id, winner_team_id, win_type, bomb_planted, is_pistol_round
+4. game_compositions: game_id, map_name, team_id, team_name, agent, agent_role, player_name, player_id
+5. player_economy: game_id, player_name, team_id, agent, total_kills, total_deaths, total_assists, total_headshots
+6. player_round_stats: game_id, round_number, player_name, team_id, agent, agent_role, kills, deaths, assists, headshots, alive_at_end
+
+CRITICAL RULES:
+1. Team names are stored in team1_name, team2_name, and team_name columns
+2. Always use WHERE team_name = 'ExactTeamName' (case sensitive) when filtering by team
+3. For player stats, JOIN game_compositions OR player_economy OR player_round_stats with WHERE team_name = 'TeamName'
+4. To calculate KD ratio: CAST(SUM(kills) AS FLOAT) / NULLIF(SUM(deaths), 0)
+5. For weaknesses queries, look at: low KD ratios, high death counts, poor win rates on specific maps
+6. Always include proper aggregate functions (SUM, AVG, COUNT) when using GROUP BY
+7. End every query with semicolon and LIMIT 25
+
+EXAMPLE QUERIES:
+
+Q: "What are G2 Esports top players weaknesses?"
+A: SELECT 
+    pe.player_name,
+    COUNT(DISTINCT pe.game_id) as games_played,
+    SUM(pe.total_kills) as total_kills,
+    SUM(pe.total_deaths) as total_deaths,
+    ROUND(CAST(SUM(pe.total_kills) AS FLOAT) / NULLIF(SUM(pe.total_deaths), 0), 2) as kd_ratio,
+    ROUND(AVG(CAST(pe.total_kills AS FLOAT) / NULLIF(pe.total_deaths, 0)), 2) as avg_kd_per_game
+FROM player_economy pe
+JOIN game_compositions gc ON pe.game_id = gc.game_id AND pe.player_name = gc.player_name
+WHERE gc.team_name = 'G2 Esports'
+GROUP BY pe.player_name
+ORDER BY kd_ratio ASC
+LIMIT 25;
+
+Q: "What maps does Sentinels struggle on?"
+A: SELECT 
+    g.map_name,
+    COUNT(*) as games_played,
+    SUM(CASE WHEN g.winner_team_id IN (
+        SELECT team_id FROM game_compositions WHERE team_name = 'Sentinels' AND game_id = g.game_id LIMIT 1
+    ) THEN 1 ELSE 0 END) as wins,
+    ROUND(100.0 * wins / games_played, 1) as win_rate_pct
+FROM games g
+WHERE g.game_id IN (SELECT game_id FROM game_compositions WHERE team_name = 'Sentinels')
+GROUP BY g.map_name
+HAVING games_played >= 2
+ORDER BY win_rate_pct ASC
+LIMIT 25;
+
+Q: "Show Cloud9 player stats"
+A: SELECT 
+    pe.player_name,
+    COUNT(DISTINCT pe.game_id) as games,
+    SUM(pe.total_kills) as kills,
+    SUM(pe.total_deaths) as deaths,
+    SUM(pe.total_assists) as assists,
+    ROUND(CAST(SUM(pe.total_kills) AS FLOAT) / NULLIF(SUM(pe.total_deaths), 0), 2) as kd_ratio
+FROM player_economy pe
+JOIN game_compositions gc ON pe.game_id = gc.game_id AND pe.player_name = gc.player_name
+WHERE gc.team_name = 'Cloud9'
+GROUP BY pe.player_name
+ORDER BY kd_ratio DESC
+LIMIT 25;
 {team_context}
 
-RULES:
-- Return ONLY the SQL, nothing else
-- Keep queries simple and direct
-- Use proper JOINs to connect tables
-- LIMIT 25 rows
+USER QUESTION: {question}
 
-QUESTION: {question}
-
-SQL:"""
+Generate ONLY the SQL query (no explanations, no markdown). End with semicolon:"""
 
         try:
             # Rate limiting
@@ -225,20 +283,20 @@ SQL:"""
             if elapsed < MIN_API_INTERVAL:
                 time.sleep(MIN_API_INTERVAL - elapsed)
             
-            response = self.client.models.generate_content(
+            response = self.client.chat.completions.create(
                 model=self.MODEL_NAME,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    temperature=0.1,  # Low temperature for consistent SQL
-                    max_output_tokens=2048
-                )
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.1,
+                max_tokens=2048
             )
             
             LAST_API_CALL = time.time()
             
-            sql = response.text.strip()
+            sql = response.choices[0].message.content.strip()
             # Clean up the SQL (remove markdown code blocks if present)
             sql = sql.replace("```sql", "").replace("```", "").strip()
+            # Remove trailing semicolon if present (DuckDB doesn't require it)
+            sql = sql.rstrip(';').strip()
             
             return {
                 "sql": sql,
@@ -251,16 +309,14 @@ SQL:"""
                 # Rate limited - wait and retry
                 time.sleep(5)
                 try:
-                    response = self.client.models.generate_content(
+                    response = self.client.chat.completions.create(
                         model=self.MODEL_NAME,
-                        contents=prompt,
-                        config=types.GenerateContentConfig(
-                            temperature=0.1,
-                            max_output_tokens=2048
-                        )
+                        messages=[{"role": "user", "content": prompt}],
+                        temperature=0.1,
+                        max_tokens=2048
                     )
                     LAST_API_CALL = time.time()
-                    sql = response.text.strip().replace("```sql", "").replace("```", "").strip()
+                    sql = response.choices[0].message.content.strip().replace("```sql", "").replace("```", "").strip()
                     return {"sql": sql, "error": None}
                 except Exception as retry_e:
                     return {"sql": None, "error": f"Rate limited: {str(retry_e)}"}
@@ -275,7 +331,25 @@ SQL:"""
             result = self.conn.execute(sql).fetchdf()
             
             # Convert to list of dicts for JSON serialization
+            # Replace NaN/inf with None and convert numpy types to Python types
+            result = result.replace([np.inf, -np.inf], None)
+            result = result.where(result.notna(), None)
+            
             records = result.to_dict('records')
+            
+            # Convert numpy types to native Python types
+            def convert_value(val):
+                if val is None:
+                    return None
+                if isinstance(val, (np.integer, np.int64, np.int32)):
+                    return int(val)
+                if isinstance(val, (np.floating, np.float64, np.float32)):
+                    return float(val)
+                if isinstance(val, np.bool_):
+                    return bool(val)
+                return val
+            
+            records = [{k: convert_value(v) for k, v in record.items()} for record in records]
             columns = list(result.columns)
             
             return {
@@ -305,6 +379,10 @@ SQL:"""
         Returns:
             Dict with query, results, and optional AI interpretation
         """
+        
+        # Step 0: Try to extract team name from question if not provided
+        if not team_name:
+            team_name = self._extract_team_from_question(question)
         
         # Step 1: Generate SQL from question
         sql_result = self.generate_sql_from_question(question, team_name)
@@ -382,16 +460,14 @@ SQL:"""
 ### Fixed SQL (return ONLY the corrected SQL query, no explanations):"""
 
         try:
-            response = self.client.models.generate_content(
+            response = self.client.chat.completions.create(
                 model=self.MODEL_NAME,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    temperature=0.1,
-                    max_output_tokens=1024
-                )
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.1,
+                max_tokens=1024
             )
             
-            fixed_sql = response.text.strip().replace("```sql", "").replace("```", "").strip()
+            fixed_sql = response.choices[0].message.content.strip().replace("```sql", "").replace("```", "").strip()
             exec_result = self.execute_sql(fixed_sql)
             
             return {
@@ -413,7 +489,7 @@ SQL:"""
         
         team_context = f" about {team_name}" if team_name else ""
         
-        prompt = f"""You are a VALORANT esports analyst. Based on the data below, provide a concise, insightful answer to the question.
+        prompt = f"""You are an elite VALORANT esports analyst. Based on the data, provide a detailed analysis.
 
 ### Question:
 {question}{team_context}
@@ -422,25 +498,25 @@ SQL:"""
 {json.dumps(data_sample, indent=2, default=str)}
 
 ### Instructions:
-1. Answer the question directly and concisely
-2. Highlight key statistics and insights
-3. Use bullet points for multiple findings
-4. Include specific numbers/percentages from the data
-5. If relevant, mention tactical implications
-6. Keep response under 200 words
+1. Start with a clear 2-3 sentence summary
+2. Use simple formatting - NO markdown symbols (no #, *, **, etc.)
+3. Organize with numbered points (1., 2., 3.) and indented sub-points (-, •)
+4. Include ALL statistics from the data with context
+5. Provide tactical implications and recommendations
+6. COMPLETE all sections fully - never cut off mid-sentence
+7. Use plain English with clear paragraph breaks
+8. Aim for thorough but focused analysis (400-600 words)
 
 ### Analysis:"""
 
         try:
-            response = self.client.models.generate_content(
+            response = self.client.chat.completions.create(
                 model=self.MODEL_NAME,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    temperature=0.7,
-                    max_output_tokens=500
-                )
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.7,
+                max_tokens=4096
             )
-            return response.text.strip()
+            return response.choices[0].message.content.strip()
         except:
             return None
     

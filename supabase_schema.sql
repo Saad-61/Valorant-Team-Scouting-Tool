@@ -1,201 +1,278 @@
 -- Supabase PostgreSQL Schema for VALORANT Scouting Tool
--- Run this in Supabase SQL Editor FIRST before importing data
+-- THIS IS THE FINAL PERFECT SCHEMA - RUN THIS ONCE
+-- All columns match CSV exports exactly
 
--- Core Tables
-CREATE TABLE IF NOT EXISTS series (
+-- Drop existing schema if needed
+DROP SCHEMA IF EXISTS public CASCADE;
+CREATE SCHEMA public;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO public;
+
+-- Core Tables (import in this order)
+
+-- 1. series (no dependencies)
+CREATE TABLE series (
     series_id BIGINT PRIMARY KEY,
+    tournament_id BIGINT,
     tournament_name TEXT,
-    team1_name TEXT,
-    team2_name TEXT,
-    team1_id TEXT,
-    team2_id TEXT,
-    winner_team_id TEXT,
-    team1_score INTEGER,
-    team2_score INTEGER,
+    stage TEXT,
+    start_time_scheduled TIMESTAMP,
     started_at TIMESTAMP,
+    updated_at TIMESTAMP,
     finished BOOLEAN,
-    best_of INTEGER
+    best_of INTEGER,
+    team1_id TEXT,
+    team1_name TEXT,
+    team2_id TEXT,
+    team2_name TEXT,
+    winner_team_id TEXT,
+    loser_team_id TEXT,
+    team1_score INTEGER,
+    team2_score INTEGER,
+    has_depth4_data BOOLEAN,
+    depth_level INTEGER
 );
 
-CREATE TABLE IF NOT EXISTS games (
-    game_id BIGINT PRIMARY KEY,
-    series_id BIGINT REFERENCES series(series_id),
-    map TEXT,
-    game_number INTEGER,
+-- 2. games (depends on series)
+CREATE TABLE games (
+    game_id TEXT PRIMARY KEY,
+    series_id BIGINT,
+    sequence_number INTEGER,
+    map_name TEXT,
+    team1_id TEXT,
+    team1_name TEXT,
+    team2_id TEXT,
+    team2_name TEXT,
     team1_score INTEGER,
     team2_score INTEGER,
     winner_team_id TEXT,
-    team1_attack_rounds INTEGER,
-    team1_defense_rounds INTEGER,
-    team2_attack_rounds INTEGER,
-    team2_defense_rounds INTEGER,
-    duration_seconds INTEGER
+    team1_start_side TEXT,
+    started BOOLEAN,
+    finished BOOLEAN,
+    total_rounds INTEGER
 );
 
-CREATE TABLE IF NOT EXISTS rounds (
-    round_id BIGINT PRIMARY KEY,
-    game_id BIGINT REFERENCES games(game_id),
+-- 3. rounds (depends on games)
+CREATE TABLE rounds (
+    round_id TEXT PRIMARY KEY,
+    game_id TEXT,
+    series_id BIGINT,
     round_number INTEGER,
-    winning_team_id TEXT,
+    attacker_team_id TEXT,
+    defender_team_id TEXT,
+    winner_team_id TEXT,
+    winner_side TEXT,
     win_type TEXT,
-    attacking_team_id TEXT,
-    defending_team_id TEXT,
-    spike_planted BOOLEAN,
-    spike_defused BOOLEAN
+    bomb_planted BOOLEAN,
+    bomb_defuse_started BOOLEAN,
+    bomb_defused BOOLEAN,
+    is_pistol_round BOOLEAN,
+    half TEXT,
+    round_type TEXT
 );
 
-CREATE TABLE IF NOT EXISTS player_round_stats (
-    id SERIAL PRIMARY KEY,
-    round_id BIGINT,
-    game_id BIGINT,
-    player_id TEXT,
-    player_name TEXT,
-    team_id TEXT,
-    team_name TEXT,
-    agent TEXT,
-    kills INTEGER,
-    deaths INTEGER,
-    assists INTEGER,
-    damage INTEGER,
-    loadout_value INTEGER,
-    remaining_credits INTEGER,
-    spent_credits INTEGER
-);
-
-CREATE TABLE IF NOT EXISTS weapon_kills (
-    id SERIAL PRIMARY KEY,
-    round_id BIGINT,
-    game_id BIGINT,
-    killer_id TEXT,
-    killer_name TEXT,
-    victim_id TEXT,
-    victim_name TEXT,
-    weapon TEXT,
-    damage_type TEXT,
-    killer_team_id TEXT,
-    victim_team_id TEXT
-);
-
-CREATE TABLE IF NOT EXISTS game_compositions (
-    id SERIAL PRIMARY KEY,
-    game_id BIGINT,
-    team_id TEXT,
-    team_name TEXT,
-    player_id TEXT,
-    player_name TEXT,
-    agent TEXT,
-    role TEXT
-);
-
-CREATE TABLE IF NOT EXISTS player_economy (
-    id SERIAL PRIMARY KEY,
-    game_id BIGINT,
-    round_number INTEGER,
-    player_id TEXT,
-    player_name TEXT,
-    team_id TEXT,
-    loadout_value INTEGER,
-    remaining_credits INTEGER,
-    spent_credits INTEGER,
-    weapon TEXT,
-    armor TEXT
-);
-
-CREATE TABLE IF NOT EXISTS agent_metadata (
-    agent TEXT PRIMARY KEY,
+-- 4. agent_metadata (no dependencies)
+CREATE TABLE agent_metadata (
+    agent_id TEXT PRIMARY KEY,
+    agent_name TEXT,
     role TEXT,
     abilities TEXT
 );
 
-CREATE TABLE IF NOT EXISTS map_metadata (
-    map TEXT PRIMARY KEY,
-    callouts TEXT,
-    release_date DATE
+-- 5. map_metadata (no dependencies)
+CREATE TABLE map_metadata (
+    map_name TEXT PRIMARY KEY,
+    map_display_name TEXT,
+    site_count INTEGER,
+    site_a_x FLOAT,
+    site_a_y FLOAT,
+    site_b_x FLOAT,
+    site_b_y FLOAT,
+    site_c_x FLOAT,
+    site_c_y FLOAT
 );
 
-CREATE TABLE IF NOT EXISTS ingestion_log (
-    id SERIAL PRIMARY KEY,
+-- 6. game_compositions (depends on games)
+CREATE TABLE game_compositions (
+    id TEXT PRIMARY KEY,
+    game_id TEXT,
     series_id BIGINT,
-    ingested_at TIMESTAMP DEFAULT NOW(),
-    status TEXT
+    map_name TEXT,
+    team_id TEXT,
+    team_name TEXT,
+    agent TEXT,
+    agent_role TEXT,
+    player_id TEXT,
+    player_name TEXT
+);
+
+-- 7. player_round_stats (depends on games)
+CREATE TABLE player_round_stats (
+    id TEXT PRIMARY KEY,
+    game_id TEXT,
+    series_id BIGINT,
+    round_number INTEGER,
+    player_id TEXT,
+    player_name TEXT,
+    team_id TEXT,
+    agent TEXT,
+    agent_role TEXT,
+    side TEXT,
+    kills INTEGER,
+    deaths INTEGER,
+    assists INTEGER,
+    headshots INTEGER,
+    alive_at_end BOOLEAN,
+    current_health INTEGER,
+    current_armor INTEGER,
+    clutch_situation TEXT
+);
+
+-- 8. player_economy (depends on games)
+CREATE TABLE player_economy (
+    id TEXT PRIMARY KEY,
+    game_id TEXT,
+    series_id BIGINT,
+    player_id TEXT,
+    player_name TEXT,
+    team_id TEXT,
+    agent TEXT,
+    final_money INTEGER,
+    final_loadout_value INTEGER,
+    final_net_worth INTEGER,
+    total_kills INTEGER,
+    total_deaths INTEGER,
+    total_assists INTEGER,
+    total_headshots INTEGER
+);
+
+-- 9. weapon_kills (depends on games)
+CREATE TABLE weapon_kills (
+    id TEXT PRIMARY KEY,
+    game_id TEXT,
+    series_id BIGINT,
+    round_number INTEGER,
+    team_id TEXT,
+    weapon_name TEXT,
+    kill_count INTEGER
+);
+
+-- 10. ingestion_log (no dependencies)
+CREATE TABLE ingestion_log (
+    series_id BIGINT PRIMARY KEY,
+    ingested_at TIMESTAMP,
+    source_path TEXT,
+    depth_level INTEGER,
+    games_count INTEGER,
+    rounds_count INTEGER,
+    status TEXT,
+    error_message TEXT
+);
+
+-- Analytical Views (import these last)
+
+-- 11. v_team_map_stats
+CREATE TABLE v_team_map_stats (
+    team_id TEXT,
+    team_name TEXT,
+    map_name TEXT,
+    games_played INTEGER,
+    wins INTEGER,
+    losses INTEGER,
+    win_rate FLOAT,
+    rounds_won INTEGER,
+    rounds_lost INTEGER,
+    round_diff_ratio FLOAT
+);
+
+-- 12. v_team_agent_picks
+CREATE TABLE v_team_agent_picks (
+    team_id TEXT,
+    team_name TEXT,
+    map_name TEXT,
+    agent TEXT,
+    agent_role TEXT,
+    times_picked INTEGER,
+    unique_players INTEGER
+);
+
+-- 13. v_player_agent_pool
+CREATE TABLE v_player_agent_pool (
+    player_id TEXT,
+    player_name TEXT,
+    agent TEXT,
+    agent_role TEXT,
+    games_played INTEGER,
+    total_kills INTEGER,
+    total_deaths INTEGER,
+    kd_ratio FLOAT,
+    total_headshots INTEGER
+);
+
+-- 14. v_pistol_performance
+CREATE TABLE v_pistol_performance (
+    team_id TEXT,
+    map_name TEXT,
+    side TEXT,
+    pistol_wins INTEGER,
+    first_half_pistol_wins INTEGER,
+    second_half_pistol_wins INTEGER
+);
+
+-- 15. v_weapon_usage
+CREATE TABLE v_weapon_usage (
+    team_id TEXT,
+    map_name TEXT,
+    is_pistol_round BOOLEAN,
+    weapon_name TEXT,
+    total_kills INTEGER,
+    games_with_weapon INTEGER
+);
+
+-- 16. v_round_win_types
+CREATE TABLE v_round_win_types (
+    team_id TEXT,
+    map_name TEXT,
+    side TEXT,
+    win_type TEXT,
+    count INTEGER,
+    percentage FLOAT
+);
+
+-- 17. v_team_compositions
+CREATE TABLE v_team_compositions (
+    game_id TEXT,
+    series_id BIGINT,
+    map_name TEXT,
+    team_id TEXT,
+    team_name TEXT,
+    composition TEXT,
+    duelist_count INTEGER,
+    controller_count INTEGER,
+    sentinel_count INTEGER,
+    initiator_count INTEGER
+);
+
+-- 18. v_post_plant_stats
+CREATE TABLE v_post_plant_stats (
+    map_name TEXT,
+    attacker_team_id TEXT,
+    defender_team_id TEXT,
+    total_plants INTEGER,
+    attacker_wins_after_plant INTEGER,
+    defender_retakes INTEGER,
+    attacker_conversion_rate FLOAT
 );
 
 -- Create indexes for performance
-CREATE INDEX IF NOT EXISTS idx_games_series ON games(series_id);
-CREATE INDEX IF NOT EXISTS idx_rounds_game ON rounds(game_id);
-CREATE INDEX IF NOT EXISTS idx_player_stats_game ON player_round_stats(game_id);
-CREATE INDEX IF NOT EXISTS idx_player_stats_team ON player_round_stats(team_name);
-CREATE INDEX IF NOT EXISTS idx_player_stats_player ON player_round_stats(player_name);
-CREATE INDEX IF NOT EXISTS idx_weapon_kills_game ON weapon_kills(game_id);
-CREATE INDEX IF NOT EXISTS idx_compositions_game ON game_compositions(game_id);
-CREATE INDEX IF NOT EXISTS idx_compositions_team ON game_compositions(team_name);
-
--- Views (recreate the analytical views)
-CREATE OR REPLACE VIEW v_team_map_stats AS
-SELECT 
-    team_name,
-    g.map,
-    COUNT(*) as games,
-    SUM(CASE WHEN winner_team_id = gc.team_id THEN 1 ELSE 0 END) as wins,
-    ROUND(100.0 * SUM(CASE WHEN winner_team_id = gc.team_id THEN 1 ELSE 0 END) / COUNT(*), 1) as win_rate,
-    AVG(CASE WHEN winner_team_id = gc.team_id THEN team1_score - team2_score ELSE team2_score - team1_score END) as avg_round_diff
-FROM game_compositions gc
-JOIN games g ON gc.game_id = g.game_id
-GROUP BY team_name, gc.team_id, g.map;
-
-CREATE OR REPLACE VIEW v_team_agent_picks AS
-SELECT 
-    team_name,
-    agent,
-    role,
-    COUNT(*) as games,
-    ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY team_name), 1) as pick_rate
-FROM game_compositions
-GROUP BY team_name, agent, role;
-
-CREATE OR REPLACE VIEW v_player_agent_pool AS
-SELECT 
-    player_name,
-    team_name,
-    agent,
-    COUNT(DISTINCT game_id) as games,
-    SUM(kills) as total_kills,
-    SUM(deaths) as total_deaths,
-    ROUND(1.0 * SUM(kills) / NULLIF(SUM(deaths), 0), 2) as kd_ratio
-FROM player_round_stats
-GROUP BY player_name, team_name, agent;
-
-CREATE OR REPLACE VIEW v_pistol_performance AS
-SELECT 
-    prs.team_name,
-    r.attacking_team_id = gc.team_id as is_attack,
-    COUNT(*) as rounds,
-    SUM(CASE WHEN r.winning_team_id = gc.team_id THEN 1 ELSE 0 END) as wins,
-    ROUND(100.0 * SUM(CASE WHEN r.winning_team_id = gc.team_id THEN 1 ELSE 0 END) / COUNT(*), 1) as win_rate
-FROM rounds r
-JOIN player_round_stats prs ON r.round_id = prs.round_id
-JOIN game_compositions gc ON prs.game_id = gc.game_id AND prs.team_name = gc.team_name
-WHERE r.round_number IN (1, 13)
-GROUP BY prs.team_name, gc.team_id, r.attacking_team_id = gc.team_id;
-
-CREATE OR REPLACE VIEW v_weapon_usage AS
-SELECT 
-    killer_team_id as team_id,
-    wk.game_id,
-    weapon,
-    COUNT(*) as kills
-FROM weapon_kills wk
-GROUP BY killer_team_id, wk.game_id, weapon;
-
-CREATE OR REPLACE VIEW v_round_win_types AS
-SELECT 
-    prs.team_name,
-    r.win_type,
-    r.attacking_team_id = gc.team_id as on_attack,
-    COUNT(*) as count,
-    ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY prs.team_name, r.attacking_team_id = gc.team_id), 1) as percentage
-FROM rounds r
-JOIN player_round_stats prs ON r.round_id = prs.round_id
-JOIN game_compositions gc ON prs.game_id = gc.game_id AND prs.team_name = gc.team_name
-WHERE r.winning_team_id = gc.team_id
-GROUP BY prs.team_name, gc.team_id, r.win_type, r.attacking_team_id = gc.team_id;
+CREATE INDEX idx_games_series ON games(series_id);
+CREATE INDEX idx_games_game_id ON games(game_id);
+CREATE INDEX idx_rounds_game ON rounds(game_id);
+CREATE INDEX idx_rounds_round_id ON rounds(round_id);
+CREATE INDEX idx_player_stats_game ON player_round_stats(game_id);
+CREATE INDEX idx_player_stats_team ON player_round_stats(team_id);
+CREATE INDEX idx_player_stats_player ON player_round_stats(player_name);
+CREATE INDEX idx_weapon_kills_game ON weapon_kills(game_id);
+CREATE INDEX idx_compositions_game ON game_compositions(game_id);
+CREATE INDEX idx_compositions_team ON game_compositions(team_name);
+CREATE INDEX idx_compositions_id ON game_compositions(id);

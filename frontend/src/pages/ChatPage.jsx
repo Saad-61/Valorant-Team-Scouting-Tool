@@ -9,51 +9,28 @@ import {
   Table, BarChart3, AlertCircle, RefreshCw, Trash2,
 } from 'lucide-react';
 
-const DEFAULT_MESSAGE = {
-  id: 1,
-  role: 'assistant',
-  content: "Hello! I'm your VCT Analytics AI. Ask me anything about team performance, player stats, map strategies, or opponent weaknesses. I can analyze data and provide actionable insights.",
-  timestamp: new Date(),
-};
-
 export function ChatPage() {
-  const { filters } = useAppStore();
-  // Load messages from localStorage on initial mount
-  const [messages, setMessages] = useState(() => {
-    const stored = localStorage.getItem('chatMessages');
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored);
-        // Convert timestamp strings back to Date objects
-        return parsed.map(msg => ({
-          ...msg,
-          timestamp: new Date(msg.timestamp)
-        }));
-      } catch (e) {
-        console.error('Failed to parse stored messages:', e);
-      }
-    }
-    return [DEFAULT_MESSAGE];
-  });
+  const { filters, chatMessages, addChatMessage, clearChatMessages } = useAppStore();
+  
+  // Convert stored timestamps back to Date objects for display
+  const messages = chatMessages.map(msg => ({
+    ...msg,
+    timestamp: new Date(msg.timestamp)
+  }));
+  
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Save messages to localStorage whenever they change
-  useEffect(() => {
-    localStorage.setItem('chatMessages', JSON.stringify(messages));
-  }, [messages]);
-
   // Auto-scroll to bottom
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+  }, [chatMessages]);
 
   // Clear chat history
   const clearChat = () => {
-    setMessages([DEFAULT_MESSAGE]);
-    localStorage.removeItem('chatMessages');
+    clearChatMessages();
   };
 
   // Suggested queries
@@ -73,10 +50,10 @@ export function ChatPage() {
       id: Date.now(),
       role: 'user',
       content: input.trim(),
-      timestamp: new Date(),
+      timestamp: new Date().toISOString(),
     };
 
-    setMessages((prev) => [...prev, userMessage]);
+    addChatMessage(userMessage);
     setInput('');
     setLoading(true);
 
@@ -93,10 +70,10 @@ export function ChatPage() {
             : response.error.includes('quota') || response.error.includes('RESOURCE_EXHAUSTED')
             ? '⚠️ API quota exceeded. The Gemini AI service has reached its daily limit. Please try again later.'
             : `Sorry, an error occurred: ${response.error}`,
-          timestamp: new Date(),
+          timestamp: new Date().toISOString(),
           error: true,
         };
-        setMessages((prev) => [...prev, errorMessage]);
+        addChatMessage(errorMessage);
         return;
       }
 
@@ -104,22 +81,22 @@ export function ChatPage() {
         id: Date.now() + 1,
         role: 'assistant',
         content: response.interpretation || response.explanation || 'Analysis complete. See the data below.',
-        timestamp: new Date(),
+        timestamp: new Date().toISOString(),
         sql: response.sql,
         data: response.results?.data || response.sql_results,
         error: false,
       };
 
-      setMessages((prev) => [...prev, assistantMessage]);
+      addChatMessage(assistantMessage);
     } catch (error) {
       const errorMessage = {
         id: Date.now() + 1,
         role: 'assistant',
         content: 'Sorry, I encountered an error processing your request. Please try again.',
-        timestamp: new Date(),
+        timestamp: new Date().toISOString(),
         error: true,
       };
-      setMessages((prev) => [...prev, errorMessage]);
+      addChatMessage(errorMessage);
     } finally {
       setLoading(false);
     }

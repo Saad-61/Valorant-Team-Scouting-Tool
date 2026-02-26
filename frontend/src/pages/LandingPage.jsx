@@ -1,9 +1,9 @@
 // Landing Page - Welcome & Feature Overview
 import { motion } from 'framer-motion';
 import {
-  Shield, Target, Map, Users, TrendingUp, MessageSquare,
-  FileText, Swords, Layers, ArrowRight, Sparkles, Zap,
-  ChevronRight, BarChart3, Brain, Eye,
+  Shield, BarChart3, Brain, Eye,
+  ArrowRight, Sparkles, Zap,
+  ChevronRight, FileText, MessageSquare,
 } from 'lucide-react';
 
 const containerVariants = {
@@ -21,42 +21,42 @@ const itemVariants = {
 
 const FEATURES = [
   {
-    icon: FileText,
+    image: '/images/icons/scout-report.png',
     title: 'Scouting Reports',
     description: 'Generate comprehensive AI-powered reports with one click',
     color: 'from-blue-500 to-cyan-500',
     page: 'reports',
   },
   {
-    icon: Target,
+    image: '/images/icons/weaknesses.png',
     title: 'Opponent Analysis',
     description: 'Discover exploitable weaknesses and tendencies',
     color: 'from-red-500 to-orange-500',
     page: 'weaknesses',
   },
   {
-    icon: MessageSquare,
+    image: '/images/icons/ai-analyst.png',
     title: 'AI Analyst',
     description: 'Ask questions naturally and get instant insights',
     color: 'from-purple-500 to-pink-500',
     page: 'chat',
   },
   {
-    icon: Swords,
+    image: '/images/icons/head-to-head.png',
     title: 'Head-to-Head',
     description: 'Compare any two teams across all metrics',
     color: 'from-amber-500 to-yellow-500',
     page: 'h2h',
   },
   {
-    icon: Map,
+    image: '/images/icons/map-analytics.png',
     title: 'Map Analytics',
     description: 'Win rates, pick rates, and side preferences by map',
     color: 'from-green-500 to-emerald-500',
     page: 'maps',
   },
   {
-    icon: Users,
+    image: '/images/icons/players.png',
     title: 'Player Statistics',
     description: 'Individual performance metrics and comparisons',
     color: 'from-indigo-500 to-violet-500',
@@ -83,9 +83,17 @@ export function LandingPage({ onNavigate }) {
         variants={itemVariants}
         className="relative py-12 px-4 overflow-hidden"
       >
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-c9-500/5 via-transparent to-c9-600/5 pointer-events-none" />
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-c9-500/10 rounded-full blur-3xl pointer-events-none" />
+        {/* Background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/images/hero-bg.png)',
+          }}
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-c9-950/40 via-c9-950/20 to-c9-950/30" />
+        {/* Subtle animated gradients */}
+        <div className="absolute top-20 left-1/4 w-72 h-72 bg-c9-500/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-c9-400/5 rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative max-w-4xl mx-auto text-center">
@@ -144,16 +152,23 @@ export function LandingPage({ onNavigate }) {
         </div>
       </motion.section>
 
-      {/* Stats Section */}
-      <motion.section 
+      {/* Stats Section - Commented out for now */}
+      {/* <motion.section 
         variants={itemVariants}
-        className="py-8 px-4"
+        className="py-8 px-4 relative"
       >
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-xl"
+          style={{
+            backgroundImage: 'url(/images/stats-bg.png)',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-c9-950/30 to-c9-950/40 rounded-xl" />
+        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4 relative">
           {STATS.map((stat) => (
             <div
               key={stat.label}
-              className="text-center p-4 rounded-xl bg-[var(--surface-primary)] border border-[var(--border-primary)]"
+              className="text-center p-4 rounded-xl bg-[var(--surface-primary)]/80 border border-[var(--border-primary)]"
             >
               <stat.icon className="w-6 h-6 text-c9-500 mx-auto mb-2" />
               <div className="text-2xl md:text-3xl font-bold text-[var(--text-primary)]">{stat.value}</div>
@@ -161,7 +176,7 @@ export function LandingPage({ onNavigate }) {
             </div>
           ))}
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* Features Grid */}
       <motion.section 
@@ -195,8 +210,12 @@ export function LandingPage({ onNavigate }) {
                 {/* Gradient background on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
                 
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 shadow-lg`}>
-                  <feature.icon className="w-6 h-6 text-white" />
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 shadow-lg overflow-hidden`}>
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 
                 <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2 group-hover:text-c9-500 transition-colors">

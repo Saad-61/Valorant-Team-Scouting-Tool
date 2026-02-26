@@ -13,17 +13,21 @@ import os
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # Use PostgreSQL engine if DATABASE_URL is set, otherwise fall back to DuckDB
 database_url = os.getenv("DATABASE_URL")
 if database_url:
+    print("🗄️  Database: PostgreSQL (Supabase)")
+    print(f"📡 Connecting to: {database_url.split('@')[1] if '@' in database_url else 'Supabase'}")
     from dynamic_scouting_engine_postgres import DynamicScoutingEngine
 else:
+    print("🗄️  Database: DuckDB (Local)")
+    print("📁 File: valorant_esports.duckdb")
     from dynamic_scouting_engine import DynamicScoutingEngine
 
 from report_generator import ReportGenerator
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -59,6 +63,7 @@ app.add_middleware(
 # Initialize scouting engine (persistent connection)
 engine = DynamicScoutingEngine()
 engine.connect()
+print("✅ Database connection established")
 
 # Initialize report generator
 report_generator = ReportGenerator()
@@ -82,6 +87,7 @@ class AskResponse(BaseModel):
     results: Optional[Dict[str, Any]]
     interpretation: Optional[str]
     error: Optional[str]
+    query_type: Optional[str] = None  # DB_QUERY, GENERAL_INFO, GREETING, etc.
 
 class TeamData(BaseModel):
     team_name: str
@@ -132,18 +138,31 @@ async def get_scouting_data(team_name: str, num_matches: int = 10):
 
 @app.post("/api/ask", response_model=AskResponse)
 async def ask_question(request: AskRequest):
-    """Ask a natural language question about a team (uses AI to generate SQL)."""
+    """Ask a natural language question about VALORANT esports data.
+    
+    The AI will:
+    1. Classify the query (DB_QUERY, GENERAL_INFO, GREETING, etc.)
+    2. For DB queries: Generate SQL, execute, and interpret results
+    3. For general questions: Provide direct helpful responses
+    4. Handle errors gracefully without breaking subsequent queries
+    """
     try:
         result = engine.ask(request.question, request.team_name)
         return AskResponse(**result)
     except Exception as e:
+        # Ensure we don't leave a broken transaction state
+        try:
+            engine._rollback_transaction()
+        except:
+            pass
         return AskResponse(
             question=request.question,
             team=request.team_name,
             sql=None,
             results=None,
-            interpretation=None,
-            error=str(e)
+            interpretation="I encountered an unexpected error. Please try again with a different question.",
+            error=str(e),
+            query_type="ERROR"
         )
 
 

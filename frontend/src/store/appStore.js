@@ -2,6 +2,14 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
+// Default welcome message for AI chat
+const DEFAULT_CHAT_MESSAGE = {
+  id: 1,
+  role: 'assistant',
+  content: "Hello! I'm your VCT Analytics AI. Ask me anything about team performance, player stats, map strategies, or opponent weaknesses. I can analyze data and provide actionable insights.",
+  timestamp: new Date().toISOString(),
+};
+
 // Global app state with persistence
 export const useAppStore = create(
   persist(
@@ -18,6 +26,18 @@ export const useAppStore = create(
       // UI state
       sidebarCollapsed: false,
       isExporting: false,
+      
+      // Chat state (NOT persisted - clears on refresh, persists on navigation)
+      chatMessages: [DEFAULT_CHAT_MESSAGE],
+      
+      // Chat actions
+      addChatMessage: (message) => set((state) => ({
+        chatMessages: [...state.chatMessages, {
+          ...message,
+          timestamp: message.timestamp || new Date().toISOString()
+        }],
+      })),
+      clearChatMessages: () => set({ chatMessages: [DEFAULT_CHAT_MESSAGE] }),
       
       // Set individual filter
       setFilter: (key, value) => set((state) => ({
@@ -63,7 +83,7 @@ export const useAppStore = create(
     }),
     {
       name: 'c9-scout-storage', // localStorage key
-      partialize: (state) => ({ filters: state.filters }), // Only persist filters
+      partialize: (state) => ({ filters: state.filters }), // Only persist filters, NOT chat
     }
   )
 );

@@ -237,6 +237,17 @@ body {
   }
 }
 
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
@@ -247,8 +258,21 @@ body {
   40% { transform: translateY(-6px); }
 }
 
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 174, 239, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(0, 174, 239, 0.4); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
 .animate-in { animation: slideUp 0.3s ease-out; }
+.animate-slide-right { animation: slideInRight 0.3s ease-out; }
 .message-enter { animation: fadeIn 0.3s ease-out; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-float { animation: float 3s ease-in-out infinite; }
 
 .shimmer {
   background: linear-gradient(
@@ -266,6 +290,75 @@ body {
 .loading-dot:nth-child(3) { animation: bounce 1s infinite 0.4s; }
 
 /* ============================================================
+   ENHANCED HOVER EFFECTS
+   ============================================================ */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 174, 239, 0.3);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* ============================================================
+   CHART ENHANCEMENTS
+   ============================================================ */
+.chart-container {
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  transform: translateY(-2px);
+}
+
+/* Recharts bar hover effect */
+.recharts-bar-rectangle {
+  transition: opacity 0.2s ease;
+}
+
+.recharts-bar-rectangle:hover {
+  opacity: 0.85;
+  filter: brightness(1.1);
+}
+
+/* Enhanced tooltip */
+.recharts-tooltip-wrapper {
+  transition: all 0.15s ease-out;
+}
+
+/* Chart axis styling */
+.recharts-cartesian-axis-tick-value {
+  fill: var(--text-tertiary) !important;
+}
+
+.recharts-cartesian-axis-line {
+  stroke: var(--border-primary) !important;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--border-primary) !important;
+  stroke-opacity: 0.5;
+}
+
+/* ============================================================
    COMPONENT OVERRIDES
    ============================================================ */
 .recharts-tooltip-wrapper {
@@ -275,9 +368,44 @@ body {
 .custom-tooltip {
   background: var(--surface-primary) !important;
   border: 1px solid var(--border-primary) !important;
-  border-radius: 8px;
-  padding: 12px;
+  border-radius: 12px;
+  padding: 12px 16px;
   box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(8px);
+}
+
+/* Glass effect for cards */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Gradient borders */
+.gradient-border {
+  position: relative;
+  background: var(--surface-primary);
+  border-radius: 12px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #00AEEF, #0077B6, #00AEEF);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
 }
 
 ::selection {

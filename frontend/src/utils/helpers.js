@@ -152,45 +152,69 @@ export function calculateKDA(kills, deaths, assists) {
  * Generate chart colors
  */
 export const chartColors = {
-  primary: '#ff4655',
+  primary: '#00AEEF', // Cloud9 Blue
   secondary: '#10b981',
   tertiary: '#3b82f6',
   quaternary: '#f59e0b',
   quinary: '#8b5cf6',
   senary: '#ec4899',
-  grid: 'rgba(255, 255, 255, 0.1)',
+  grid: 'rgba(255, 255, 255, 0.08)',
   text: '#a0a0b0',
 };
 
 /**
- * Chart colors array for use in charts
+ * Chart colors array for use in charts - Updated with more vibrant, modern colors
  */
 export const CHART_COLORS = [
-  '#ff4655', // Valorant red
-  '#10b981', // Green
-  '#3b82f6', // Blue
+  '#00AEEF', // Cloud9 Blue (primary)
+  '#10b981', // Emerald
   '#f59e0b', // Amber
-  '#8b5cf6', // Purple
+  '#8b5cf6', // Violet
+  '#ef4444', // Red
   '#ec4899', // Pink
   '#06b6d4', // Cyan
   '#f97316', // Orange
+  '#14b8a6', // Teal
+  '#a855f7', // Purple
 ];
 
 /**
- * Map-specific colors
+ * Gradient color pairs for charts
+ */
+export const CHART_GRADIENTS = [
+  { start: '#00AEEF', end: '#0077B6' }, // Cloud9 Blue
+  { start: '#10b981', end: '#059669' }, // Emerald
+  { start: '#f59e0b', end: '#d97706' }, // Amber
+  { start: '#8b5cf6', end: '#7c3aed' }, // Violet
+  { start: '#ef4444', end: '#dc2626' }, // Red
+  { start: '#ec4899', end: '#db2777' }, // Pink
+];
+
+/**
+ * Map-specific colors - More distinct and vibrant
  */
 export const MAP_COLORS = {
-  'Ascent': '#4ade80',
+  'Ascent': '#22c55e',
   'Bind': '#f59e0b',
-  'Breeze': '#3b82f6',
+  'Breeze': '#0ea5e9',
   'Fracture': '#a855f7',
   'Haven': '#ef4444',
   'Icebox': '#06b6d4',
-  'Lotus': '#ec4899',
+  'Lotus': '#f472b6',
   'Pearl': '#8b5cf6',
   'Split': '#10b981',
   'Sunset': '#f97316',
   'Abyss': '#6366f1',
+};
+
+/**
+ * Agent role colors
+ */
+export const ROLE_COLORS = {
+  Controller: { primary: '#10b981', secondary: '#059669' },
+  Initiator: { primary: '#f59e0b', secondary: '#d97706' },
+  Sentinel: { primary: '#3b82f6', secondary: '#2563eb' },
+  Duelist: { primary: '#ef4444', secondary: '#dc2626' },
 };
 
 /**

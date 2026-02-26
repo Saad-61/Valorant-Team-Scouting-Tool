@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Layout } from './components/layout/Layout';
+import { LandingPage } from './pages/LandingPage';
 import { DashboardPage } from './pages/DashboardPage';
 import { WeaknessPage } from './pages/WeaknessPage';
 import { MapPage } from './pages/MapPage';
@@ -12,6 +13,7 @@ import { HeadToHeadPage } from './pages/HeadToHeadPage';
 import { CompositionsPage } from './pages/CompositionsPage';
 import { MatchHistoryPage } from './pages/MatchHistoryPage';
 import { ScoutingReportPage } from './pages/ScoutingReportPage';
+import { SettingsPage } from './pages/SettingsPage';
 import { useAppStore } from './store/appStore';
 import { exportToPDF } from './utils/export';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
@@ -19,6 +21,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 // Page components mapping
 const PAGES = {
+  home: null, // Special case - rendered with onNavigate prop
   dashboard: DashboardPage,
   weaknesses: WeaknessPage,
   maps: MapPage,
@@ -29,7 +32,7 @@ const PAGES = {
   compositions: CompositionsPage,
   history: MatchHistoryPage,
   reports: ScoutingReportPage,
-  settings: () => <PlaceholderPage title="Settings" description="Application configuration options." />,
+  settings: SettingsPage,
 };
 
 // Placeholder for pages not yet implemented
@@ -81,7 +84,7 @@ function ThemedToaster() {
 }
 
 function AppContent() {
-  const [currentPage, setCurrentPage] = useState('dashboard');
+  const [currentPage, setCurrentPage] = useState('home');
   const { filters } = useAppStore();
 
   // Handle export
@@ -106,6 +109,14 @@ function AppContent() {
   // Get current page component
   const PageComponent = PAGES[currentPage] || DashboardPage;
 
+  // Render landing page or regular pages
+  const renderPage = () => {
+    if (currentPage === 'home') {
+      return <LandingPage onNavigate={setCurrentPage} />;
+    }
+    return <PageComponent />;
+  };
+
   return (
     <>
       {/* Toast notifications */}
@@ -126,7 +137,7 @@ function AppContent() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
             >
-              <PageComponent />
+              {renderPage()}
             </motion.div>
           </AnimatePresence>
         </div>

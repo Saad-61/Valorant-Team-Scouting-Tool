@@ -32,6 +32,15 @@ const ROLE_COLORS = {
   Duelist: '#EF4444',
 };
 
+// Match count options
+const MATCH_OPTIONS = [
+  { value: 5, label: 'Last 5 matches' },
+  { value: 10, label: 'Last 10 matches' },
+  { value: 15, label: 'Last 15 matches' },
+  { value: 20, label: 'Last 20 matches' },
+  { value: 50, label: 'All available' },
+];
+
 export function ScoutingReportPage() {
   const { filters, setFilter } = useAppStore();
   const [teams, setTeams] = useState([]);
@@ -39,13 +48,15 @@ export function ScoutingReportPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [chatInsights, setChatInsights] = useState([]);
+  const [matchCount, setMatchCount] = useState(10);
+  // All sections collapsed by default until report is generated
   const [expandedSections, setExpandedSections] = useState({
-    overview: true,
-    mapPool: true,
-    compositions: true,
-    players: true,
-    weaknesses: true,
-    strategies: true,
+    overview: false,
+    mapPool: false,
+    compositions: false,
+    players: false,
+    weaknesses: false,
+    strategies: false,
   });
   const reportRef = useRef(null);
 
@@ -80,7 +91,7 @@ export function ScoutingReportPage() {
     api.getTeams().then(res => setTeams(res.data || []));
   }, []);
 
-  // Fetch full scouting data when team changes
+  // Fetch full scouting data when team or match count changes
   useEffect(() => {
     if (!filters.team) {
       setScoutData(null);
@@ -91,7 +102,7 @@ export function ScoutingReportPage() {
     setLoading(true);
     setError(null);
     
-    api.getFullScoutingData(filters.team)
+    api.getFullScoutingData(filters.team, matchCount)
       .then(res => {
         console.log('Scout API Raw Response:', res);
         // API response: { team_name, num_matches, data: { overview, players, etc } }
@@ -112,7 +123,7 @@ export function ScoutingReportPage() {
         setScoutData(null);
       })
       .finally(() => setLoading(false));
-  }, [filters.team]);
+  }, [filters.team, matchCount]);
 
   // Toggle section expansion
   const toggleSection = (section) => {
@@ -595,17 +606,29 @@ export function ScoutingReportPage() {
             <FileText className="w-6 h-6 text-c9-500" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-[var(--text-primary)]">Scouting Report Generator</h1>
-            <p className="text-sm text-[var(--text-secondary)]">Automated tactical analysis for match preparation</p>
+            <h1 className="text-2xl font-bold text-[var(--text-primary)]">Scout Report</h1>
+            <p className="text-sm text-[var(--text-secondary)]">AI-powered tactical analysis</p>
           </div>
         </div>
-        <TeamSelector
-          teams={teams}
-          value={filters.team}
-          onChange={(team) => setFilter('team', team)}
-          placeholder="Select team to scout..."
-          className="w-64"
-        />
+        <div className="flex items-center gap-3">
+          {/* Match Count Selector */}
+          <select
+            value={matchCount}
+            onChange={(e) => setMatchCount(Number(e.target.value))}
+            className="px-3 py-2 rounded-lg bg-[var(--surface-secondary)] border border-[var(--border-primary)] text-[var(--text-primary)] text-sm focus:outline-none focus:ring-2 focus:ring-c9-500/50 cursor-pointer"
+          >
+            {MATCH_OPTIONS.map(opt => (
+              <option key={opt.value} value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+          <TeamSelector
+            teams={teams}
+            value={filters.team}
+            onChange={(team) => setFilter('team', team)}
+            placeholder="Select team..."
+            className="w-48"
+          />
+        </div>
       </motion.div>
 
       {/* No team selected */}

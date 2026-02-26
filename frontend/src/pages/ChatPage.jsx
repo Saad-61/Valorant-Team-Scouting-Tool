@@ -6,19 +6,35 @@ import { useAppStore } from '../store/appStore';
 import api from '../services/api';
 import {
   Send, Bot, User, Loader2, Sparkles, Copy, Check,
-  Table, BarChart3, AlertCircle, RefreshCw,
+  Table, BarChart3, AlertCircle, RefreshCw, Trash2,
 } from 'lucide-react';
+
+const DEFAULT_MESSAGE = {
+  id: 1,
+  role: 'assistant',
+  content: "Hello! I'm your VCT Analytics AI. Ask me anything about team performance, player stats, map strategies, or opponent weaknesses. I can analyze data and provide actionable insights.",
+  timestamp: new Date(),
+};
 
 export function ChatPage() {
   const { filters } = useAppStore();
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      role: 'assistant',
-      content: "Hello! I'm your VCT Analytics AI. Ask me anything about team performance, player stats, map strategies, or opponent weaknesses. I can analyze data and provide actionable insights.",
-      timestamp: new Date(),
-    },
-  ]);
+  // Load messages from localStorage on initial mount
+  const [messages, setMessages] = useState(() => {
+    const stored = localStorage.getItem('chatMessages');
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        // Convert timestamp strings back to Date objects
+        return parsed.map(msg => ({
+          ...msg,
+          timestamp: new Date(msg.timestamp)
+        }));
+      } catch (e) {
+        console.error('Failed to parse stored messages:', e);
+      }
+    }
+    return [DEFAULT_MESSAGE];
+  });
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
@@ -33,6 +49,12 @@ export function ChatPage() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // Clear chat history
+  const clearChat = () => {
+    setMessages([DEFAULT_MESSAGE]);
+    localStorage.removeItem('chatMessages');
+  };
 
   // Suggested queries
   const suggestions = [
@@ -117,6 +139,30 @@ export function ChatPage() {
 
   return (
     <div className="h-[calc(100vh-8rem)] flex flex-col">
+      {/* Header */}
+      <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--border-primary)]">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-c9-500 to-c9-400 flex items-center justify-center shadow-c9-glow-sm">
+            <Sparkles className="w-5 h-5 text-white" />
+          </div>
+          <div>
+            <h1 className="text-lg font-semibold text-[var(--text-primary)]">AI Analyst</h1>
+            <p className="text-xs text-[var(--text-tertiary)]">
+              {messages.length > 1 ? `${messages.length - 1} messages` : 'Ask anything about VCT data'}
+            </p>
+          </div>
+        </div>
+        {messages.length > 1 && (
+          <button
+            onClick={clearChat}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-[var(--text-secondary)] hover:text-red-500 hover:bg-red-500/10 transition-colors"
+          >
+            <Trash2 className="w-4 h-4" />
+            Clear Chat
+          </button>
+        )}
+      </div>
+
       {/* Chat Messages */}
       <div className="flex-1 overflow-y-auto px-4 py-6 space-y-6">
         <AnimatePresence mode="popLayout">

@@ -18,27 +18,35 @@ import {
   Swords,
   Layers,
   Calendar,
+  Home,
+  Sparkles,
 } from 'lucide-react';
 
 const NAV_ITEMS = [
   {
-    id: 'dashboard',
-    label: 'Dashboard',
-    icon: LayoutDashboard,
-    description: 'Overview & KPIs',
+    id: 'home',
+    label: 'Home',
+    icon: Home,
+    description: 'Welcome & overview',
   },
   {
     id: 'reports',
-    label: 'Scouting Report',
+    label: 'Scout Report',
     icon: FileText,
-    description: 'Generate full report',
+    description: 'AI-generated analysis',
     primary: true,
   },
   {
+    id: 'dashboard',
+    label: 'Team Overview',
+    icon: LayoutDashboard,
+    description: 'Stats & metrics',
+  },
+  {
     id: 'weaknesses',
-    label: 'Opponent Analysis',
+    label: 'Weaknesses',
     icon: Target,
-    description: 'Exploitable weaknesses',
+    description: 'Exploitable patterns',
   },
   {
     id: 'h2h',
@@ -48,49 +56,43 @@ const NAV_ITEMS = [
   },
   {
     id: 'maps',
-    label: 'Map Performance',
+    label: 'Map Analytics',
     icon: Map,
-    description: 'Win rates by map',
+    description: 'Performance by map',
   },
   {
     id: 'players',
-    label: 'Player Stats',
+    label: 'Players',
     icon: User,
-    description: 'Individual performance',
+    description: 'Individual stats',
   },
   {
     id: 'compositions',
-    label: 'Agent Comps',
+    label: 'Compositions',
     icon: Layers,
-    description: 'Agent pick rates',
+    description: 'Agent picks & comps',
   },
   {
     id: 'history',
     label: 'Match History',
     icon: Calendar,
-    description: 'Recent matches',
+    description: 'Recent games',
   },
   {
     id: 'trends',
-    label: 'Trend Analysis',
+    label: 'Trends',
     icon: TrendingUp,
     description: 'Performance over time',
   },
   {
     id: 'chat',
     label: 'AI Analyst',
-    icon: MessageSquare,
-    description: 'Ask questions',
+    icon: Sparkles,
+    description: 'Ask anything',
   },
 ];
 
 const SECONDARY_ITEMS = [
-  {
-    id: 'reports',
-    label: 'Reports',
-    icon: FileText,
-    description: 'Export scouting reports',
-  },
   {
     id: 'settings',
     label: 'Settings',

@@ -1,0 +1,1013 @@
+team_id,team_name,map_name,agent,agent_role,times_picked,unique_players
+99,FURIA,breeze,jett,Duelist,4,2
+81,MIBR,bind,viper,Controller,2,1
+81,MIBR,split,skye,Initiator,2,1
+97,NRG,sunset,viper,Controller,2,2
+79,Cloud9,ascent,kay/o,Initiator,5,1
+1079,Sentinels,ascent,killjoy,Sentinel,1,1
+1079,Sentinels,ascent,sova,Initiator,3,2
+337,100 Thieves,bind,fade,Initiator,15,1
+1611,Leviatán Esports,split,sova,Initiator,1,1
+337,100 Thieves,icebox,jett,Duelist,10,1
+337,100 Thieves,icebox,killjoy,Sentinel,10,2
+1611,Leviatán Esports,icebox,viper,Controller,17,2
+1079,Sentinels,bind,yoru,Duelist,1,1
+96,G2 Esports,breeze,cypher,Sentinel,4,2
+3412,LOUD (1),split,astra,Controller,3,1
+81,MIBR (1),lotus,tejo,Initiator,5,2
+99,FURIA,haven,cypher,Sentinel,2,2
+99,FURIA,lotus,raze,Duelist,3,2
+96,G2 Esports,abyss,astra,Controller,4,1
+96,G2 Esports,abyss,chamber,Sentinel,3,1
+96,G2 Esports,pearl,chamber,Sentinel,2,1
+81,MIBR (1),split,jett,Duelist,9,3
+81,MIBR (1),split,skye,Initiator,4,3
+1079,Sentinels,abyss,tejo,Initiator,1,1
+96,G2 Esports,lotus,fade,Initiator,10,2
+3412,LOUD (1),icebox,sova,Initiator,6,1
+48457,KRÜ Esports,sunset,gekko,Initiator,2,1
+337,100 Thieves,breeze,cypher,Sentinel,1,1
+97,NRG,sunset,kay/o,Initiator,2,1
+3412,LOUD (1),sunset,viper,Controller,1,1
+1079,Sentinels,icebox,jett,Duelist,4,1
+81,MIBR (1),icebox,jett,Duelist,11,4
+281,Evil Geniuses,breeze,sova,Initiator,1,1
+281,Evil Geniuses,breeze,viper,Controller,1,1
+81,MIBR (1),split,omen,Controller,5,2
+337,100 Thieves,fracture,tejo,Initiator,2,1
+337,100 Thieves,haven,neon,Duelist,4,1
+281,Evil Geniuses,fracture,breach,Initiator,1,1
+81,MIBR (1),haven,jett,Duelist,4,1
+81,MIBR (1),ascent,vyse,Sentinel,1,1
+48457,KRÜ Esports,split,breach,Initiator,1,1
+53367,2GAME eSports,pearl,vyse,Sentinel,1,1
+281,Evil Geniuses,haven,sova,Initiator,1,1
+81,MIBR (1),split,cypher,Sentinel,1,1
+99,FURIA,pearl,kay/o,Initiator,2,1
+79,Cloud9,split,breach,Initiator,1,1
+97,NRG,ascent,cypher,Sentinel,2,1
+1611,Leviatán Esports,ascent,waylay,Duelist,1,1
+79,Cloud9,lotus,cypher,Sentinel,2,1
+81,MIBR (1),lotus,vyse,Sentinel,3,1
+48457,KRÜ Esports,abyss,omen,Controller,2,1
+79,Cloud9,haven,killjoy,Sentinel,3,2
+337,100 Thieves,lotus,killjoy,Sentinel,2,1
+99,FURIA,bind,brimstone,Controller,3,2
+81,MIBR (1),lotus,fade,Initiator,3,2
+1611,Leviatán Esports,corrode,chamber,Sentinel,1,1
+1611,Leviatán Esports,haven,yoru,Duelist,5,1
+97,NRG,corrode,viper,Controller,2,1
+53367,2GAME eSports,lotus,neon,Duelist,1,1
+53367,2GAME eSports,ascent,omen,Controller,2,1
+53367,2GAME eSports,ascent,cypher,Sentinel,2,1
+1079,Sentinels,ascent,yoru,Duelist,1,1
+48457,KRÜ Esports,ascent,yoru,Duelist,3,1
+337,100 Thieves,bind,yoru,Duelist,4,1
+99,FURIA,ascent,jett,Duelist,2,2
+99,FURIA,ascent,killjoy,Sentinel,1,1
+81,MIBR,bind,brimstone,Controller,2,1
+81,MIBR,breeze,sova,Initiator,1,1
+79,Cloud9,sunset,viper,Controller,3,2
+97,NRG,sunset,cypher,Sentinel,6,4
+337,100 Thieves,bind,gekko,Initiator,11,1
+1611,Leviatán Esports,bind,viper,Controller,9,1
+1611,Leviatán Esports,icebox,harbor,Controller,14,2
+1079,Sentinels,lotus,raze,Duelist,8,1
+96,G2 Esports,sunset,cypher,Sentinel,2,2
+1079,Sentinels,breeze,kay/o,Initiator,1,1
+96,G2 Esports,split,viper,Controller,10,2
+281,Evil Geniuses,split,omen,Controller,2,1
+3412,LOUD (1),split,cypher,Sentinel,2,1
+281,Evil Geniuses,pearl,sova,Initiator,1,1
+53367,2GAME eSports,haven,yoru,Duelist,3,3
+48457,KRÜ Esports,haven,breach,Initiator,4,2
+48457,KRÜ Esports,split,viper,Controller,5,2
+1079,Sentinels,bind,gekko,Initiator,4,2
+48457,KRÜ Esports,abyss,jett,Duelist,3,1
+48457,KRÜ Esports,abyss,kay/o,Initiator,3,2
+79,Cloud9,lotus,viper,Controller,5,2
+1611,Leviatán Esports,bind,brimstone,Controller,8,2
+48457,KRÜ Esports,lotus,fade,Initiator,8,2
+79,Cloud9,icebox,viper,Controller,7,3
+1611,Leviatán Esports,sunset,phoenix,Duelist,1,1
+97,NRG,sunset,gekko,Initiator,2,1
+281,Evil Geniuses,lotus,viper,Controller,8,2
+281,Evil Geniuses,icebox,viper,Controller,3,1
+81,MIBR (1),bind,kay/o,Initiator,1,1
+3412,LOUD (1),lotus,deadlock,Sentinel,1,1
+97,NRG,bind,raze,Duelist,4,2
+81,MIBR (1),breeze,kay/o,Initiator,1,1
+337,100 Thieves,haven,iso,Duelist,3,1
+97,NRG,haven,tejo,Initiator,1,1
+81,MIBR (1),lotus,neon,Duelist,4,1
+48457,KRÜ Esports,lotus,neon,Duelist,2,1
+96,G2 Esports,icebox,tejo,Initiator,2,1
+1079,Sentinels,lotus,yoru,Duelist,1,1
+48457,KRÜ Esports,fracture,breach,Initiator,2,1
+53367,2GAME eSports,pearl,yoru,Duelist,1,1
+3412,LOUD (1),pearl,fade,Initiator,1,1
+97,NRG,lotus,breach,Initiator,3,1
+1611,Leviatán Esports,icebox,yoru,Duelist,1,1
+97,NRG,pearl,jett,Duelist,1,1
+99,FURIA,fracture,tejo,Initiator,1,1
+79,Cloud9,split,yoru,Duelist,1,1
+1611,Leviatán Esports,ascent,deadlock,Sentinel,3,2
+1611,Leviatán Esports,ascent,vyse,Sentinel,2,2
+1611,Leviatán Esports,fracture,tejo,Initiator,2,1
+97,NRG,icebox,killjoy,Sentinel,4,2
+79,Cloud9,lotus,clove,Controller,1,1
+1611,Leviatán Esports,abyss,omen,Controller,1,1
+96,G2 Esports,haven,omen,Controller,3,1
+3412,LOUD (1),icebox,gekko,Initiator,2,1
+281,Evil Geniuses,bind,omen,Controller,1,1
+3412,LOUD (1),bind,skye,Initiator,4,2
+99,FURIA,sunset,jett,Duelist,1,1
+1611,Leviatán Esports,corrode,viper,Controller,1,1
+79,Cloud9,corrode,skye,Initiator,2,1
+96,G2 Esports,sunset,fade,Initiator,2,1
+96,G2 Esports,sunset,sage,Sentinel,2,1
+281,Evil Geniuses,ascent,sova,Initiator,1,1
+1079,Sentinels,sunset,breach,Initiator,1,1
+337,100 Thieves,corrode,fade,Initiator,1,1
+1611,Leviatán Esports,icebox,sage,Sentinel,1,1
+337,100 Thieves,icebox,omen,Controller,1,1
+337,100 Thieves,lotus,yoru,Duelist,2,1
+81,MIBR,lotus,skye,Initiator,1,1
+99,FURIA,split,skye,Initiator,3,3
+97,NRG,sunset,jett,Duelist,1,1
+1611,Leviatán Esports,bind,raze,Duelist,7,1
+1611,Leviatán Esports,bind,gekko,Initiator,9,1
+1611,Leviatán Esports,split,raze,Duelist,2,2
+337,100 Thieves,lotus,raze,Duelist,5,1
+281,Evil Geniuses,split,viper,Controller,4,2
+3412,LOUD (1),split,tejo,Initiator,4,1
+81,MIBR (1),bind,skye,Initiator,4,3
+53367,2GAME eSports,haven,vyse,Sentinel,1,1
+97,NRG,lotus,omen,Controller,7,2
+79,Cloud9,lotus,deadlock,Sentinel,3,1
+337,100 Thieves,pearl,fade,Initiator,2,1
+1079,Sentinels,pearl,tejo,Initiator,8,1
+96,G2 Esports,pearl,astra,Controller,7,1
+48457,KRÜ Esports,bind,brimstone,Controller,4,1
+81,MIBR (1),split,viper,Controller,8,4
+1079,Sentinels,haven,iso,Duelist,1,1
+96,G2 Esports,haven,tejo,Initiator,7,1
+3412,LOUD (1),icebox,jett,Duelist,5,2
+1611,Leviatán Esports,breeze,kay/o,Initiator,2,1
+337,100 Thieves,breeze,sova,Initiator,1,1
+1079,Sentinels,icebox,gekko,Initiator,3,2
+79,Cloud9,bind,cypher,Sentinel,2,1
+281,Evil Geniuses,breeze,yoru,Duelist,1,1
+281,Evil Geniuses,bind,raze,Duelist,2,1
+281,Evil Geniuses,bind,gekko,Initiator,2,1
+281,Evil Geniuses,bind,viper,Controller,1,1
+337,100 Thieves,fracture,chamber,Sentinel,2,1
+337,100 Thieves,fracture,brimstone,Controller,2,1
+97,NRG,fracture,cypher,Sentinel,4,1
+79,Cloud9,fracture,breach,Initiator,2,1
+281,Evil Geniuses,icebox,kay/o,Initiator,2,1
+48457,KRÜ Esports,lotus,breach,Initiator,2,1
+281,Evil Geniuses,split,tejo,Initiator,2,1
+81,MIBR (1),ascent,omen,Controller,6,2
+48457,KRÜ Esports,fracture,vyse,Sentinel,2,1
+3412,LOUD (1),lotus,vyse,Sentinel,2,2
+3412,LOUD (1),lotus,tejo,Initiator,1,1
+3412,LOUD (1),pearl,vyse,Sentinel,1,1
+3412,LOUD (1),pearl,tejo,Initiator,1,1
+281,Evil Geniuses,haven,omen,Controller,1,1
+97,NRG,pearl,sova,Initiator,2,1
+99,FURIA,lotus,neon,Duelist,4,2
+99,FURIA,ascent,vyse,Sentinel,3,1
+99,FURIA,pearl,astra,Controller,3,1
+1611,Leviatán Esports,ascent,cypher,Sentinel,4,1
+97,NRG,icebox,gekko,Initiator,1,1
+48457,KRÜ Esports,sunset,neon,Duelist,4,2
+1611,Leviatán Esports,sunset,neon,Duelist,6,2
+3412,LOUD (1),sunset,cypher,Sentinel,4,2
+3412,LOUD (1),sunset,gekko,Initiator,2,1
+99,FURIA,bind,viper,Controller,3,2
+81,MIBR (1),sunset,gekko,Initiator,2,1
+1079,Sentinels,bind,deadlock,Sentinel,1,1
+79,Cloud9,corrode,raze,Duelist,2,1
+79,Cloud9,haven,skye,Initiator,2,1
+1079,Sentinels,corrode,neon,Duelist,2,1
+1611,Leviatán Esports,sunset,kay/o,Initiator,3,1
+53367,2GAME eSports,sunset,breach,Initiator,1,1
+53367,2GAME eSports,lotus,fade,Initiator,1,1
+96,G2 Esports,corrode,vyse,Sentinel,1,1
+48457,KRÜ Esports,corrode,neon,Duelist,2,1
+97,NRG,haven,neon,Duelist,3,1
+81,MIBR (1),sunset,sova,Initiator,2,1
+48457,KRÜ Esports,bind,yoru,Duelist,2,1
+99,FURIA,breeze,viper,Controller,4,2
+99,FURIA,breeze,cypher,Sentinel,4,1
+97,NRG,breeze,kay/o,Initiator,1,1
+97,NRG,ascent,jett,Duelist,4,3
+79,Cloud9,bind,brimstone,Controller,5,3
+81,MIBR,split,raze,Duelist,2,1
+81,MIBR,ascent,jett,Duelist,1,1
+1079,Sentinels,split,cypher,Sentinel,4,1
+337,100 Thieves,bind,brimstone,Controller,15,2
+1611,Leviatán Esports,bind,skye,Initiator,4,1
+1079,Sentinels,bind,brimstone,Controller,5,1
+1079,Sentinels,breeze,jett,Duelist,1,1
+1079,Sentinels,breeze,sova,Initiator,1,1
+96,G2 Esports,split,cypher,Sentinel,2,2
+96,G2 Esports,split,breach,Initiator,10,1
+3412,LOUD (1),split,raze,Duelist,3,1
+281,Evil Geniuses,pearl,phoenix,Duelist,1,1
+337,100 Thieves,lotus,breach,Initiator,1,1
+99,FURIA,lotus,omen,Controller,7,2
+97,NRG,fracture,breach,Initiator,5,1
+1611,Leviatán Esports,haven,cypher,Sentinel,9,1
+79,Cloud9,abyss,omen,Controller,2,2
+96,G2 Esports,abyss,breach,Initiator,3,1
+81,MIBR (1),lotus,cypher,Sentinel,1,1
+96,G2 Esports,fracture,breach,Initiator,2,1
+96,G2 Esports,lotus,killjoy,Sentinel,9,1
+48457,KRÜ Esports,ascent,sova,Initiator,7,3
+337,100 Thieves,ascent,sova,Initiator,4,1
+48457,KRÜ Esports,lotus,raze,Duelist,8,1
+48457,KRÜ Esports,lotus,killjoy,Sentinel,6,1
+1611,Leviatán Esports,breeze,viper,Controller,2,1
+3412,LOUD (1),sunset,phoenix,Duelist,1,1
+281,Evil Geniuses,lotus,raze,Duelist,8,2
+99,FURIA,icebox,killjoy,Sentinel,7,4
+281,Evil Geniuses,sunset,cypher,Sentinel,5,2
+81,MIBR (1),lotus,viper,Controller,5,3
+79,Cloud9,ascent,cypher,Sentinel,1,1
+79,Cloud9,pearl,jett,Duelist,5,1
+337,100 Thieves,haven,cypher,Sentinel,5,2
+97,NRG,haven,jett,Duelist,2,1
+79,Cloud9,fracture,neon,Duelist,2,1
+281,Evil Geniuses,lotus,clove,Controller,4,1
+81,MIBR (1),ascent,jett,Duelist,5,2
+1079,Sentinels,haven,neon,Duelist,3,1
+48457,KRÜ Esports,fracture,tejo,Initiator,2,1
+48457,KRÜ Esports,split,tejo,Initiator,1,1
+53367,2GAME eSports,haven,iso,Duelist,2,1
+53367,2GAME eSports,pearl,tejo,Initiator,1,1
+3412,LOUD (1),split,jett,Duelist,1,1
+81,MIBR (1),pearl,vyse,Sentinel,2,1
+99,FURIA,pearl,yoru,Duelist,1,1
+1611,Leviatán Esports,fracture,neon,Duelist,2,1
+97,NRG,icebox,reyna,Duelist,1,1
+79,Cloud9,abyss,killjoy,Sentinel,1,1
+1611,Leviatán Esports,haven,neon,Duelist,8,2
+281,Evil Geniuses,icebox,iso,Duelist,1,1
+99,FURIA,lotus,kay/o,Initiator,1,1
+3412,LOUD (1),ascent,kay/o,Initiator,3,2
+3412,LOUD (1),ascent,jett,Duelist,3,2
+99,FURIA,sunset,cypher,Sentinel,1,1
+79,Cloud9,corrode,vyse,Sentinel,2,1
+79,Cloud9,lotus,vyse,Sentinel,2,1
+96,G2 Esports,sunset,chamber,Sentinel,2,1
+1079,Sentinels,corrode,viper,Controller,2,1
+96,G2 Esports,ascent,yoru,Duelist,2,1
+48457,KRÜ Esports,bind,fade,Initiator,2,1
+99,FURIA,breeze,kay/o,Initiator,3,1
+79,Cloud9,split,killjoy,Sentinel,1,1
+79,Cloud9,sunset,skye,Initiator,4,2
+3412,LOUD,split,breach,Initiator,1,1
+3412,LOUD,ascent,breach,Initiator,1,1
+1611,Leviatán Esports,split,breach,Initiator,3,2
+337,100 Thieves,lotus,omen,Controller,6,3
+96,G2 Esports,sunset,omen,Controller,4,1
+53367,2GAME eSports,lotus,breach,Initiator,2,2
+97,NRG,lotus,raze,Duelist,5,1
+79,Cloud9,lotus,tejo,Initiator,5,1
+48457,KRÜ Esports,haven,jett,Duelist,1,1
+48457,KRÜ Esports,haven,cypher,Sentinel,9,1
+48457,KRÜ Esports,haven,sova,Initiator,8,3
+337,100 Thieves,split,tejo,Initiator,3,1
+99,FURIA,haven,omen,Controller,4,2
+1611,Leviatán Esports,split,skye,Initiator,1,1
+48457,KRÜ Esports,bind,vyse,Sentinel,2,1
+81,MIBR (1),bind,yoru,Duelist,3,1
+81,MIBR (1),abyss,kay/o,Initiator,2,1
+81,MIBR (1),abyss,sova,Initiator,2,1
+96,G2 Esports,split,yoru,Duelist,6,1
+1079,Sentinels,haven,omen,Controller,5,2
+3412,LOUD (1),bind,raze,Duelist,6,2
+96,G2 Esports,icebox,killjoy,Sentinel,9,1
+337,100 Thieves,sunset,raze,Duelist,2,1
+96,G2 Esports,bind,raze,Duelist,7,1
+48457,KRÜ Esports,icebox,jett,Duelist,7,1
+1611,Leviatán Esports,breeze,jett,Duelist,2,1
+337,100 Thieves,breeze,jett,Duelist,1,1
+97,NRG,sunset,raze,Duelist,3,2
+3412,LOUD (1),sunset,omen,Controller,5,2
+99,FURIA,lotus,skye,Initiator,1,1
+97,NRG,split,omen,Controller,2,1
+97,NRG,split,skye,Initiator,2,1
+281,Evil Geniuses,sunset,raze,Duelist,2,1
+281,Evil Geniuses,sunset,breach,Initiator,4,1
+81,MIBR (1),breeze,jett,Duelist,1,1
+96,G2 Esports,ascent,vyse,Sentinel,8,2
+48457,KRÜ Esports,fracture,brimstone,Controller,2,1
+48457,KRÜ Esports,fracture,neon,Duelist,1,1
+281,Evil Geniuses,haven,cypher,Sentinel,1,1
+99,FURIA,fracture,brimstone,Controller,1,1
+79,Cloud9,haven,sova,Initiator,3,2
+1611,Leviatán Esports,lotus,neon,Duelist,3,2
+1611,Leviatán Esports,fracture,brimstone,Controller,2,1
+1611,Leviatán Esports,fracture,vyse,Sentinel,2,1
+48457,KRÜ Esports,abyss,cypher,Sentinel,2,1
+1079,Sentinels,ascent,deadlock,Sentinel,2,2
+3412,LOUD (1),icebox,omen,Controller,5,3
+3412,LOUD (1),ascent,cypher,Sentinel,3,2
+1079,Sentinels,bind,fade,Initiator,1,1
+1079,Sentinels,lotus,deadlock,Sentinel,1,1
+1079,Sentinels,corrode,fade,Initiator,2,1
+79,Cloud9,icebox,raze,Duelist,1,1
+97,NRG,corrode,waylay,Duelist,2,1
+96,G2 Esports,bind,tejo,Initiator,1,1
+53367,2GAME eSports,sunset,sova,Initiator,1,1
+99,FURIA,sunset,sage,Sentinel,1,1
+48457,KRÜ Esports,corrode,vyse,Sentinel,2,1
+97,NRG,haven,viper,Controller,3,1
+81,MIBR (1),lotus,yoru,Duelist,2,1
+79,Cloud9,bind,skye,Initiator,5,3
+79,Cloud9,lotus,killjoy,Sentinel,5,2
+79,Cloud9,sunset,yoru,Duelist,1,1
+97,NRG,sunset,omen,Controller,7,4
+81,MIBR,ascent,viper,Controller,1,1
+337,100 Thieves,split,viper,Controller,6,1
+1079,Sentinels,breeze,viper,Controller,1,1
+81,MIBR (1),lotus,breach,Initiator,6,2
+99,FURIA,haven,sova,Initiator,2,2
+96,G2 Esports,lotus,viper,Controller,16,3
+48457,KRÜ Esports,bind,raze,Duelist,4,2
+48457,KRÜ Esports,abyss,viper,Controller,1,1
+1079,Sentinels,fracture,yoru,Duelist,1,1
+3412,LOUD (1),bind,breach,Initiator,3,1
+3412,LOUD (1),icebox,harbor,Controller,5,1
+1611,Leviatán Esports,sunset,raze,Duelist,3,1
+1611,Leviatán Esports,sunset,cypher,Sentinel,7,2
+48457,KRÜ Esports,sunset,omen,Controller,6,1
+96,G2 Esports,sunset,breach,Initiator,1,1
+79,Cloud9,icebox,jett,Duelist,4,1
+3412,LOUD (1),breeze,jett,Duelist,1,1
+3412,LOUD (1),breeze,cypher,Sentinel,1,1
+3412,LOUD (1),sunset,sova,Initiator,3,2
+281,Evil Geniuses,icebox,jett,Duelist,3,2
+99,FURIA,icebox,viper,Controller,7,3
+81,MIBR (1),sunset,omen,Controller,5,3
+281,Evil Geniuses,sunset,fade,Initiator,4,1
+97,NRG,bind,gekko,Initiator,1,1
+99,FURIA,lotus,fade,Initiator,4,2
+79,Cloud9,pearl,cypher,Sentinel,5,1
+97,NRG,haven,omen,Controller,5,2
+281,Evil Geniuses,fracture,raze,Duelist,1,1
+96,G2 Esports,ascent,tejo,Initiator,6,1
+81,MIBR (1),haven,breach,Initiator,4,1
+3412,LOUD (1),fracture,cypher,Sentinel,1,1
+3412,LOUD (1),split,viper,Controller,2,2
+281,Evil Geniuses,haven,breach,Initiator,1,1
+97,NRG,pearl,astra,Controller,2,1
+97,NRG,pearl,neon,Duelist,1,1
+1611,Leviatán Esports,split,tejo,Initiator,2,1
+99,FURIA,fracture,cypher,Sentinel,1,1
+1611,Leviatán Esports,pearl,vyse,Sentinel,1,1
+1611,Leviatán Esports,lotus,tejo,Initiator,1,1
+97,NRG,icebox,viper,Controller,4,2
+99,FURIA,icebox,jett,Duelist,4,2
+1079,Sentinels,haven,killjoy,Sentinel,1,1
+337,100 Thieves,abyss,gekko,Initiator,1,1
+99,FURIA,haven,neon,Duelist,3,2
+99,FURIA,haven,gekko,Initiator,2,1
+3412,LOUD (1),icebox,kay/o,Initiator,3,2
+1611,Leviatán Esports,lotus,vyse,Sentinel,3,1
+97,NRG,corrode,kay/o,Initiator,2,1
+96,G2 Esports,bind,deadlock,Sentinel,1,1
+281,Evil Geniuses,sunset,sova,Initiator,1,1
+53367,2GAME eSports,lotus,cypher,Sentinel,1,1
+53367,2GAME eSports,ascent,jett,Duelist,2,1
+96,G2 Esports,ascent,chamber,Sentinel,2,2
+48457,KRÜ Esports,corrode,fade,Initiator,2,1
+81,MIBR,bind,raze,Duelist,2,2
+81,MIBR,lotus,omen,Controller,1,1
+79,Cloud9,lotus,gekko,Initiator,5,2
+81,MIBR,breeze,cypher,Sentinel,1,1
+79,Cloud9,ascent,jett,Duelist,6,1
+1079,Sentinels,split,viper,Controller,10,1
+1079,Sentinels,split,skye,Initiator,4,1
+3412,LOUD,split,viper,Controller,1,1
+1079,Sentinels,ascent,omen,Controller,6,2
+3412,LOUD,ascent,viper,Controller,1,1
+337,100 Thieves,bind,viper,Controller,15,2
+1079,Sentinels,sunset,kay/o,Initiator,2,1
+1079,Sentinels,sunset,raze,Duelist,2,1
+96,G2 Esports,sunset,viper,Controller,1,1
+99,FURIA,haven,tejo,Initiator,1,1
+99,FURIA,lotus,breach,Initiator,5,3
+97,NRG,lotus,viper,Controller,4,2
+48457,KRÜ Esports,haven,omen,Controller,9,1
+48457,KRÜ Esports,split,skye,Initiator,4,2
+1611,Leviatán Esports,split,viper,Controller,3,2
+96,G2 Esports,pearl,yoru,Duelist,7,1
+48457,KRÜ Esports,bind,viper,Controller,4,3
+81,MIBR (1),abyss,jett,Duelist,2,1
+81,MIBR (1),split,astra,Controller,4,2
+96,G2 Esports,split,tejo,Initiator,6,1
+1079,Sentinels,haven,sova,Initiator,5,3
+96,G2 Esports,haven,yoru,Duelist,9,1
+96,G2 Esports,icebox,gekko,Initiator,9,2
+48457,KRÜ Esports,ascent,jett,Duelist,7,2
+1611,Leviatán Esports,lotus,killjoy,Sentinel,6,1
+96,G2 Esports,breeze,astra,Controller,2,1
+99,FURIA,icebox,gekko,Initiator,2,1
+96,G2 Esports,bind,fade,Initiator,2,2
+3412,LOUD (1),lotus,fade,Initiator,5,2
+281,Evil Geniuses,bind,skye,Initiator,2,1
+79,Cloud9,fracture,cypher,Sentinel,2,1
+99,FURIA,pearl,cypher,Sentinel,1,1
+1611,Leviatán Esports,pearl,yoru,Duelist,1,1
+79,Cloud9,lotus,neon,Duelist,2,1
+96,G2 Esports,fracture,cypher,Sentinel,1,1
+1611,Leviatán Esports,haven,vyse,Sentinel,1,1
+97,NRG,icebox,kay/o,Initiator,2,1
+337,100 Thieves,abyss,omen,Controller,1,1
+1611,Leviatán Esports,abyss,sova,Initiator,1,1
+99,FURIA,bind,gekko,Initiator,1,1
+281,Evil Geniuses,icebox,sage,Sentinel,1,1
+97,NRG,sunset,fade,Initiator,1,1
+1079,Sentinels,corrode,vyse,Sentinel,2,1
+1079,Sentinels,icebox,sage,Sentinel,2,1
+48457,KRÜ Esports,lotus,yoru,Duelist,2,1
+48457,KRÜ Esports,sunset,yoru,Duelist,2,1
+53367,2GAME eSports,sunset,neon,Duelist,1,1
+48457,KRÜ Esports,ascent,cypher,Sentinel,3,1
+337,100 Thieves,corrode,omen,Controller,1,1
+97,NRG,breeze,sova,Initiator,4,1
+97,NRG,ascent,killjoy,Sentinel,2,1
+81,MIBR,ascent,cypher,Sentinel,1,1
+96,G2 Esports,breeze,yoru,Duelist,4,2
+281,Evil Geniuses,pearl,vyse,Sentinel,4,1
+81,MIBR (1),lotus,killjoy,Sentinel,3,3
+81,MIBR (1),lotus,omen,Controller,10,4
+81,MIBR (1),bind,deadlock,Sentinel,1,1
+81,MIBR (1),bind,cypher,Sentinel,1,1
+53367,2GAME eSports,lotus,tejo,Initiator,1,1
+79,Cloud9,fracture,raze,Duelist,1,1
+79,Cloud9,fracture,killjoy,Sentinel,1,1
+97,NRG,lotus,fade,Initiator,4,2
+1079,Sentinels,abyss,omen,Controller,3,1
+81,MIBR (1),lotus,jett,Duelist,1,1
+96,G2 Esports,haven,breach,Initiator,8,1
+96,G2 Esports,lotus,raze,Duelist,9,1
+96,G2 Esports,ascent,jett,Duelist,6,1
+3412,LOUD (1),bind,kay/o,Initiator,3,1
+48457,KRÜ Esports,icebox,viper,Controller,11,1
+1611,Leviatán Esports,sunset,gekko,Initiator,3,1
+96,G2 Esports,bind,gekko,Initiator,7,1
+48457,KRÜ Esports,lotus,viper,Controller,8,3
+48457,KRÜ Esports,sunset,cypher,Sentinel,6,1
+337,100 Thieves,breeze,viper,Controller,1,1
+337,100 Thieves,breeze,kay/o,Initiator,1,1
+281,Evil Geniuses,lotus,cypher,Sentinel,6,1
+48457,KRÜ Esports,breeze,jett,Duelist,2,1
+48457,KRÜ Esports,breeze,viper,Controller,2,1
+48457,KRÜ Esports,breeze,kay/o,Initiator,2,1
+81,MIBR (1),sunset,cypher,Sentinel,5,3
+1079,Sentinels,ascent,tejo,Initiator,3,1
+337,100 Thieves,haven,sova,Initiator,7,1
+337,100 Thieves,pearl,yoru,Duelist,1,1
+281,Evil Geniuses,split,breach,Initiator,2,1
+3412,LOUD (1),fracture,brimstone,Controller,1,1
+3412,LOUD (1),fracture,breach,Initiator,1,1
+48457,KRÜ Esports,haven,tejo,Initiator,1,1
+53367,2GAME eSports,pearl,astra,Controller,1,1
+99,FURIA,ascent,yoru,Duelist,2,1
+79,Cloud9,haven,jett,Duelist,5,1
+1079,Sentinels,ascent,cypher,Sentinel,2,2
+337,100 Thieves,abyss,sova,Initiator,1,1
+337,100 Thieves,abyss,jett,Duelist,1,1
+99,FURIA,bind,fade,Initiator,1,1
+3412,LOUD (1),haven,viper,Controller,1,1
+96,G2 Esports,haven,fade,Initiator,2,1
+1079,Sentinels,icebox,sova,Initiator,2,1
+97,NRG,corrode,sova,Initiator,2,1
+97,NRG,sunset,sova,Initiator,3,1
+281,Evil Geniuses,sunset,kay/o,Initiator,1,1
+281,Evil Geniuses,sunset,jett,Duelist,1,1
+53367,2GAME eSports,sunset,omen,Controller,1,1
+81,MIBR (1),corrode,raze,Duelist,1,1
+81,MIBR (1),corrode,yoru,Duelist,1,1
+337,100 Thieves,corrode,yoru,Duelist,1,1
+3412,LOUD (1),corrode,fade,Initiator,1,1
+3412,LOUD (1),corrode,neon,Duelist,1,1
+99,FURIA,ascent,kay/o,Initiator,3,2
+97,NRG,ascent,sova,Initiator,4,2
+99,FURIA,split,jett,Duelist,1,1
+1079,Sentinels,ascent,jett,Duelist,5,1
+1611,Leviatán Esports,bind,harbor,Controller,1,1
+1079,Sentinels,lotus,omen,Controller,9,2
+96,G2 Esports,sunset,sova,Initiator,1,1
+96,G2 Esports,split,omen,Controller,9,1
+281,Evil Geniuses,split,chamber,Sentinel,1,1
+281,Evil Geniuses,pearl,jett,Duelist,4,2
+281,Evil Geniuses,pearl,astra,Controller,4,1
+81,MIBR (1),lotus,raze,Duelist,6,3
+337,100 Thieves,lotus,clove,Controller,1,1
+99,FURIA,haven,breach,Initiator,4,3
+79,Cloud9,fracture,clove,Controller,1,1
+3412,LOUD (1),haven,jett,Duelist,2,1
+337,100 Thieves,split,sage,Sentinel,3,1
+337,100 Thieves,split,breach,Initiator,4,1
+1079,Sentinels,split,tejo,Initiator,6,1
+99,FURIA,split,omen,Controller,3,1
+79,Cloud9,abyss,kay/o,Initiator,2,2
+79,Cloud9,abyss,sova,Initiator,2,2
+81,MIBR (1),abyss,cypher,Sentinel,2,1
+96,G2 Esports,fracture,brimstone,Controller,2,1
+79,Cloud9,ascent,viper,Controller,1,1
+337,100 Thieves,sunset,omen,Controller,6,2
+337,100 Thieves,ascent,kay/o,Initiator,4,1
+1611,Leviatán Esports,ascent,viper,Controller,1,1
+3412,LOUD (1),breeze,viper,Controller,1,1
+281,Evil Geniuses,icebox,harbor,Controller,3,1
+99,FURIA,split,yoru,Duelist,2,2
+281,Evil Geniuses,sunset,omen,Controller,5,1
+281,Evil Geniuses,breeze,jett,Duelist,1,1
+281,Evil Geniuses,bind,brimstone,Controller,2,1
+79,Cloud9,ascent,vyse,Sentinel,2,1
+79,Cloud9,pearl,sova,Initiator,5,1
+281,Evil Geniuses,fracture,brimstone,Controller,1,1
+48457,KRÜ Esports,lotus,vyse,Sentinel,2,1
+281,Evil Geniuses,lotus,tejo,Initiator,3,1
+53367,2GAME eSports,pearl,fade,Initiator,1,1
+3412,LOUD (1),pearl,yoru,Duelist,1,1
+97,NRG,lotus,tejo,Initiator,3,1
+99,FURIA,pearl,tejo,Initiator,2,2
+79,Cloud9,haven,cypher,Sentinel,2,1
+96,G2 Esports,fracture,waylay,Duelist,1,1
+99,FURIA,icebox,tejo,Initiator,1,1
+337,100 Thieves,haven,yoru,Duelist,3,2
+99,FURIA,haven,killjoy,Sentinel,3,2
+337,100 Thieves,haven,jett,Duelist,2,1
+337,100 Thieves,haven,kay/o,Initiator,2,1
+281,Evil Geniuses,lotus,iso,Duelist,1,1
+3412,LOUD (1),haven,skye,Initiator,1,1
+79,Cloud9,icebox,gekko,Initiator,2,1
+337,100 Thieves,sunset,neon,Duelist,4,1
+281,Evil Geniuses,ascent,kay/o,Initiator,1,1
+96,G2 Esports,corrode,yoru,Duelist,1,1
+99,FURIA,sunset,neon,Duelist,1,1
+99,FURIA,breeze,sova,Initiator,4,2
+81,MIBR,bind,jett,Duelist,1,1
+81,MIBR,breeze,kay/o,Initiator,1,1
+1611,Leviatán Esports,icebox,sova,Initiator,16,1
+337,100 Thieves,lotus,fade,Initiator,6,1
+1079,Sentinels,lotus,viper,Controller,8,2
+3412,LOUD (1),split,breach,Initiator,4,2
+81,MIBR (1),bind,raze,Duelist,5,2
+53367,2GAME eSports,haven,breach,Initiator,1,1
+97,NRG,lotus,vyse,Sentinel,7,2
+48457,KRÜ Esports,split,cypher,Sentinel,4,2
+1079,Sentinels,split,yoru,Duelist,6,1
+1079,Sentinels,pearl,yoru,Duelist,8,1
+1079,Sentinels,pearl,fade,Initiator,8,1
+1611,Leviatán Esports,haven,sova,Initiator,9,1
+96,G2 Esports,lotus,yoru,Duelist,7,1
+96,G2 Esports,abyss,yoru,Duelist,4,2
+96,G2 Esports,fracture,vyse,Sentinel,1,1
+96,G2 Esports,ascent,kay/o,Initiator,12,1
+96,G2 Esports,icebox,sova,Initiator,7,1
+48457,KRÜ Esports,icebox,killjoy,Sentinel,11,1
+48457,KRÜ Esports,icebox,kay/o,Initiator,7,1
+48457,KRÜ Esports,ascent,killjoy,Sentinel,4,1
+337,100 Thieves,sunset,cypher,Sentinel,6,2
+1611,Leviatán Esports,lotus,omen,Controller,12,3
+48457,KRÜ Esports,sunset,breach,Initiator,4,2
+1611,Leviatán Esports,breeze,cypher,Sentinel,2,1
+1611,Leviatán Esports,ascent,jett,Duelist,5,2
+1611,Leviatán Esports,ascent,kay/o,Initiator,5,3
+1611,Leviatán Esports,sunset,sova,Initiator,7,1
+1611,Leviatán Esports,ascent,sage,Sentinel,1,1
+99,FURIA,icebox,kay/o,Initiator,3,2
+81,MIBR (1),icebox,viper,Controller,11,2
+81,MIBR (1),icebox,sova,Initiator,11,4
+97,NRG,split,jett,Duelist,2,1
+97,NRG,split,viper,Controller,2,1
+97,NRG,bind,brimstone,Controller,4,2
+79,Cloud9,ascent,yoru,Duelist,2,1
+337,100 Thieves,fracture,breach,Initiator,2,1
+3412,LOUD (1),lotus,breach,Initiator,2,2
+79,Cloud9,split,tejo,Initiator,1,1
+99,FURIA,pearl,fade,Initiator,1,1
+1611,Leviatán Esports,pearl,tejo,Initiator,1,1
+97,NRG,icebox,jett,Duelist,3,2
+96,G2 Esports,haven,killjoy,Sentinel,1,1
+337,100 Thieves,haven,killjoy,Sentinel,2,1
+99,FURIA,bind,raze,Duelist,3,2
+3412,LOUD (1),bind,omen,Controller,1,1
+3412,LOUD (1),bind,gekko,Initiator,4,2
+99,FURIA,bind,sage,Sentinel,1,1
+79,Cloud9,icebox,reyna,Duelist,2,1
+97,NRG,sunset,breach,Initiator,3,1
+79,Cloud9,sunset,clove,Controller,1,1
+96,G2 Esports,sunset,neon,Duelist,2,1
+96,G2 Esports,corrode,waylay,Duelist,1,1
+96,G2 Esports,corrode,sage,Sentinel,1,1
+96,G2 Esports,corrode,viper,Controller,2,2
+99,FURIA,haven,viper,Controller,1,1
+96,G2 Esports,corrode,sova,Initiator,1,1
+99,FURIA,sunset,viper,Controller,1,1
+81,MIBR (1),corrode,vyse,Sentinel,1,1
+337,100 Thieves,corrode,sova,Initiator,1,1
+81,MIBR (1),sunset,yoru,Duelist,1,1
+97,NRG,ascent,omen,Controller,4,2
+81,MIBR,lotus,viper,Controller,1,1
+79,Cloud9,sunset,raze,Duelist,4,2
+3412,LOUD,split,raze,Duelist,1,1
+1079,Sentinels,ascent,kay/o,Initiator,4,2
+3412,LOUD,ascent,phoenix,Duelist,1,1
+337,100 Thieves,split,gekko,Initiator,5,1
+1079,Sentinels,bind,skye,Initiator,3,1
+96,G2 Esports,breeze,viper,Controller,4,2
+81,MIBR (1),bind,brimstone,Controller,5,2
+97,NRG,fracture,sova,Initiator,1,1
+3412,LOUD (1),haven,omen,Controller,5,2
+337,100 Thieves,pearl,astra,Controller,2,1
+96,G2 Esports,lotus,tejo,Initiator,7,1
+1079,Sentinels,abyss,astra,Controller,3,1
+1079,Sentinels,abyss,kay/o,Initiator,3,1
+81,MIBR (1),bind,viper,Controller,4,2
+48457,KRÜ Esports,abyss,sova,Initiator,3,2
+81,MIBR (1),abyss,astra,Controller,2,1
+1079,Sentinels,fracture,breach,Initiator,1,1
+96,G2 Esports,icebox,harbor,Controller,8,1
+48457,KRÜ Esports,ascent,omen,Controller,7,1
+337,100 Thieves,ascent,killjoy,Sentinel,4,1
+96,G2 Esports,bind,viper,Controller,8,1
+96,G2 Esports,bind,brimstone,Controller,9,1
+96,G2 Esports,bind,skye,Initiator,7,1
+96,G2 Esports,split,fade,Initiator,2,1
+79,Cloud9,icebox,sova,Initiator,7,3
+281,Evil Geniuses,icebox,sova,Initiator,5,1
+96,G2 Esports,bind,kay/o,Initiator,1,1
+97,NRG,split,raze,Duelist,2,1
+99,FURIA,breeze,yoru,Duelist,1,1
+3412,LOUD (1),lotus,raze,Duelist,3,3
+97,NRG,bind,kay/o,Initiator,4,1
+281,Evil Geniuses,fracture,tejo,Initiator,1,1
+96,G2 Esports,pearl,fade,Initiator,5,1
+281,Evil Geniuses,split,astra,Controller,2,1
+81,MIBR (1),haven,tejo,Initiator,4,1
+81,MIBR (1),haven,cypher,Sentinel,5,1
+1079,Sentinels,haven,breach,Initiator,4,2
+97,NRG,lotus,neon,Duelist,2,1
+81,MIBR (1),ascent,sova,Initiator,5,3
+81,MIBR (1),ascent,cypher,Sentinel,2,1
+1611,Leviatán Esports,haven,tejo,Initiator,1,1
+99,FURIA,pearl,jett,Duelist,1,1
+96,G2 Esports,haven,jett,Duelist,1,1
+81,MIBR (1),ascent,yoru,Duelist,1,1
+81,MIBR (1),ascent,killjoy,Sentinel,3,3
+81,MIBR (1),icebox,gekko,Initiator,3,2
+281,Evil Geniuses,icebox,clove,Controller,2,1
+281,Evil Geniuses,lotus,neon,Duelist,1,1
+99,FURIA,sunset,kay/o,Initiator,1,1
+99,FURIA,sunset,omen,Controller,2,2
+97,NRG,sunset,neon,Duelist,3,2
+1611,Leviatán Esports,corrode,fade,Initiator,1,1
+96,G2 Esports,corrode,omen,Controller,2,1
+1611,Leviatán Esports,sunset,vyse,Sentinel,3,1
+48457,KRÜ Esports,haven,iso,Duelist,4,1
+1079,Sentinels,sunset,neon,Duelist,1,1
+99,FURIA,icebox,waylay,Duelist,1,1
+81,MIBR (1),haven,iso,Duelist,1,1
+97,NRG,breeze,jett,Duelist,4,1
+99,FURIA,ascent,sova,Initiator,4,2
+97,NRG,ascent,kay/o,Initiator,4,1
+79,Cloud9,split,viper,Controller,4,3
+79,Cloud9,split,skye,Initiator,3,1
+79,Cloud9,lotus,fade,Initiator,3,2
+81,MIBR,breeze,viper,Controller,1,1
+79,Cloud9,sunset,omen,Controller,4,2
+79,Cloud9,ascent,omen,Controller,8,3
+1611,Leviatán Esports,split,cypher,Sentinel,2,1
+337,100 Thieves,icebox,viper,Controller,10,2
+337,100 Thieves,icebox,sova,Initiator,10,1
+1611,Leviatán Esports,icebox,reyna,Duelist,1,1
+337,100 Thieves,lotus,viper,Controller,3,1
+96,G2 Esports,sunset,raze,Duelist,2,2
+96,G2 Esports,split,raze,Duelist,4,2
+99,FURIA,lotus,tejo,Initiator,1,1
+97,NRG,fracture,killjoy,Sentinel,1,1
+48457,KRÜ Esports,split,omen,Controller,5,1
+1079,Sentinels,bind,tejo,Initiator,1,1
+337,100 Thieves,pearl,kay/o,Initiator,1,1
+48457,KRÜ Esports,bind,skye,Initiator,2,2
+81,MIBR (1),pearl,sova,Initiator,1,1
+96,G2 Esports,fracture,raze,Duelist,1,1
+96,G2 Esports,haven,vyse,Sentinel,9,2
+3412,LOUD (1),bind,brimstone,Controller,7,2
+3412,LOUD (1),icebox,killjoy,Sentinel,8,3
+48457,KRÜ Esports,icebox,gekko,Initiator,5,2
+1611,Leviatán Esports,sunset,breach,Initiator,7,1
+48457,KRÜ Esports,lotus,omen,Controller,10,1
+79,Cloud9,icebox,sage,Sentinel,2,1
+96,G2 Esports,icebox,omen,Controller,1,1
+1079,Sentinels,icebox,killjoy,Sentinel,5,1
+3412,LOUD (1),lotus,viper,Controller,2,2
+97,NRG,bind,viper,Controller,4,2
+81,MIBR (1),breeze,viper,Controller,1,1
+1079,Sentinels,ascent,vyse,Sentinel,3,1
+337,100 Thieves,fracture,neon,Duelist,2,1
+97,NRG,haven,breach,Initiator,1,1
+97,NRG,haven,cypher,Sentinel,2,1
+96,G2 Esports,pearl,tejo,Initiator,5,1
+281,Evil Geniuses,pearl,yoru,Duelist,3,2
+48457,KRÜ Esports,split,jett,Duelist,1,1
+53367,2GAME eSports,haven,sova,Initiator,2,2
+3412,LOUD (1),lotus,neon,Duelist,3,2
+1611,Leviatán Esports,split,yoru,Duelist,2,1
+81,MIBR (1),pearl,waylay,Duelist,2,1
+1611,Leviatán Esports,ascent,yoru,Duelist,2,2
+1611,Leviatán Esports,pearl,fade,Initiator,1,1
+1611,Leviatán Esports,lotus,breach,Initiator,3,2
+97,NRG,icebox,harbor,Controller,2,1
+1079,Sentinels,haven,jett,Duelist,1,1
+99,FURIA,icebox,sage,Sentinel,3,1
+3412,LOUD (1),ascent,omen,Controller,3,1
+337,100 Thieves,sunset,yoru,Duelist,4,1
+96,G2 Esports,haven,viper,Controller,2,1
+99,FURIA,bind,deadlock,Sentinel,1,1
+281,Evil Geniuses,lotus,chamber,Sentinel,1,1
+1611,Leviatán Esports,bind,yoru,Duelist,2,1
+48457,KRÜ Esports,corrode,viper,Controller,2,1
+97,NRG,sunset,deadlock,Sentinel,1,1
+97,NRG,haven,killjoy,Sentinel,3,1
+337,100 Thieves,lotus,vyse,Sentinel,2,1
+81,MIBR (1),sunset,neon,Duelist,1,1
+97,NRG,breeze,cypher,Sentinel,4,1
+79,Cloud9,bind,yoru,Duelist,2,1
+79,Cloud9,bind,raze,Duelist,5,2
+79,Cloud9,lotus,omen,Controller,12,3
+79,Cloud9,lotus,raze,Duelist,10,1
+99,FURIA,split,raze,Duelist,3,1
+99,FURIA,split,viper,Controller,4,3
+79,Cloud9,ascent,sova,Initiator,7,3
+79,Cloud9,ascent,killjoy,Sentinel,5,2
+81,MIBR,bind,kay/o,Initiator,1,1
+3412,LOUD,split,skye,Initiator,1,1
+337,100 Thieves,split,raze,Duelist,9,1
+337,100 Thieves,split,fade,Initiator,6,1
+337,100 Thieves,icebox,gekko,Initiator,9,1
+1079,Sentinels,lotus,killjoy,Sentinel,4,1
+1079,Sentinels,sunset,omen,Controller,3,2
+281,Evil Geniuses,split,raze,Duelist,4,2
+3412,LOUD (1),pearl,sova,Initiator,1,1
+53367,2GAME eSports,haven,omen,Controller,3,1
+53367,2GAME eSports,haven,tejo,Initiator,1,1
+99,FURIA,haven,jett,Duelist,2,2
+53367,2GAME eSports,lotus,vyse,Sentinel,1,1
+337,100 Thieves,pearl,jett,Duelist,1,1
+1079,Sentinels,pearl,astra,Controller,8,1
+1611,Leviatán Esports,haven,breach,Initiator,5,3
+99,FURIA,split,sage,Sentinel,1,1
+96,G2 Esports,lotus,breach,Initiator,6,1
+79,Cloud9,abyss,astra,Controller,1,1
+96,G2 Esports,abyss,sova,Initiator,4,1
+1079,Sentinels,fracture,brimstone,Controller,1,1
+1079,Sentinels,fracture,vyse,Sentinel,1,1
+96,G2 Esports,fracture,tejo,Initiator,2,1
+48457,KRÜ Esports,ascent,kay/o,Initiator,4,1
+337,100 Thieves,sunset,sova,Initiator,6,1
+1611,Leviatán Esports,sunset,omen,Controller,10,1
+337,100 Thieves,ascent,jett,Duelist,4,1
+1611,Leviatán Esports,lotus,raze,Duelist,9,2
+1611,Leviatán Esports,lotus,fade,Initiator,11,1
+1611,Leviatán Esports,ascent,omen,Controller,9,3
+1611,Leviatán Esports,ascent,sova,Initiator,7,1
+81,MIBR (1),icebox,killjoy,Sentinel,11,4
+79,Cloud9,split,cypher,Sentinel,2,1
+281,Evil Geniuses,breeze,astra,Controller,1,1
+81,MIBR (1),breeze,sova,Initiator,1,1
+81,MIBR (1),split,breach,Initiator,5,1
+79,Cloud9,ascent,deadlock,Sentinel,2,1
+79,Cloud9,icebox,harbor,Controller,2,1
+48457,KRÜ Esports,lotus,tejo,Initiator,2,1
+281,Evil Geniuses,pearl,tejo,Initiator,3,1
+81,MIBR (1),haven,omen,Controller,5,1
+3412,LOUD (1),fracture,tejo,Initiator,1,1
+3412,LOUD (1),split,omen,Controller,1,1
+97,NRG,pearl,killjoy,Sentinel,2,1
+99,FURIA,fracture,breach,Initiator,1,1
+99,FURIA,fracture,raze,Duelist,1,1
+99,FURIA,ascent,tejo,Initiator,1,1
+99,FURIA,pearl,vyse,Sentinel,2,1
+79,Cloud9,haven,breach,Initiator,3,2
+97,NRG,icebox,sova,Initiator,3,2
+48457,KRÜ Esports,sunset,sova,Initiator,4,2
+1611,Leviatán Esports,abyss,jett,Duelist,1,1
+1611,Leviatán Esports,abyss,cypher,Sentinel,1,1
+1611,Leviatán Esports,abyss,harbor,Controller,1,1
+1611,Leviatán Esports,lotus,cypher,Sentinel,2,1
+99,FURIA,icebox,sova,Initiator,4,2
+3412,LOUD (1),ascent,sova,Initiator,3,2
+81,MIBR (1),sunset,breach,Initiator,2,1
+81,MIBR (1),corrode,astra,Controller,1,1
+81,MIBR (1),haven,yoru,Duelist,1,1
+81,MIBR (1),haven,sova,Initiator,1,1
+81,MIBR (1),bind,fade,Initiator,1,1
+1611,Leviatán Esports,ascent,chamber,Sentinel,1,1
+81,MIBR,bind,skye,Initiator,2,2
+81,MIBR,split,jett,Duelist,2,1
+99,FURIA,split,astra,Controller,1,1
+81,MIBR,breeze,jett,Duelist,1,1
+97,NRG,sunset,skye,Initiator,1,1
+81,MIBR,ascent,omen,Controller,1,1
+1611,Leviatán Esports,split,omen,Controller,4,3
+1611,Leviatán Esports,icebox,killjoy,Sentinel,17,1
+337,100 Thieves,lotus,chamber,Sentinel,1,1
+1079,Sentinels,breeze,cypher,Sentinel,1,1
+96,G2 Esports,breeze,harbor,Controller,2,1
+96,G2 Esports,breeze,sova,Initiator,4,2
+3412,LOUD (1),pearl,astra,Controller,2,1
+337,100 Thieves,lotus,neon,Duelist,1,1
+99,FURIA,haven,clove,Controller,1,1
+53367,2GAME eSports,lotus,omen,Controller,2,1
+99,FURIA,lotus,vyse,Sentinel,1,1
+79,Cloud9,lotus,breach,Initiator,5,1
+1611,Leviatán Esports,haven,jett,Duelist,2,1
+96,G2 Esports,pearl,vyse,Sentinel,7,2
+81,MIBR (1),split,raze,Duelist,4,3
+81,MIBR (1),pearl,kay/o,Initiator,3,1
+81,MIBR (1),pearl,astra,Controller,3,1
+96,G2 Esports,split,astra,Controller,1,1
+96,G2 Esports,ascent,killjoy,Sentinel,6,1
+96,G2 Esports,ascent,sova,Initiator,8,1
+96,G2 Esports,icebox,viper,Controller,9,1
+337,100 Thieves,sunset,gekko,Initiator,2,1
+1611,Leviatán Esports,icebox,jett,Duelist,15,3
+337,100 Thieves,ascent,omen,Controller,4,1
+1611,Leviatán Esports,lotus,viper,Controller,10,2
+79,Cloud9,sunset,cypher,Sentinel,3,1
+1611,Leviatán Esports,ascent,raze,Duelist,1,1
+3412,LOUD (1),breeze,sova,Initiator,1,1
+99,FURIA,lotus,viper,Controller,2,1
+81,MIBR (1),sunset,raze,Duelist,4,3
+81,MIBR (1),breeze,cypher,Sentinel,1,1
+97,NRG,fracture,tejo,Initiator,4,1
+48457,KRÜ Esports,icebox,sova,Initiator,7,2
+337,100 Thieves,pearl,neon,Duelist,1,1
+1079,Sentinels,lotus,breach,Initiator,1,1
+81,MIBR (1),ascent,tejo,Initiator,1,1
+48457,KRÜ Esports,haven,yoru,Duelist,6,2
+81,MIBR (1),pearl,tejo,Initiator,2,1
+1611,Leviatán Esports,ascent,tejo,Initiator,1,1
+1611,Leviatán Esports,pearl,astra,Controller,1,1
+79,Cloud9,haven,omen,Controller,5,2
+97,NRG,haven,yoru,Duelist,1,1
+1611,Leviatán Esports,icebox,kay/o,Initiator,1,1
+48457,KRÜ Esports,haven,neon,Duelist,3,2
+337,100 Thieves,abyss,cypher,Sentinel,1,1
+3412,LOUD (1),lotus,cypher,Sentinel,3,1
+3412,LOUD (1),lotus,gekko,Initiator,2,1
+1079,Sentinels,lotus,cypher,Sentinel,1,1
+79,Cloud9,corrode,viper,Controller,2,1
+79,Cloud9,haven,viper,Controller,2,1
+79,Cloud9,icebox,iso,Duelist,1,1
+97,NRG,bind,fade,Initiator,3,1
+79,Cloud9,bind,vyse,Sentinel,1,1
+281,Evil Geniuses,ascent,cypher,Sentinel,1,1
+281,Evil Geniuses,ascent,jett,Duelist,1,1
+53367,2GAME eSports,ascent,kay/o,Initiator,2,1
+81,MIBR (1),corrode,fade,Initiator,1,1
+97,NRG,breeze,viper,Controller,4,1
+79,Cloud9,bind,viper,Controller,5,3
+81,MIBR,split,astra,Controller,2,1
+81,MIBR,split,viper,Controller,2,1
+81,MIBR,lotus,killjoy,Sentinel,1,1
+81,MIBR,ascent,skye,Initiator,1,1
+1079,Sentinels,split,raze,Duelist,4,1
+1079,Sentinels,lotus,fade,Initiator,8,2
+1079,Sentinels,bind,raze,Duelist,5,1
+1079,Sentinels,sunset,gekko,Initiator,2,1
+281,Evil Geniuses,split,skye,Initiator,2,1
+3412,LOUD (1),pearl,jett,Duelist,1,1
+53367,2GAME eSports,lotus,raze,Duelist,1,1
+79,Cloud9,fracture,tejo,Initiator,3,2
+3412,LOUD (1),haven,breach,Initiator,4,2
+1079,Sentinels,split,breach,Initiator,6,1
+1611,Leviatán Esports,haven,omen,Controller,10,1
+79,Cloud9,abyss,jett,Duelist,2,1
+1079,Sentinels,abyss,jett,Duelist,3,1
+48457,KRÜ Esports,abyss,astra,Controller,1,1
+1079,Sentinels,fracture,tejo,Initiator,1,1
+1079,Sentinels,haven,yoru,Duelist,1,1
+1079,Sentinels,haven,cypher,Sentinel,4,1
+96,G2 Esports,haven,astra,Controller,7,1
+96,G2 Esports,ascent,omen,Controller,14,1
+3412,LOUD (1),icebox,viper,Controller,6,2
+1611,Leviatán Esports,ascent,killjoy,Sentinel,2,1
+3412,LOUD (1),sunset,breach,Initiator,5,1
+281,Evil Geniuses,icebox,killjoy,Sentinel,5,2
+99,FURIA,icebox,omen,Controller,3,2
+48457,KRÜ Esports,breeze,cypher,Sentinel,2,1
+81,MIBR (1),sunset,viper,Controller,2,2
+281,Evil Geniuses,split,cypher,Sentinel,1,1
+81,MIBR (1),split,tejo,Initiator,5,1
+79,Cloud9,pearl,astra,Controller,5,1
+281,Evil Geniuses,fracture,cypher,Sentinel,1,1
+48457,KRÜ Esports,icebox,harbor,Controller,3,1
+1079,Sentinels,icebox,omen,Controller,1,1
+1079,Sentinels,icebox,tejo,Initiator,1,1
+1079,Sentinels,lotus,tejo,Initiator,1,1
+81,MIBR (1),ascent,kay/o,Initiator,5,2
+48457,KRÜ Esports,fracture,raze,Duelist,1,1
+3412,LOUD (1),fracture,neon,Duelist,1,1
+97,NRG,pearl,yoru,Duelist,2,1
+99,FURIA,pearl,sova,Initiator,1,1
+1611,Leviatán Esports,fracture,breach,Initiator,2,1
+97,NRG,haven,sova,Initiator,4,1
+99,FURIA,split,tejo,Initiator,1,1
+96,G2 Esports,abyss,killjoy,Sentinel,1,1
+96,G2 Esports,abyss,viper,Controller,1,1
+281,Evil Geniuses,lotus,breach,Initiator,2,1
+281,Evil Geniuses,sunset,neon,Duelist,2,1
+3412,LOUD (1),haven,neon,Duelist,3,2
+3412,LOUD (1),bind,neon,Duelist,1,1
+99,FURIA,bind,skye,Initiator,2,2
+99,FURIA,sunset,sova,Initiator,2,2
+79,Cloud9,corrode,omen,Controller,2,1
+1079,Sentinels,corrode,omen,Controller,2,1
+97,NRG,corrode,omen,Controller,2,1
+53367,2GAME eSports,sunset,cypher,Sentinel,1,1
+53367,2GAME eSports,ascent,sova,Initiator,2,1
+1079,Sentinels,sunset,fade,Initiator,1,1
+337,100 Thieves,corrode,chamber,Sentinel,1,1
+3412,LOUD (1),corrode,vyse,Sentinel,1,1
+99,FURIA,ascent,omen,Controller,4,2
+79,Cloud9,split,astra,Controller,1,1
+79,Cloud9,split,raze,Duelist,3,1
+81,MIBR,lotus,raze,Duelist,1,1
+1079,Sentinels,split,omen,Controller,10,2
+3412,LOUD,split,omen,Controller,1,1
+3412,LOUD,ascent,kay/o,Initiator,1,1
+3412,LOUD,ascent,omen,Controller,1,1
+337,100 Thieves,bind,raze,Duelist,15,1
+337,100 Thieves,split,astra,Controller,9,2
+1079,Sentinels,bind,viper,Controller,4,2
+1079,Sentinels,sunset,cypher,Sentinel,3,1
+3412,LOUD (1),pearl,kay/o,Initiator,1,1
+3412,LOUD (1),pearl,cypher,Sentinel,1,1
+97,NRG,fracture,brimstone,Controller,5,1
+97,NRG,fracture,raze,Duelist,5,1
+79,Cloud9,fracture,brimstone,Controller,3,1
+3412,LOUD (1),haven,sova,Initiator,4,2
+3412,LOUD (1),haven,cypher,Sentinel,5,3
+48457,KRÜ Esports,split,raze,Duelist,4,1
+337,100 Thieves,pearl,killjoy,Sentinel,2,1
+1079,Sentinels,pearl,vyse,Sentinel,8,1
+96,G2 Esports,lotus,omen,Controller,16,1
+1079,Sentinels,abyss,sova,Initiator,2,1
+96,G2 Esports,pearl,sova,Initiator,2,1
+1079,Sentinels,lotus,vyse,Sentinel,3,1
+81,MIBR (1),pearl,jett,Duelist,1,1
+81,MIBR (1),pearl,killjoy,Sentinel,1,1
+79,Cloud9,ascent,skye,Initiator,1,1
+3412,LOUD (1),bind,viper,Controller,6,2
+48457,KRÜ Esports,icebox,reyna,Duelist,4,1
+48457,KRÜ Esports,sunset,raze,Duelist,2,1
+1611,Leviatán Esports,breeze,sova,Initiator,2,1
+96,G2 Esports,sunset,gekko,Initiator,1,1
+79,Cloud9,icebox,killjoy,Sentinel,7,3
+97,NRG,breeze,yoru,Duelist,3,1
+3412,LOUD (1),breeze,kay/o,Initiator,1,1
+281,Evil Geniuses,lotus,fade,Initiator,10,2
+281,Evil Geniuses,lotus,omen,Controller,6,1
+1079,Sentinels,icebox,kay/o,Initiator,2,1
+1079,Sentinels,icebox,viper,Controller,5,2
+99,FURIA,lotus,killjoy,Sentinel,2,1
+48457,KRÜ Esports,breeze,sova,Initiator,2,1
+96,G2 Esports,bind,yoru,Duelist,2,2
+81,MIBR (1),icebox,harbor,Controller,8,2
+81,MIBR (1),sunset,skye,Initiator,1,1
+79,Cloud9,split,omen,Controller,3,2
+81,MIBR (1),lotus,skye,Initiator,1,1
+3412,LOUD (1),lotus,omen,Controller,6,2
+79,Cloud9,pearl,yoru,Duelist,5,1
+337,100 Thieves,haven,omen,Controller,7,2
+96,G2 Esports,ascent,waylay,Duelist,6,1
+53367,2GAME eSports,haven,cypher,Sentinel,2,1
+281,Evil Geniuses,haven,waylay,Duelist,1,1
+99,FURIA,lotus,clove,Controller,3,1
+1611,Leviatán Esports,icebox,tejo,Initiator,2,2
+99,FURIA,pearl,neon,Duelist,1,1
+99,FURIA,split,breach,Initiator,1,1
+1611,Leviatán Esports,bind,fade,Initiator,5,1
+96,G2 Esports,haven,sova,Initiator,1,1
+81,MIBR (1),ascent,iso,Duelist,1,1
+3412,LOUD (1),sunset,neon,Duelist,4,2
+99,FURIA,lotus,cypher,Sentinel,1,1
+1611,Leviatán Esports,corrode,omen,Controller,1,1
+1611,Leviatán Esports,corrode,neon,Duelist,1,1
+96,G2 Esports,corrode,fade,Initiator,1,1
+281,Evil Geniuses,ascent,omen,Controller,1,1
+48457,KRÜ Esports,corrode,omen,Controller,2,1
+3412,LOUD (1),corrode,omen,Controller,1,1
+3412,LOUD (1),corrode,viper,Controller,1,1

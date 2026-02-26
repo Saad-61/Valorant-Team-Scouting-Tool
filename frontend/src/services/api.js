@@ -1,6 +1,7 @@
 // API Integration Layer
 import axios from 'axios';
 
+// API base URL - /api works for both local (vite proxy) and Vercel
 const API_BASE = '/api';
 
 const axiosInstance = axios.create({
@@ -79,6 +80,15 @@ export const askQuestion = (question, teamName = null) =>
 export const getSuggestions = (teamName = null) =>
   axiosInstance.get('/suggestions', { params: { team_name: teamName } }).then(res => res.data);
 
+// ============== REPORT GENERATION ==============
+
+export const generateReport = (teamName, numMatches = 10, chatInsights = []) =>
+  axiosInstance.post('/generate-report', { 
+    team_name: teamName, 
+    num_matches: numMatches,
+    chat_insights: chatInsights 
+  }).then(res => res.data);
+
 // ============== HEALTH CHECK ==============
 
 export const healthCheck = () =>
@@ -98,6 +108,7 @@ const api = {
   askQuestion,
   chat: askQuestion,
   getSuggestions,
+  generateReport,
   healthCheck,
 };
 

@@ -13,7 +13,14 @@ import os
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from dynamic_scouting_engine import DynamicScoutingEngine
+# Use PostgreSQL engine if DATABASE_URL is set, otherwise fall back to DuckDB
+database_url = os.getenv("DATABASE_URL")
+if database_url:
+    from dynamic_scouting_engine_postgres import DynamicScoutingEngine
+else:
+    from dynamic_scouting_engine import DynamicScoutingEngine
+
+from report_generator import ReportGenerator
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -26,9 +33,24 @@ app = FastAPI(
 )
 
 # CORS middleware for React frontend
+allowed_origins = [
+    "http://localhost:5173",
+    "http://localhost:5174", 
+    "http://localhost:5175",
+    "http://localhost:3000",
+    "http://127.0.0.1:5173",
+]
+
+# Add production frontend URL from environment variable
+frontend_url = os.getenv("FRONTEND_URL")
+if frontend_url:
+    allowed_origins.append(frontend_url)
+    # Also allow the Vercel preview URLs pattern
+    allowed_origins.append("https://*.vercel.app")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:3000", "http://127.0.0.1:5173"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -38,12 +60,20 @@ app.add_middleware(
 engine = DynamicScoutingEngine()
 engine.connect()
 
+# Initialize report generator
+report_generator = ReportGenerator()
+
 
 # ============== PYDANTIC MODELS ==============
 
 class AskRequest(BaseModel):
     question: str
     team_name: Optional[str] = None
+
+class GenerateReportRequest(BaseModel):
+    team_name: str
+    num_matches: int = 10
+    chat_insights: Optional[List[Dict[str, Any]]] = None
 
 class AskResponse(BaseModel):
     question: str
@@ -183,6 +213,36 @@ async def get_question_suggestions(team_name: Optional[str] = None):
     return {
         "suggestions": engine.suggest_questions(team_name)
     }
+
+
+@app.post("/api/generate-report")
+async def generate_report(request: GenerateReportRequest):
+    """Generate a comprehensive scouting report with optional chat insights."""
+    try:
+        teams = engine.get_all_teams()
+        if request.team_name not in teams:
+            raise HTTPException(status_code=404, detail=f"Team '{request.team_name}' not found")
+        
+        # Get scouting data
+        data = engine.generate_full_scouting_data(request.team_name, request.num_matches)
+        
+        # Generate report with chat insights
+        report_text = report_generator.generate_scouting_report(
+            scouting_data=data,
+            opponent_name=request.team_name,
+            chat_insights=request.chat_insights or []
+        )
+        
+        return {
+            "team_name": request.team_name,
+            "report": report_text,
+            "data": data,
+            "insights_included": len(request.chat_insights or [])
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # Cleanup on shutdown

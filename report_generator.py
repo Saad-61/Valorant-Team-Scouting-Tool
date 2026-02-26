@@ -1,12 +1,11 @@
 """
-Report Generator - Uses Gemini 2.5 Flash to generate scouting reports
+Report Generator - Uses Groq API to generate scouting reports
 Converts raw data into actionable narrative insights
 """
 
-from google import genai
-from google.genai import types
+from groq import Groq
 import json
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 import os
 from dotenv import load_dotenv
 
@@ -14,16 +13,16 @@ load_dotenv()
 
 
 class ReportGenerator:
-    """Generate scouting reports using Gemini AI."""
+    """Generate scouting reports using Groq API."""
     
-    MODEL_NAME = "gemini-2.5-flash"
+    MODEL_NAME = "llama-3.3-70b-versatile"  # Groq's best model
     
     def __init__(self, api_key: str = None):
-        """Initialize with Gemini API key."""
-        self.api_key = api_key or os.getenv("GEMINI_API_KEY")
+        """Initialize with Groq API key."""
+        self.api_key = api_key or os.getenv("GROQ_API_KEY")
         if self.api_key:
             self.api_key = self.api_key.strip().strip('"').strip("'")
-            self.client = genai.Client(api_key=self.api_key)
+            self.client = Groq(api_key=self.api_key)
         else:
             self.client = None
     
@@ -31,30 +30,43 @@ class ReportGenerator:
         """Check if API is configured."""
         return self.client is not None
     
-    def generate_scouting_report(self, scouting_data: Dict[str, Any], opponent_name: str) -> str:
-        """Generate a full scouting report from raw data."""
+    def generate_scouting_report(self, scouting_data: Dict[str, Any], opponent_name: str, chat_insights: List[Dict] = None) -> str:
+        """Generate a full scouting report from raw data and optional chat insights.
+        
+        Args:
+            scouting_data: Raw statistical data from database
+            opponent_name: Team name
+            chat_insights: Optional list of Q&A insights from chat, format:
+                [{"question": "...", "answer": "...", "timestamp": "..."}, ...]
+        """
         
         if not self.is_configured():
-            return self._generate_fallback_report(scouting_data, opponent_name)
+            return self._generate_fallback_report(scouting_data, opponent_name, chat_insights)
         
-        prompt = self._build_prompt(scouting_data, opponent_name)
+        prompt = self._build_prompt(scouting_data, opponent_name, chat_insights)
         
         try:
-            response = self.client.models.generate_content(
+            response = self.client.chat.completions.create(
                 model=self.MODEL_NAME,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    temperature=0.7,
-                    max_output_tokens=8192
-                )
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.7,
+                max_tokens=8192
             )
-            return response.text
+            return response.choices[0].message.content
         except Exception as e:
-            print(f"Gemini API error: {e}")
-            return self._generate_fallback_report(scouting_data, opponent_name)
+            print(f"Groq API error: {e}")
+            return self._generate_fallback_report(scouting_data, opponent_name, chat_insights)
     
-    def _build_prompt(self, data: Dict[str, Any], opponent: str) -> str:
+    def _build_prompt(self, data: Dict[str, Any], opponent: str, chat_insights: List[Dict] = None) -> str:
         """Build the prompt for Gemini."""
+        
+        # Add chat insights section if available
+        chat_context = ""
+        if chat_insights and len(chat_insights) > 0:
+            chat_context = "\n\n### AI Assistant Insights (from previous analysis)\n"
+            for insight in chat_insights[-10:]:  # Last 10 Q&As
+                chat_context += f"\n**Q: {insight.get('question')}**\n"
+                chat_context += f"A: {insight.get('answer', insight.get('interpretation', 'N/A'))}\n"
         
         return f"""You are a professional VALORANT esports analyst creating a scouting report for Cloud9's coaching staff.
 
@@ -84,6 +96,7 @@ Use the following data to create your analysis. Be specific with numbers and per
 
 ### Team Weaknesses Analysis
 {json.dumps(data.get('weaknesses', {}), indent=2, default=str)}
+{chat_context}
 
 ---
 
@@ -124,9 +137,11 @@ Generate the scouting report with these sections:
 - Tactical adjustments to make
 
 Be concise but thorough. Use bullet points. Include specific percentages and statistics to back up every claim.
+
+IMPORTANT: If AI Assistant Insights are provided above, incorporate those findings into relevant sections of the report.
 """
     
-    def _generate_fallback_report(self, data: Dict[str, Any], opponent: str) -> str:
+    def _generate_fallback_report(self, data: Dict[str, Any], opponent: str, chat_insights: List[Dict] = None) -> str:
         """Generate a basic report without LLM when API is not available."""
         
         overview = data.get('overview', {})
@@ -243,6 +258,22 @@ Be concise but thorough. Use bullet points. Include specific percentages and sta
         elif defense_pistol > attack_pistol + 10:
             report += f"- Focus on winning **attack pistols** - they're weaker on defense pistol ({defense_pistol}% vs {attack_pistol}%)\n"
         
+        # Add chat insights if available
+        if chat_insights and len(chat_insights) > 0:
+            report += """
+---
+
+## 💬 AI ASSISTANT INSIGHTS
+
+Based on previous analysis and queries:
+
+"""
+            for insight in chat_insights[-5:]:  # Last 5 Q&As
+                report += f"**Q: {insight.get('question')}**\n"
+                report += f"{insight.get('answer', insight.get('interpretation', 'N/A'))}\n\n"
+        
+            report += f"- Focus on winning **attack pistols** - they're weaker on defense pistol ({defense_pistol}% vs {attack_pistol}%)\n"
+        
         report += "\n---\n*Report generated by Cloud9 Scouting Tool*"
         
         return report
@@ -262,15 +293,13 @@ Data: {json.dumps(scouting_data.get('overview', {}), default=str)}
 Be specific with numbers. Focus on win rate, best maps, and recent form."""
         
         try:
-            response = self.client.models.generate_content(
+            response = self.client.chat.completions.create(
                 model=self.MODEL_NAME,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    temperature=0.7,
-                    max_output_tokens=200
-                )
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.7,
+                max_tokens=200
             )
-            return response.text
+            return response.choices[0].message.content
         except Exception as e:
             overview = scouting_data.get('overview', {})
             return f"{opponent_name} has a {overview.get('series_record', 'N/A')} record ({overview.get('win_rate', 0)}% WR) in recent matches."
@@ -301,17 +330,15 @@ Be specific with numbers and percentages. If the data doesn't contain informatio
 Provide a concise, data-backed answer. Use bullet points for clarity when listing multiple items."""
 
         try:
-            response = self.client.models.generate_content(
+            response = self.client.chat.completions.create(
                 model=self.MODEL_NAME,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    temperature=0.7,
-                    max_output_tokens=2048
-                )
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.7,
+                max_tokens=2048
             )
-            return response.text
+            return response.choices[0].message.content
         except Exception as e:
-            print(f"Gemini API error: {e}")
+            print(f"Groq API error: {e}")
             return self._fallback_chat_response(question, team_data, team_name)
     
     def _fallback_chat_response(self, question: str, team_data: Dict[str, Any], team_name: str) -> str:

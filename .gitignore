@@ -133,3 +133,4 @@ secrets.json
 
 # Build artifacts
 *.build
+.env

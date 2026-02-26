@@ -1,5 +1,5 @@
 // AI Chat Page - Conversational Analytics
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, forwardRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../utils/helpers';
 import { useAppStore } from '../store/appStore';
@@ -23,6 +23,11 @@ export function ChatPage() {
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+
+  // Save messages to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('chatMessages', JSON.stringify(messages));
+  }, [messages]);
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -198,7 +203,7 @@ export function ChatPage() {
 }
 
 // Message Bubble Component
-function MessageBubble({ message }) {
+const MessageBubble = forwardRef(function MessageBubble({ message }, ref) {
   const [copied, setCopied] = useState(false);
   const [showData, setShowData] = useState(false);
 
@@ -212,6 +217,7 @@ function MessageBubble({ message }) {
 
   return (
     <motion.div
+      ref={ref}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
@@ -258,23 +264,7 @@ function MessageBubble({ message }) {
           <p className="text-sm whitespace-pre-wrap">{message.content}</p>
         </div>
 
-        {/* SQL Query (if available) */}
-        {message.sql && (
-          <div className="mt-2">
-            <button
-              onClick={() => setShowData(!showData)}
-              className="text-xs text-gray-500 hover:text-gray-400 flex items-center gap-1"
-            >
-                          <Table className="w-3 h-3" />
-              {showData ? 'Hide' : 'Show'} SQL Query
-            </button>
-            {showData && (
-              <pre className="mt-2 p-3 bg-[var(--surface-secondary)] border border-[var(--border-primary)] rounded-lg text-xs text-[var(--text-secondary)] overflow-x-auto">
-                {message.sql}
-              </pre>
-            )}
-          </div>
-        )}
+        {/* SQL Query removed - hidden from user interface */}
 
         {/* Data Table (if available) */}
         {message.data && message.data.length > 0 && (
@@ -336,6 +326,6 @@ function MessageBubble({ message }) {
       </div>
     </motion.div>
   );
-}
+});
 
 export default ChatPage;

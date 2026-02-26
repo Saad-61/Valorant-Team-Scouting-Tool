@@ -1,5 +1,183 @@
 # 🚀 Vercel Deployment Checklist - Complete Beginner's Guide
 
+## Phase 0: Local Testing (DO THIS FIRST!) ⏱️ 15-20 minutes
+
+### ⚠️ Test locally before deploying to avoid issues!
+
+### Step 0.1: What is GROQ and Why Do We Need It?
+
+**GROQ** provides ultra-fast AI inference for your app's intelligent features:
+
+1. **AI Chat** 🤖
+   - Converts questions like "What agents does Cloud9 prefer?" into SQL queries
+   - Analyzes database and generates intelligent answers
+   - Uses LLaMA 3.3 70B model (very powerful!)
+
+2. **Scouting Reports** 📊
+   - Auto-generates narrative analysis from raw stats
+   - Identifies team patterns, weaknesses, strengths
+   - Creates actionable coaching insights
+
+3. **Smart Suggestions** 💡
+   - Recommends relevant follow-up questions
+   - Helps explore data efficiently
+
+**Without GROQ:** App works but AI features return basic fallback responses.
+
+### Step 0.2: Get Your .env File Ready
+
+- [ ] Make sure you have a `.env` file in your project root
+- [ ] It should contain your GROQ API key:
+  ```
+  GROQ_API_KEY=gsk_your_key_here
+  ```
+- [ ] If you don't have a GROQ key yet, get one at https://console.groq.com (FREE!)
+
+### Step 0.3: Install Backend Dependencies
+
+Open PowerShell in your project folder:
+
+```powershell
+# Activate virtual environment (if not already active)
+.venv\Scripts\Activate.ps1
+
+# Install dependencies
+pip install -r backend/requirements.txt
+```
+
+Expected output: List of packages being installed (FastAPI, psycopg2-binary, groq, etc.)
+
+### Step 0.4: Test Backend Server
+
+Start the backend API server:
+
+```powershell
+# From project root folder
+cd backend
+python main.py
+```
+
+**Expected output:**
+```
+INFO:     Started server process
+INFO:     Uvicorn running on http://127.0.0.1:8000
+INFO:     Application startup complete.
+```
+
+**✅ Test Backend Health:**
+1. [ ] Open browser to http://localhost:8000
+   - Should see: `{"status":"online","service":"VALORANT Scouting API","ai_enabled":true}`
+   - If `ai_enabled` is `false`, check your GROQ_API_KEY in .env
+
+2. [ ] Test API docs: http://localhost:8000/docs
+   - Should see interactive Swagger UI with all endpoints
+
+3. [ ] Test teams endpoint: http://localhost:8000/api/teams
+   - Should see array of team names: `["Cloud9","Sentinels","LOUD",...]`
+
+4. [ ] **Test AI Chat** (IMPORTANT!):
+   - Go to http://localhost:8000/docs
+   - Find `/api/ask` endpoint
+   - Click "Try it out"
+   - Enter:
+     ```json
+     {
+       "question": "What maps does Cloud9 play?",
+       "team": "Cloud9"
+     }
+     ```
+   - Click "Execute"
+   - **Should get:** AI-generated answer with map statistics
+   - **If error:** Check GROQ_API_KEY is valid
+
+**Leave backend running in this terminal!**
+
+### Step 0.5: Install Frontend Dependencies
+
+Open a **NEW** PowerShell terminal:
+
+```powershell
+cd frontend
+npm install
+```
+
+Expected: Download of React, Vite, Tailwind CSS, etc. (may take 1-2 minutes)
+
+### Step 0.6: Test Frontend
+
+Start the frontend development server:
+
+```powershell
+# Make sure you're in frontend folder
+npm run dev
+```
+
+**Expected output:**
+```
+VITE v5.x.x  ready in XXX ms
+
+➜  Local:   http://localhost:5173/
+➜  Network: use --host to expose
+```
+
+**✅ Test Frontend:**
+
+1. [ ] Open browser to http://localhost:5173
+   - Should see VALORANT Scouting Dashboard with sidebar
+
+2. [ ] **Test Team Selection:**
+   - Click "Dashboard" in sidebar
+   - Select a team from dropdown (e.g., "Cloud9")
+   - Should load team data and show charts
+
+3. [ ] **Test Chat Page (Critical!):**
+   - Click "Chat" in sidebar
+   - Select team: "Cloud9"
+   - Type question: "What are their best maps?"
+   - Click Send (or press Enter)
+   - **Should get:** AI response with map statistics
+   - **If error:** Backend might not be running or GROQ key missing
+
+4. [ ] **Test Other Pages:**
+   - [ ] Click "Players" → Should show player statistics
+   - [ ] Click "Map Analytics" → Should show map performance
+   - [ ] Click "Compositions" → Should show agent picks
+   - [ ] Click "Weaknesses" → Should show exploitable patterns
+
+### Step 0.7: Common Local Testing Issues
+
+**Issue: "Failed to fetch teams"**
+- ✅ Check backend is running on http://localhost:8000
+- ✅ Check no CORS errors in browser console (F12)
+
+**Issue: "Database connection failed"**
+- ✅ Using local DuckDB: Make sure `valorant_esports.duckdb` file exists
+- ✅ Using Supabase: Check DATABASE_URL in .env is correct
+
+**Issue: AI Chat returns "AI service not available"**
+- ✅ Check GROQ_API_KEY in .env file
+- ✅ Verify key is valid at https://console.groq.com
+- ✅ Check backend shows `"ai_enabled": true` at root endpoint
+
+**Issue: Blank page or React errors**
+- ✅ Check browser console (F12) for errors
+- ✅ Try: `npm run build` in frontend folder
+- ✅ Clear browser cache and reload
+
+### ✅ Local Testing Complete!
+
+If all tests pass, you're ready to deploy! 🚀
+
+**What we tested:**
+- ✅ Backend API is working
+- ✅ Database connection is working  
+- ✅ GROQ AI integration is working
+- ✅ Frontend builds and runs
+- ✅ Frontend ↔ Backend communication works
+- ✅ All pages load correctly
+
+---
+
 ## Phase 1: Database Setup (Supabase) ⏱️ 20-30 minutes
 
 ### Step 1.1: Create Supabase Account

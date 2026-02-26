@@ -2,14 +2,12 @@
 import { useState } from 'react';
 import { cn } from '../../utils/helpers';
 import { motion, AnimatePresence } from 'framer-motion';
-import ThemeToggle from '../ui/ThemeToggle';
 import {
   LayoutDashboard,
   Target,
   Map,
   User,
   TrendingUp,
-  MessageSquare,
   Settings,
   ChevronLeft,
   ChevronRight,
@@ -30,17 +28,22 @@ const NAV_ITEMS = [
     description: 'Welcome & overview',
   },
   {
+    id: 'dashboard',
+    label: 'Dashboard',
+    icon: LayoutDashboard,
+    description: 'Team stats & metrics',
+  },
+  {
     id: 'reports',
     label: 'Scout Report',
     icon: FileText,
     description: 'AI-generated analysis',
-    primary: true,
   },
   {
-    id: 'dashboard',
-    label: 'Team Overview',
-    icon: LayoutDashboard,
-    description: 'Stats & metrics',
+    id: 'chat',
+    label: 'AI Analyst',
+    icon: Sparkles,
+    description: 'Ask anything',
   },
   {
     id: 'weaknesses',
@@ -83,12 +86,6 @@ const NAV_ITEMS = [
     label: 'Trends',
     icon: TrendingUp,
     description: 'Performance over time',
-  },
-  {
-    id: 'chat',
-    label: 'AI Analyst',
-    icon: Sparkles,
-    description: 'Ask anything',
   },
 ];
 
@@ -164,12 +161,9 @@ export function Sidebar({
                 className={cn(
                   'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200',
                   'relative group focus:outline-none focus:ring-2 focus:ring-c9-500/50',
-                  item.primary && !isActive && 'bg-c9-500/10 border border-c9-500/30 hover:bg-c9-500/20',
                   isActive
                     ? 'bg-c9-500/10 text-c9-500'
-                    : item.primary 
-                      ? 'text-c9-400 hover:text-c9-300'
-                      : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)]'
+                    : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)]'
                 )}
               >
                 {/* Active indicator */}
@@ -268,20 +262,8 @@ export function Sidebar({
         </div>
       </nav>
 
-      {/* Theme Toggle & Collapse */}
-      <div className="p-3 border-t border-[var(--border-primary)] space-y-2">
-        {/* Theme Toggle */}
-        <div className={cn(
-          'flex items-center',
-          collapsed ? 'justify-center' : 'justify-between px-2'
-        )}>
-          {!collapsed && (
-            <span className="text-xs text-[var(--text-tertiary)]">Theme</span>
-          )}
-          <ThemeToggle />
-        </div>
-        
-        {/* Collapse Toggle */}
+      {/* Collapse Toggle */}
+      <div className="p-3 border-t border-[var(--border-primary)]">
         <button
           onClick={onToggleCollapse}
           className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] transition-colors focus:outline-none focus:ring-2 focus:ring-c9-500/50"

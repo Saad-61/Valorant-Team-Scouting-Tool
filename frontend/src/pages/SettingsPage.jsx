@@ -2,11 +2,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
-import { useAppStore } from '../store/appStore';
 import {
-  Sun, Moon, Monitor, Palette, Bell, Shield, Database,
-  Trash2, RefreshCw, Check, ChevronRight, Info, Zap,
-  Eye, EyeOff, Volume2, VolumeX,
+  Sun, Moon, Monitor, Palette, Eye,
+  Check, ChevronRight,
 } from 'lucide-react';
 
 const containerVariants = {
@@ -93,11 +91,9 @@ function ThemeOption({ theme, currentTheme, onSelect, icon: Icon, label }) {
 }
 
 export function SettingsPage() {
-  const { theme, setTheme, toggleTheme, resetToSystem } = useTheme();
-  const { resetFilters } = useAppStore();
-  const [confirmClear, setConfirmClear] = useState(false);
+  const { theme, setTheme, resetToSystem } = useTheme();
   
-  // Local settings state (could be moved to store/localStorage)
+  // Local settings state
   const [settings, setSettings] = useState(() => {
     const stored = localStorage.getItem('c9-scout-settings');
     return stored ? JSON.parse(stored) : {
@@ -112,30 +108,6 @@ export function SettingsPage() {
     const newSettings = { ...settings, [key]: value };
     setSettings(newSettings);
     localStorage.setItem('c9-scout-settings', JSON.stringify(newSettings));
-  };
-
-  const clearAllData = () => {
-    if (!confirmClear) {
-      setConfirmClear(true);
-      setTimeout(() => setConfirmClear(false), 3000);
-      return;
-    }
-    
-    // Clear all local storage
-    localStorage.removeItem('c9-scout-storage');
-    localStorage.removeItem('chatMessages');
-    localStorage.removeItem('c9-scout-settings');
-    resetFilters();
-    setSettings({
-      animations: true,
-      compactMode: false,
-      showDataTables: true,
-      autoRefresh: false,
-    });
-    setConfirmClear(false);
-    
-    // Reload to reset state
-    window.location.reload();
   };
 
   return (
@@ -221,89 +193,6 @@ export function SettingsPage() {
           description="Automatically update data every 5 minutes"
         />
       </SettingSection>
-
-      {/* Data Management Section */}
-      <SettingSection
-        title="Data & Storage"
-        description="Manage cached data and preferences"
-        icon={Database}
-      >
-        <div className="flex items-center justify-between py-2">
-          <div>
-            <div className="text-sm font-medium text-[var(--text-primary)]">Clear all data</div>
-            <div className="text-xs text-[var(--text-tertiary)]">
-              Reset all settings, filters, and chat history
-            </div>
-          </div>
-          <button
-            onClick={clearAllData}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-              confirmClear
-                ? 'bg-red-500 text-white hover:bg-red-600'
-                : 'bg-red-500/10 text-red-500 hover:bg-red-500/20'
-            }`}
-          >
-            {confirmClear ? 'Click again to confirm' : 'Clear Data'}
-          </button>
-        </div>
-
-        <div className="p-4 rounded-xl bg-[var(--surface-secondary)] border border-[var(--border-primary)]">
-          <div className="flex items-center gap-3 text-[var(--text-secondary)]">
-            <Info className="w-4 h-4 flex-shrink-0" />
-            <p className="text-xs">
-              Your team selections and chat history are stored locally in your browser. 
-              Clearing data will reset the app to its default state.
-            </p>
-          </div>
-        </div>
-      </SettingSection>
-
-      {/* About Section */}
-      <SettingSection
-        title="About"
-        description="Application information"
-        icon={Shield}
-      >
-        <div className="space-y-3">
-          <div className="flex justify-between py-2">
-            <span className="text-sm text-[var(--text-secondary)]">Version</span>
-            <span className="text-sm font-medium text-[var(--text-primary)]">1.0.0</span>
-          </div>
-          <div className="flex justify-between py-2">
-            <span className="text-sm text-[var(--text-secondary)]">Built for</span>
-            <span className="text-sm font-medium text-c9-500">Cloud9 Esports</span>
-          </div>
-          <div className="flex justify-between py-2">
-            <span className="text-sm text-[var(--text-secondary)]">AI Engine</span>
-            <span className="text-sm font-medium text-[var(--text-primary)]">Groq LLaMA 3.3</span>
-          </div>
-        </div>
-      </SettingSection>
-
-      {/* Keyboard Shortcuts */}
-      <motion.div
-        variants={itemVariants}
-        className="p-6 rounded-2xl bg-gradient-to-br from-c9-500/10 to-c9-600/5 border border-c9-500/20"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <Zap className="w-5 h-5 text-c9-500" />
-          <h3 className="text-lg font-semibold text-[var(--text-primary)]">Quick Tips</h3>
-        </div>
-        <ul className="space-y-2 text-sm text-[var(--text-secondary)]">
-          <li className="flex items-center gap-2">
-            <ChevronRight className="w-4 h-4 text-c9-500" />
-            Use the AI Analyst chat for complex queries
-          </li>
-          <li className="flex items-center gap-2">
-            <ChevronRight className="w-4 h-4 text-c9-500" />
-            Export scouting reports as markdown files
-          </li>
-          <li className="flex items-center gap-2">
-            <ChevronRight className="w-4 h-4 text-c9-500" />
-            Team selections persist across page navigation
-          </li>
-        </ul>
-      </motion.div>
     </motion.div>
   );
 }

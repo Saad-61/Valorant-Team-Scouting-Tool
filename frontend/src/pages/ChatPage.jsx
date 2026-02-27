@@ -230,6 +230,7 @@ export function ChatPage() {
 const MessageBubble = forwardRef(function MessageBubble({ message }, ref) {
   const [copied, setCopied] = useState(false);
   const [showData, setShowData] = useState(false);
+  const [rowLimit, setRowLimit] = useState(10);
 
   const isUser = message.role === 'user';
 
@@ -314,13 +315,27 @@ const MessageBubble = forwardRef(function MessageBubble({ message }, ref) {
         {/* Data Table (if available) */}
         {message.data && message.data.length > 0 && (
           <div className="mt-2">
-            <div className="flex items-center gap-2 text-xs text-[var(--text-tertiary)] mb-2">
-              <BarChart3 className="w-3 h-3" />
-              {message.data.length} results
+            <div className="flex items-center justify-between text-xs text-[var(--text-tertiary)] mb-2">
+              <div className="flex items-center gap-2">
+                <BarChart3 className="w-3 h-3" />
+                {message.data.length} results
+              </div>
+              {message.data.length > 10 && (
+                <select
+                  value={rowLimit}
+                  onChange={(e) => setRowLimit(Number(e.target.value))}
+                  className="bg-[var(--surface-secondary)] border border-[var(--border-primary)] rounded px-2 py-1 text-xs text-[var(--text-secondary)] focus:outline-none focus:ring-1 focus:ring-c9-500"
+                >
+                  <option value={10}>Show 10</option>
+                  <option value={25}>Show 25</option>
+                  <option value={50}>Show 50</option>
+                  <option value={message.data.length}>Show All ({message.data.length})</option>
+                </select>
+              )}
             </div>
-            <div className="overflow-x-auto bg-[var(--surface-primary)] border border-[var(--border-primary)] rounded-lg">
+            <div className="overflow-x-auto bg-[var(--surface-primary)] border border-[var(--border-primary)] rounded-lg max-h-[400px] overflow-y-auto">
               <table className="w-full text-sm">
-                <thead>
+                <thead className="sticky top-0 bg-[var(--surface-primary)]">
                   <tr className="border-b border-[var(--border-primary)]">
                     {Object.keys(message.data[0]).map((key) => (
                       <th key={key} className="px-3 py-2 text-left text-[var(--text-tertiary)] font-medium">
@@ -330,7 +345,7 @@ const MessageBubble = forwardRef(function MessageBubble({ message }, ref) {
                   </tr>
                 </thead>
                 <tbody>
-                  {message.data.slice(0, 10).map((row, i) => (
+                  {message.data.slice(0, rowLimit).map((row, i) => (
                     <tr key={i} className="border-b border-[var(--border-primary)] last:border-0">
                       {Object.values(row).map((value, j) => (
                         <td key={j} className="px-3 py-2 text-[var(--text-secondary)]">
@@ -341,9 +356,9 @@ const MessageBubble = forwardRef(function MessageBubble({ message }, ref) {
                   ))}
                 </tbody>
               </table>
-              {message.data.length > 10 && (
+              {message.data.length > rowLimit && (
                 <p className="text-xs text-[var(--text-tertiary)] py-2 px-3 border-t border-[var(--border-primary)]">
-                  Showing 10 of {message.data.length} results
+                  Showing {rowLimit} of {message.data.length} results
                 </p>
               )}
             </div>

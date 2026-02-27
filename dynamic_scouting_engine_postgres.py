@@ -592,10 +592,21 @@ DO NOT:
         
         response = f"**{team_name} — Map Pool Scouting**\n\n"
         
+        # Filter out invalid map names
+        valid_maps = []
         for m in map_stats:
-            map_name = m.get('map') or m.get('map_name') or 'Unknown'
-            win_rate = m.get('win_rate', 0) or 0
-            games = m.get('games') or m.get('games_played', 0) or 0
+            map_name = m.get('map') or m.get('map_name')
+            if not map_name or map_name.lower() in ['none', 'unknown', 'null']:
+                continue
+            valid_maps.append({'map_name': map_name, 'win_rate': m.get('win_rate', 0) or 0, 'games': m.get('games') or m.get('games_played', 0) or 0})
+        
+        if not valid_maps:
+            return f"No valid map data found for **{team_name}**."
+        
+        for m in valid_maps:
+            map_name = m['map_name']
+            win_rate = m['win_rate']
+            games = m['games']
             
             if win_rate >= 55:
                 icon = "🟢"
@@ -606,14 +617,14 @@ DO NOT:
             response += f"{icon} **{map_name}**: **{win_rate}%** WR ({games} games)\n"
         
         # Veto recommendations
-        strong_maps = [m.get('map') or m.get('map_name') or 'Unknown' for m in map_stats if (m.get('win_rate', 0) or 0) >= 55]
-        weak_maps = [m.get('map') or m.get('map_name') or 'Unknown' for m in map_stats if (m.get('win_rate', 0) or 0) < 45]
+        strong_maps = [m['map_name'] for m in valid_maps if m['win_rate'] >= 55]
+        weak_maps = [m['map_name'] for m in valid_maps if m['win_rate'] < 45]
         
         response += "\n"
         if strong_maps:
-            response += f"**Ban consideration:** {', '.join(filter(None, strong_maps))}\n"
+            response += f"**Ban consideration:** {', '.join(strong_maps)}\n"
         if weak_maps:
-            response += f"**Force in veto:** {', '.join(filter(None, weak_maps))}\n"
+            response += f"**Force in veto:** {', '.join(weak_maps)}\n"
         
         return response
     
@@ -622,9 +633,15 @@ DO NOT:
         if not players:
             return f"No player data found for **{team_name}**."
         
+        # Filter out invalid player names
+        valid_players = [p for p in players if p.get('player_name') and p.get('player_name').lower() not in ['none', 'unknown', 'null']]
+        
+        if not valid_players:
+            return f"No valid player data found for **{team_name}**."
+        
         response = f"**{team_name} — Player Threat Assessment**\n\n"
         
-        for p in players:
+        for p in valid_players:
             name = p.get('player_name', 'Unknown')
             games = p.get('games', 0)
             kills = p.get('kills', 0)
@@ -641,11 +658,12 @@ DO NOT:
             
             agent_pool = p.get('agent_pool', [])
             if agent_pool:
-                agents = [a.get('agent', '') for a in agent_pool[:3]]
-                response += f"  Agents: {', '.join(agents)}\n"
+                agents = [a.get('agent', '') for a in agent_pool[:3] if a.get('agent')]
+                if agents:
+                    response += f"  Agents: {', '.join(agents)}\n"
         
         # Find the star player
-        star = max(players, key=lambda p: p.get('kd_ratio', 0) or 0)
+        star = max(valid_players, key=lambda p: p.get('kd_ratio', 0) or 0)
         response += f"\n**Tactical Takeaway:** Focus utility and pressure on **{star.get('player_name', 'Unknown')}** — their top fragger."
         return response
     
@@ -742,6 +760,7 @@ DO NOT:
                 ROUND(1.0 * SUM(prs.kills) / COUNT(DISTINCT prs.game_id), 1) as avg_kills_per_game
             FROM player_round_stats prs
             JOIN game_compositions gc ON prs.game_id = gc.game_id AND prs.player_name = gc.player_name
+            WHERE prs.player_name IS NOT NULL AND gc.team_name IS NOT NULL
             GROUP BY prs.player_name, gc.team_name
             HAVING COUNT(DISTINCT prs.game_id) >= 5
             ORDER BY kd_ratio DESC
@@ -1337,12 +1356,12 @@ Just mention a team name and what you want to know!"""
         wins = win_data['wins'] or 0
         win_rate = round(100.0 * wins / total, 1)
         
-        # Map stats
+        # Map stats (filter nulls and require 2+ games for reliability)
         map_query = """
             SELECT map_name as map, games_played as games, wins, win_rate, round_diff_ratio as avg_round_diff
             FROM v_team_map_stats
-            WHERE team_name ILIKE %s
-            ORDER BY games_played DESC
+            WHERE team_name ILIKE %s AND map_name IS NOT NULL AND games_played >= 2
+            ORDER BY games_played DESC, win_rate DESC
         """
         
         with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
@@ -1452,25 +1471,30 @@ Just mention a team name and what you want to know!"""
         
         weaknesses = []
         
-        # Check map weaknesses
+        # Check map weaknesses (limit to top 3 worst maps, filter nulls)
         map_query = """
             SELECT map_name as map, win_rate, games_played as games
             FROM v_team_map_stats
-            WHERE team_name ILIKE %s AND win_rate < 45 AND games_played >= 2
+            WHERE team_name ILIKE %s AND win_rate < 45 AND games_played >= 2 AND map_name IS NOT NULL
             ORDER BY win_rate ASC
+            LIMIT 3
         """
         
         with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
             cur.execute(map_query, (f"%{team_name}%",))
             weak_maps = [dict(row) for row in cur.fetchall()]
         
+        # Filter out null/invalid map names at Python level too
         for m in weak_maps:
+            map_name = m.get('map')
+            if not map_name or str(map_name).lower() in ['none', 'unknown', 'null']:
+                continue
             weaknesses.append({
                 "category": "Map Pool",
                 "severity": "HIGH" if m['win_rate'] < 35 else "MEDIUM",
-                "finding": f"Poor performance on {m['map']}",
+                "finding": f"Poor performance on {map_name} ({m['win_rate']:.1f}% WR)",
                 "details": f"Win rate of {m['win_rate']:.1f}% across {m['games']} games",
-                "recommendation": f"Consider banning {m['map']} or prepare specific counter-strategies"
+                "recommendation": f"Force {map_name} in veto — exploit this weakness"
             })
         
         # If no weak maps found, check all maps and report lowest
@@ -1478,7 +1502,7 @@ Just mention a team name and what you want to know!"""
             all_maps_query = """
                 SELECT map_name as map, win_rate, games_played as games
                 FROM v_team_map_stats
-                WHERE team_name ILIKE %s AND games_played >= 1
+                WHERE team_name ILIKE %s AND games_played >= 1 AND map_name IS NOT NULL
                 ORDER BY win_rate ASC
                 LIMIT 2
             """
@@ -1486,14 +1510,98 @@ Just mention a team name and what you want to know!"""
                 cur.execute(all_maps_query, (f"%{team_name}%",))
                 lowest_maps = [dict(row) for row in cur.fetchall()]
             
+            # Filter out null/invalid map names
             for m in lowest_maps:
+                map_name = m.get('map')
+                if not map_name or str(map_name).lower() in ['none', 'unknown', 'null']:
+                    continue
                 weaknesses.append({
                     "category": "Map Pool",
                     "severity": "LOW" if m['win_rate'] >= 45 else "MEDIUM",
-                    "finding": f"Relatively weaker on {m['map']}",
+                    "finding": f"Relatively weaker on {map_name} ({m['win_rate']:.1f}% WR)",
                     "details": f"Win rate of {m['win_rate']:.1f}% across {m['games']} games",
-                    "recommendation": f"Target {m['map']} if looking for advantages"
+                    "recommendation": f"Target {map_name} in veto for potential edge"
                 })
+        
+        # Check defense weakness
+        defense_query = """
+            SELECT 
+                SUM(CASE WHEN r.defender_team_id = gc.team_id AND r.winner_team_id = gc.team_id THEN 1 ELSE 0 END) as defense_wins,
+                SUM(CASE WHEN r.defender_team_id = gc.team_id THEN 1 ELSE 0 END) as defense_rounds
+            FROM rounds r
+            JOIN game_compositions gc ON r.game_id = gc.game_id
+            WHERE gc.team_name ILIKE %s
+        """
+        try:
+            with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
+                cur.execute(defense_query, (f"%{team_name}%",))
+                defense_stats = cur.fetchone()
+                if defense_stats and defense_stats['defense_rounds'] and defense_stats['defense_rounds'] >= 50:
+                    defense_wr = round(100.0 * (defense_stats['defense_wins'] or 0) / defense_stats['defense_rounds'], 1)
+                    if defense_wr < 45:
+                        weaknesses.append({
+                            "category": "Defense",
+                            "severity": "HIGH" if defense_wr < 40 else "MEDIUM",
+                            "finding": f"Weak on defense ({defense_wr}% WR)",
+                            "details": f"{defense_stats['defense_wins']}/{defense_stats['defense_rounds']} defensive rounds won",
+                            "recommendation": f"Run aggressive executes — they struggle to hold sites"
+                        })
+        except Exception:
+            pass
+        
+        # Check attack weakness
+        attack_query = """
+            SELECT 
+                SUM(CASE WHEN r.attacker_team_id = gc.team_id AND r.winner_team_id = gc.team_id THEN 1 ELSE 0 END) as attack_wins,
+                SUM(CASE WHEN r.attacker_team_id = gc.team_id THEN 1 ELSE 0 END) as attack_rounds
+            FROM rounds r
+            JOIN game_compositions gc ON r.game_id = gc.game_id
+            WHERE gc.team_name ILIKE %s
+        """
+        try:
+            with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
+                cur.execute(attack_query, (f"%{team_name}%",))
+                attack_stats = cur.fetchone()
+                if attack_stats and attack_stats['attack_rounds'] and attack_stats['attack_rounds'] >= 50:
+                    attack_wr = round(100.0 * (attack_stats['attack_wins'] or 0) / attack_stats['attack_rounds'], 1)
+                    if attack_wr < 45:
+                        weaknesses.append({
+                            "category": "Attack",
+                            "severity": "HIGH" if attack_wr < 40 else "MEDIUM",
+                            "finding": f"Weak on attack ({attack_wr}% WR)",
+                            "details": f"{attack_stats['attack_wins']}/{attack_stats['attack_rounds']} attack rounds won",
+                            "recommendation": f"Play patient defense — deny them space and punish entries"
+                        })
+        except Exception:
+            pass
+        
+        # Check pistol round weakness
+        try:
+            team_id_query = "SELECT DISTINCT team_id FROM game_compositions WHERE team_name ILIKE %s LIMIT 1"
+            with self.conn.cursor() as cur:
+                cur.execute(team_id_query, (f"%{team_name}%",))
+                row = cur.fetchone()
+                if row:
+                    team_id = row[0]
+                    pistol_query = """
+                        SELECT SUM(pistol_wins) as wins, COUNT(*) as games
+                        FROM v_pistol_performance WHERE team_id = %s
+                    """
+                    with self.conn.cursor(cursor_factory=RealDictCursor) as cur2:
+                        cur2.execute(pistol_query, (team_id,))
+                        pistol_stats = cur2.fetchone()
+                        if pistol_stats and pistol_stats['games'] and pistol_stats['games'] >= 10:
+                            pistol_wr = round(100.0 * (pistol_stats['wins'] or 0) / pistol_stats['games'], 1)
+                            if pistol_wr < 40:
+                                weaknesses.append({
+                                    "category": "Pistol Rounds",
+                                    "severity": "MEDIUM",
+                                    "finding": f"Poor pistol conversion ({pistol_wr}% WR)",
+                                    "details": f"{pistol_stats['wins']}/{pistol_stats['games']} pistol rounds won",
+                                    "recommendation": f"Win pistols → build economy lead → snowball rounds"
+                                })
+        except Exception:
+            pass
         
         return {"weaknesses": weaknesses}
     

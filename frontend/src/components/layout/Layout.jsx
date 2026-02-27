@@ -3,14 +3,12 @@ import { useState } from 'react';
 import { cn } from '../../utils/helpers';
 import { motion } from 'framer-motion';
 import { Sidebar } from './Sidebar';
-import { Download } from 'lucide-react';
 
 export function Layout({
   children,
   currentPage = 'dashboard',
   onNavigate,
   teamName,
-  onExport,
   className,
 }) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -64,16 +62,6 @@ export function Layout({
 
             {/* Right: Actions */}
             <div className="flex items-center gap-3">
-              {/* Export Button */}
-              {onExport && (
-                <button
-                  onClick={onExport}
-                  className="flex items-center gap-2 px-4 py-2 bg-c9-500 hover:bg-c9-600 text-white text-sm font-medium rounded-lg transition-colors shadow-c9-glow-sm hover:shadow-c9-glow focus:outline-none focus:ring-2 focus:ring-c9-500/50 focus:ring-offset-2"
-                >
-                  <Download className="w-4 h-4" />
-                  <span className="hidden sm:inline">Export Report</span>
-                </button>
-              )}
             </div>
           </div>
         </header>

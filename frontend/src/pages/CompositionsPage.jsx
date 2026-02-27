@@ -9,12 +9,11 @@ import { AnalyticsCard } from '../components/ui/AnalyticsCard';
 import { ChartContainer } from '../components/ui/ChartContainer';
 import { TeamSelector } from '../components/ui/TeamSelector';
 import { TeamRequiredPrompt } from '../components/ui/TeamRequiredPrompt';
-import { cn } from '../utils/helpers';
 import { useAppStore } from '../store/appStore';
 import api from '../services/api';
 import {
   Users, Crosshair, Shield, Eye, Layers,
-  Target, TrendingUp, Zap,
+  Target,
 } from 'lucide-react';
 
 const containerVariants = {
@@ -71,19 +70,25 @@ export function CompositionsPage() {
   }, [filters.team]);
 
   // Process agent pick rates - use agent_picks from API
+  // Engine returns: { agent, role, games } where games = times_picked
   const getAgentPickRates = () => {
     if (!compositions?.agent_picks) return [];
+    const picks = compositions.agent_picks;
+    const totalPicks = picks.reduce((sum, a) => sum + (a.games || a.times_picked || 0), 0);
     
-    return compositions.agent_picks
-      .sort((a, b) => b.pick_rate - a.pick_rate)
+    return picks
+      .sort((a, b) => (b.games || b.times_picked || 0) - (a.games || a.times_picked || 0))
       .slice(0, 10)
-      .map(agent => ({
-        name: agent.agent.charAt(0).toUpperCase() + agent.agent.slice(1),
-        pickRate: Math.round(agent.pick_rate),
-        picks: agent.picks || 0,
-        role: agent.role || 'Unknown',
-        color: ROLE_COLORS[agent.role] || '#6b7280',
-      }));
+      .map(agent => {
+        const games = agent.games || agent.times_picked || 0;
+        return {
+          name: (agent.agent || '').charAt(0).toUpperCase() + (agent.agent || '').slice(1),
+          pickRate: totalPicks > 0 ? Math.round((games / totalPicks) * 100) : 0,
+          picks: games,
+          role: agent.role || 'Unknown',
+          color: ROLE_COLORS[agent.role] || '#6b7280',
+        };
+      });
   };
 
   // Process role distribution - use role_distribution from API
@@ -97,23 +102,8 @@ export function CompositionsPage() {
     }));
   };
 
-  // Get compositions by map
-  const getCompositionsByMap = () => {
-    if (!compositions?.compositions_by_map) return [];
-    
-    return Object.entries(compositions.compositions_by_map).map(([map, comps]) => ({
-      map: map.charAt(0).toUpperCase() + map.slice(1),
-      compositions: comps.map(c => ({
-        agents: c.agents.split(', ').map(a => a.charAt(0).toUpperCase() + a.slice(1)),
-        timesPlayed: c.times_played,
-        pickRate: Math.round(c.pick_rate),
-      })),
-    })).sort((a, b) => b.compositions[0]?.timesPlayed - a.compositions[0]?.timesPlayed);
-  };
-
   const agentPickRates = getAgentPickRates();
   const roleDistribution = getRoleDistribution();
-  const compositionsByMap = getCompositionsByMap();
 
   return (
     <motion.div
@@ -159,7 +149,7 @@ export function CompositionsPage() {
       ) : (
         <>
           {/* KPI Cards */}
-          <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <AnalyticsCard
               title="Most Played Agent"
               value={agentPickRates[0]?.name || '—'}
@@ -178,12 +168,6 @@ export function CompositionsPage() {
               value={roleDistribution[0]?.name || '—'}
               icon={roleDistribution[0] ? ROLE_ICONS[roleDistribution[0].name] || Shield : Shield}
               subtitle="Most common role"
-            />
-            <AnalyticsCard
-              title="Maps Played"
-              value={compositionsByMap.length || 0}
-              icon={Layers}
-              subtitle="Unique map pool"
             />
           </motion.div>
 
@@ -237,82 +221,37 @@ export function CompositionsPage() {
             </ChartContainer>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Role Distribution */}
-            <motion.div variants={itemVariants}>
-              <ChartContainer title="Role Distribution" subtitle="Agent role preferences">
-                <ResponsiveContainer width="100%" height={300}>
-                  <PieChart>
-                    <Pie
-                      data={roleDistribution}
-                      cx="50%"
-                      cy="50%"
-                      innerRadius={60}
-                      outerRadius={100}
-                      dataKey="value"
-                      label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                      labelLine={false}
-                    >
-                      {roleDistribution.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Pie>
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: 'var(--surface-primary)',
-                        border: '1px solid var(--border-primary)',
-                        borderRadius: '8px',
-                      }}
-                    />
-                    <Legend />
-                  </PieChart>
-                </ResponsiveContainer>
-              </ChartContainer>
-            </motion.div>
-
-            {/* Map Compositions */}
-            <motion.div variants={itemVariants}>
-              <ChartContainer title="Compositions by Map" subtitle="Team compositions per map">
-                <div className="space-y-4 max-h-[400px] overflow-y-auto pr-2">
-                  {compositionsByMap.length > 0 ? compositionsByMap.map((mapData) => (
-                    <div
-                      key={mapData.map}
-                      className={cn(
-                        'p-4 rounded-lg border',
-                        'bg-[var(--surface-secondary)] border-[var(--border-primary)]'
-                      )}
-                    >
-                      <div className="font-bold text-c9-400 mb-2">{mapData.map}</div>
-                      <div className="space-y-2">
-                        {mapData.compositions.slice(0, 2).map((comp, idx) => (
-                          <div key={idx} className="flex items-center justify-between">
-                            <div className="flex items-center gap-1 flex-wrap">
-                              {comp.agents.map((agent, aidx) => (
-                                <span
-                                  key={aidx}
-                                  className="px-2 py-1 text-xs rounded bg-[var(--surface-tertiary)] text-[var(--text-secondary)]"
-                                >
-                                  {agent}
-                                </span>
-                              ))}
-                            </div>
-                            <div className="flex items-center gap-3 ml-2">
-                              <span className="text-sm font-medium text-c9-400">{comp.pickRate}%</span>
-                              <span className="text-xs text-[var(--text-tertiary)]">{comp.timesPlayed}x</span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )) : (
-                    <div className="text-center py-8 text-[var(--text-secondary)]">
-                      No composition data available
-                    </div>
-                  )}
-                </div>
-              </ChartContainer>
-            </motion.div>
-          </div>
+          {/* Role Distribution */}
+          <motion.div variants={itemVariants}>
+            <ChartContainer title="Role Distribution" subtitle="Agent role preferences">
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={roleDistribution}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={60}
+                    outerRadius={100}
+                    dataKey="value"
+                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                    labelLine={false}
+                  >
+                    {roleDistribution.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: 'var(--surface-primary)',
+                      border: '1px solid var(--border-primary)',
+                      borderRadius: '8px',
+                    }}
+                  />
+                  <Legend />
+                </PieChart>
+              </ResponsiveContainer>
+            </ChartContainer>
+          </motion.div>
         </>
       )}
     </motion.div>

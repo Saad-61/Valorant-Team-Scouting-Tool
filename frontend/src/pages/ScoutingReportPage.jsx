@@ -58,7 +58,6 @@ export function ScoutingReportPage() {
     weaknesses: false,
     strategies: false,
   });
-  const reportRef = useRef(null);
 
   // Load chat insights from localStorage on mount
   useEffect(() => {
@@ -133,39 +132,271 @@ export function ScoutingReportPage() {
     }));
   };
 
-  // Export report as text/markdown with AI generation
+  // Export report as PDF with all stats, graphs, and charts
   const exportReport = async () => {
     if (!scoutData || !filters.team) return;
 
     try {
       setLoading(true);
       
-      // Generate AI-powered report with chat insights
-      const reportData = await api.generateReport(
-        filters.team, 
-        10, 
-        chatInsights.slice(-10) // Last 10 Q&As
-      );
-      
-      const report = reportData.report || generateTextReport();
-      const blob = new Blob([report], { type: 'text/markdown' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${filters.team}_scouting_report.md`;
-      a.click();
-      URL.revokeObjectURL(url);
+      try {
+        const jsPDF = (await import('jspdf')).jsPDF;
+        const pdf = new jsPDF({
+          orientation: 'portrait',
+          unit: 'mm',
+          format: 'a4',
+          compress: true,
+        });
+
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+        let yPosition = 15;
+        const lineHeight = 5;
+        const margin = 15;
+        const contentWidth = pageWidth - (margin * 2);
+
+        // Set default font to Arial for better compatibility
+        pdf.setFont('helvetica');
+
+        // Helper function to add text with auto-wrapping
+        const addWrappedText = (text, fontSize = 10, isBold = false) => {
+          pdf.setFontSize(fontSize);
+          pdf.setFont('helvetica', isBold ? 'bold' : 'normal');
+          const lines = pdf.splitTextToSize(text, contentWidth);
+          lines.forEach(line => {
+            if (yPosition > pageHeight - 15) {
+              pdf.addPage();
+              yPosition = 15;
+            }
+            pdf.text(line, margin, yPosition);
+            yPosition += lineHeight;
+          });
+          return yPosition;
+        };
+
+        const addHeading = (text, level = 1) => {
+          const size = level === 1 ? 16 : level === 2 ? 13 : 11;
+          yPosition += 3;
+          pdf.setFontSize(size);
+          pdf.setFont('helvetica', 'bold');
+          if (yPosition > pageHeight - 20) {
+            pdf.addPage();
+            yPosition = 15;
+          }
+          pdf.text(text, margin, yPosition);
+          yPosition += lineHeight + 2;
+          // Add a line under heading
+          pdf.setDrawColor(0);
+          pdf.line(margin, yPosition - 1, pageWidth - margin, yPosition - 1);
+          yPosition += 2;
+        };
+
+        // HEADER
+        addHeading('CLOUD9 VALORANT - SCOUTING REPORT', 1);
+        
+        pdf.setFontSize(10);
+        pdf.setFont('helvetica', 'normal');
+        pdf.text(`Opponent: ${filters.team.toUpperCase()}`, margin, yPosition);
+        yPosition += lineHeight;
+        pdf.text(`Generated: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} at ${new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`, margin, yPosition);
+        yPosition += lineHeight;
+        const totalGames = scoutData.overview?.map_stats?.reduce((sum, m) => sum + (m.games || 0), 0) || 0;
+        pdf.text(`Matches Analyzed: ${totalGames}`, margin, yPosition);
+        yPosition += 8;
+
+        // QUICK STATS
+        addHeading('[*] QUICK STATS', 2);
+        pdf.setFontSize(9);
+        pdf.setFont('helvetica', 'normal');
+        const statsText = [
+          `- Overall Win Rate: ${scoutData.overview?.win_rate?.toFixed(1) || 0}%`,
+          `- Series Record: ${scoutData.overview?.series_record || 'N/A'}`,
+          `- Map Pool Size: ${scoutData.overview?.map_stats?.length || 0} maps`,
+          `- Players Analyzed: ${scoutData.players?.players?.length || 0}`,
+          `- Weaknesses Identified: ${scoutData.weaknesses?.weaknesses?.length || 0}`,
+        ];
+        statsText.forEach(stat => {
+          if (yPosition > pageHeight - 15) {
+            pdf.addPage();
+            yPosition = 15;
+          }
+          pdf.text(stat, margin + 5, yPosition);
+          yPosition += lineHeight;
+        });
+        yPosition += 3;
+
+        // PISTOL ROUND ANALYSIS
+        addHeading('[>>] PISTOL ROUND ANALYSIS', 2);
+        pdf.setFontSize(10);
+        pdf.setFont('helvetica', 'normal');
+        const attackPistol = (scoutData.pistol_rounds?.attack_pistol?.win_rate || 0).toFixed(1);
+        const defensePistol = (scoutData.pistol_rounds?.defense_pistol?.win_rate || 0).toFixed(1);
+        pdf.text(`Attack Pistol Win Rate: ${attackPistol}%`, margin, yPosition);
+        yPosition += lineHeight;
+        pdf.text(`Defense Pistol Win Rate: ${defensePistol}%`, margin, yPosition);
+        yPosition += lineHeight;
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(9);
+        const pistolAnalysis = attackPistol >= 55 
+          ? '[+] Strong attack pistols - Expect aggressive utility usage and confident aim dueling'
+          : attackPistol < 45
+          ? '[-] Weak attack pistols - Opportunity to exploit with aggressive early positioning'
+          : '[~] Balanced attack pistols - Standard defensive setup recommended';
+        addWrappedText(pistolAnalysis, 9, false);
+        yPosition += 3;
+
+        // MAP POOL ANALYSIS
+        addHeading('[#] MAP POOL ANALYSIS', 2);
+        pdf.setFontSize(9);
+        scoutData.overview?.map_stats?.forEach((map, idx) => {
+          if (yPosition > pageHeight - 25) {
+            pdf.addPage();
+            yPosition = 15;
+          }
+          pdf.setFont('helvetica', 'bold');
+          pdf.text(`${idx + 1}. ${map.map.toUpperCase()} - ${(map.win_rate || 0).toFixed(1)}% WR`, margin, yPosition);
+          yPosition += lineHeight;
+          pdf.setFont('helvetica', 'normal');
+          pdf.setFontSize(8);
+          pdf.text(`   ${map.games} games | ${map.wins}W-${map.games - map.wins}L | Avg Diff: ${(map.avg_round_diff || 0).toFixed(1)}`, margin, yPosition);
+          yPosition += lineHeight + 1;
+        });
+        yPosition += 3;
+
+        // AGENT COMPOSITIONS
+        addHeading('[~] AGENT COMPOSITIONS', 2);
+        pdf.setFontSize(9);
+        pdf.setFont('helvetica', 'bold');
+        pdf.text('Top Agents:', margin, yPosition);
+        yPosition += lineHeight;
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(8);
+        scoutData.compositions?.agent_picks?.slice(0, 8).forEach((agent, idx) => {
+          if (yPosition > pageHeight - 15) {
+            pdf.addPage();
+            yPosition = 15;
+          }
+          const pickRate = agent.pick_rate ? agent.pick_rate.toFixed(0) : 'N/A';
+          pdf.text(`${idx + 1}. ${agent.agent} (${agent.role}) - ${pickRate}%`, margin + 3, yPosition);
+          yPosition += lineHeight;
+        });
+        yPosition += 2;
+
+        // ROLE DISTRIBUTION
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(9);
+        pdf.text('Role Distribution:', margin, yPosition);
+        yPosition += lineHeight;
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(8);
+        Object.entries(scoutData.compositions?.role_distribution || {}).forEach(([role, value]) => {
+          if (yPosition > pageHeight - 15) {
+            pdf.addPage();
+            yPosition = 15;
+          }
+          pdf.text(`${role}: ${value?.toFixed(0)}%`, margin + 3, yPosition);
+          yPosition += lineHeight;
+        });
+        yPosition += 3;
+
+        // WEAKNESSES
+        addHeading('[!] IDENTIFIED WEAKNESSES', 2);
+        pdf.setFontSize(9);
+        if (scoutData.weaknesses?.weaknesses?.length > 0) {
+          scoutData.weaknesses.weaknesses.forEach((weakness, idx) => {
+            if (yPosition > pageHeight - 20) {
+              pdf.addPage();
+              yPosition = 15;
+            }
+            pdf.setFont('helvetica', 'bold');
+            pdf.text(`${idx + 1}. ${weakness.category || weakness.area} [${weakness.severity || 'Medium'}]`, margin, yPosition);
+            yPosition += lineHeight;
+            pdf.setFont('helvetica', 'normal');
+            pdf.setFontSize(8);
+            addWrappedText(`Finding: ${weakness.finding}`, 8, false);
+            addWrappedText(`Action: ${weakness.recommendation}`, 8, false);
+            yPosition += 2;
+          });
+        } else {
+          pdf.setFontSize(9);
+          pdf.text('No significant weaknesses identified', margin, yPosition);
+          yPosition += lineHeight;
+        }
+        yPosition += 3;
+
+        // PLAYER PROFILES
+        addHeading('[P] PLAYER PROFILES', 2);
+        pdf.setFontSize(9);
+        scoutData.players?.players?.forEach((player, idx) => {
+          if (yPosition > pageHeight - 20) {
+            pdf.addPage();
+            yPosition = 15;
+          }
+          pdf.setFont('helvetica', 'bold');
+          const kdRatio = (player.kd_ratio || player.kd || 0).toFixed(2);
+          pdf.text(`${idx + 1}. ${player.name || player.player_name} - ${kdRatio} K/D`, margin, yPosition);
+          yPosition += lineHeight;
+          pdf.setFont('helvetica', 'normal');
+          pdf.setFontSize(8);
+          pdf.text(`    ${player.games} games | ${player.kills}K/${player.deaths}D/${player.assists}A`, margin + 3, yPosition);
+          yPosition += lineHeight;
+          const agents = player.agent_pool?.map(a => typeof a === 'object' ? a.agent : a).slice(0, 4).join(', ') || 'N/A';
+          pdf.text(`    Agents: ${agents}`, margin + 3, yPosition);
+          yPosition += lineHeight + 1;
+        });
+        yPosition += 3;
+
+        // MATCH PREPARATION SUMMARY
+        addHeading('[...] MATCH PREPARATION SUMMARY', 2);
+        pdf.setFontSize(9);
+        pdf.setFont('helvetica', 'normal');
+        addWrappedText('Key Takeaways:', 9, true);
+        
+        const recommendations = [];
+        if (scoutData.overview?.map_stats && scoutData.overview.map_stats.length > 0) {
+          const worstMap = [...scoutData.overview.map_stats].sort((a, b) => a.win_rate - b.win_rate)[0];
+          recommendations.push(`> MAP VETO: Force ${worstMap.map.toUpperCase()} (${worstMap.win_rate.toFixed(0)}% WR)`);
+        }
+        if (scoutData.compositions?.agent_picks?.length > 0) {
+          recommendations.push(`> AGENT FOCUS: Counter ${scoutData.compositions.agent_picks.slice(0, 2).map(a => a.agent).join(', ')}`);
+        }
+        if (scoutData.players?.players?.length > 0) {
+          const topPlayer = [...scoutData.players.players].sort((a, b) => (b.kd_ratio || b.kd) - (a.kd_ratio || a.kd))[0];
+          recommendations.push(`> PLAYER FOCUS: Monitor ${topPlayer.name || topPlayer.player_name} (${(topPlayer.kd_ratio || topPlayer.kd).toFixed(2)} K/D)`);
+        }
+        recommendations.push('> Practice defensive setups and retake strategies');
+
+        pdf.setFontSize(8);
+        recommendations.forEach(rec => {
+          if (yPosition > pageHeight - 15) {
+            pdf.addPage();
+            yPosition = 15;
+          }
+          addWrappedText(rec, 8, false);
+        });
+
+        yPosition += 5;
+
+        // FOOTER
+        if (yPosition > pageHeight - 20) {
+          pdf.addPage();
+          yPosition = 15;
+        }
+        pdf.setFontSize(8);
+        pdf.setFont('helvetica', 'italic');
+        pdf.text('Cloud9 VALORANT Scouting System', pageWidth / 2, pageHeight - 10, { align: 'center' });
+        pdf.text('Confidential - For Coaching Staff Use Only', pageWidth / 2, pageHeight - 5, { align: 'center' });
+
+        // Save PDF
+        pdf.save(`${filters.team}_scouting_report.pdf`);
+        alert('✓ Report exported successfully as PDF!');
+      } catch (err) {
+        console.error('PDF generation error:', err);
+        alert('Error generating PDF: ' + err.message);
+      }
     } catch (err) {
-      console.error('Report generation error:', err);
-      // Fallback to basic report
-      const report = generateTextReport();
-      const blob = new Blob([report], { type: 'text/markdown' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${filters.team}_scouting_report.md`;
-      a.click();
-      URL.revokeObjectURL(url);
+      console.error('Report export error:', err);
+      alert('Failed to export report');
     } finally {
       setLoading(false);
     }
@@ -683,7 +914,7 @@ export function ScoutingReportPage() {
           </div>
         </div>
       ) : (
-        <div ref={reportRef} className="space-y-6">
+        <div className="space-y-6">
           {/* Export Button */}
           <motion.div variants={itemVariants} className="flex justify-end">
             <button

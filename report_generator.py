@@ -5,6 +5,7 @@ Converts raw data into actionable narrative insights
 
 from groq import Groq
 import json
+import re
 from typing import Dict, Any, Optional, List
 import os
 from dotenv import load_dotenv
@@ -125,10 +126,11 @@ Generate the scouting report with these sections:
 - Flex picks and pocket picks
 
 ### ⚠️ WEAKNESSES & EXPLOITS (CRITICAL SECTION)
-- List ALL identified weaknesses from the data
-- Rate severity (HIGH/MEDIUM/LOW)
-- Specific recommendations for each weakness
-- This should be the most detailed section
+Group ALL map pool weaknesses into ONE bullet point listing all weak maps together with their win rates.
+Then list each other weakness category (Defense, Attack, Pistol Rounds, etc.) as separate bullets.
+Rate severity (HIGH/MEDIUM/LOW) per item.
+Provide a specific counter-strategy recommendation for each.
+This section should cover 4-6 distinct weakness points minimum.
 
 ### ⚔️ HOW TO WIN (Counter-Strategy Recommendations)
 - Exploitable weaknesses based on data
@@ -220,20 +222,36 @@ IMPORTANT: If AI Assistant Insights are provided above, incorporate those findin
 """
         weakness_list = weaknesses.get('weaknesses', [])
         if weakness_list:
-            report += f"**Summary:** {weaknesses.get('summary', 'Analysis complete')}\n\n"
-            
-            for severity in ['HIGH', 'MEDIUM', 'LOW']:
-                severity_weaknesses = [w for w in weakness_list if w['severity'] == severity]
-                if severity_weaknesses:
-                    emoji = {'HIGH': '🔴', 'MEDIUM': '🟡', 'LOW': '🟢'}[severity]
-                    report += f"### {emoji} {severity} Priority\n"
-                    for w in severity_weaknesses:
-                        report += f"- **{w['category']}**: {w['finding']}\n"
-                        if w.get('recommendation'):
-                            report += f"  - *Recommendation:* {w['recommendation']}\n"
-                    report += "\n"
+            # Consolidate all map weaknesses into one bullet
+            map_weaknesses = [w for w in weakness_list if w.get('category') == 'Map Pool']
+            other_weaknesses = [w for w in weakness_list if w.get('category') != 'Map Pool']
+
+            # Group map weaknesses into a single entry
+            if map_weaknesses:
+                map_names = []
+                for w in map_weaknesses:
+                    match = re.search(r'on ([A-Za-z]+) \(', w.get('finding', ''))
+                    if match:
+                        map_names.append(match.group(1))
+                    else:
+                        map_names.append(w.get('finding', '').replace('Poor performance on ', '').split(' (')[0])
+                severities = [w['severity'] for w in map_weaknesses]
+                top_severity = 'HIGH' if 'HIGH' in severities else 'MEDIUM'
+                emoji = '🔴' if top_severity == 'HIGH' else '🟡'
+                maps_str = ', '.join(map_names)
+                rates_str = ' | '.join([w.get('finding', '').split('(')[-1].rstrip(')') for w in map_weaknesses])
+                report += f"{emoji} **Map Pool Weakness ({top_severity}):** Struggles on {maps_str} — {rates_str}\n"
+                report += f"  - *Recommendation:* Force these maps in veto — deny their comfort picks\n\n"
+
+            # Show all other weakness categories
+            for w in other_weaknesses:
+                severity = w.get('severity', 'MEDIUM')
+                emoji = {'HIGH': '🔴', 'MEDIUM': '🟡', 'LOW': '🟢'}.get(severity, '🟡')
+                report += f"{emoji} **{w['category']} ({severity}):** {w['finding']}\n"
+                if w.get('recommendation'):
+                    report += f"  - *Recommendation:* {w['recommendation']}\n\n"
         else:
-            report += "*No significant weaknesses identified - this is a well-rounded team.*\n"
+            report += "*No significant weaknesses identified — this is a well-rounded team.*\n"
         
         report += """
 ---

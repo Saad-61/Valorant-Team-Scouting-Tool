@@ -124,7 +124,7 @@ async def get_scouting_data(team_name: str, num_matches: int = 10):
         if team_name not in teams:
             raise HTTPException(status_code=404, detail=f"Team '{team_name}' not found")
         
-        data = engine.generate_full_scouting_data(team_name, num_matches)
+        data = engine.get_full_scouting_data(team_name)
         return {
             "team_name": team_name,
             "num_matches": num_matches,
@@ -170,7 +170,7 @@ async def ask_question(request: AskRequest):
 async def get_team_overview(team_name: str, num_matches: int = 10):
     """Get team overview (win rate, recent form, map stats)."""
     try:
-        data = engine.get_team_overview(team_name, num_matches)
+        data = engine.get_team_overview(team_name)
         return data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -180,7 +180,7 @@ async def get_team_overview(team_name: str, num_matches: int = 10):
 async def get_player_stats(team_name: str, num_matches: int = 10):
     """Get player statistics for a team."""
     try:
-        data = engine.get_player_stats(team_name, num_matches)
+        data = engine.get_team_players(team_name)
         return data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -190,7 +190,7 @@ async def get_player_stats(team_name: str, num_matches: int = 10):
 async def get_compositions(team_name: str, num_matches: int = 10):
     """Get agent compositions and pick rates."""
     try:
-        data = engine.get_team_compositions(team_name, num_matches)
+        data = engine.get_team_compositions(team_name)
         return data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -200,7 +200,7 @@ async def get_compositions(team_name: str, num_matches: int = 10):
 async def get_weaknesses(team_name: str, num_matches: int = 10):
     """Get identified weaknesses for a team."""
     try:
-        data = engine.get_team_weaknesses(team_name, num_matches)
+        data = engine.get_team_weaknesses(team_name)
         return data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -210,7 +210,7 @@ async def get_weaknesses(team_name: str, num_matches: int = 10):
 async def get_pistol_stats(team_name: str, num_matches: int = 10):
     """Get pistol round performance."""
     try:
-        data = engine.get_pistol_tendencies(team_name, num_matches)
+        data = engine.get_team_pistol_stats(team_name)
         return data
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -229,9 +229,16 @@ async def get_head_to_head(team1: str, team2: str):
 @app.get("/api/suggestions")
 async def get_question_suggestions(team_name: Optional[str] = None):
     """Get suggested questions to ask."""
-    return {
-        "suggestions": engine.suggest_questions(team_name)
-    }
+    base = [
+        "What are this team's biggest weaknesses?",
+        "Show me their map stats",
+        "Who are their star players?",
+        "Which maps should I force in veto?",
+        "How do they perform on pistol rounds?"
+    ]
+    if team_name:
+        return {"suggestions": [q for q in base]}
+    return {"suggestions": base}
 
 
 @app.post("/api/generate-report")
@@ -243,7 +250,7 @@ async def generate_report(request: GenerateReportRequest):
             raise HTTPException(status_code=404, detail=f"Team '{request.team_name}' not found")
         
         # Get scouting data
-        data = engine.generate_full_scouting_data(request.team_name, request.num_matches)
+        data = engine.get_full_scouting_data(request.team_name)
         
         # Generate report with chat insights
         report_text = report_generator.generate_scouting_report(

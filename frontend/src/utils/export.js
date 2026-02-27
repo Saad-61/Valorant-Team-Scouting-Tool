@@ -21,30 +21,38 @@ export async function exportToPDF(elementOrId, filename = 'scouting-report') {
     const canvas = await html2canvas(element, {
       scale: 2,
       useCORS: true,
-      backgroundColor: '#0f0f1a',
+      backgroundColor: '#ffffff',
       logging: false,
+      windowHeight: element.scrollHeight,
+      windowWidth: element.scrollWidth,
+      allowTaint: true,
     });
 
-    const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF({
       orientation: 'portrait',
       unit: 'mm',
       format: 'a4',
+      compress: true,
     });
 
     const imgWidth = 210; // A4 width in mm
-    const pageHeight = 297; // A4 height in mm
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
+    const pageHeight = 290; // Leave 7mm margin at bottom
     let heightLeft = imgHeight;
     let position = 0;
 
-    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+    // Add first page
+    const pageWidth = imgWidth - 10; // 5mm margins on each side
+    const scaledHeight = (canvas.height * pageWidth) / canvas.width;
+    
+    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 5, 5, pageWidth, scaledHeight);
     heightLeft -= pageHeight;
 
-    while (heightLeft >= 0) {
-      position = heightLeft - imgHeight;
+    // Add additional pages as needed
+    while (heightLeft > 0) {
+      position = heightLeft - scaledHeight;
       pdf.addPage();
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 5, position + 5, pageWidth, scaledHeight);
       heightLeft -= pageHeight;
     }
 

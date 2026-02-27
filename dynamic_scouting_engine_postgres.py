@@ -1466,8 +1466,13 @@ Just mention a team name and what you want to know!"""
                     SELECT team1_id FROM series WHERE team1_name ILIKE %s
                 ) OR winner_team_id IN (
                     SELECT team2_id FROM series WHERE team2_name ILIKE %s
-                ) THEN 'W' ELSE 'L' END as result,
-                team1_score || '-' || team2_score as score
+                ) THEN 'WIN' ELSE 'LOSS' END as result,
+                team1_score || '-' || team2_score as score,
+                COALESCE(
+                    REGEXP_REPLACE(tournament_name, ' \\(.*\\)$', ''),
+                    'VCT'
+                ) as tournament,
+                TO_CHAR(started_at, 'Mon DD, YYYY') as match_date
             FROM series
             WHERE team1_name ILIKE %s OR team2_name ILIKE %s
             ORDER BY started_at DESC
@@ -1489,10 +1494,11 @@ Just mention a team name and what you want to know!"""
         """Get team agent compositions."""
         
         agent_query = """
-            SELECT agent, agent_role as role, times_picked as games
+            SELECT agent, agent_role as role, SUM(times_picked) as games
             FROM v_team_agent_picks
-            WHERE team_name ILIKE %s
-            ORDER BY times_picked DESC
+            WHERE team_name ILIKE %s AND agent IS NOT NULL
+            GROUP BY agent, agent_role
+            ORDER BY games DESC
         """
         
         with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
@@ -1544,10 +1550,12 @@ Just mention a team name and what you want to know!"""
         # Get agent pools for each player
         for player in players:
             pool_query = """
-                SELECT agent, games_played, kd_ratio
-                FROM v_player_agent_pool
-                WHERE player_name = %s
-                ORDER BY games_played DESC
+                SELECT vp.agent, vp.games_played, vp.kd_ratio,
+                       COALESCE(am.role, 'Unknown') as role
+                FROM v_player_agent_pool vp
+                LEFT JOIN agent_metadata am ON LOWER(vp.agent) = LOWER(am.agent_name)
+                WHERE vp.player_name = %s
+                ORDER BY vp.games_played DESC
                 LIMIT 5
             """
             with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
@@ -1773,7 +1781,7 @@ Just mention a team name and what you want to know!"""
         """
         
         with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
-            cur.execute(query, (f"%{team_name}%",))
+            cur.execute(query, (team_id,))
             patterns = [dict(row) for row in cur.fetchall()]
         
         attack_conditions = []
@@ -1837,4 +1845,45 @@ Just mention a team name and what you want to know!"""
             "pistol_rounds": self.get_team_pistol_stats(team_name),
             "round_patterns": self.get_team_round_patterns(team_name),
             "weapon_economy": self.get_team_weapon_economy(team_name)
+        }
+
+    def get_head_to_head(self, team1: str, team2: str) -> Dict[str, Any]:
+        """Get head-to-head record between two teams."""
+        
+        query = """
+            SELECT 
+                team1_name, team2_name,
+                team1_score, team2_score,
+                CASE WHEN winner_team_id IN (
+                    SELECT team1_id FROM series WHERE team1_name ILIKE %s
+                    UNION SELECT team2_id FROM series WHERE team2_name ILIKE %s
+                ) THEN team1_name
+                ELSE team2_name END as winner_name,
+                started_at
+            FROM series
+            WHERE (team1_name ILIKE %s OR team2_name ILIKE %s)
+              AND (team1_name ILIKE %s OR team2_name ILIKE %s)
+            ORDER BY started_at DESC
+        """
+        t1 = f"%{team1}%"
+        t2 = f"%{team2}%"
+        
+        try:
+            with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
+                cur.execute(query, (t1, t1, t1, t1, t2, t2))
+                matches = [dict(row) for row in cur.fetchall()]
+        except Exception:
+            self._rollback_transaction()
+            matches = []
+        
+        t1_wins = sum(1 for m in matches if team1.lower() in (m.get('winner_name') or '').lower())
+        t2_wins = len(matches) - t1_wins
+        
+        return {
+            "team1": team1,
+            "team2": team2,
+            "total_matches": len(matches),
+            "team1_wins": t1_wins,
+            "team2_wins": t2_wins,
+            "matches": matches
         }

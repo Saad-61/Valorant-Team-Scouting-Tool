@@ -126,7 +126,6 @@ function AppContent() {
         currentPage={currentPage}
         onNavigate={setCurrentPage}
         teamName={filters.team}
-        onExport={currentPage === 'reports' ? handleExport : undefined}
       >
         <div id="dashboard-content">
           <AnimatePresence mode="wait">

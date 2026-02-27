@@ -54,7 +54,7 @@ export function MatchHistoryPage() {
           return {
             id: idx + 1,
             opponent: match.opponent || 'Unknown',
-            date: match.date || 'Recent',
+            date: match.match_date || match.date || 'Recent',
             score: match.score || '0-0',
             won: isWin,
             result: match.result,

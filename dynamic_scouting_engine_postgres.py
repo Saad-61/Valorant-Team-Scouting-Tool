@@ -400,6 +400,8 @@ CORRECT EXAMPLE QUERIES:
 - Rounds on Ascent: SELECT * FROM rounds WHERE map_name ILIKE '%ascent%' LIMIT 10
 - Team on Ascent: SELECT map_name, games_played, wins FROM v_team_map_stats WHERE team_name ILIKE '%100%' AND map_name ILIKE '%ascent%'
 - Pistol stats per map: SELECT map_name, side, pistol_wins FROM v_pistol_performance WHERE map_name ILIKE '%bind%' LIMIT 10
+- Agent pick rates: SELECT agent, SUM(times_picked) as total_picks FROM v_team_agent_picks GROUP BY agent ORDER BY total_picks DESC LIMIT 10
+- Team agent preferences: SELECT agent, times_picked FROM v_team_agent_picks WHERE team_name ILIKE '%Sentinels%' ORDER BY times_picked DESC
 
 SQL Query:"""
 
@@ -813,6 +815,41 @@ DO NOT:
             results = [dict(row) for row in cur.fetchall()]
         return {"teams": results, "metric": "win_rate", "order": "worst_first"}
     
+    def get_agent_pick_rates(self, limit: int = 15, team_name: str = None) -> Dict[str, Any]:
+        """Get agent pick rates across all teams or for a specific team."""
+        if team_name:
+            query = """
+                SELECT 
+                    agent,
+                    SUM(times_picked) as total_picks,
+                    COUNT(DISTINCT map_name) as maps_played
+                FROM v_team_agent_picks
+                WHERE team_name ILIKE %s AND agent IS NOT NULL
+                GROUP BY agent
+                ORDER BY total_picks DESC
+                LIMIT %s
+            """
+            with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
+                cur.execute(query, (f"%{team_name}%", limit))
+                results = [dict(row) for row in cur.fetchall()]
+            return {"agents": results, "team": team_name}
+        else:
+            query = """
+                SELECT 
+                    agent,
+                    SUM(times_picked) as total_picks,
+                    COUNT(DISTINCT team_name) as teams_using
+                FROM v_team_agent_picks
+                WHERE agent IS NOT NULL
+                GROUP BY agent
+                ORDER BY total_picks DESC
+                LIMIT %s
+            """
+            with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
+                cur.execute(query, (limit,))
+                results = [dict(row) for row in cur.fetchall()]
+            return {"agents": results, "team": None}
+    
     def _interpret_teams_defense(self, data: Dict) -> str:
         """Interpret defense stats for multiple teams."""
         teams = data.get("teams", [])
@@ -908,6 +945,37 @@ DO NOT:
             response += f"{i}. **{t['team_name']}**: **{wr:.1f}%** WR ({t.get('total_wins', 0)}W-{t.get('total_losses', 0)}L, {t.get('total_games', 0)} maps)\n"
         
         response += "\n**Tactical Takeaway:** These teams have clear gaps — study their tendencies for easy prep wins."
+        return response
+    
+    def _interpret_agent_picks(self, data: Dict) -> str:
+        """Interpret agent pick rate stats."""
+        agents = data.get("agents", [])
+        team = data.get("team")
+        
+        if not agents:
+            return "No agent pick data found."
+        
+        if team:
+            response = f"**{team} — Agent Pool Preferences**\n\n"
+        else:
+            response = "**League Meta — Agent Pick Rates**\n\n"
+        
+        for i, a in enumerate(agents, 1):
+            agent_name = a.get('agent', 'Unknown')
+            picks = a.get('total_picks', 0)
+            
+            if team:
+                maps = a.get('maps_played', 0)
+                response += f"{i}. **{agent_name}**: **{picks}** picks ({maps} maps)\n"
+            else:
+                teams = a.get('teams_using', 0)
+                response += f"{i}. **{agent_name}**: **{picks}** picks ({teams} teams)\n"
+        
+        if team:
+            response += f"\n**Tactical Takeaway:** Ban or counter their most-picked agents to disrupt their comfort picks."
+        else:
+            response += f"\n**Tactical Takeaway:** These meta agents see the most play — prepare counters for {agents[0].get('agent', 'top picks')}."
+        
         return response
 
     def _suggest_alternative_queries(self, question: str, team_name: str = None) -> str:
@@ -1201,6 +1269,28 @@ Just mention a team name and what you want to know!"""
                 }
             except Exception as e:
                 print(f"[Worst teams error] {e}")
+                self._rollback_transaction()
+        
+        # Agent pick rates: "agent pick rates", "most picked agents", "meta agents"
+        if any(p in question_lower for p in ['agent pick', 'pick rate', 'most picked', 'popular agent', 'meta agent', 'agent meta']):
+            try:
+                self._rollback_transaction()
+                # Check if team-specific
+                query_team = team_name if team_name else None
+                data = self.get_agent_pick_rates(15, query_team)
+                self.conn.commit()
+                interpretation = self._interpret_agent_picks(data)
+                return {
+                    "question": question,
+                    "team": query_team,
+                    "sql": "(Used optimized agent analysis)",
+                    "error": None,
+                    "results": {"data": data.get("agents", []), "count": len(data.get("agents", []))},
+                    "interpretation": interpretation,
+                    "query_type": "DB_QUERY"
+                }
+            except Exception as e:
+                print(f"[Agent pick rates error] {e}")
                 self._rollback_transaction()
         
         # ===== STEP 2B: TEAM-SPECIFIC QUERIES =====

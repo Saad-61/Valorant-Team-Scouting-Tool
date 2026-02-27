@@ -37,11 +37,11 @@ export function ChatPage() {
   // Suggested queries
   const suggestions = [
     "What are LOUD's biggest weaknesses?",
-    "Compare win rates on Ascent vs Haven",
-    "Who are the top fraggers this season?",
-    "Show me eco round conversion rates by team",
     "Which teams struggle on defense?",
+    "Who are the top fraggers this season?",
     "Agent pick rates in recent matches",
+    "What team is TenZ on?",
+    "What are the best teams?",
   ];
 
   const handleSend = async () => {

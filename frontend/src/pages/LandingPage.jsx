@@ -81,20 +81,27 @@ export function LandingPage({ onNavigate }) {
       {/* Hero Section */}
       <motion.section 
         variants={itemVariants}
-        className="relative py-12 px-4 overflow-hidden"
+        className="relative py-20 px-4 overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50/30 to-c9-50/40 dark:from-gray-900 dark:via-c9-950 dark:to-gray-900"
       >
-        {/* Background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/images/hero-bg.png)',
-          }}
-        />
-        {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-c9-950/40 via-c9-950/20 to-c9-950/30" />
-        {/* Subtle animated gradients */}
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-c9-500/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-c9-400/5 rounded-full blur-3xl pointer-events-none" />
+        {/* Geometric background patterns */}
+        <div className="absolute inset-0 opacity-40 dark:opacity-20">
+          {/* Grid pattern */}
+          <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(to right, rgb(0 174 239 / 0.1) 1px, transparent 1px),
+                             linear-gradient(to bottom, rgb(0 174 239 / 0.1) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px'
+          }} />
+          {/* Diagonal lines */}
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-10 left-10 w-64 h-64 border-2 border-c9-500/20 rounded-lg transform rotate-12" />
+            <div className="absolute top-32 right-20 w-48 h-48 border-2 border-blue-500/20 rounded-full" />
+            <div className="absolute bottom-20 left-1/4 w-56 h-56 border-2 border-c9-400/20 rounded-lg transform -rotate-6" />
+          </div>
+        </div>
+        
+        {/* Animated gradient orbs */}
+        <div className="absolute top-20 -left-20 w-96 h-96 bg-gradient-to-br from-c9-500/30 to-blue-500/20 dark:from-c9-500/20 dark:to-blue-500/10 rounded-full blur-3xl pointer-events-none animate-pulse" />
+        <div className="absolute bottom-10 -right-20 w-[32rem] h-[32rem] bg-gradient-to-tl from-blue-500/25 to-c9-600/20 dark:from-blue-500/15 dark:to-c9-500/10 rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative max-w-4xl mx-auto text-center">
           {/* Logo Badge */}
@@ -102,26 +109,26 @@ export function LandingPage({ onNavigate }) {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.1, type: 'spring', stiffness: 200 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-c9-500/10 border border-c9-500/30 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-gray-800/80 border-2 border-c9-500/50 dark:border-c9-400/50 mb-8 backdrop-blur-sm shadow-lg shadow-c9-500/20"
           >
             <Sparkles className="w-4 h-4 text-c9-500" />
-            <span className="text-sm font-medium text-c9-500">AI-Powered Analytics</span>
+            <span className="text-sm font-semibold text-c9-600 dark:text-c9-400">AI-Powered Analytics</span>
           </motion.div>
           
           {/* Hero Title */}
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] mb-4"
+            className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.2] pb-2"
           >
-            Cloud9 VCT
-            <span className="block mt-2 bg-gradient-to-r from-c9-400 to-c9-600 bg-clip-text text-transparent">
+            <span className="block text-gray-900 dark:text-white pb-1">Cloud9 VCT</span>
+            <span className="block mt-2 pb-2 bg-gradient-to-r from-c9-500 via-blue-500 to-c9-600 dark:from-c9-400 dark:via-blue-400 dark:to-c9-500 bg-clip-text text-transparent">
               Scouting Dashboard
             </span>
           </motion.h1>
           
           <motion.p 
             variants={itemVariants}
-            className="text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto mb-8"
+            className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
             Professional-grade competitive analysis for VALORANT esports. 
             Get tactical insights, discover weaknesses, and prepare winning strategies.
@@ -134,7 +141,7 @@ export function LandingPage({ onNavigate }) {
           >
             <button
               onClick={() => onNavigate?.('reports')}
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-c9-500 to-c9-600 text-white font-semibold shadow-lg shadow-c9-500/25 hover:shadow-c9-500/40 transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-c9-500 to-c9-600 hover:from-c9-600 hover:to-blue-600 text-white font-bold shadow-xl shadow-c9-500/40 hover:shadow-2xl hover:shadow-c9-500/50 transition-all duration-300 hover:scale-105 transform"
             >
               <FileText className="w-5 h-5" />
               Generate Report
@@ -143,9 +150,9 @@ export function LandingPage({ onNavigate }) {
             
             <button
               onClick={() => onNavigate?.('chat')}
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--surface-secondary)] border border-[var(--border-primary)] text-[var(--text-primary)] font-semibold hover:border-c9-500/50 transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white font-bold hover:border-c9-500 dark:hover:border-c9-400 hover:shadow-xl transition-all duration-300 hover:scale-105 transform"
             >
-              <MessageSquare className="w-5 h-5" />
+              <MessageSquare className="w-5 h-5 text-c9-500 dark:text-c9-400" />
               Ask AI Analyst
             </button>
           </motion.div>
@@ -181,18 +188,18 @@ export function LandingPage({ onNavigate }) {
       {/* Features Grid */}
       <motion.section 
         variants={itemVariants}
-        className="flex-1 py-8 px-4"
+        className="flex-1 py-12 px-4"
       >
         <div className="max-w-5xl mx-auto">
           <motion.h2 
             variants={itemVariants}
-            className="text-2xl font-bold text-[var(--text-primary)] text-center mb-2"
+            className="text-3xl font-bold text-[var(--text-primary)] text-center mb-3"
           >
             Everything You Need to Win
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-[var(--text-secondary)] text-center mb-8 max-w-xl mx-auto"
+            className="text-lg text-[var(--text-secondary)] text-center mb-10 max-w-2xl mx-auto"
           >
             Comprehensive tools for match preparation and competitive analysis
           </motion.p>
@@ -202,15 +209,15 @@ export function LandingPage({ onNavigate }) {
               <motion.button
                 key={feature.title}
                 variants={itemVariants}
-                whileHover={{ scale: 1.02, y: -4 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.03, y: -6 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={() => onNavigate?.(feature.page)}
-                className="group relative p-6 rounded-2xl bg-[var(--surface-primary)] border border-[var(--border-primary)] hover:border-c9-500/50 transition-all duration-300 text-left overflow-hidden"
+                className="group relative p-6 rounded-2xl bg-[var(--surface-primary)] border-2 border-[var(--border-primary)] hover:border-c9-500/60 hover:shadow-xl hover:shadow-c9-500/10 transition-all duration-300 text-left overflow-hidden"
               >
                 {/* Gradient background on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-[0.07] transition-opacity duration-300`} />
                 
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 shadow-lg overflow-hidden`}>
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl overflow-hidden transition-all duration-300`}>
                   <img 
                     src={feature.image} 
                     alt={feature.title}
@@ -218,15 +225,15 @@ export function LandingPage({ onNavigate }) {
                   />
                 </div>
                 
-                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2 group-hover:text-c9-500 transition-colors">
+                <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2 group-hover:text-c9-600 dark:group-hover:text-c9-400 transition-colors">
                   {feature.title}
                 </h3>
                 
-                <p className="text-sm text-[var(--text-secondary)] mb-4">
+                <p className="text-sm text-[var(--text-secondary)] mb-4 leading-relaxed">
                   {feature.description}
                 </p>
                 
-                <div className="inline-flex items-center gap-1 text-sm font-medium text-c9-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="inline-flex items-center gap-1 text-sm font-semibold text-c9-500 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all">
                   Explore <ChevronRight className="w-4 h-4" />
                 </div>
               </motion.button>
@@ -238,31 +245,31 @@ export function LandingPage({ onNavigate }) {
       {/* Quick Start Guide */}
       <motion.section 
         variants={itemVariants}
-        className="py-8 px-4"
+        className="py-8 px-4 mb-8"
       >
         <div className="max-w-3xl mx-auto">
-          <div className="p-6 rounded-2xl bg-gradient-to-br from-c9-500/10 to-c9-600/5 border border-c9-500/20">
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-c9-500/15 to-c9-600/10 dark:from-c9-500/10 dark:to-c9-600/5 border-2 border-c9-500/30 dark:border-c9-500/20 shadow-lg">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-c9-500/20 flex items-center justify-center flex-shrink-0">
-                <Zap className="w-5 h-5 text-c9-500" />
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-c9-500 to-c9-600 flex items-center justify-center flex-shrink-0 shadow-md">
+                <Zap className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                   Quick Start
                 </h3>
-                <p className="text-sm text-[var(--text-secondary)] mb-4">
+                <p className="text-sm text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                   Select a team from any page to start analyzing. Use the AI Analyst for custom questions, 
                   or generate a full scouting report with one click.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[var(--surface-primary)] border border-[var(--border-primary)] text-xs text-[var(--text-secondary)]">
-                    <Eye className="w-3 h-3" /> Select Team
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-c9-500/30 text-xs font-medium text-gray-700 dark:text-gray-300">
+                    <Eye className="w-3.5 h-3.5 text-c9-500" /> Select Team
                   </span>
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[var(--surface-primary)] border border-[var(--border-primary)] text-xs text-[var(--text-secondary)]">
-                    <Brain className="w-3 h-3" /> Analyze Data
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-c9-500/30 text-xs font-medium text-gray-700 dark:text-gray-300">
+                    <Brain className="w-3.5 h-3.5 text-c9-500" /> Analyze Data
                   </span>
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[var(--surface-primary)] border border-[var(--border-primary)] text-xs text-[var(--text-secondary)]">
-                    <FileText className="w-3 h-3" /> Export Report
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-c9-500/30 text-xs font-medium text-gray-700 dark:text-gray-300">
+                    <FileText className="w-3.5 h-3.5 text-c9-500" /> Export Report
                   </span>
                 </div>
               </div>
@@ -274,10 +281,10 @@ export function LandingPage({ onNavigate }) {
       {/* Footer */}
       <motion.footer 
         variants={itemVariants}
-        className="py-6 px-4 text-center border-t border-[var(--border-primary)]"
+        className="py-8 px-4 text-center border-t border-[var(--border-primary)] bg-gradient-to-b from-transparent to-gray-50/50 dark:to-gray-900/50"
       >
-        <p className="text-xs text-[var(--text-tertiary)]">
-          Built for Cloud9 • VCT Analytics Platform • {new Date().getFullYear()}
+        <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+          Built for <span className="text-c9-500 font-bold">Cloud9</span> • VCT Analytics Platform • {new Date().getFullYear()}
         </p>
       </motion.footer>
     </motion.div>

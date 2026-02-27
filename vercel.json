@@ -4,7 +4,6 @@
   "installCommand": "pip install -r api/requirements.txt && cd frontend && npm install",
   "functions": {
     "api/index.py": {
-      "runtime": "python3.9",
       "maxDuration": 60
     }
   },

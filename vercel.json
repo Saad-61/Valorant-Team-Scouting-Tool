@@ -1,5 +1,4 @@
 {
-  "installCommand": "pip install -r requirements.txt",
   "functions": {
     "index.py": {
       "maxDuration": 60

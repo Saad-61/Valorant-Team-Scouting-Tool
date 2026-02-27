@@ -34,7 +34,7 @@ MIN_API_INTERVAL = 3.0
 DATABASE_SCHEMA = """
 ## VALORANT Esports Database Schema (PostgreSQL/Supabase)
 
-### Tables:
+### Core Tables:
 
 #### 1. series - Match/series between two teams
 - series_id (BIGINT, PK)
@@ -43,94 +43,110 @@ DATABASE_SCHEMA = """
 - team1_id, team2_id (TEXT)
 - winner_team_id (TEXT)
 - team1_score, team2_score (INTEGER)
-- started_at (TIMESTAMP)
-- finished (BOOLEAN)
-- best_of (INTEGER)
 
-#### 2. games - Individual maps within a series
-- game_id (BIGINT, PK)
-- series_id (BIGINT, FK)
-- map (TEXT)
-- game_number (INTEGER)
+#### 2. games - Individual maps within a series (HAS map_name, NOT "map")
+- game_id (TEXT, PK)
+- series_id (BIGINT)
+- map_name (TEXT) -- CRITICAL: Use map_name, not "map"
+- team1_name, team2_name (TEXT)
 - team1_score, team2_score (INTEGER)
 - winner_team_id (TEXT)
+- total_rounds (INTEGER)
 
-#### 3. rounds - Round outcomes
-- round_id (BIGINT, PK)
-- game_id (BIGINT, FK)
+#### 3. rounds - Individual round outcomes (DOES NOT have map_name! JOIN with games)
+- round_id (TEXT, PK)
+- game_id (TEXT) -- JOIN with games table to get map_name
+- series_id (BIGINT)
 - round_number (INTEGER)
-- winning_team_id (TEXT)
+- attacker_team_id, defender_team_id (TEXT)
+- winner_team_id (TEXT) -- The team that won this round
+- winner_side (TEXT)
 - win_type (TEXT)
-- attacking_team_id, defending_team_id (TEXT)
-- spike_planted, spike_defused (BOOLEAN)
+- is_pistol_round (BOOLEAN)
 
-#### 4. player_round_stats - Per-player stats (NO team_name column!)
-- id (TEXT, PK)
-- game_id, series_id (TEXT/BIGINT)
+#### 4. game_compositions - Team compositions per game (USE THIS to join team_id with team_name)
+- game_id (TEXT)
+- team_id (TEXT)
+- team_name (TEXT)
+- player_name (TEXT)
+- agent (TEXT)
+- agent_role (TEXT)
+
+#### 5. player_round_stats - Per-player stats (HAS team_id but NO team_name! Need game_compositions)
+- game_id (TEXT)
+- series_id (BIGINT)
 - round_number (INTEGER)
-- player_id, player_name (TEXT)
-- team_id (TEXT) - JOIN with game_compositions to filter by team_name!
-- agent, agent_role (TEXT)
+- player_name (TEXT)
+- team_id (TEXT)  -- NO team_name here! JOIN with game_compositions
+- agent (TEXT)
+- side (TEXT)
 - kills, deaths, assists, headshots (INTEGER)
-- alive_at_end (BOOLEAN)
 
-#### 5. weapon_kills - Kill events
-- id (SERIAL, PK)
-- round_id, game_id (BIGINT)
-- killer_id, killer_name, victim_id, victim_name (TEXT)
-- weapon, damage_type (TEXT)
+#### 6. weapon_kills - Weapon kill statistics
+- game_id (TEXT)
+- series_id (BIGINT)
+- round_number (INTEGER)
+- team_id (TEXT)
+- weapon_name (TEXT)
+- kill_count (INTEGER)
 
-#### 6. game_compositions - Team compositions (USE THIS to get team_name from team_id)
-- id (SERIAL, PK)
-- game_id (BIGINT)
-- team_id, team_name (TEXT)
-- player_id, player_name (TEXT)
-- agent, role (TEXT)
+### Analytical Views (CRITICAL COLUMN NAMES):
 
-### Key Views (USE CORRECT COLUMN NAMES!):
-
-#### v_team_map_stats - Team win rates per map
-- team_id, team_name (TEXT)
-- map_name (TEXT) -- NOT "map"!
-- games_played (INTEGER) -- NOT "games"!
+#### v_team_map_stats (USE: map_name NOT "map", games_played NOT "games")
+- team_name (TEXT)
+- map_name (TEXT) -- NOT "map"
+- games_played (INTEGER) -- NOT "games"
 - wins, losses (INTEGER)
 - win_rate (FLOAT)
-- round_diff_ratio (FLOAT)
 
-#### v_team_agent_picks - Agent pick rates by team
-- team_id, team_name (TEXT)
-- map_name (TEXT)
-- agent, agent_role (TEXT)
-- times_picked, unique_players (INTEGER)
-
-#### v_player_agent_pool - Player agent pools with KD
-- player_id, player_name (TEXT)
-- agent, agent_role (TEXT)
-- games_played, total_kills, total_deaths (INTEGER)
-- kd_ratio (FLOAT)
-
-#### v_pistol_performance - Pistol round stats (NO team_name!)
+#### v_round_win_types (HAS team_id but NO team_name! Needs JOIN)
 - team_id (TEXT)
 - map_name (TEXT)
-- side (TEXT) -- 'Attack' or 'Defense'
-- pistol_wins (INTEGER)
-
-#### v_weapon_usage - Weapon kill stats (NO team_name!)
-- team_id, map_name (TEXT)
-- weapon_name (TEXT) -- NOT "weapon"!
-- total_kills (INTEGER)
-
-#### v_round_win_types - Win condition percentages (NO team_name!)
-- team_id, map_name, side, win_type (TEXT)
+- side (TEXT) -- 'attacker' or 'defender'
+- win_type (TEXT)
 - count (INTEGER)
 - percentage (FLOAT)
 
-### Common Values:
-- Agents: jett, raze, reyna (Duelists); omen, brimstone, astra (Controllers); sage, cypher, killjoy (Sentinels); sova, breach, skye (Initiators)
-- Maps: ascent, bind, breeze, haven, icebox, lotus, pearl, split, sunset
-- Win types: opponentEliminated, bombExploded, bombDefused, timeExpired
-- Side values in views: 'Attack', 'Defense'
-- Win types: opponentEliminated, bombExploded, bombDefused, timeExpired
+#### v_pistol_performance (HAS team_id, map_name, NO team_name, NO win_rate)
+- team_id (TEXT) -- NO team_name! JOIN with game_compositions if needed
+- map_name (TEXT)
+- side (TEXT)
+- pistol_wins (INTEGER)
+
+#### v_team_agent_picks (HAS team_name, map_name)
+- team_name (TEXT)
+- map_name (TEXT)
+- agent (TEXT)
+- times_picked (INTEGER) -- NOT "pick_rate"
+
+#### v_weapon_usage (HAS team_id, map_name but NO team_name)
+- team_id (TEXT)
+- map_name (TEXT)
+- weapon_name (TEXT) -- NOT "weapon"
+- total_kills (INTEGER)
+
+### JOIN PATTERNS:
+
+To get rounds WITH map names:
+  SELECT r.* FROM rounds r
+  JOIN games g ON r.game_id = g.game_id
+  WHERE g.map_name ILIKE '%ascent%'
+
+To get team_name for player stats:
+  SELECT prs.* FROM player_round_stats prs
+  JOIN game_compositions gc ON prs.game_id = gc.game_id AND prs.player_name = gc.player_name
+  WHERE gc.team_name ILIKE '%100%'
+
+To count 100 Thieves rounds won on Ascent:
+  SELECT COUNT(*) FROM rounds r
+  JOIN games g ON r.game_id = g.game_id
+  WHERE g.map_name ILIKE '%ascent%'
+  AND r.winner_team_id IN (SELECT DISTINCT team_id FROM game_compositions WHERE team_name ILIKE '%100%')
+
+### Map Names: ascent, bind, breeze, haven, icebox, lotus, pearl, split
+### Agent Roles: Duelist (jett, raze), Controller (omen, brimstone), Sentinel (sage, cypher), Initiator (sova, breach)
+### Win Types: opponentEliminated, bombExploded, bombDefused, timeExpired
+### Side Values: 'attacker', 'defender'
 """
 
 # Query classification categories
@@ -144,33 +160,23 @@ QUERY_TYPES = {
 }
 
 # System context for the AI
-SYSTEM_CONTEXT = """You are the VCT Analytics AI Assistant, a specialized esports analyst tool for VALORANT Champions Tour data.
+SYSTEM_CONTEXT = """You are a VCT Scouting Analyst embedded in a professional VALORANT coaching tool. You work FOR the coaching staff who are preparing to play AGAINST the teams they ask about.
 
-ABOUT THIS TOOL:
-- This is a scouting dashboard for professional VALORANT esports teams
-- It contains match data, player statistics, agent compositions, and team performance metrics
-- Built for Cloud9's coaching staff to prepare for competitive matches
-- Data includes: series results, map stats, round-by-round data, player performance, agent picks
+YOUR ROLE:
+- You scout OPPONENTS to find exploitable weaknesses
+- Every answer should help the coach build a game plan AGAINST the queried team
+- Be direct, concise, and actionable — coaches are busy
+- Frame everything as "how to beat them" not "how good they are"
 
-WHAT YOU CAN HELP WITH:
-- Team weaknesses and strengths analysis
-- Map pool analysis (win rates, pick rates by team)
-- Player statistics (KD, ACS, agent pools)
-- Agent composition analysis
-- Head-to-head comparisons between teams
-- Pistol round performance
-- Round win patterns (eliminations, spike plants, defuses)
-- Weapon usage statistics
+RESPONSE RULES:
+- Use **bold** for key numbers and important findings
+- Keep responses under 150 words
+- Structure with bullet points, not paragraphs
+- Always end with 1-2 tactical takeaways
+- Never ramble or repeat information
+- Use markdown formatting (bold, bullets)
 
-WHAT YOU CANNOT DO:
-- Live match analysis (data is historical)
-- Predictions or betting advice
-- Non-VALORANT esports data
-- General web searches
-- Personal opinions on teams
-
-AVAILABLE TEAMS IN DATABASE (examples):
-LOUD, Sentinels, Cloud9, NRG, 100 Thieves, FUT Esports, Fnatic, Team Liquid, G2 Esports, Paper Rex, DRX, T1, Gen.G, MIBR, Leviatán, KRÜ Esports, FURIA, and more.
+AVAILABLE DATA: VCT Americas match history, map stats, player performance, agent compositions, round-by-round data, weapon usage, pistol performance.
 
 COMMON QUERIES USERS ASK:
 - "What are [Team]'s weaknesses?"
@@ -237,6 +243,38 @@ class DynamicScoutingEngine:
                 return team
         return None
     
+    def _extract_player_from_question(self, question: str) -> Optional[str]:
+        """Extract player name from the question for player lookup queries."""
+        import re
+        question_lower = question.lower()
+        
+        # Common patterns for player lookup
+        patterns = [
+            r'what team (?:is|does) (\w+)',
+            r'which team (?:is|does) (\w+)',
+            r'where does (\w+) play',
+            r'who is (\w+)',
+            r'find player (\w+)',
+            r"(\w+)'s team",
+        ]
+        
+        for pattern in patterns:
+            match = re.search(pattern, question_lower)
+            if match:
+                return match.group(1)
+        
+        # Fallback: look for capitalized words that might be player names
+        words = question.split()
+        for word in words:
+            # Skip common words
+            if word.lower() in ['what', 'which', 'who', 'where', 'team', 'is', 'does', 'play', 'on', 'the', 'find', 'player', 'show', 'me']:
+                continue
+            # If it looks like a name (capitalized), it might be a player
+            if word[0].isupper() and len(word) >= 2:
+                return word
+        
+        return None
+    
     def get_all_teams(self) -> List[str]:
         """Get list of all teams in the database."""
         query = """
@@ -250,8 +288,62 @@ class DynamicScoutingEngine:
             cur.execute(query)
             return [row[0] for row in cur.fetchall()]
     
+    def validate_sql(self, sql: str) -> tuple[bool, str]:
+        """Validate SQL for common errors before execution.
+        
+        Returns: (is_valid, error_message)
+        """
+        import re
+        sql_lower = sql.lower()
+        
+        # Check for non-existent columns - simple string patterns
+        banned_patterns = [
+            # Pistol performance
+            ('pistol_loss', "v_pistol_performance does not have 'pistol_losses' column. Use: 'pistol_wins'"),
+            ('vpw.win_rate', "v_pistol_performance does not have 'win_rate' column. Calculate as: pistol_wins / total rounds"),
+            ('vpp.win_rate', "v_pistol_performance does not have 'win_rate' column"),
+            ('pistol_performance.win_rate', "v_pistol_performance does not have 'win_rate' column"),
+            
+            # Side/attack terminology
+            ('is_attack', "Use 'side' column (values: 'attacker', 'defender'), not 'is_attack'"),
+            ('on_attack', "Use 'side' column, not 'on_attack'"),
+            
+            # Weapons
+            (' weapon ', "Use 'weapon_name', not 'weapon'"),
+            ('select games,', "Use 'games_played', not 'games' in v_team_map_stats (in SELECT clause)"),
+            
+            # Agent picks
+            ('pick_rate', "Use 'times_picked', not 'pick_rate' in v_team_agent_picks"),
+            
+            # Common mistake: using map_name from rounds table directly
+            ('r.map_name', "rounds table does NOT have map_name! JOIN with games: JOIN games g ON r.game_id = g.game_id, then use g.map_name"),
+            ('rounds.map_name', "rounds table does NOT have map_name! JOIN with games table to get map_name"),
+            ('winning_team_id', "Use 'winner_team_id' (not winning_team_id) in rounds table"),
+        ]
+        
+        for pattern, error in banned_patterns:
+            if pattern in sql_lower:
+                return False, error
+        
+        # Regex patterns for more complex cases (catches g.map, t.map, etc. but NOT g.map_name)
+        regex_patterns = [
+            (r'\w+\.map\b(?!_)', "Column reference to 'map' found. Use 'map_name' instead. Example: g.map_name"),
+            (r'\w+\.games\b(?!_)', "Column reference to 'games' found. Use 'games_played' instead"),
+        ]
+        
+        for regex, error in regex_patterns:
+            if re.search(regex, sql_lower):
+                return False, error
+        
+        return True, ""
+    
     def execute_query(self, sql: str) -> List[Dict]:
         """Execute SQL and return results as list of dicts."""
+        # Validate first
+        is_valid, error = self.validate_sql(sql)
+        if not is_valid:
+            raise ValueError(f"Invalid SQL: {error}")
+        
         with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
             cur.execute(sql)
             return [dict(row) for row in cur.fetchall()]
@@ -260,9 +352,11 @@ class DynamicScoutingEngine:
         """Use Groq to generate SQL from natural language question."""
         
         if not self.client:
+            # Provide helpful suggestions when AI isn't available
+            suggestions = self._suggest_alternative_queries(question, team_name)
             return {
                 "success": False,
-                "error": "AI not configured. Please set GROQ_API_KEY.",
+                "error": f"AI query generation not available. {suggestions}",
                 "sql": None
             }
         
@@ -278,6 +372,12 @@ class DynamicScoutingEngine:
 
 Question: {question}{team_context}
 
+⚠️ CRITICAL COLUMN NAME REMINDERS (MISTAKES WILL CAUSE ERRORS):
+- NEVER use 'map' - ALWAYS use 'map_name' (in ALL tables: games, rounds, v_team_map_stats, v_pistol_performance, v_round_win_types)
+- NEVER use 'games' - ALWAYS use 'games_played' (in v_team_map_stats)
+- NEVER use 'team_name' in v_pistol_performance or v_round_win_types - use team_id and JOIN with game_compositions
+- NEVER use 'pick_rate' - ALWAYS use 'times_picked' (in v_team_agent_picks)
+
 IMPORTANT RULES:
 1. Return ONLY the SQL query, no explanation
 2. Use PostgreSQL syntax (not DuckDB)
@@ -289,10 +389,17 @@ IMPORTANT RULES:
 8. Handle NULLs with COALESCE or NULLIF
 9. CRITICAL: player_round_stats has NO team_name column! JOIN with game_compositions to filter by team_name
 
-Example queries:
-- Team weaknesses: SELECT map_name, win_rate FROM v_team_map_stats WHERE team_name ILIKE '%G2%' AND win_rate < 50
-- Top players for team: SELECT prs.player_name, SUM(prs.kills) as kills FROM player_round_stats prs JOIN game_compositions gc ON prs.game_id = gc.game_id AND prs.player_name = gc.player_name WHERE gc.team_name ILIKE '%G2%' GROUP BY prs.player_name ORDER BY kills DESC LIMIT 10
-- Agent picks: SELECT agent, times_picked FROM v_team_agent_picks WHERE team_name ILIKE '%LOUD%' ORDER BY times_picked DESC
+TABLE COLUMN REFERENCES (with correct names):
+- games table: game_id, series_id, map_name (NOT map), team1_name, team2_name, team1_score, team2_score, total_rounds
+- rounds table: round_id, game_id, map_name (NOT map), attacker_team_id, defender_team_id, win_type
+- v_team_map_stats: team_name, map_name (NOT map), games_played (NOT games), wins, losses, win_rate
+- v_pistol_performance: team_id, map_name (NOT map), side, pistol_wins
+- v_round_win_types: team_id, map_name (NOT map), side, win_type, count
+
+CORRECT EXAMPLE QUERIES:
+- Rounds on Ascent: SELECT * FROM rounds WHERE map_name ILIKE '%ascent%' LIMIT 10
+- Team on Ascent: SELECT map_name, games_played, wins FROM v_team_map_stats WHERE team_name ILIKE '%100%' AND map_name ILIKE '%ascent%'
+- Pistol stats per map: SELECT map_name, side, pistol_wins FROM v_pistol_performance WHERE map_name ILIKE '%bind%' LIMIT 10
 
 SQL Query:"""
 
@@ -344,24 +451,28 @@ SQL Query:"""
         
         prompt = f"""{SYSTEM_CONTEXT}
 
-You are analyzing data for a user question. Provide a helpful, conversational response.
+Analyze this data from a SCOUTING perspective. The coach wants to know how to EXPLOIT this.
 
-USER QUESTION: {question}
-TEAM FOCUS: {team_name or 'General'}
+QUESTION: {question}
+TEAM BEING SCOUTED: {team_name or 'General'}
 
-DATABASE RESULTS:
+DATA:
 {json.dumps(display_results, indent=2, default=str)[:3000]}
 
-RESPONSE GUIDELINES:
-1. Start with a direct answer to their question
-2. Highlight the most important statistics
-3. Explain what the numbers mean tactically
-4. Give 1-2 actionable recommendations if relevant
-5. Keep response focused and under 400 words
-6. Use plain text - no markdown symbols like *, #, or -
-7. Write conversationally, as an esports analyst would
+FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
+- Start with a **one-line summary** answering the question directly
+- Use **bold** for all key numbers (win rates, K/D, round counts)
+- Use bullet points (•) for each finding
+- End with **Tactical Takeaway:** section (1-2 sentences max)
+- TOTAL response must be under 150 words
+- Frame findings as opponent vulnerabilities to exploit
+- If data is about multiple teams, rank them clearly
 
-If the data seems incomplete or unusual, acknowledge it honestly and suggest how they might refine their query."""
+DO NOT:
+- Write long paragraphs
+- Repeat data that's already shown in the table
+- Use generic filler phrases
+- Exceed 150 words"""
 
         try:
             global LAST_API_CALL
@@ -372,11 +483,11 @@ If the data seems incomplete or unusual, acknowledge it honestly and suggest how
             response = self.client.chat.completions.create(
                 model=self.MODEL_NAME,
                 messages=[
-                    {"role": "system", "content": "You are a professional VALORANT esports analyst. Be concise, insightful, and actionable."},
+                    {"role": "system", "content": "You are a sharp VALORANT scouting analyst. Be concise, use bold markdown for key stats, and frame everything as opponent vulnerabilities. Under 150 words."},
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=2048,
-                temperature=0.4
+                max_tokens=512,
+                temperature=0.3
             )
             
             LAST_API_CALL = time.time()
@@ -384,6 +495,63 @@ If the data seems incomplete or unusual, acknowledge it honestly and suggest how
             
         except Exception as e:
             return f"Analysis error: {str(e)}\n\n{self._format_results_basic(results)}"
+    
+    def _validate_results_sanity(self, results: List[Dict], query_type: str = None) -> Dict[str, Any]:
+        """
+        Check results for suspicious/unusual patterns and add warnings.
+        Returns: {"warnings": [...], "is_suspicious": bool}
+        """
+        warnings = []
+        
+        if not results:
+            return {"warnings": [], "is_suspicious": False}
+        
+        # Check for extreme percentages (100% or 0%)
+        for row in results:
+            for key, value in row.items():
+                if isinstance(value, (int, float)):
+                    # Win rate extremes with low sample
+                    if 'rate' in key.lower() or 'percentage' in key.lower():
+                        if value == 100 or value == 0:
+                            games = row.get('games', row.get('games_played', row.get('count', 0)))
+                            if isinstance(games, (int, float)) and games < 5:
+                                warnings.append(f"Note: {value}% rate based on only {games} games - low sample size")
+        
+        # Check for very small sample sizes
+        total_count = 0
+        for row in results:
+            count = row.get('games', row.get('games_played', row.get('count', row.get('total_games', 0))))
+            if isinstance(count, (int, float)):
+                total_count += count
+        
+        if total_count > 0 and total_count < 3:
+            warnings.append(f"Warning: Results based on very small sample ({total_count} total)")
+        
+        # Check for duplicate team names (like LOUD vs LOUD (1))
+        team_names = set()
+        for row in results:
+            if 'team_name' in row:
+                team_names.add(row['team_name'])
+        
+        # Look for teams with parenthetical suffixes
+        base_teams = {}
+        for name in team_names:
+            import re
+            match = re.match(r'^(.+?)\s*\(\d+\)$', name)
+            if match:
+                base = match.group(1)
+                if base not in base_teams:
+                    base_teams[base] = []
+                base_teams[base].append(name)
+        
+        for base, variants in base_teams.items():
+            if len(variants) > 1:
+                warnings.append(f"Note: Multiple entries exist for '{base}': {', '.join(variants)} - these may be different tournament appearances")
+        
+        return {
+            "warnings": warnings,
+            "is_suspicious": len(warnings) > 0
+        }
     
     def _format_results_basic(self, results: List[Dict]) -> str:
         """Format results as basic text table."""
@@ -406,49 +574,55 @@ If the data seems incomplete or unusual, acknowledge it honestly and suggest how
         weaknesses = data.get("weaknesses", [])
         
         if not weaknesses:
-            return f"Based on the available data, {team_name} doesn't have any significant weaknesses that stand out. They appear to be performing consistently across maps and game phases. Consider analyzing their recent form or specific player matchups for potential opportunities."
+            return f"No major vulnerabilities found for **{team_name}** in our data. They perform consistently across maps and phases. Try asking about specific maps or player matchups to find edges."
         
-        response = f"Analysis of {team_name}'s weaknesses:\n\n"
+        response = f"**Scouting Report: {team_name} Vulnerabilities**\n\n"
         
         for w in weaknesses:
-            response += f"• {w['category']}: {w['finding']}\n"
-            response += f"  Details: {w['details']}\n"
-            response += f"  Recommendation: {w['recommendation']}\n\n"
+            response += f"• **{w['category']}** — {w['finding']}\n"
+            response += f"  → *{w['recommendation']}*\n\n"
         
+        response += f"**Tactical Takeaway:** Target their weak maps in the veto and exploit the gaps identified above."
         return response
     
     def _interpret_map_stats(self, map_stats: List[Dict], team_name: str) -> str:
         """Generate natural language interpretation of map statistics."""
         if not map_stats:
-            return f"No map statistics found for {team_name} in the database. They may not have played enough recorded matches."
+            return f"No map data found for **{team_name}**. They may not have enough recorded matches."
         
-        response = f"Map pool analysis for {team_name}:\n\n"
+        response = f"**{team_name} — Map Pool Scouting**\n\n"
         
         for m in map_stats:
-            map_name = m.get('map') or m.get('map_name', 'Unknown')
-            win_rate = m.get('win_rate', 0)
-            games = m.get('games') or m.get('games_played', 0)
+            map_name = m.get('map') or m.get('map_name') or 'Unknown'
+            win_rate = m.get('win_rate', 0) or 0
+            games = m.get('games') or m.get('games_played', 0) or 0
             
-            status = "strong" if win_rate >= 55 else "average" if win_rate >= 45 else "weak"
-            response += f"• {map_name}: {win_rate}% win rate over {games} games ({status})\n"
+            if win_rate >= 55:
+                icon = "🟢"
+            elif win_rate >= 45:
+                icon = "🟡"
+            else:
+                icon = "🔴"
+            response += f"{icon} **{map_name}**: **{win_rate}%** WR ({games} games)\n"
         
-        # Add summary
-        strong_maps = [m for m in map_stats if m.get('win_rate', 0) >= 55]
-        weak_maps = [m for m in map_stats if m.get('win_rate', 0) < 45]
+        # Veto recommendations
+        strong_maps = [m.get('map') or m.get('map_name') or 'Unknown' for m in map_stats if (m.get('win_rate', 0) or 0) >= 55]
+        weak_maps = [m.get('map') or m.get('map_name') or 'Unknown' for m in map_stats if (m.get('win_rate', 0) or 0) < 45]
         
+        response += "\n"
         if strong_maps:
-            response += f"\nStrong maps to consider banning: {', '.join([m.get('map') or m.get('map_name') for m in strong_maps])}"
+            response += f"**Ban consideration:** {', '.join(filter(None, strong_maps))}\n"
         if weak_maps:
-            response += f"\nWeak maps to exploit: {', '.join([m.get('map') or m.get('map_name') for m in weak_maps])}"
+            response += f"**Force in veto:** {', '.join(filter(None, weak_maps))}\n"
         
         return response
     
     def _interpret_player_stats(self, players: List[Dict], team_name: str) -> str:
         """Generate natural language interpretation of player statistics."""
         if not players:
-            return f"No player statistics found for {team_name} in the database."
+            return f"No player data found for **{team_name}**."
         
-        response = f"Player roster analysis for {team_name}:\n\n"
+        response = f"**{team_name} — Player Threat Assessment**\n\n"
         
         for p in players:
             name = p.get('player_name', 'Unknown')
@@ -457,15 +631,22 @@ If the data seems incomplete or unusual, acknowledge it honestly and suggest how
             deaths = p.get('deaths', 0)
             kd = p.get('kd_ratio', 0)
             
-            role_desc = "star player" if kd and kd > 1.2 else "solid performer" if kd and kd > 1.0 else "support player"
-            response += f"• {name}: {kills} kills / {deaths} deaths ({kd} K/D) over {games} games - {role_desc}\n"
+            if kd and kd > 1.2:
+                threat = "🚨 **KEY THREAT**"
+            elif kd and kd > 1.0:
+                threat = "Solid"
+            else:
+                threat = "Supportive"
+            response += f"• **{name}** — **{kd} K/D** ({kills}K/{deaths}D, {games} games) — {threat}\n"
             
-            # Add agent pool if available
             agent_pool = p.get('agent_pool', [])
             if agent_pool:
                 agents = [a.get('agent', '') for a in agent_pool[:3]]
-                response += f"  Agent pool: {', '.join(agents)}\n"
+                response += f"  Agents: {', '.join(agents)}\n"
         
+        # Find the star player
+        star = max(players, key=lambda p: p.get('kd_ratio', 0) or 0)
+        response += f"\n**Tactical Takeaway:** Focus utility and pressure on **{star.get('player_name', 'Unknown')}** — their top fragger."
         return response
     
     def _rollback_transaction(self):
@@ -476,6 +657,271 @@ If the data seems incomplete or unusual, acknowledge it honestly and suggest how
         except Exception:
             pass
     
+    # ==================== GENERAL QUERY HANDLERS (Non-team-specific) ====================
+    
+    def get_teams_defense_stats(self, limit: int = 10) -> Dict[str, Any]:
+        """Get defense performance for all teams - for 'which teams struggle on defense' queries."""
+        query = """
+            SELECT 
+                gc.team_name,
+                COUNT(DISTINCT r.game_id) as games,
+                SUM(CASE WHEN r.defender_team_id = gc.team_id AND r.winner_team_id = gc.team_id THEN 1 ELSE 0 END) as defense_wins,
+                SUM(CASE WHEN r.defender_team_id = gc.team_id THEN 1 ELSE 0 END) as defense_rounds,
+                ROUND(100.0 * SUM(CASE WHEN r.defender_team_id = gc.team_id AND r.winner_team_id = gc.team_id THEN 1 ELSE 0 END) / 
+                    NULLIF(SUM(CASE WHEN r.defender_team_id = gc.team_id THEN 1 ELSE 0 END), 0), 1) as defense_win_rate
+            FROM rounds r
+            JOIN game_compositions gc ON r.game_id = gc.game_id
+            WHERE gc.team_name IS NOT NULL
+            GROUP BY gc.team_name
+            HAVING SUM(CASE WHEN r.defender_team_id = gc.team_id THEN 1 ELSE 0 END) >= 50
+            ORDER BY defense_win_rate ASC
+            LIMIT %s
+        """
+        with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(query, (limit,))
+            results = [dict(row) for row in cur.fetchall()]
+        return {"teams": results, "metric": "defense_win_rate", "order": "worst_first"}
+    
+    def get_teams_attack_stats(self, limit: int = 10) -> Dict[str, Any]:
+        """Get attack performance for all teams."""
+        query = """
+            SELECT 
+                gc.team_name,
+                COUNT(DISTINCT r.game_id) as games,
+                SUM(CASE WHEN r.attacker_team_id = gc.team_id AND r.winner_team_id = gc.team_id THEN 1 ELSE 0 END) as attack_wins,
+                SUM(CASE WHEN r.attacker_team_id = gc.team_id THEN 1 ELSE 0 END) as attack_rounds,
+                ROUND(100.0 * SUM(CASE WHEN r.attacker_team_id = gc.team_id AND r.winner_team_id = gc.team_id THEN 1 ELSE 0 END) / 
+                    NULLIF(SUM(CASE WHEN r.attacker_team_id = gc.team_id THEN 1 ELSE 0 END), 0), 1) as attack_win_rate
+            FROM rounds r
+            JOIN game_compositions gc ON r.game_id = gc.game_id
+            WHERE gc.team_name IS NOT NULL
+            GROUP BY gc.team_name
+            HAVING SUM(CASE WHEN r.attacker_team_id = gc.team_id THEN 1 ELSE 0 END) >= 50
+            ORDER BY attack_win_rate ASC
+            LIMIT %s
+        """
+        with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(query, (limit,))
+            results = [dict(row) for row in cur.fetchall()]
+        return {"teams": results, "metric": "attack_win_rate", "order": "worst_first"}
+    
+    def get_player_team(self, player_name: str) -> Dict[str, Any]:
+        """Find which team a player is on and their stats."""
+        query = """
+            SELECT DISTINCT 
+                gc.player_name,
+                gc.team_name,
+                gc.agent,
+                gc.agent_role,
+                COUNT(DISTINCT gc.game_id) as games_played
+            FROM game_compositions gc
+            WHERE gc.player_name ILIKE %s
+            GROUP BY gc.player_name, gc.team_name, gc.agent, gc.agent_role
+            ORDER BY games_played DESC
+            LIMIT 10
+        """
+        with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(query, (f"%{player_name}%",))
+            results = [dict(row) for row in cur.fetchall()]
+        
+        if not results:
+            return {"found": False, "player": player_name, "matches": []}
+        
+        return {"found": True, "player": results[0]['player_name'], "matches": results}
+    
+    def get_top_fraggers(self, limit: int = 10) -> Dict[str, Any]:
+        """Get top fragging players across all teams."""
+        query = """
+            SELECT 
+                prs.player_name,
+                gc.team_name,
+                COUNT(DISTINCT prs.game_id) as games,
+                SUM(prs.kills) as total_kills,
+                SUM(prs.deaths) as total_deaths,
+                ROUND(1.0 * SUM(prs.kills) / NULLIF(SUM(prs.deaths), 0), 2) as kd_ratio,
+                ROUND(1.0 * SUM(prs.kills) / COUNT(DISTINCT prs.game_id), 1) as avg_kills_per_game
+            FROM player_round_stats prs
+            JOIN game_compositions gc ON prs.game_id = gc.game_id AND prs.player_name = gc.player_name
+            GROUP BY prs.player_name, gc.team_name
+            HAVING COUNT(DISTINCT prs.game_id) >= 5
+            ORDER BY kd_ratio DESC
+            LIMIT %s
+        """
+        with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(query, (limit,))
+            results = [dict(row) for row in cur.fetchall()]
+        return {"players": results, "metric": "kd_ratio"}
+    
+    def get_best_teams_overall(self, limit: int = 10) -> Dict[str, Any]:
+        """Get best performing teams overall."""
+        query = """
+            SELECT 
+                team_name,
+                SUM(games_played) as total_games,
+                SUM(wins) as total_wins,
+                SUM(losses) as total_losses,
+                ROUND(100.0 * SUM(wins) / NULLIF(SUM(games_played), 0), 1) as win_rate
+            FROM v_team_map_stats
+            WHERE team_name IS NOT NULL
+            GROUP BY team_name
+            HAVING SUM(games_played) >= 10
+            ORDER BY win_rate DESC
+            LIMIT %s
+        """
+        with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(query, (limit,))
+            results = [dict(row) for row in cur.fetchall()]
+        return {"teams": results, "metric": "win_rate"}
+    
+    def get_worst_teams_overall(self, limit: int = 10) -> Dict[str, Any]:
+        """Get worst performing teams overall."""
+        query = """
+            SELECT 
+                team_name,
+                SUM(games_played) as total_games,
+                SUM(wins) as total_wins,
+                SUM(losses) as total_losses,
+                ROUND(100.0 * SUM(wins) / NULLIF(SUM(games_played), 0), 1) as win_rate
+            FROM v_team_map_stats
+            WHERE team_name IS NOT NULL
+            GROUP BY team_name
+            HAVING SUM(games_played) >= 10
+            ORDER BY win_rate ASC
+            LIMIT %s
+        """
+        with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(query, (limit,))
+            results = [dict(row) for row in cur.fetchall()]
+        return {"teams": results, "metric": "win_rate", "order": "worst_first"}
+    
+    def _interpret_teams_defense(self, data: Dict) -> str:
+        """Interpret defense stats for multiple teams."""
+        teams = data.get("teams", [])
+        if not teams:
+            return "No team defense data found with sufficient matches."
+        
+        response = "**Defense Vulnerabilities — League Overview**\n\n"
+        for i, t in enumerate(teams, 1):
+            wr = t.get('defense_win_rate', 0) or 0
+            icon = "🔴" if wr < 45 else "🟡" if wr < 50 else "🟢"
+            response += f"{i}. {icon} **{t['team_name']}**: **{wr:.1f}%** def WR ({t.get('defense_wins', 0)}/{t.get('defense_rounds', 0)} rounds)\n"
+        
+        response += "\n**Tactical Takeaway:** Against these teams, run aggressive executes and overwhelm their site holds."
+        return response
+    
+    def _interpret_teams_attack(self, data: Dict) -> str:
+        """Interpret attack stats for multiple teams."""
+        teams = data.get("teams", [])
+        if not teams:
+            return "No team attack data found with sufficient matches."
+        
+        response = "**Attack Vulnerabilities — League Overview**\n\n"
+        for i, t in enumerate(teams, 1):
+            wr = t.get('attack_win_rate', 0) or 0
+            icon = "🔴" if wr < 45 else "🟡" if wr < 50 else "🟢"
+            response += f"{i}. {icon} **{t['team_name']}**: **{wr:.1f}%** atk WR ({t.get('attack_wins', 0)}/{t.get('attack_rounds', 0)} rounds)\n"
+        
+        response += "\n**Tactical Takeaway:** These teams struggle with site takes. Play patient defense and deny early map control."
+        return response
+    
+    def _interpret_player_lookup(self, data: Dict) -> str:
+        """Interpret player team lookup."""
+        if not data.get("found"):
+            return f"Couldn't find **{data.get('player', 'unknown')}** in the database. Check spelling or try their in-game name."
+        
+        matches = data.get("matches", [])
+        player = data.get("player", "")
+        
+        if len(matches) == 1:
+            m = matches[0]
+            return f"**{m['player_name']}** plays for **{m['team_name']}**\n• Role: **{m['agent']}** ({m['agent_role']})\n• Games on record: **{m['games_played']}**"
+        
+        # Multiple matches (different teams or agents)
+        response = f"**{player} — Player Intel**\n\n"
+        for m in matches[:5]:
+            response += f"• **{m['team_name']}** — {m['agent']} ({m['games_played']} games)\n"
+        
+        teams = list(set(m['team_name'] for m in matches))
+        if len(teams) > 1:
+            response += f"\n*Note: Multiple team appearances — possible roster changes.*"
+        
+        return response
+    
+    def _interpret_top_players(self, data: Dict) -> str:
+        """Interpret top player stats."""
+        players = data.get("players", [])
+        if not players:
+            return "No player data found with sufficient matches."
+        
+        response = "**Top Fraggers — Threat Watch List**\n\n"
+        for i, p in enumerate(players, 1):
+            kd = p.get('kd_ratio', 0) or 0
+            avg_kills = p.get('avg_kills_per_game', 0) or 0
+            icon = "🚨" if kd >= 1.3 else "⚠️" if kd >= 1.1 else ""
+            response += f"{i}. {icon} **{p['player_name']}** ({p['team_name']}) — **{kd:.2f} K/D**, {avg_kills:.1f} kills/game ({p['games']} games)\n"
+        
+        response += f"\n**Tactical Takeaway:** Prioritize shutting down **{players[0]['player_name']}** — league's most dangerous fragger."
+        return response
+    
+    def _interpret_best_teams(self, data: Dict) -> str:
+        """Interpret best teams rankings."""
+        teams = data.get("teams", [])
+        if not teams:
+            return "No team data found with sufficient matches."
+        
+        response = "**Strongest Opponents — Power Rankings**\n\n"
+        for i, t in enumerate(teams, 1):
+            wr = t.get('win_rate', 0) or 0
+            response += f"{i}. **{t['team_name']}**: **{wr:.1f}%** WR ({t.get('total_wins', 0)}W-{t.get('total_losses', 0)}L, {t.get('total_games', 0)} maps)\n"
+        
+        response += f"\n**Tactical Takeaway:** Prepare extra veto strategies and anti-strats when facing these top-tier opponents."
+        return response
+    
+    def _interpret_worst_teams(self, data: Dict) -> str:
+        """Interpret worst teams rankings."""
+        teams = data.get("teams", [])
+        if not teams:
+            return "No team data found with sufficient matches."
+        
+        response = "**Weakest Opponents — Exploitable Teams**\n\n"
+        for i, t in enumerate(teams, 1):
+            wr = t.get('win_rate', 0) or 0
+            response += f"{i}. **{t['team_name']}**: **{wr:.1f}%** WR ({t.get('total_wins', 0)}W-{t.get('total_losses', 0)}L, {t.get('total_games', 0)} maps)\n"
+        
+        response += "\n**Tactical Takeaway:** These teams have clear gaps — study their tendencies for easy prep wins."
+        return response
+
+    def _suggest_alternative_queries(self, question: str, team_name: str = None) -> str:
+        """Suggest alternative queries or query patterns when AI isn't available."""
+        question_lower = question.lower()
+        
+        # Analyze what the user is asking about
+        is_team_question = team_name is not None
+        keywords = []
+        
+        if any(w in question_lower for w in ['defense', 'defend', 'retake']):
+            keywords.append("'Which teams struggle on defense?'")
+        if any(w in question_lower for w in ['attack', 'plant', 'enter site']):
+            keywords.append("'What teams are weak on attack?'")
+        if any(w in question_lower for w in ['player', 'frag', 'kill']):
+            keywords.append("'Who are the top fraggers?'")
+        if any(w in question_lower for w in ['best', 'strong', 'win rate']):
+            keywords.append("'What are the best teams?'")
+        if any(w in question_lower for w in ['weak', 'worst', 'bad']):
+            keywords.append("'What are the worst teams?'")
+        if any(w in question_lower for w in ['map', 'split', 'bind', 'haven']):
+            if is_team_question:
+                keywords.append(f"'Show me {team_name} map stats'")
+        if any(w in question_lower for w in ['on', 'play', 'team']):
+            keywords.append("'What team is [player] on?'")
+        
+        if keywords:
+            suggestions = " Try asking: " + " or ".join(keywords[:2]) + "."
+        else:
+            suggestions = " Try asking about teams, players, or maps instead. Example: 'Which teams struggle on defense?'"
+        
+        return suggestions
+
     def classify_query(self, question: str) -> Dict[str, Any]:
         """
         Classify the user's query to determine if DB access is needed.
@@ -611,8 +1057,135 @@ Just mention a team name and what you want to know!"""
         
         print(f"[ASK DEBUG] Question: {question}, Extracted team: {team_name}")  # Debug logging
         
-        # Step 2: Check for common query patterns and use built-in methods
-        # This is faster and more reliable than AI-generated SQL for common cases
+        # ===== STEP 2A: GENERAL QUERIES (no team required) =====
+        # These handle queries like "which teams struggle on defense?"
+        
+        # Player lookup: "what team is TenZ on", "where does aspas play"
+        player_lookup_patterns = ['what team is', 'which team is', 'where does', 'who is', 'what team does', 'find player']
+        if any(p in question_lower for p in player_lookup_patterns):
+            # Extract player name from question
+            player_match = self._extract_player_from_question(question)
+            if player_match:
+                try:
+                    self._rollback_transaction()
+                    data = self.get_player_team(player_match)
+                    self.conn.commit()
+                    interpretation = self._interpret_player_lookup(data)
+                    return {
+                        "question": question,
+                        "team": None,
+                        "sql": "(Used optimized player lookup)",
+                        "error": None,
+                        "results": {"data": data.get("matches", []), "count": len(data.get("matches", []))},
+                        "interpretation": interpretation,
+                        "query_type": "DB_QUERY"
+                    }
+                except Exception as e:
+                    print(f"[Player lookup error] {e}")
+                    self._rollback_transaction()
+        
+        # Defense struggles: "which teams struggle on defense"
+        if 'defense' in question_lower and any(w in question_lower for w in ['struggle', 'weak', 'worst', 'bad', 'which team']):
+            try:
+                self._rollback_transaction()
+                data = self.get_teams_defense_stats(10)
+                self.conn.commit()
+                interpretation = self._interpret_teams_defense(data)
+                return {
+                    "question": question,
+                    "team": None,
+                    "sql": "(Used optimized defense analysis)",
+                    "error": None,
+                    "results": {"data": data.get("teams", []), "count": len(data.get("teams", []))},
+                    "interpretation": interpretation,
+                    "query_type": "DB_QUERY"
+                }
+            except Exception as e:
+                print(f"[Defense handler error] {e}")
+                self._rollback_transaction()
+        
+        # Attack struggles: "which teams struggle on attack"
+        if 'attack' in question_lower and any(w in question_lower for w in ['struggle', 'weak', 'worst', 'bad', 'which team']):
+            try:
+                self._rollback_transaction()
+                data = self.get_teams_attack_stats(10)
+                self.conn.commit()
+                interpretation = self._interpret_teams_attack(data)
+                return {
+                    "question": question,
+                    "team": None,
+                    "sql": "(Used optimized attack analysis)",
+                    "error": None,
+                    "results": {"data": data.get("teams", []), "count": len(data.get("teams", []))},
+                    "interpretation": interpretation,
+                    "query_type": "DB_QUERY"
+                }
+            except Exception as e:
+                print(f"[Attack handler error] {e}")
+                self._rollback_transaction()
+        
+        # Top fraggers: "who are the best players", "top fraggers"
+        if any(p in question_lower for p in ['top frag', 'best player', 'highest kd', 'top player', 'best kd']):
+            if not team_name:  # Only if no team specified
+                try:
+                    self._rollback_transaction()
+                    data = self.get_top_fraggers(10)
+                    self.conn.commit()
+                    interpretation = self._interpret_top_players(data)
+                    return {
+                        "question": question,
+                        "team": None,
+                        "sql": "(Used optimized player rankings)",
+                        "error": None,
+                        "results": {"data": data.get("players", []), "count": len(data.get("players", []))},
+                        "interpretation": interpretation,
+                        "query_type": "DB_QUERY"
+                    }
+                except Exception as e:
+                    print(f"[Top fraggers error] {e}")
+                    self._rollback_transaction()
+        
+        # Best/worst teams overall
+        if any(p in question_lower for p in ['best team', 'top team', 'strongest team']):
+            try:
+                self._rollback_transaction()
+                data = self.get_best_teams_overall(10)
+                self.conn.commit()
+                interpretation = self._interpret_best_teams(data)
+                return {
+                    "question": question,
+                    "team": None,
+                    "sql": "(Used optimized team rankings)",
+                    "error": None,
+                    "results": {"data": data.get("teams", []), "count": len(data.get("teams", []))},
+                    "interpretation": interpretation,
+                    "query_type": "DB_QUERY"
+                }
+            except Exception as e:
+                print(f"[Best teams error] {e}")
+                self._rollback_transaction()
+        
+        if any(p in question_lower for p in ['worst team', 'weakest team', 'struggling team']):
+            try:
+                self._rollback_transaction()
+                data = self.get_worst_teams_overall(10)
+                self.conn.commit()
+                interpretation = self._interpret_worst_teams(data)
+                return {
+                    "question": question,
+                    "team": None,
+                    "sql": "(Used optimized team rankings)",
+                    "error": None,
+                    "results": {"data": data.get("teams", []), "count": len(data.get("teams", []))},
+                    "interpretation": interpretation,
+                    "query_type": "DB_QUERY"
+                }
+            except Exception as e:
+                print(f"[Worst teams error] {e}")
+                self._rollback_transaction()
+        
+        # ===== STEP 2B: TEAM-SPECIFIC QUERIES =====
+        # These require a team name to be detected
         if team_name:
             if any(kw in question_lower for kw in ['weakness', 'weak', 'struggle', 'bad at', 'poor', 'exploit']):
                 try:
@@ -679,13 +1252,15 @@ Just mention a team name and what you want to know!"""
         
         if not sql_result["success"]:
             self._rollback_transaction()  # Reset transaction state
+            # Use the error message which contains helpful suggestions
+            error_msg = sql_result["error"]
             return {
                 "question": question,
                 "team": team_name,
                 "sql": sql_result.get("sql"),
-                "error": sql_result["error"],
+                "error": error_msg,
                 "results": None,
-                "interpretation": f"I couldn't generate a query for that question. Try being more specific, like 'What are [team name]'s weaknesses?' or 'Show me [team]'s map stats'",
+                "interpretation": error_msg,
                 "query_type": "DB_QUERY"
             }
         
@@ -720,6 +1295,11 @@ Just mention a team name and what you want to know!"""
         
         # Step 4: Interpret results
         interpretation = self._interpret_results(question, results, detected_team)
+        
+        # Step 5: Add sanity validation warnings
+        sanity_check = self._validate_results_sanity(results, "AI_GENERATED")
+        if sanity_check["warnings"]:
+            interpretation = interpretation + "\n\n---\n" + "\n".join(sanity_check["warnings"])
         
         return {
             "question": question,
@@ -855,14 +1435,14 @@ Just mention a team name and what you want to know!"""
         # Get agent pools for each player
         for player in players:
             pool_query = """
-                SELECT agent, games, kd_ratio
+                SELECT agent, games_played, kd_ratio
                 FROM v_player_agent_pool
-                WHERE player_name = %s AND team_name ILIKE %s
-                ORDER BY games DESC
+                WHERE player_name = %s
+                ORDER BY games_played DESC
                 LIMIT 5
             """
             with self.conn.cursor(cursor_factory=RealDictCursor) as cur:
-                cur.execute(pool_query, (player['player_name'], f"%{team_name}%"))
+                cur.execute(pool_query, (player['player_name'],))
                 player['agent_pool'] = [dict(row) for row in cur.fetchall()]
         
         return {"players": players}

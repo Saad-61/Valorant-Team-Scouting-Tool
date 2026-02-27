@@ -1,6 +1,7 @@
 // AI Chat Page - Conversational Analytics
 import { useState, useRef, useEffect, forwardRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
 import { cn } from '../utils/helpers';
 import { useAppStore } from '../store/appStore';
 import api from '../services/api';
@@ -284,7 +285,28 @@ const MessageBubble = forwardRef(function MessageBubble({ message }, ref) {
               Error occurred
             </div>
           )}
-          <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+          {isUser ? (
+            <p className="text-[15px] leading-relaxed whitespace-pre-wrap">{message.content}</p>
+          ) : (
+            <div className="text-[15px] leading-relaxed prose-chat">
+              <ReactMarkdown
+                components={{
+                  p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                  strong: ({ children }) => <strong className="font-bold text-[var(--text-primary)]">{children}</strong>,
+                  em: ({ children }) => <em className="italic text-c9-400">{children}</em>,
+                  ul: ({ children }) => <ul className="list-disc list-inside mb-2 space-y-1">{children}</ul>,
+                  ol: ({ children }) => <ol className="list-decimal list-inside mb-2 space-y-1">{children}</ol>,
+                  li: ({ children }) => <li className="text-[15px]">{children}</li>,
+                  h1: ({ children }) => <h3 className="text-base font-bold text-[var(--text-primary)] mb-2">{children}</h3>,
+                  h2: ({ children }) => <h3 className="text-base font-bold text-[var(--text-primary)] mb-2">{children}</h3>,
+                  h3: ({ children }) => <h4 className="text-[15px] font-semibold text-[var(--text-primary)] mb-1">{children}</h4>,
+                  code: ({ children }) => <code className="bg-[var(--surface-secondary)] px-1.5 py-0.5 rounded text-sm text-c9-400">{children}</code>,
+                }}
+              >
+                {message.content}
+              </ReactMarkdown>
+            </div>
+          )}
         </div>
 
         {/* SQL Query removed - hidden from user interface */}
@@ -297,7 +319,7 @@ const MessageBubble = forwardRef(function MessageBubble({ message }, ref) {
               {message.data.length} results
             </div>
             <div className="overflow-x-auto bg-[var(--surface-primary)] border border-[var(--border-primary)] rounded-lg">
-              <table className="w-full text-xs">
+              <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-[var(--border-primary)]">
                     {Object.keys(message.data[0]).map((key) => (
